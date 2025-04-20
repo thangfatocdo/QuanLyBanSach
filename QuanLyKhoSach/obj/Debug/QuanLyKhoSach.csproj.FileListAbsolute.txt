@@ -1,0 +1,10 @@
+D:\Documents\HocTap\DATN\Project\QuanLyKhoSach\bin\Debug\QuanLyKhoSach.exe.config
+D:\Documents\HocTap\DATN\Project\QuanLyKhoSach\bin\Debug\QuanLyKhoSach.exe
+D:\Documents\HocTap\DATN\Project\QuanLyKhoSach\bin\Debug\QuanLyKhoSach.pdb
+D:\Documents\HocTap\DATN\Project\QuanLyKhoSach\obj\Debug\QuanLyKhoSach.csproj.AssemblyReference.cache
+D:\Documents\HocTap\DATN\Project\QuanLyKhoSach\obj\Debug\QuanLyKhoSach.Form1.resources
+D:\Documents\HocTap\DATN\Project\QuanLyKhoSach\obj\Debug\QuanLyKhoSach.Properties.Resources.resources
+D:\Documents\HocTap\DATN\Project\QuanLyKhoSach\obj\Debug\QuanLyKhoSach.csproj.GenerateResource.cache
+D:\Documents\HocTap\DATN\Project\QuanLyKhoSach\obj\Debug\QuanLyKhoSach.csproj.CoreCompileInputs.cache
+D:\Documents\HocTap\DATN\Project\QuanLyKhoSach\obj\Debug\QuanLyKhoSach.exe
+D:\Documents\HocTap\DATN\Project\QuanLyKhoSach\obj\Debug\QuanLyKhoSach.pdb
