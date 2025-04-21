@@ -117,8 +117,6 @@ namespace QuanLyKhoSach
             this.txtDescription.Size = new System.Drawing.Size(345, 126);
             this.txtDescription.TabIndex = 15;
             this.txtDescription.Text = "";
-            this.txtDescription.TextChanged += new System.EventHandler(this.txtDescription_TextChanged_1);
-            // 
             // Description
             // 
             this.Description.AutoSize = true;

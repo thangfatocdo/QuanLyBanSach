@@ -8,3 +8,8 @@ D:\Documents\HocTap\DATN\Project\QuanLyKhoSach\obj\Debug\QuanLyKhoSach.csproj.Ge
 D:\Documents\HocTap\DATN\Project\QuanLyKhoSach\obj\Debug\QuanLyKhoSach.csproj.CoreCompileInputs.cache
 D:\Documents\HocTap\DATN\Project\QuanLyKhoSach\obj\Debug\QuanLyKhoSach.exe
 D:\Documents\HocTap\DATN\Project\QuanLyKhoSach\obj\Debug\QuanLyKhoSach.pdb
+D:\Documents\HocTap\DATN\Project\QuanLyKhoSach\bin\Debug\EntityFramework.dll
+D:\Documents\HocTap\DATN\Project\QuanLyKhoSach\bin\Debug\EntityFramework.SqlServer.dll
+D:\Documents\HocTap\DATN\Project\QuanLyKhoSach\bin\Debug\EntityFramework.xml
+D:\Documents\HocTap\DATN\Project\QuanLyKhoSach\bin\Debug\EntityFramework.SqlServer.xml
+D:\Documents\HocTap\DATN\Project\QuanLyKhoSach\obj\Debug\QuanLyKh.3457E4A4.Up2Date

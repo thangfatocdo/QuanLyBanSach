@@ -1,133 +1,124 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.Entity;
+using System.Collections.Generic;
 
 namespace QuanLyKhoSach
 {
-    
     public partial class Form1 : Form
     {
-        private DataProvider dataProvider = new DataProvider();
-        private DataTable bookTable = new DataTable(); // dữ liệu toàn cục
+        private BookstoreDBEntities context = new BookstoreDBEntities();
+        private List<Book> bookList = new List<Book>(); // lưu danh sách sách dùng toàn cục
 
         public Form1()
         {
             InitializeComponent();
             init();
         }
+
         private void init()
         {
-            initSach();
-            initCategory();
-        }
-        private void initSach()
-        {
-            bookTable = getBookData();
-            displayBooks(bookTable);
+            LoadBooks();
+            LoadCategories();
         }
 
-        //Lấy dữ liệu từ database
-        private DataTable getBookData()
-        {
-            StringBuilder query = new StringBuilder();
-            query.Append("SELECT ");
-            query.Append("b.BookId AS [Mã Sách], ");
-            query.Append("b.Title AS [Tên Sách], ");
-            query.Append("c.CategoryName AS [Loại Sách], ");
-            query.Append("a.AuthorName AS [Tác Giả], ");
-            query.Append("b.Price AS [Giá Bán], ");
-            query.Append("b.Description AS [Mô Tả], ");
-            query.Append("p.PublisherName AS [NXB], ");
-            query.Append("b.CreatedAt AS [Ngày Tạo], ");
-            query.Append("b.ImageUrl AS [Hình Ảnh] ");
-            query.Append("FROM Books b ");
-            query.Append("JOIN Categories c ON b.CategoryId = c.CategoryId ");
-            query.Append("JOIN Authors a ON b.AuthorId = a.AuthorId ");
-            query.Append("JOIN Publishers p ON b.PublisherId = p.PublisherId ");
-
-            return dataProvider.execQuery(query.ToString());
-        }
-
-        //hiển thị sách
-        private void displayBooks(DataTable dt)
+        // Load danh sách sách từ EF + hiển thị thumbnail
+        private void LoadBooks()
         {
             dgvBooks.Columns.Clear();
             dgvBooks.Rows.Clear();
             dgvBooks.AllowUserToAddRows = false;
-            // Thêm cột ảnh
+
+            // Lấy danh sách sách có Include quan hệ
+            bookList = context.Books
+                .Include(b => b.Category)
+                .Include(b => b.Author)
+                .Include(b => b.Publisher)
+                .ToList();
+
+            // Thêm cột hình ảnh
             DataGridViewImageColumn imgCol = new DataGridViewImageColumn();
             imgCol.HeaderText = "Ảnh";
             imgCol.ImageLayout = DataGridViewImageCellLayout.Zoom;
             imgCol.Width = 80;
             dgvBooks.Columns.Add(imgCol);
 
-            // Thêm các cột text
-            foreach (DataColumn col in dt.Columns)
-            {
-                if (col.ColumnName != "Hình Ảnh")
-                    dgvBooks.Columns.Add(col.ColumnName, col.ColumnName);
-            }
+            // Các cột khác
+            dgvBooks.Columns.Add("BookId", "Mã Sách");
+            dgvBooks.Columns.Add("Title", "Tên Sách");
+            dgvBooks.Columns.Add("Category", "Loại Sách");
+            dgvBooks.Columns.Add("Author", "Tác Giả");
+            dgvBooks.Columns.Add("Publisher", "NXB");
+            dgvBooks.Columns.Add("Price", "Giá Bán");
+            dgvBooks.Columns.Add("Description", "Mô Tả");
+            dgvBooks.Columns.Add("CreatedAt", "Ngày Tạo");
+            dgvBooks.Columns.Add("ImageUrl", "Hình Ảnh"); // ẩn
 
-            // Thêm từng dòng dữ liệu
-            foreach (DataRow row in dt.Rows)
+            dgvBooks.Columns["ImageUrl"].Visible = false;
+
+            // Thêm dòng
+            foreach (var b in bookList)
             {
-                string imgPath = row["Hình Ảnh"].ToString();
                 Image img = null;
-
-                if (!string.IsNullOrEmpty(imgPath))
+                if (!string.IsNullOrEmpty(b.ImageUrl))
                 {
-                    string fullPath = Path.Combine(Application.StartupPath, imgPath);
+                    string fullPath = Path.Combine(Application.StartupPath, b.ImageUrl);
                     if (File.Exists(fullPath))
                         img = Image.FromFile(fullPath);
                 }
 
-                List<object> cells = new List<object> { img };
-                foreach (DataColumn col in dt.Columns)
-                {
-                    if (col.ColumnName != "Hình Ảnh")
-                        cells.Add(row[col]);
-                }
-
-                dgvBooks.Rows.Add(cells.ToArray());
+                dgvBooks.Rows.Add(
+                    img,
+                    b.BookId,
+                    b.Title,
+                    b.Category?.CategoryName,
+                    b.Author?.AuthorName,
+                    b.Publisher?.PublisherName,
+                    b.Price,
+                    b.Description,
+                    b.CreatedAt.HasValue ? b.CreatedAt.Value.ToString("dd/MM/yyyy") : "",
+                    b.ImageUrl
+                );
             }
         }
-        private void txtDescription_TextChanged_1(object sender, EventArgs e)
-        {
 
-        }
-
+        // 🔹 Click đúp để xem ảnh to
         private void dgvBooks_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0 && dgvBooks.Rows[e.RowIndex].Cells.Count > 0)
+            if (e.RowIndex >= 0 && e.RowIndex < bookList.Count)
             {
-                string imagePath = bookTable.Rows[e.RowIndex]["Hình Ảnh"].ToString(); // dùng bookTable
-
-                FormPreview previewForm = new FormPreview(imagePath);
-                previewForm.ShowDialog(); // popup ảnh to
+                string imagePath = dgvBooks.Rows[e.RowIndex].Cells["ImageUrl"].Value?.ToString();
+                if (!string.IsNullOrEmpty(imagePath))
+                {
+                    FormPreview previewForm = new FormPreview(imagePath);
+                    previewForm.ShowDialog();
+                }
             }
         }
-        //xử lý loại sách
-        private void initCategory()
+
+        // Load loại sách qua EF
+        private void LoadCategories()
         {
-            StringBuilder query = new StringBuilder();
-            query.Append("SELECT ");
-            query.Append("c.CategoryId AS [Mã Loại Sách], ");
-            query.Append("c.CategoryName AS [Loại Sách] ");
-            query.Append("FROM Categories c");
-
-            DataTable dt = dataProvider.execQuery(query.ToString());
-
-            dgvCategories.DataSource = dt;
+            dgvCategories.Columns.Clear();
+            dgvCategories.Rows.Clear();
             dgvCategories.AllowUserToAddRows = false;
-        }
 
+            dgvCategories.Columns.Add("CategoryId", "Mã Loại Sách");
+            dgvCategories.Columns.Add("CategoryName", "Loại Sách");
+
+            // Lấy dữ liệu từ Entity Framework
+            var categories = context.Categories.ToList();
+
+            // Thêm từng dòng
+            foreach (var c in categories)
+            {
+                dgvCategories.Rows.Add(c.CategoryId, c.CategoryName);
+            }
+        }
 
     }
 }
