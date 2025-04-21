@@ -1,37 +1,27 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Data.SqlClient;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace QuanLyKhoSach
 {
     public partial class FormLogin : Form
     {
+        private BookstoreDBEntities context = new BookstoreDBEntities();
+
         public FormLogin()
         {
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            if (txtTenDN.Text == string.Empty)
+            if (txtTenDN.Text.Trim() == "")
             {
                 MessageBox.Show("Hãy nhập tài khoản", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtTenDN.Focus();
                 return;
             }
-            if (txtMatkhau.Text == string.Empty)
+            if (txtMatkhau.Text.Trim() == "")
             {
                 MessageBox.Show("Hãy nhập mật khẩu", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtMatkhau.Focus();
@@ -40,23 +30,22 @@ namespace QuanLyKhoSach
 
             try
             {
-                using (SqlConnection kn = new SqlConnection("Data Source=LAPTOP-UN2G3F2R\\MSSQLSERVER01;Initial Catalog=BookstoreDB;Integrated Security=True;TrustServerCertificate=True"))
-                {
-                    kn.Open();
-                    SqlCommand cmd = new SqlCommand("SELECT * FROM Users WHERE Username = @username AND Password = @password", kn);
-                    cmd.Parameters.AddWithValue("@username", txtTenDN.Text);
-                    cmd.Parameters.AddWithValue("@password", txtMatkhau.Text);
+                string user = txtTenDN.Text.Trim();
+                string pass = txtMatkhau.Text.Trim();
 
-                    SqlDataReader reader = cmd.ExecuteReader();
-                    if (reader.HasRows)
-                    {
-                        MessageBox.Show("Đăng nhập thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        // TODO: mở form chính tại đây nếu có
-                    }
-                    else
-                    {
-                        MessageBox.Show("Thông tin không hợp lệ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    }
+                var acc = context.Users.FirstOrDefault(u => u.Username == user && u.Password == pass);
+                if (acc != null)
+                {
+                    MessageBox.Show("Đăng nhập thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    this.Hide();
+                    Form1 mainForm = new Form1();
+                    mainForm.ShowDialog();
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Thông tin không hợp lệ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
             catch (Exception ex)

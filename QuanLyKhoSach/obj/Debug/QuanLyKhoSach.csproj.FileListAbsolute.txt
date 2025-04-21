@@ -13,3 +13,4 @@ D:\Documents\HocTap\DATN\Project\QuanLyKhoSach\bin\Debug\EntityFramework.SqlServ
 D:\Documents\HocTap\DATN\Project\QuanLyKhoSach\bin\Debug\EntityFramework.xml
 D:\Documents\HocTap\DATN\Project\QuanLyKhoSach\bin\Debug\EntityFramework.SqlServer.xml
 D:\Documents\HocTap\DATN\Project\QuanLyKhoSach\obj\Debug\QuanLyKh.3457E4A4.Up2Date
+D:\Documents\HocTap\DATN\Project\QuanLyKhoSach\obj\Debug\QuanLyKhoSach.FormLogin.resources
