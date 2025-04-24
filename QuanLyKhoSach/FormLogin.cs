@@ -6,6 +6,7 @@ namespace QuanLyKhoSach
 {
     public partial class FormLogin : Form
     {
+        // Khởi tạo DbContext để tương tác với database bằng Entity Framework
         private BookstoreDBEntities context = new BookstoreDBEntities();
 
         public FormLogin()
@@ -13,6 +14,7 @@ namespace QuanLyKhoSach
             InitializeComponent();
         }
 
+        // Bắt sự kiện nhấn nút Đăng nhập
         private void btnLogin_Click(object sender, EventArgs e)
         {
             if (txtTenDN.Text.Trim() == "")
@@ -33,11 +35,12 @@ namespace QuanLyKhoSach
                 string user = txtTenDN.Text.Trim();
                 string pass = txtMatkhau.Text.Trim();
 
+                // Tìm người dùng trong database bằng EF
                 var acc = context.Users.FirstOrDefault(u => u.Username == user && u.Password == pass);
                 if (acc != null)
                 {
                     MessageBox.Show("Đăng nhập thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+                // Mở form chính sau khi login thành công
                     this.Hide();
                     Form1 mainForm = new Form1();
                     mainForm.ShowDialog();

@@ -1,0 +1,185 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{9245713E-BB27-4898-8B18-12807CE0F43C}|WebBanSach.csproj|D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9245713E-BB27-4898-8B18-12807CE0F43C}|WebBanSach.csproj|solutionrelative:controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9245713E-BB27-4898-8B18-12807CE0F43C}|WebBanSach.csproj|d:\\documents\\hoctap\\datn\\project\\webbansach\\views\\shared\\_loginpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{9245713E-BB27-4898-8B18-12807CE0F43C}|WebBanSach.csproj|solutionrelative:views\\shared\\_loginpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9245713E-BB27-4898-8B18-12807CE0F43C}|WebBanSach.csproj|d:\\documents\\hoctap\\datn\\project\\webbansach\\models\\viewmodels\\changepasswordviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9245713E-BB27-4898-8B18-12807CE0F43C}|WebBanSach.csproj|solutionrelative:models\\viewmodels\\changepasswordviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9245713E-BB27-4898-8B18-12807CE0F43C}|WebBanSach.csproj|d:\\documents\\hoctap\\datn\\project\\webbansach\\models\\viewmodels\\verifyemail.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9245713E-BB27-4898-8B18-12807CE0F43C}|WebBanSach.csproj|solutionrelative:models\\viewmodels\\verifyemail.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9245713E-BB27-4898-8B18-12807CE0F43C}|WebBanSach.csproj|D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\models\\viewmodels\\loginviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9245713E-BB27-4898-8B18-12807CE0F43C}|WebBanSach.csproj|solutionrelative:models\\viewmodels\\loginviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9245713E-BB27-4898-8B18-12807CE0F43C}|WebBanSach.csproj|D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9245713E-BB27-4898-8B18-12807CE0F43C}|WebBanSach.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9245713E-BB27-4898-8B18-12807CE0F43C}|WebBanSach.csproj|D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\models\\viewmodels\\registerviewmodels.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9245713E-BB27-4898-8B18-12807CE0F43C}|WebBanSach.csproj|solutionrelative:models\\viewmodels\\registerviewmodels.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9245713E-BB27-4898-8B18-12807CE0F43C}|WebBanSach.csproj|D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\models\\entities\\customer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9245713E-BB27-4898-8B18-12807CE0F43C}|WebBanSach.csproj|solutionrelative:models\\entities\\customer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9245713E-BB27-4898-8B18-12807CE0F43C}|WebBanSach.csproj|D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\views\\account\\changepassword.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{9245713E-BB27-4898-8B18-12807CE0F43C}|WebBanSach.csproj|solutionrelative:views\\account\\changepassword.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/DESKTOP_7B1B1GQ_SQLEXPRESS/BookstoreDB/sa/SqlTable/dbo.Customers.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ChangePasswordViewModel.cs",
+              "DocumentMoniker": "D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\Models\\ViewModels\\ChangePasswordViewModel.cs",
+              "RelativeDocumentMoniker": "Models\\ViewModels\\ChangePasswordViewModel.cs",
+              "ToolTip": "D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\Models\\ViewModels\\ChangePasswordViewModel.cs",
+              "RelativeToolTip": "Models\\ViewModels\\ChangePasswordViewModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-24T13:37:01.733Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "VerifyEmail.cs",
+              "DocumentMoniker": "D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\Models\\ViewModels\\VerifyEmail.cs",
+              "RelativeDocumentMoniker": "Models\\ViewModels\\VerifyEmail.cs",
+              "ToolTip": "D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\Models\\ViewModels\\VerifyEmail.cs",
+              "RelativeToolTip": "Models\\ViewModels\\VerifyEmail.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-24T13:36:56.726Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "_LoginPartial.cshtml",
+              "DocumentMoniker": "D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\Views\\Shared\\_LoginPartial.cshtml",
+              "RelativeDocumentMoniker": "Views\\Shared\\_LoginPartial.cshtml",
+              "ToolTip": "D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\Views\\Shared\\_LoginPartial.cshtml",
+              "RelativeToolTip": "Views\\Shared\\_LoginPartial.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABcAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-24T09:53:08.199Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AccountController.cs",
+              "DocumentMoniker": "D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\Controllers\\AccountController.cs",
+              "RelativeDocumentMoniker": "Controllers\\AccountController.cs",
+              "ToolTip": "D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\Controllers\\AccountController.cs",
+              "RelativeToolTip": "Controllers\\AccountController.cs",
+              "ViewState": "AQIAAA0AAAAAAAAAAAAQwGAAAAA3AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-24T06:56:22.933Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "LoginViewModel.cs",
+              "DocumentMoniker": "D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\Models\\ViewModels\\LoginViewModel.cs",
+              "RelativeDocumentMoniker": "Models\\ViewModels\\LoginViewModel.cs",
+              "ToolTip": "D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\Models\\ViewModels\\LoginViewModel.cs",
+              "RelativeToolTip": "Models\\ViewModels\\LoginViewModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-24T08:41:16.375Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "RegisterViewModels.cs",
+              "DocumentMoniker": "D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\Models\\ViewModels\\RegisterViewModels.cs",
+              "RelativeDocumentMoniker": "Models\\ViewModels\\RegisterViewModels.cs",
+              "ToolTip": "D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\Models\\ViewModels\\RegisterViewModels.cs",
+              "RelativeToolTip": "Models\\ViewModels\\RegisterViewModels.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-24T07:30:27.911Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABUAAAARAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-24T07:59:07.632Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Customer.cs",
+              "DocumentMoniker": "D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\Models\\Entities\\Customer.cs",
+              "RelativeDocumentMoniker": "Models\\Entities\\Customer.cs",
+              "ToolTip": "D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\Models\\Entities\\Customer.cs",
+              "RelativeToolTip": "Models\\Entities\\Customer.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAuwAcAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-24T07:24:55.782Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "ChangePassword.cshtml",
+              "DocumentMoniker": "D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\Views\\Account\\ChangePassword.cshtml",
+              "RelativeDocumentMoniker": "Views\\Account\\ChangePassword.cshtml",
+              "ToolTip": "D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\Views\\Account\\ChangePassword.cshtml",
+              "RelativeToolTip": "Views\\Account\\ChangePassword.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAPAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-24T09:42:56.039Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "dbo.Customers [Data]",
+              "DocumentMoniker": "ViewDataWindow_MSSQL__/DESKTOP_7B1B1GQ_SQLEXPRESS/BookstoreDB/sa/SqlTable/dbo.Customers.sql",
+              "ToolTip": "dbo.Customers [Data]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2025-04-24T07:03:43.061Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
