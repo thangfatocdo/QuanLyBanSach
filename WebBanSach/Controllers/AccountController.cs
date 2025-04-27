@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using WebBanSach.Models.ViewModels;
 using WebBanSach.Models.Entities;
+using WebBanSach.Models;
 
 namespace WebBanSach.Controllers
 {

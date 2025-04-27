@@ -17,7 +17,7 @@ namespace QuanLyKhoSach
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public InventoryImport()
         {
-            this.InventoryDetails = new HashSet<InventoryDetail>();
+            this.InventoryDetail = new HashSet<InventoryDetail>();
         }
     
         public int ImportId { get; set; }
@@ -26,7 +26,7 @@ namespace QuanLyKhoSach
         public string Note { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<InventoryDetail> InventoryDetails { get; set; }
-        public virtual User User { get; set; }
+        public virtual ICollection<InventoryDetail> InventoryDetail { get; set; }
+        public virtual Users Users { get; set; }
     }
 }

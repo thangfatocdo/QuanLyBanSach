@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 
 namespace WebBanSach.Models.Entities;
-
 public partial class InventoryExport
 {
     public string IepId { get; set; } = null!;
@@ -12,8 +11,6 @@ public partial class InventoryExport
     public int? UserId { get; set; }
 
     public DateTime? ExportDate { get; set; }
-
-    public virtual Order? Order { get; set; }
 
     public virtual User? User { get; set; }
 }

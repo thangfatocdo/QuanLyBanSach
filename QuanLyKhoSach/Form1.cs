@@ -12,7 +12,7 @@ namespace QuanLyKhoSach
     public partial class Form1 : Form
     {
         private BookstoreDBEntities context = new BookstoreDBEntities();
-        private List<Book> bookList = new List<Book>(); // lưu danh sách sách dùng toàn cục
+        private List<Books> bookList = new List<Books>(); // lưu danh sách sách dùng toàn cục
 
         public Form1()
         {
@@ -24,6 +24,7 @@ namespace QuanLyKhoSach
         {
             LoadBooks();
             LoadCategories();
+            LoadOrders();
         }
 
         // Load danh sách sách từ EF + hiển thị thumbnail
@@ -35,9 +36,9 @@ namespace QuanLyKhoSach
 
             // Lấy danh sách sách có Include quan hệ
             bookList = context.Books
-                .Include(b => b.Category)
-                .Include(b => b.Author)
-                .Include(b => b.Publisher)
+                .Include(b => b.Categories)
+                .Include(b => b.Authors)
+                .Include(b => b.Publishers)
                 .ToList();
 
             // Thêm cột hình ảnh
@@ -75,9 +76,9 @@ namespace QuanLyKhoSach
                     img,
                     b.BookId,
                     b.Title,
-                    b.Category?.CategoryName,
-                    b.Author?.AuthorName,
-                    b.Publisher?.PublisherName,
+                    b.Categories?.CategoryName,
+                    b.Authors?.AuthorName,
+                    b.Publishers?.PublisherName,
                     b.Price,
                     b.Description,
                     b.CreatedAt.HasValue ? b.CreatedAt.Value.ToString("dd/MM/yyyy") : "",
@@ -120,5 +121,48 @@ namespace QuanLyKhoSach
             }
         }
 
+        private void LoadOrders()
+        {
+            dgvOrders.Columns.Clear();
+            dgvOrders.Rows.Clear();
+            dgvOrders.AllowUserToAddRows = false;
+
+            var orderList = context.Orders
+                .Include(o => o.Customers)
+                .ToList();
+
+            // Các cột
+            dgvOrders.Columns.Add("OrderId", "Mã Đơn Hàng");
+            dgvOrders.Columns.Add("CustomerName", "Khách Hàng");
+            dgvOrders.Columns.Add("OrderDate", "Ngày Đặt");
+            dgvOrders.Columns.Add("Payment", "Hình Thức Thanh Toán");
+            dgvOrders.Columns.Add("ReceiveDate", "Ngày Nhận");
+            dgvOrders.Columns.Add("Status", "Trạng Thái");
+            dgvOrders.Columns.Add("TotalPrice", "Tổng Tiền");
+
+            // Thêm dòng
+            foreach (var o in orderList)
+            {
+                dgvOrders.Rows.Add(
+                    o.OrderId,
+                    o.Customers?.FullName,
+                    o.OrderDate.HasValue ? o.ReceiveDate.Value.ToString("dd/MM/yyyy") : "",
+                    o.Payment,
+                    o.ReceiveDate.HasValue ? o.ReceiveDate.Value.ToString("dd/MM/yyyy") : "",
+                    o.Status,
+                    o.TotalPrice
+                );
+            }
+        }
+
+        private void dgvOrders_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                int orderId = Convert.ToInt32(dgvOrders.Rows[e.RowIndex].Cells["OrderId"].Value);
+                FormOrderDetail formDetail = new FormOrderDetail(orderId);
+                formDetail.ShowDialog();
+            }
+        }
     }
 }

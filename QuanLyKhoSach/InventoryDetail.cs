@@ -19,7 +19,7 @@ namespace QuanLyKhoSach
         public Nullable<int> BookId { get; set; }
         public int Quantity { get; set; }
     
-        public virtual Book Book { get; set; }
+        public virtual Books Books { get; set; }
         public virtual InventoryImport InventoryImport { get; set; }
     }
 }

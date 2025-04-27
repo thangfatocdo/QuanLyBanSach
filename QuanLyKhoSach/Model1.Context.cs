@@ -25,14 +25,17 @@ namespace QuanLyKhoSach
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Author> Authors { get; set; }
-        public virtual DbSet<Book> Books { get; set; }
-        public virtual DbSet<Category> Categories { get; set; }
-        public virtual DbSet<Customer> Customers { get; set; }
-        public virtual DbSet<InventoryDetail> InventoryDetails { get; set; }
-        public virtual DbSet<InventoryImport> InventoryImports { get; set; }
-        public virtual DbSet<Publisher> Publishers { get; set; }
-        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
-        public virtual DbSet<User> Users { get; set; }
+        public virtual DbSet<Authors> Authors { get; set; }
+        public virtual DbSet<Books> Books { get; set; }
+        public virtual DbSet<Categories> Categories { get; set; }
+        public virtual DbSet<Customers> Customers { get; set; }
+        public virtual DbSet<InventoryDetail> InventoryDetail { get; set; }
+        public virtual DbSet<InventoryExport> InventoryExport { get; set; }
+        public virtual DbSet<InventoryImport> InventoryImport { get; set; }
+        public virtual DbSet<OrderItems> OrderItems { get; set; }
+        public virtual DbSet<Orders> Orders { get; set; }
+        public virtual DbSet<Publishers> Publishers { get; set; }
+        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
+        public virtual DbSet<Users> Users { get; set; }
     }
 }

@@ -2,7 +2,7 @@
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="BookstoreDBModelStoreContainer" CdmEntityContainer="BookstoreDBEntities">
     <EntitySetMapping Name="Authors">
-      <EntityTypeMapping TypeName="BookstoreDBModel.Author">
+      <EntityTypeMapping TypeName="BookstoreDBModel.Authors">
         <MappingFragment StoreEntitySet="Authors">
           <ScalarProperty Name="AuthorId" ColumnName="AuthorId" />
           <ScalarProperty Name="AuthorName" ColumnName="AuthorName" />
@@ -10,7 +10,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Books">
-      <EntityTypeMapping TypeName="BookstoreDBModel.Book">
+      <EntityTypeMapping TypeName="BookstoreDBModel.Books">
         <MappingFragment StoreEntitySet="Books">
           <ScalarProperty Name="BookId" ColumnName="BookId" />
           <ScalarProperty Name="Title" ColumnName="Title" />
@@ -25,7 +25,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Categories">
-      <EntityTypeMapping TypeName="BookstoreDBModel.Category">
+      <EntityTypeMapping TypeName="BookstoreDBModel.Categories">
         <MappingFragment StoreEntitySet="Categories">
           <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
           <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
@@ -33,17 +33,18 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Customers">
-      <EntityTypeMapping TypeName="BookstoreDBModel.Customer">
+      <EntityTypeMapping TypeName="BookstoreDBModel.Customers">
         <MappingFragment StoreEntitySet="Customers">
           <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
           <ScalarProperty Name="FullName" ColumnName="FullName" />
           <ScalarProperty Name="Phone" ColumnName="Phone" />
           <ScalarProperty Name="Email" ColumnName="Email" />
           <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="InventoryDetails">
+    <EntitySetMapping Name="InventoryDetail">
       <EntityTypeMapping TypeName="BookstoreDBModel.InventoryDetail">
         <MappingFragment StoreEntitySet="InventoryDetail">
           <ScalarProperty Name="DetailId" ColumnName="DetailId" />
@@ -53,7 +54,17 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="InventoryImports">
+    <EntitySetMapping Name="InventoryExport">
+      <EntityTypeMapping TypeName="BookstoreDBModel.InventoryExport">
+        <MappingFragment StoreEntitySet="InventoryExport">
+          <ScalarProperty Name="Iep_Id" ColumnName="Iep_Id" />
+          <ScalarProperty Name="OrderId" ColumnName="OrderId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Export_Date" ColumnName="Export_Date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="InventoryImport">
       <EntityTypeMapping TypeName="BookstoreDBModel.InventoryImport">
         <MappingFragment StoreEntitySet="InventoryImport">
           <ScalarProperty Name="ImportId" ColumnName="ImportId" />
@@ -63,8 +74,33 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="OrderItems">
+      <EntityTypeMapping TypeName="BookstoreDBModel.OrderItems">
+        <MappingFragment StoreEntitySet="OrderItems">
+          <ScalarProperty Name="OrderItem_Id" ColumnName="OrderItem_Id" />
+          <ScalarProperty Name="OrderId" ColumnName="OrderId" />
+          <ScalarProperty Name="BookId" ColumnName="BookId" />
+          <ScalarProperty Name="BookPrice" ColumnName="BookPrice" />
+          <ScalarProperty Name="BookQuantity" ColumnName="BookQuantity" />
+          <ScalarProperty Name="CustomerPhone" ColumnName="CustomerPhone" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Orders">
+      <EntityTypeMapping TypeName="BookstoreDBModel.Orders">
+        <MappingFragment StoreEntitySet="Orders">
+          <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
+          <ScalarProperty Name="OrderDate" ColumnName="OrderDate" />
+          <ScalarProperty Name="Payment" ColumnName="Payment" />
+          <ScalarProperty Name="ReceiveDate" ColumnName="ReceiveDate" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="TotalPrice" ColumnName="TotalPrice" />
+          <ScalarProperty Name="OrderId" ColumnName="OrderId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="Publishers">
-      <EntityTypeMapping TypeName="BookstoreDBModel.Publisher">
+      <EntityTypeMapping TypeName="BookstoreDBModel.Publishers">
         <MappingFragment StoreEntitySet="Publishers">
           <ScalarProperty Name="PublisherId" ColumnName="PublisherId" />
           <ScalarProperty Name="PublisherName" ColumnName="PublisherName" />
@@ -74,7 +110,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="sysdiagrams">
-      <EntityTypeMapping TypeName="BookstoreDBModel.sysdiagram">
+      <EntityTypeMapping TypeName="BookstoreDBModel.sysdiagrams">
         <MappingFragment StoreEntitySet="sysdiagrams">
           <ScalarProperty Name="name" ColumnName="name" />
           <ScalarProperty Name="principal_id" ColumnName="principal_id" />
@@ -85,7 +121,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Users">
-      <EntityTypeMapping TypeName="BookstoreDBModel.User">
+      <EntityTypeMapping TypeName="BookstoreDBModel.Users">
         <MappingFragment StoreEntitySet="Users">
           <ScalarProperty Name="UserId" ColumnName="UserId" />
           <ScalarProperty Name="Username" ColumnName="Username" />

@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 
 namespace WebBanSach.Models.Entities;
-
 public partial class BookstoreDbContext : DbContext
 {
     public BookstoreDbContext()
@@ -41,7 +40,7 @@ public partial class BookstoreDbContext : DbContext
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
-        => optionsBuilder.UseSqlServer("Server=DESKTOP-7B1B1GQ\\SQLEXPRESS;Database=BookstoreDB;User Id=sa;Password=123456;TrustServerCertificate=True;");
+        => optionsBuilder.UseSqlServer("data source=DESKTOP-7B1B1GQ\\SQLEXPRESS;initial catalog=BookstoreDB;persist security info=True;user id=sa;password=123456;encrypt=True;trustservercertificate=True");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -123,10 +122,6 @@ public partial class BookstoreDbContext : DbContext
                 .HasColumnName("Export_Date");
             entity.Property(e => e.OrderId).HasMaxLength(50);
 
-            entity.HasOne(d => d.Order).WithMany(p => p.InventoryExports)
-                .HasForeignKey(d => d.OrderId)
-                .HasConstraintName("FK__Inventory__Order__6383C8BA");
-
             entity.HasOne(d => d.User).WithMany(p => p.InventoryExports)
                 .HasForeignKey(d => d.UserId)
                 .HasConstraintName("FK__Inventory__UserI__6477ECF3");
@@ -150,9 +145,8 @@ public partial class BookstoreDbContext : DbContext
 
         modelBuilder.Entity<Order>(entity =>
         {
-            entity.HasKey(e => e.OrderId).HasName("PK__Orders__C3905BCFBDE8F529");
+            entity.HasKey(e => e.OrderId).HasName("PK__Orders__C3905BCF04297B5A");
 
-            entity.Property(e => e.OrderId).HasMaxLength(50);
             entity.Property(e => e.OrderDate).HasColumnType("datetime");
             entity.Property(e => e.Payment).HasMaxLength(50);
             entity.Property(e => e.ReceiveDate).HasColumnType("datetime");
@@ -169,7 +163,6 @@ public partial class BookstoreDbContext : DbContext
 
             entity.Property(e => e.OrderItemId).HasColumnName("OrderItem_Id");
             entity.Property(e => e.CustomerPhone).HasMaxLength(20);
-            entity.Property(e => e.OrderId).HasMaxLength(50);
 
             entity.HasOne(d => d.Book).WithMany(p => p.OrderItems)
                 .HasForeignKey(d => d.BookId)
@@ -177,7 +170,7 @@ public partial class BookstoreDbContext : DbContext
 
             entity.HasOne(d => d.Order).WithMany(p => p.OrderItems)
                 .HasForeignKey(d => d.OrderId)
-                .HasConstraintName("FK__OrderItem__Order__5FB337D6");
+                .HasConstraintName("FK_OrderItems_OrderId");
         });
 
         modelBuilder.Entity<Publisher>(entity =>

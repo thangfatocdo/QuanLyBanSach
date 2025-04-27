@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 
 namespace WebBanSach.Models.Entities;
-
 public partial class InventoryDetail
 {
     public int DetailId { get; set; }

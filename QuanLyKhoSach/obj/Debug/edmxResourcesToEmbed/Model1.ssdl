@@ -37,6 +37,7 @@
     <Property Name="Phone" Type="nvarchar" MaxLength="20" />
     <Property Name="Email" Type="nvarchar" MaxLength="100" />
     <Property Name="Address" Type="nvarchar" MaxLength="200" />
+    <Property Name="Password" Type="nvarchar" MaxLength="100" />
   </EntityType>
   <EntityType Name="InventoryDetail">
     <Key>
@@ -47,6 +48,15 @@
     <Property Name="BookId" Type="int" />
     <Property Name="Quantity" Type="int" Nullable="false" />
   </EntityType>
+  <EntityType Name="InventoryExport">
+    <Key>
+      <PropertyRef Name="Iep_Id" />
+    </Key>
+    <Property Name="Iep_Id" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="OrderId" Type="nvarchar" MaxLength="50" />
+    <Property Name="UserId" Type="int" />
+    <Property Name="Export_Date" Type="datetime" />
+  </EntityType>
   <EntityType Name="InventoryImport">
     <Key>
       <PropertyRef Name="ImportId" />
@@ -55,6 +65,29 @@
     <Property Name="UserId" Type="int" />
     <Property Name="ImportDate" Type="datetime" />
     <Property Name="Note" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="OrderItems">
+    <Key>
+      <PropertyRef Name="OrderItem_Id" />
+    </Key>
+    <Property Name="OrderItem_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="OrderId" Type="int" />
+    <Property Name="BookId" Type="int" />
+    <Property Name="BookPrice" Type="float" />
+    <Property Name="BookQuantity" Type="int" />
+    <Property Name="CustomerPhone" Type="nvarchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="Orders">
+    <Key>
+      <PropertyRef Name="OrderId" />
+    </Key>
+    <Property Name="CustomerId" Type="int" />
+    <Property Name="OrderDate" Type="datetime" />
+    <Property Name="Payment" Type="nvarchar" MaxLength="50" />
+    <Property Name="ReceiveDate" Type="datetime" />
+    <Property Name="Status" Type="nvarchar" MaxLength="50" />
+    <Property Name="TotalPrice" Type="float" />
+    <Property Name="OrderId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
   </EntityType>
   <EntityType Name="Publishers">
     <Key>
@@ -65,6 +98,16 @@
     <Property Name="Address" Type="nvarchar" MaxLength="200" />
     <Property Name="Phone" Type="nvarchar" MaxLength="20" />
   </EntityType>
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'BookstoreDB.dbo.Statistic' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="Statistic">
+          <Property Name="Title" Type="nvarchar" MaxLength="100" />
+          <Property Name="Total_BooksSold" Type="int" />
+          <Property Name="Total_Customers" Type="int" />
+          <Property Name="Total_Orders" Type="int" />
+          <Property Name="Total_Quantity" Type="int" />
+          <Property Name="YearRevenue" Type="int" />
+        </EntityType>-->
   <EntityType Name="sysdiagrams">
     <Key>
       <PropertyRef Name="diagram_id" />
@@ -157,13 +200,64 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK__Inventory__UserI__6477ECF3">
+    <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+    <End Role="InventoryExport" Type="Self.InventoryExport" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="InventoryExport">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__OrderItem__BookI__60A75C0F">
+    <End Role="Books" Type="Self.Books" Multiplicity="0..1" />
+    <End Role="OrderItems" Type="Self.OrderItems" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Books">
+        <PropertyRef Name="BookId" />
+      </Principal>
+      <Dependent Role="OrderItems">
+        <PropertyRef Name="BookId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Orders__Customer__5CD6CB2B">
+    <End Role="Customers" Type="Self.Customers" Multiplicity="0..1" />
+    <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customers">
+        <PropertyRef Name="CustomerId" />
+      </Principal>
+      <Dependent Role="Orders">
+        <PropertyRef Name="CustomerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OrderItems_OrderId">
+    <End Role="Orders" Type="Self.Orders" Multiplicity="0..1" />
+    <End Role="OrderItems" Type="Self.OrderItems" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Orders">
+        <PropertyRef Name="OrderId" />
+      </Principal>
+      <Dependent Role="OrderItems">
+        <PropertyRef Name="OrderId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <EntityContainer Name="BookstoreDBModelStoreContainer">
     <EntitySet Name="Authors" EntityType="Self.Authors" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Books" EntityType="Self.Books" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Categories" EntityType="Self.Categories" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Customers" EntityType="Self.Customers" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="InventoryDetail" EntityType="Self.InventoryDetail" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="InventoryExport" EntityType="Self.InventoryExport" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="InventoryImport" EntityType="Self.InventoryImport" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="OrderItems" EntityType="Self.OrderItems" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Orders" EntityType="Self.Orders" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Publishers" EntityType="Self.Publishers" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
@@ -190,6 +284,22 @@
     <AssociationSet Name="FK__Inventory__UserI__48CFD27E" Association="Self.FK__Inventory__UserI__48CFD27E">
       <End Role="Users" EntitySet="Users" />
       <End Role="InventoryImport" EntitySet="InventoryImport" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Inventory__UserI__6477ECF3" Association="Self.FK__Inventory__UserI__6477ECF3">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="InventoryExport" EntitySet="InventoryExport" />
+    </AssociationSet>
+    <AssociationSet Name="FK__OrderItem__BookI__60A75C0F" Association="Self.FK__OrderItem__BookI__60A75C0F">
+      <End Role="Books" EntitySet="Books" />
+      <End Role="OrderItems" EntitySet="OrderItems" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Orders__Customer__5CD6CB2B" Association="Self.FK__Orders__Customer__5CD6CB2B">
+      <End Role="Customers" EntitySet="Customers" />
+      <End Role="Orders" EntitySet="Orders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OrderItems_OrderId" Association="Self.FK_OrderItems_OrderId">
+      <End Role="Orders" EntitySet="Orders" />
+      <End Role="OrderItems" EntitySet="OrderItems" />
     </AssociationSet>
   </EntityContainer>
 </Schema>
