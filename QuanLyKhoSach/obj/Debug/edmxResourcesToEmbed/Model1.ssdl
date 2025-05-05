@@ -47,15 +47,17 @@
     <Property Name="ImportId" Type="int" />
     <Property Name="BookId" Type="int" />
     <Property Name="Quantity" Type="int" Nullable="false" />
+    <Property Name="Iep_Id" Type="int" />
+    <Property Name="Type" Type="nvarchar" MaxLength="10" />
   </EntityType>
   <EntityType Name="InventoryExport">
     <Key>
       <PropertyRef Name="Iep_Id" />
     </Key>
-    <Property Name="Iep_Id" Type="nvarchar" MaxLength="50" Nullable="false" />
-    <Property Name="OrderId" Type="nvarchar" MaxLength="50" />
     <Property Name="UserId" Type="int" />
     <Property Name="Export_Date" Type="datetime" />
+    <Property Name="Iep_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="OrderId" Type="int" />
   </EntityType>
   <EntityType Name="InventoryImport">
     <Key>
@@ -83,11 +85,26 @@
     </Key>
     <Property Name="CustomerId" Type="int" />
     <Property Name="OrderDate" Type="datetime" />
-    <Property Name="Payment" Type="nvarchar" MaxLength="50" />
     <Property Name="ReceiveDate" Type="datetime" />
-    <Property Name="Status" Type="nvarchar" MaxLength="50" />
     <Property Name="TotalPrice" Type="float" />
     <Property Name="OrderId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PaymentMethodId" Type="int" />
+    <Property Name="StatusId" Type="int" />
+    <Property Name="Address" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="OrderStatuses">
+    <Key>
+      <PropertyRef Name="StatusId" />
+    </Key>
+    <Property Name="StatusId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="StatusName" Type="nchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PaymentMethods">
+    <Key>
+      <PropertyRef Name="PaymentMethodId" />
+    </Key>
+    <Property Name="PaymentMethodId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MethodName" Type="nvarchar" MaxLength="50" Nullable="false" />
   </EntityType>
   <EntityType Name="Publishers">
     <Key>
@@ -236,6 +253,30 @@ warning 6013: The table/view 'BookstoreDB.dbo.Statistic' does not have a primary
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_InventoryDetail_InventoryExport">
+    <End Role="InventoryExport" Type="Self.InventoryExport" Multiplicity="0..1" />
+    <End Role="InventoryDetail" Type="Self.InventoryDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="InventoryExport">
+        <PropertyRef Name="Iep_Id" />
+      </Principal>
+      <Dependent Role="InventoryDetail">
+        <PropertyRef Name="Iep_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_InventoryExport_Orders">
+    <End Role="Orders" Type="Self.Orders" Multiplicity="0..1" />
+    <End Role="InventoryExport" Type="Self.InventoryExport" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Orders">
+        <PropertyRef Name="OrderId" />
+      </Principal>
+      <Dependent Role="InventoryExport">
+        <PropertyRef Name="OrderId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_OrderItems_OrderId">
     <End Role="Orders" Type="Self.Orders" Multiplicity="0..1" />
     <End Role="OrderItems" Type="Self.OrderItems" Multiplicity="*" />
@@ -245,6 +286,30 @@ warning 6013: The table/view 'BookstoreDB.dbo.Statistic' does not have a primary
       </Principal>
       <Dependent Role="OrderItems">
         <PropertyRef Name="OrderId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Orders_OrderStatuses">
+    <End Role="OrderStatuses" Type="Self.OrderStatuses" Multiplicity="0..1" />
+    <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="OrderStatuses">
+        <PropertyRef Name="StatusId" />
+      </Principal>
+      <Dependent Role="Orders">
+        <PropertyRef Name="StatusId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Orders_PaymentMethods">
+    <End Role="PaymentMethods" Type="Self.PaymentMethods" Multiplicity="0..1" />
+    <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PaymentMethods">
+        <PropertyRef Name="PaymentMethodId" />
+      </Principal>
+      <Dependent Role="Orders">
+        <PropertyRef Name="PaymentMethodId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -258,6 +323,8 @@ warning 6013: The table/view 'BookstoreDB.dbo.Statistic' does not have a primary
     <EntitySet Name="InventoryImport" EntityType="Self.InventoryImport" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="OrderItems" EntityType="Self.OrderItems" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Orders" EntityType="Self.Orders" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="OrderStatuses" EntityType="Self.OrderStatuses" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PaymentMethods" EntityType="Self.PaymentMethods" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Publishers" EntityType="Self.Publishers" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
@@ -297,9 +364,25 @@ warning 6013: The table/view 'BookstoreDB.dbo.Statistic' does not have a primary
       <End Role="Customers" EntitySet="Customers" />
       <End Role="Orders" EntitySet="Orders" />
     </AssociationSet>
+    <AssociationSet Name="FK_InventoryDetail_InventoryExport" Association="Self.FK_InventoryDetail_InventoryExport">
+      <End Role="InventoryExport" EntitySet="InventoryExport" />
+      <End Role="InventoryDetail" EntitySet="InventoryDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_InventoryExport_Orders" Association="Self.FK_InventoryExport_Orders">
+      <End Role="Orders" EntitySet="Orders" />
+      <End Role="InventoryExport" EntitySet="InventoryExport" />
+    </AssociationSet>
     <AssociationSet Name="FK_OrderItems_OrderId" Association="Self.FK_OrderItems_OrderId">
       <End Role="Orders" EntitySet="Orders" />
       <End Role="OrderItems" EntitySet="OrderItems" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Orders_OrderStatuses" Association="Self.FK_Orders_OrderStatuses">
+      <End Role="OrderStatuses" EntitySet="OrderStatuses" />
+      <End Role="Orders" EntitySet="Orders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Orders_PaymentMethods" Association="Self.FK_Orders_PaymentMethods">
+      <End Role="PaymentMethods" EntitySet="PaymentMethods" />
+      <End Role="Orders" EntitySet="Orders" />
     </AssociationSet>
   </EntityContainer>
 </Schema>

@@ -51,16 +51,18 @@
           <ScalarProperty Name="ImportId" ColumnName="ImportId" />
           <ScalarProperty Name="BookId" ColumnName="BookId" />
           <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="Iep_Id" ColumnName="Iep_Id" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="InventoryExport">
       <EntityTypeMapping TypeName="BookstoreDBModel.InventoryExport">
         <MappingFragment StoreEntitySet="InventoryExport">
-          <ScalarProperty Name="Iep_Id" ColumnName="Iep_Id" />
-          <ScalarProperty Name="OrderId" ColumnName="OrderId" />
           <ScalarProperty Name="UserId" ColumnName="UserId" />
           <ScalarProperty Name="Export_Date" ColumnName="Export_Date" />
+          <ScalarProperty Name="Iep_Id" ColumnName="Iep_Id" />
+          <ScalarProperty Name="OrderId" ColumnName="OrderId" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -91,11 +93,28 @@
         <MappingFragment StoreEntitySet="Orders">
           <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
           <ScalarProperty Name="OrderDate" ColumnName="OrderDate" />
-          <ScalarProperty Name="Payment" ColumnName="Payment" />
           <ScalarProperty Name="ReceiveDate" ColumnName="ReceiveDate" />
-          <ScalarProperty Name="Status" ColumnName="Status" />
           <ScalarProperty Name="TotalPrice" ColumnName="TotalPrice" />
           <ScalarProperty Name="OrderId" ColumnName="OrderId" />
+          <ScalarProperty Name="PaymentMethodId" ColumnName="PaymentMethodId" />
+          <ScalarProperty Name="StatusId" ColumnName="StatusId" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OrderStatuses">
+      <EntityTypeMapping TypeName="BookstoreDBModel.OrderStatuses">
+        <MappingFragment StoreEntitySet="OrderStatuses">
+          <ScalarProperty Name="StatusId" ColumnName="StatusId" />
+          <ScalarProperty Name="StatusName" ColumnName="StatusName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PaymentMethods">
+      <EntityTypeMapping TypeName="BookstoreDBModel.PaymentMethods">
+        <MappingFragment StoreEntitySet="PaymentMethods">
+          <ScalarProperty Name="PaymentMethodId" ColumnName="PaymentMethodId" />
+          <ScalarProperty Name="MethodName" ColumnName="MethodName" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

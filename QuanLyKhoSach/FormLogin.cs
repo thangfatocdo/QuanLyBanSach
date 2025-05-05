@@ -1,48 +1,53 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
 using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace QuanLyKhoSach
 {
-    public partial class FormLogin : Form
+    public partial class formLogin : Sample
     {
         // Khởi tạo DbContext để tương tác với database bằng Entity Framework
         private BookstoreDBEntities context = new BookstoreDBEntities();
 
-        public FormLogin()
+        public formLogin()
         {
             InitializeComponent();
         }
 
-        // Bắt sự kiện nhấn nút Đăng nhập
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            if (txtTenDN.Text.Trim() == "")
+            if (txtUsername.Text.Trim() == "")
             {
                 MessageBox.Show("Hãy nhập tài khoản", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                txtTenDN.Focus();
+                txtUsername.Focus();
                 return;
             }
-            if (txtMatkhau.Text.Trim() == "")
+            if (txtPass.Text.Trim() == "")
             {
                 MessageBox.Show("Hãy nhập mật khẩu", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                txtMatkhau.Focus();
+                txtPass.Focus();
                 return;
             }
 
             try
             {
-                string user = txtTenDN.Text.Trim();
-                string pass = txtMatkhau.Text.Trim();
+                string user = txtUsername.Text.Trim();
+                string pass = txtPass.Text.Trim();
 
                 // Tìm người dùng trong database bằng EF
                 var acc = context.Users.FirstOrDefault(u => u.Username == user && u.Password == pass);
                 if (acc != null)
                 {
-                    MessageBox.Show("Đăng nhập thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                // Mở form chính sau khi login thành công
+                    formMain.CurrentUserId = acc.UserId;
+                    // Mở form chính sau khi login thành công
                     this.Hide();
-                    Form1 mainForm = new Form1();
+                    formMain mainForm = new formMain();
                     mainForm.ShowDialog();
                     this.Close();
                 }

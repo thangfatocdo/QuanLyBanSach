@@ -34,6 +34,8 @@ namespace QuanLyKhoSach
         public virtual DbSet<InventoryImport> InventoryImport { get; set; }
         public virtual DbSet<OrderItems> OrderItems { get; set; }
         public virtual DbSet<Orders> Orders { get; set; }
+        public virtual DbSet<OrderStatuses> OrderStatuses { get; set; }
+        public virtual DbSet<PaymentMethods> PaymentMethods { get; set; }
         public virtual DbSet<Publishers> Publishers { get; set; }
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<Users> Users { get; set; }

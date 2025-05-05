@@ -18,8 +18,11 @@ namespace QuanLyKhoSach
         public Nullable<int> ImportId { get; set; }
         public Nullable<int> BookId { get; set; }
         public int Quantity { get; set; }
+        public Nullable<int> Iep_Id { get; set; }
+        public string Type { get; set; }
     
         public virtual Books Books { get; set; }
         public virtual InventoryImport InventoryImport { get; set; }
+        public virtual InventoryExport InventoryExport { get; set; }
     }
 }

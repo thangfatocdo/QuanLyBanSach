@@ -5,7 +5,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{6B9CCB29-D59B-4B90-822A-E339A82FAA89}</ProjectGuid>
+    <ProjectGuid>{FC1009A6-E534-4CDF-B652-CAE503598B2C}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>QuanLyKhoSach</RootNamespace>
     <AssemblyName>QuanLyKhoSach</AssemblyName>
@@ -42,11 +42,17 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>packages\EntityFramework.6.5.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="Guna.UI2, Version=2.0.4.7, Culture=neutral, PublicKeyToken=8b9d14aa5142e261, processorArchitecture=MSIL">
+      <HintPath>packages\Guna.UI2.WinForms.2.0.4.7\lib\net472\Guna.UI2.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Management" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -69,30 +75,6 @@
     </Compile>
     <Compile Include="Customers.cs">
       <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FormLogin.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormLogin.Designer.cs">
-      <DependentUpon>FormLogin.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FormOrderDetail .cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormOrderDetail .Designer.cs">
-      <DependentUpon>FormOrderDetail .cs</DependentUpon>
-    </Compile>
-    <Compile Include="FormPreview.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormPreview.Designer.cs">
-      <DependentUpon>FormPreview.cs</DependentUpon>
     </Compile>
     <Compile Include="InventoryDetail.cs">
       <DependentUpon>Model1.tt</DependentUpon>
@@ -118,16 +100,85 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Model1.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Model\formBookAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Model\formBookAdd.Designer.cs">
+      <DependentUpon>formBookAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\formCategoryAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Model\formCategoryAdd.Designer.cs">
+      <DependentUpon>formCategoryAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\formCustomerAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Model\formCustomerAdd.Designer.cs">
+      <DependentUpon>formCustomerAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\formImportAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Model\formImportAdd.Designer.cs">
+      <DependentUpon>formImportAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\formOrderAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Model\formUserAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Model\formUserAdd.Designer.cs">
+      <DependentUpon>formUserAdd.cs</DependentUpon>
+    </Compile>
     <Compile Include="OrderItems.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Orders.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Program.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="OrderStatuses.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PaymentMethods.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Publishers.cs">
       <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Sample.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sample.Designer.cs">
+      <DependentUpon>Sample.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formLogin.Designer.cs">
+      <DependentUpon>formLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formMain.Designer.cs">
+      <DependentUpon>formMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SampleAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SampleAdd.Designer.cs">
+      <DependentUpon>SampleAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SampleView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SampleView.Designer.cs">
+      <DependentUpon>SampleView.cs</DependentUpon>
     </Compile>
     <Compile Include="sysdiagrams.cs">
       <DependentUpon>Model1.tt</DependentUpon>
@@ -135,24 +186,98 @@
     <Compile Include="Users.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="View\formBookView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\formBookView.Designer.cs">
+      <DependentUpon>formBookView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\formCategoryView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\formCategoryView.Designer.cs">
+      <DependentUpon>formCategoryView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\formCustomerView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\formCustomerView.Designer.cs">
+      <DependentUpon>formCustomerView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\formImportView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\formImportView.Designer.cs">
+      <DependentUpon>formImportView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\formOderView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\formOderView.Designer.cs">
+      <DependentUpon>formOderView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\formUserView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\formUserView.Designer.cs">
+      <DependentUpon>formUserView.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Model\formBookAdd.resx">
+      <DependentUpon>formBookAdd.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormLogin.resx">
-      <DependentUpon>FormLogin.cs</DependentUpon>
+    <EmbeddedResource Include="Model\formCategoryAdd.resx">
+      <DependentUpon>formCategoryAdd.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormOrderDetail .resx">
-      <DependentUpon>FormOrderDetail .cs</DependentUpon>
+    <EmbeddedResource Include="Model\formCustomerAdd.resx">
+      <DependentUpon>formCustomerAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Model\formImportAdd.resx">
+      <DependentUpon>formImportAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Model\formOrderAdd.resx">
+      <DependentUpon>formOrderAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Model\formUserAdd.resx">
+      <DependentUpon>formUserAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sample.resx">
+      <DependentUpon>Sample.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formLogin.resx">
+      <DependentUpon>formLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formMain.resx">
+      <DependentUpon>formMain.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
+    <EmbeddedResource Include="SampleAdd.resx">
+      <DependentUpon>SampleAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SampleView.resx">
+      <DependentUpon>SampleView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\formBookView.resx">
+      <DependentUpon>formBookView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\formCategoryView.resx">
+      <DependentUpon>formCategoryView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\formCustomerView.resx">
+      <DependentUpon>formCustomerView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\formImportView.resx">
+      <DependentUpon>formImportView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\formOderView.resx">
+      <DependentUpon>formOderView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\formUserView.resx">
+      <DependentUpon>formUserView.cs</DependentUpon>
+    </EmbeddedResource>
     <EntityDeploy Include="Model1.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Model1.Designer.cs</LastGenOutput>
@@ -165,6 +290,11 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -173,6 +303,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pngtree-outline-user-icon-png-image_5045523.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user.png" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

@@ -1,58 +1,54 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\Documents\\HocTap\\DATN\\Project\\QuanLyKhoSach\\",
+  "WorkspaceRootPath": "D:\\Documents\\HocTap\\DATN\\QuanLyKhoSach\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{6B9CCB29-D59B-4B90-822A-E339A82FAA89}|QuanLyKhoSach.csproj|d:\\documents\\hoctap\\datn\\project\\quanlykhosach\\customers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6B9CCB29-D59B-4B90-822A-E339A82FAA89}|QuanLyKhoSach.csproj|solutionrelative:customers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{FC1009A6-E534-4CDF-B652-CAE503598B2C}|QuanLyKhoSach.csproj|D:\\Documents\\HocTap\\DATN\\QuanLyKhoSach\\view\\formimportview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{FC1009A6-E534-4CDF-B652-CAE503598B2C}|QuanLyKhoSach.csproj|solutionrelative:view\\formimportview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6B9CCB29-D59B-4B90-822A-E339A82FAA89}|QuanLyKhoSach.csproj|d:\\documents\\hoctap\\datn\\project\\quanlykhosach\\orders.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6B9CCB29-D59B-4B90-822A-E339A82FAA89}|QuanLyKhoSach.csproj|solutionrelative:orders.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{FC1009A6-E534-4CDF-B652-CAE503598B2C}|QuanLyKhoSach.csproj|D:\\Documents\\HocTap\\DATN\\QuanLyKhoSach\\view\\formimportview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FC1009A6-E534-4CDF-B652-CAE503598B2C}|QuanLyKhoSach.csproj|solutionrelative:view\\formimportview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6B9CCB29-D59B-4B90-822A-E339A82FAA89}|QuanLyKhoSach.csproj|d:\\documents\\hoctap\\datn\\project\\quanlykhosach\\model1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6B9CCB29-D59B-4B90-822A-E339A82FAA89}|QuanLyKhoSach.csproj|solutionrelative:model1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{FC1009A6-E534-4CDF-B652-CAE503598B2C}|QuanLyKhoSach.csproj|D:\\Documents\\HocTap\\DATN\\QuanLyKhoSach\\formmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FC1009A6-E534-4CDF-B652-CAE503598B2C}|QuanLyKhoSach.csproj|solutionrelative:formmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6B9CCB29-D59B-4B90-822A-E339A82FAA89}|QuanLyKhoSach.csproj|D:\\Documents\\HocTap\\DATN\\Project\\QuanLyKhoSach\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6B9CCB29-D59B-4B90-822A-E339A82FAA89}|QuanLyKhoSach.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{FC1009A6-E534-4CDF-B652-CAE503598B2C}|QuanLyKhoSach.csproj|d:\\documents\\hoctap\\datn\\quanlykhosach\\model\\formimportadd.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FC1009A6-E534-4CDF-B652-CAE503598B2C}|QuanLyKhoSach.csproj|solutionrelative:model\\formimportadd.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6B9CCB29-D59B-4B90-822A-E339A82FAA89}|QuanLyKhoSach.csproj|D:\\Documents\\HocTap\\DATN\\Project\\QuanLyKhoSach\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{6B9CCB29-D59B-4B90-822A-E339A82FAA89}|QuanLyKhoSach.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{FC1009A6-E534-4CDF-B652-CAE503598B2C}|QuanLyKhoSach.csproj|D:\\Documents\\HocTap\\DATN\\QuanLyKhoSach\\model\\formimportadd.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{FC1009A6-E534-4CDF-B652-CAE503598B2C}|QuanLyKhoSach.csproj|solutionrelative:model\\formimportadd.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6B9CCB29-D59B-4B90-822A-E339A82FAA89}|QuanLyKhoSach.csproj|d:\\documents\\hoctap\\datn\\project\\quanlykhosach\\orderitems.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6B9CCB29-D59B-4B90-822A-E339A82FAA89}|QuanLyKhoSach.csproj|solutionrelative:orderitems.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{FC1009A6-E534-4CDF-B652-CAE503598B2C}|QuanLyKhoSach.csproj|d:\\documents\\hoctap\\datn\\quanlykhosach\\model\\formbookadd.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FC1009A6-E534-4CDF-B652-CAE503598B2C}|QuanLyKhoSach.csproj|solutionrelative:model\\formbookadd.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6B9CCB29-D59B-4B90-822A-E339A82FAA89}|QuanLyKhoSach.csproj|d:\\documents\\hoctap\\datn\\project\\quanlykhosach\\formorderdetail .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{6B9CCB29-D59B-4B90-822A-E339A82FAA89}|QuanLyKhoSach.csproj|solutionrelative:formorderdetail .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{FC1009A6-E534-4CDF-B652-CAE503598B2C}|QuanLyKhoSach.csproj|d:\\documents\\hoctap\\datn\\quanlykhosach\\model\\formcustomeradd.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{FC1009A6-E534-4CDF-B652-CAE503598B2C}|QuanLyKhoSach.csproj|solutionrelative:model\\formcustomeradd.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6B9CCB29-D59B-4B90-822A-E339A82FAA89}|QuanLyKhoSach.csproj|d:\\documents\\hoctap\\datn\\project\\quanlykhosach\\formorderdetail .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6B9CCB29-D59B-4B90-822A-E339A82FAA89}|QuanLyKhoSach.csproj|solutionrelative:formorderdetail .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{FC1009A6-E534-4CDF-B652-CAE503598B2C}|QuanLyKhoSach.csproj|d:\\documents\\hoctap\\datn\\quanlykhosach\\model\\formcustomeradd.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FC1009A6-E534-4CDF-B652-CAE503598B2C}|QuanLyKhoSach.csproj|solutionrelative:model\\formcustomeradd.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6B9CCB29-D59B-4B90-822A-E339A82FAA89}|QuanLyKhoSach.csproj|D:\\Documents\\HocTap\\DATN\\Project\\QuanLyKhoSach\\form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6B9CCB29-D59B-4B90-822A-E339A82FAA89}|QuanLyKhoSach.csproj|solutionrelative:form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{FC1009A6-E534-4CDF-B652-CAE503598B2C}|QuanLyKhoSach.csproj|D:\\Documents\\HocTap\\DATN\\QuanLyKhoSach\\view\\formbookview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FC1009A6-E534-4CDF-B652-CAE503598B2C}|QuanLyKhoSach.csproj|solutionrelative:view\\formbookview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6B9CCB29-D59B-4B90-822A-E339A82FAA89}|QuanLyKhoSach.csproj|D:\\Documents\\HocTap\\DATN\\Project\\QuanLyKhoSach\\formlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{6B9CCB29-D59B-4B90-822A-E339A82FAA89}|QuanLyKhoSach.csproj|solutionrelative:formlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{FC1009A6-E534-4CDF-B652-CAE503598B2C}|QuanLyKhoSach.csproj|D:\\Documents\\HocTap\\DATN\\QuanLyKhoSach\\view\\formbookview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{FC1009A6-E534-4CDF-B652-CAE503598B2C}|QuanLyKhoSach.csproj|solutionrelative:view\\formbookview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6B9CCB29-D59B-4B90-822A-E339A82FAA89}|QuanLyKhoSach.csproj|D:\\Documents\\HocTap\\DATN\\Project\\QuanLyKhoSach\\formlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6B9CCB29-D59B-4B90-822A-E339A82FAA89}|QuanLyKhoSach.csproj|solutionrelative:formlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{FC1009A6-E534-4CDF-B652-CAE503598B2C}|QuanLyKhoSach.csproj|D:\\Documents\\HocTap\\DATN\\QuanLyKhoSach\\view\\formoderview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{FC1009A6-E534-4CDF-B652-CAE503598B2C}|QuanLyKhoSach.csproj|solutionrelative:view\\formoderview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6B9CCB29-D59B-4B90-822A-E339A82FAA89}|QuanLyKhoSach.csproj|D:\\Documents\\HocTap\\DATN\\Project\\QuanLyKhoSach\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6B9CCB29-D59B-4B90-822A-E339A82FAA89}|QuanLyKhoSach.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6B9CCB29-D59B-4B90-822A-E339A82FAA89}|QuanLyKhoSach.csproj|D:\\Documents\\HocTap\\DATN\\Project\\QuanLyKhoSach\\formlogin.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6B9CCB29-D59B-4B90-822A-E339A82FAA89}|QuanLyKhoSach.csproj|solutionrelative:formlogin.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{FC1009A6-E534-4CDF-B652-CAE503598B2C}|QuanLyKhoSach.csproj|D:\\Documents\\HocTap\\DATN\\QuanLyKhoSach\\formmain.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FC1009A6-E534-4CDF-B652-CAE503598B2C}|QuanLyKhoSach.csproj|solutionrelative:formmain.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -62,7 +58,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 76,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Bookmark",
@@ -70,167 +66,154 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Form1.cs",
-              "DocumentMoniker": "D:\\Documents\\HocTap\\DATN\\Project\\QuanLyKhoSach\\Form1.cs",
-              "RelativeDocumentMoniker": "Form1.cs",
-              "ToolTip": "D:\\Documents\\HocTap\\DATN\\Project\\QuanLyKhoSach\\Form1.cs",
-              "RelativeToolTip": "Form1.cs",
-              "ViewState": "AQIAAH0AAAAAAAAAAAAtwHsAAAAIAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-27T07:19:26.226Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Model1.cs",
-              "DocumentMoniker": "D:\\Documents\\HocTap\\DATN\\Project\\QuanLyKhoSach\\Model1.cs",
-              "RelativeDocumentMoniker": "Model1.cs",
-              "ToolTip": "D:\\Documents\\HocTap\\DATN\\Project\\QuanLyKhoSach\\Model1.cs",
-              "RelativeToolTip": "Model1.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-27T12:10:03.917Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Customers.cs",
-              "DocumentMoniker": "D:\\Documents\\HocTap\\DATN\\Project\\QuanLyKhoSach\\Customers.cs",
-              "RelativeDocumentMoniker": "Customers.cs",
-              "ToolTip": "D:\\Documents\\HocTap\\DATN\\Project\\QuanLyKhoSach\\Customers.cs",
-              "RelativeToolTip": "Customers.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAAABYAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-27T13:13:54.259Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Orders.cs",
-              "DocumentMoniker": "D:\\Documents\\HocTap\\DATN\\Project\\QuanLyKhoSach\\Orders.cs",
-              "RelativeDocumentMoniker": "Orders.cs",
-              "ToolTip": "D:\\Documents\\HocTap\\DATN\\Project\\QuanLyKhoSach\\Orders.cs",
-              "RelativeToolTip": "Orders.cs",
-              "ViewState": "AQIAAAoAAAAAAAAAAAAcwCMAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-27T12:10:13.563Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "FormOrderDetail .cs",
-              "DocumentMoniker": "D:\\Documents\\HocTap\\DATN\\Project\\QuanLyKhoSach\\FormOrderDetail .cs",
-              "RelativeDocumentMoniker": "FormOrderDetail .cs",
-              "ToolTip": "D:\\Documents\\HocTap\\DATN\\Project\\QuanLyKhoSach\\FormOrderDetail .cs",
-              "RelativeToolTip": "FormOrderDetail .cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAACMAAAAfAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-27T12:10:31.523Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "FormOrderDetail .cs [Design]",
-              "DocumentMoniker": "D:\\Documents\\HocTap\\DATN\\Project\\QuanLyKhoSach\\FormOrderDetail .cs",
-              "RelativeDocumentMoniker": "FormOrderDetail .cs",
-              "ToolTip": "D:\\Documents\\HocTap\\DATN\\Project\\QuanLyKhoSach\\FormOrderDetail .cs [Design]",
-              "RelativeToolTip": "FormOrderDetail .cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-27T12:10:30.29Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "OrderItems.cs",
-              "DocumentMoniker": "D:\\Documents\\HocTap\\DATN\\Project\\QuanLyKhoSach\\OrderItems.cs",
-              "RelativeDocumentMoniker": "OrderItems.cs",
-              "ToolTip": "D:\\Documents\\HocTap\\DATN\\Project\\QuanLyKhoSach\\OrderItems.cs",
-              "RelativeToolTip": "OrderItems.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Title": "formBookAdd.cs",
+              "DocumentMoniker": "D:\\Documents\\HocTap\\DATN\\QuanLyKhoSach\\Model\\formBookAdd.cs",
+              "RelativeDocumentMoniker": "Model\\formBookAdd.cs",
+              "ToolTip": "D:\\Documents\\HocTap\\DATN\\QuanLyKhoSach\\Model\\formBookAdd.cs",
+              "RelativeToolTip": "Model\\formBookAdd.cs",
+              "ViewState": "AQIAAEMAAAAAAAAAAAAkwG8AAAAQAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-27T12:10:07.482Z",
+              "WhenOpened": "2025-05-05T11:27:32.827Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "Form1.cs [Design]",
-              "DocumentMoniker": "D:\\Documents\\HocTap\\DATN\\Project\\QuanLyKhoSach\\Form1.cs",
-              "RelativeDocumentMoniker": "Form1.cs",
-              "ToolTip": "D:\\Documents\\HocTap\\DATN\\Project\\QuanLyKhoSach\\Form1.cs [Design]",
-              "RelativeToolTip": "Form1.cs [Design]",
+              "Title": "formImportAdd.cs [Design]",
+              "DocumentMoniker": "D:\\Documents\\HocTap\\DATN\\QuanLyKhoSach\\Model\\formImportAdd.cs",
+              "RelativeDocumentMoniker": "Model\\formImportAdd.cs",
+              "ToolTip": "D:\\Documents\\HocTap\\DATN\\QuanLyKhoSach\\Model\\formImportAdd.cs [Design]",
+              "RelativeToolTip": "Model\\formImportAdd.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-27T03:49:03.009Z",
+              "WhenOpened": "2025-05-05T09:42:58.452Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "formImportAdd.cs",
+              "DocumentMoniker": "D:\\Documents\\HocTap\\DATN\\QuanLyKhoSach\\Model\\formImportAdd.cs",
+              "RelativeDocumentMoniker": "Model\\formImportAdd.cs",
+              "ToolTip": "D:\\Documents\\HocTap\\DATN\\QuanLyKhoSach\\Model\\formImportAdd.cs",
+              "RelativeToolTip": "Model\\formImportAdd.cs",
+              "ViewState": "AQIAAJIAAAAAAAAAAAAqwJwAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-05T09:42:59.985Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "formMain.cs",
+              "DocumentMoniker": "D:\\Documents\\HocTap\\DATN\\QuanLyKhoSach\\formMain.cs",
+              "RelativeDocumentMoniker": "formMain.cs",
+              "ToolTip": "D:\\Documents\\HocTap\\DATN\\QuanLyKhoSach\\formMain.cs",
+              "RelativeToolTip": "formMain.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAYwBIAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-05T09:38:43.084Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "formImportView.cs",
+              "DocumentMoniker": "D:\\Documents\\HocTap\\DATN\\QuanLyKhoSach\\View\\formImportView.cs",
+              "RelativeDocumentMoniker": "View\\formImportView.cs",
+              "ToolTip": "D:\\Documents\\HocTap\\DATN\\QuanLyKhoSach\\View\\formImportView.cs",
+              "RelativeToolTip": "View\\formImportView.cs",
+              "ViewState": "AQIAAD0AAAAAAAAAAAAmwE4AAAApAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-05T09:25:19.761Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "formImportView.cs [Design]",
+              "DocumentMoniker": "D:\\Documents\\HocTap\\DATN\\QuanLyKhoSach\\View\\formImportView.cs",
+              "RelativeDocumentMoniker": "View\\formImportView.cs",
+              "ToolTip": "D:\\Documents\\HocTap\\DATN\\QuanLyKhoSach\\View\\formImportView.cs [Design]",
+              "RelativeToolTip": "View\\formImportView.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-05T09:25:18.168Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "formCustomerAdd.cs [Design]",
+              "DocumentMoniker": "D:\\Documents\\HocTap\\DATN\\QuanLyKhoSach\\Model\\formCustomerAdd.cs",
+              "RelativeDocumentMoniker": "Model\\formCustomerAdd.cs",
+              "ToolTip": "D:\\Documents\\HocTap\\DATN\\QuanLyKhoSach\\Model\\formCustomerAdd.cs [Design]",
+              "RelativeToolTip": "Model\\formCustomerAdd.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-05T11:38:03.853Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "formCustomerAdd.cs",
+              "DocumentMoniker": "D:\\Documents\\HocTap\\DATN\\QuanLyKhoSach\\Model\\formCustomerAdd.cs",
+              "RelativeDocumentMoniker": "Model\\formCustomerAdd.cs",
+              "ToolTip": "D:\\Documents\\HocTap\\DATN\\QuanLyKhoSach\\Model\\formCustomerAdd.cs",
+              "RelativeToolTip": "Model\\formCustomerAdd.cs",
+              "ViewState": "AQIAACcAAAAAAAAAAAAmwFQAAAAbAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-05T11:38:05.703Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "formBookView.cs",
+              "DocumentMoniker": "D:\\Documents\\HocTap\\DATN\\QuanLyKhoSach\\View\\formBookView.cs",
+              "RelativeDocumentMoniker": "View\\formBookView.cs",
+              "ToolTip": "D:\\Documents\\HocTap\\DATN\\QuanLyKhoSach\\View\\formBookView.cs",
+              "RelativeToolTip": "View\\formBookView.cs",
+              "ViewState": "AQIAADkAAAAAAAAAAAAiwE4AAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-05T10:03:52.054Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "formBookView.cs [Design]",
+              "DocumentMoniker": "D:\\Documents\\HocTap\\DATN\\QuanLyKhoSach\\View\\formBookView.cs",
+              "RelativeDocumentMoniker": "View\\formBookView.cs",
+              "ToolTip": "D:\\Documents\\HocTap\\DATN\\QuanLyKhoSach\\View\\formBookView.cs [Design]",
+              "RelativeToolTip": "View\\formBookView.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-05T10:03:49.86Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "formOderView.cs [Design]",
+              "DocumentMoniker": "D:\\Documents\\HocTap\\DATN\\QuanLyKhoSach\\View\\formOderView.cs",
+              "RelativeDocumentMoniker": "View\\formOderView.cs",
+              "ToolTip": "D:\\Documents\\HocTap\\DATN\\QuanLyKhoSach\\View\\formOderView.cs [Design]",
+              "RelativeToolTip": "View\\formOderView.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-05T09:25:51.395Z",
               "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
               "DocumentIndex": 11,
-              "Title": "Program.cs",
-              "DocumentMoniker": "D:\\Documents\\HocTap\\DATN\\Project\\QuanLyKhoSach\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "D:\\Documents\\HocTap\\DATN\\Project\\QuanLyKhoSach\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAArAAAA",
+              "Title": "formMain.Designer.cs",
+              "DocumentMoniker": "D:\\Documents\\HocTap\\DATN\\QuanLyKhoSach\\formMain.Designer.cs",
+              "RelativeDocumentMoniker": "formMain.Designer.cs",
+              "ToolTip": "D:\\Documents\\HocTap\\DATN\\QuanLyKhoSach\\formMain.Designer.cs",
+              "RelativeToolTip": "formMain.Designer.cs",
+              "ViewState": "AQIAAOYAAAAAAAAAAAAewPUAAAAwAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-21T11:57:53.723Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "FormLogin.cs",
-              "DocumentMoniker": "D:\\Documents\\HocTap\\DATN\\Project\\QuanLyKhoSach\\FormLogin.cs",
-              "RelativeDocumentMoniker": "FormLogin.cs",
-              "ToolTip": "D:\\Documents\\HocTap\\DATN\\Project\\QuanLyKhoSach\\FormLogin.cs",
-              "RelativeToolTip": "FormLogin.cs",
-              "ViewState": "AQIAABoAAAAAAAAAAAAYwCwAAAAxAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-21T11:50:43.494Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "FormLogin.cs [Design]",
-              "DocumentMoniker": "D:\\Documents\\HocTap\\DATN\\Project\\QuanLyKhoSach\\FormLogin.cs",
-              "RelativeDocumentMoniker": "FormLogin.cs",
-              "ToolTip": "D:\\Documents\\HocTap\\DATN\\Project\\QuanLyKhoSach\\FormLogin.cs [Design]",
-              "RelativeToolTip": "FormLogin.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-21T11:50:38.43Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Form1.Designer.cs",
-              "DocumentMoniker": "D:\\Documents\\HocTap\\DATN\\Project\\QuanLyKhoSach\\Form1.Designer.cs",
-              "RelativeDocumentMoniker": "Form1.Designer.cs",
-              "ToolTip": "D:\\Documents\\HocTap\\DATN\\Project\\QuanLyKhoSach\\Form1.Designer.cs",
-              "RelativeToolTip": "Form1.Designer.cs",
-              "ViewState": "AQIAAGQCAAAAAAAAAAD4v3QCAAAqAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-21T11:10:38.939Z",
+              "WhenOpened": "2025-05-05T09:39:11.425Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "FormLogin.Designer.cs",
-              "DocumentMoniker": "D:\\Documents\\HocTap\\DATN\\Project\\QuanLyKhoSach\\FormLogin.Designer.cs",
-              "RelativeDocumentMoniker": "FormLogin.Designer.cs",
-              "ToolTip": "D:\\Documents\\HocTap\\DATN\\Project\\QuanLyKhoSach\\FormLogin.Designer.cs",
-              "RelativeToolTip": "FormLogin.Designer.cs",
-              "ViewState": "AQIAACEAAAAAAAAAAAAEwC0AAAArAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-21T12:24:46.901Z"
             }
           ]
         }

@@ -14,11 +14,20 @@ namespace QuanLyKhoSach
     
     public partial class InventoryExport
     {
-        public string Iep_Id { get; set; }
-        public string OrderId { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public InventoryExport()
+        {
+            this.InventoryDetail = new HashSet<InventoryDetail>();
+        }
+    
         public Nullable<int> UserId { get; set; }
         public Nullable<System.DateTime> Export_Date { get; set; }
+        public int Iep_Id { get; set; }
+        public Nullable<int> OrderId { get; set; }
     
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<InventoryDetail> InventoryDetail { get; set; }
         public virtual Users Users { get; set; }
+        public virtual Orders Orders { get; set; }
     }
 }

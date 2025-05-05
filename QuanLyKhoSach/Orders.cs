@@ -17,19 +17,25 @@ namespace QuanLyKhoSach
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Orders()
         {
+            this.InventoryExport = new HashSet<InventoryExport>();
             this.OrderItems = new HashSet<OrderItems>();
         }
     
         public Nullable<int> CustomerId { get; set; }
         public Nullable<System.DateTime> OrderDate { get; set; }
-        public string Payment { get; set; }
         public Nullable<System.DateTime> ReceiveDate { get; set; }
-        public string Status { get; set; }
         public Nullable<double> TotalPrice { get; set; }
         public int OrderId { get; set; }
+        public Nullable<int> PaymentMethodId { get; set; }
+        public Nullable<int> StatusId { get; set; }
+        public string Address { get; set; }
     
         public virtual Customers Customers { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<InventoryExport> InventoryExport { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<OrderItems> OrderItems { get; set; }
+        public virtual OrderStatuses OrderStatuses { get; set; }
+        public virtual PaymentMethods PaymentMethods { get; set; }
     }
 }
