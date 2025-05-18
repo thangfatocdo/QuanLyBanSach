@@ -17,6 +17,7 @@ namespace QuanLyKhoSach.Model
         public formCustomerAdd()
         {
             InitializeComponent();
+            txtPass.PasswordChar = '*';
         }
 
         private void formCustomerAdd_Load(object sender, EventArgs e)

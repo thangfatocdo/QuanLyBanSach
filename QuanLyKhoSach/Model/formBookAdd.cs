@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Configuration;
 using System.Data;
 using System.Drawing;
 using System.IO;
@@ -142,16 +143,34 @@ namespace QuanLyKhoSach.Model
 
             if (ofd.ShowDialog() == DialogResult.OK)
             {
+                // 1. Copy vào folder local WinForms (Images)
                 string fileName = Path.GetFileName(ofd.FileName);
-                string destPath = Path.Combine(Application.StartupPath, "Images", fileName);
+                string localFolder = Path.Combine(Application.StartupPath, "Images");
+                Directory.CreateDirectory(localFolder);
+                string localPath = Path.Combine(localFolder, fileName);
+                File.Copy(ofd.FileName, localPath, true);
 
-                // Tạo thư mục nếu chưa có
-                Directory.CreateDirectory(Path.Combine(Application.StartupPath, "Images"));
+                // 2. Copy tiếp vào folder Web (wwwroot/Images)
+                string webFolder = ConfigurationManager.AppSettings["WebImagesFolder"];
+                if (!string.IsNullOrEmpty(webFolder))
+                {
+                    try
+                    {
+                        Directory.CreateDirectory(webFolder);
+                        string webPath = Path.Combine(webFolder, fileName);
+                        File.Copy(ofd.FileName, webPath, true);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show($"Không copy được ảnh sang Web folder:\n{ex.Message}",
+                                        "Lỗi đồng bộ ảnh", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                }
 
-                File.Copy(ofd.FileName, destPath, true);
 
+                // 3. Cập nhật PictureBox và biến lưu tên file
                 selectedImageFileName = fileName;
-                picBox.Image = Image.FromFile(destPath);
+                picBox.Image = Image.FromFile(localPath);
             }
         }
     }

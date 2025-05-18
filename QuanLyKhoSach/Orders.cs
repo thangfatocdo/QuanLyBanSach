@@ -29,6 +29,7 @@ namespace QuanLyKhoSach
         public Nullable<int> PaymentMethodId { get; set; }
         public Nullable<int> StatusId { get; set; }
         public string Address { get; set; }
+        public string CustomerName { get; set; }
     
         public virtual Customers Customers { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

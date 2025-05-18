@@ -26,6 +26,19 @@
     <NavigationProperty Name="Publishers" Relationship="Self.FK__Books__Publisher__4316F928" FromRole="Books" ToRole="Publishers" />
     <NavigationProperty Name="InventoryDetail" Relationship="Self.FK__Inventory__BookI__4D94879B" FromRole="Books" ToRole="InventoryDetail" />
     <NavigationProperty Name="OrderItems" Relationship="Self.FK__OrderItem__BookI__60A75C0F" FromRole="Books" ToRole="OrderItems" />
+    <NavigationProperty Name="CartItems" Relationship="Self.FK_CartItems_Books" FromRole="Books" ToRole="CartItems" />
+  </EntityType>
+  <EntityType Name="CartItems">
+    <Key>
+      <PropertyRef Name="CartItemId" />
+    </Key>
+    <Property Name="CartItemId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CustomerId" Type="Int32" />
+    <Property Name="BookId" Type="Int32" />
+    <Property Name="Quantity" Type="Int32" />
+    <Property Name="CreatedAt" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Books" Relationship="Self.FK_CartItems_Books" FromRole="CartItems" ToRole="Books" />
+    <NavigationProperty Name="Customers" Relationship="Self.FK_CartItems_Customers" FromRole="CartItems" ToRole="Customers" />
   </EntityType>
   <EntityType Name="Categories">
     <Key>
@@ -33,6 +46,7 @@
     </Key>
     <Property Name="CategoryId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="CategoryName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Alias" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="Books" Relationship="Self.FK__Books__CategoryI__4222D4EF" FromRole="Categories" ToRole="Books" />
   </EntityType>
   <EntityType Name="Customers">
@@ -45,6 +59,7 @@
     <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
     <Property Name="Address" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
     <Property Name="Password" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="CartItems" Relationship="Self.FK_CartItems_Customers" FromRole="Customers" ToRole="CartItems" />
     <NavigationProperty Name="Orders" Relationship="Self.FK__Orders__Customer__5CD6CB2B" FromRole="Customers" ToRole="Orders" />
   </EntityType>
   <EntityType Name="InventoryDetail">
@@ -109,6 +124,7 @@
     <Property Name="PaymentMethodId" Type="Int32" />
     <Property Name="StatusId" Type="Int32" />
     <Property Name="Address" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="CustomerName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="Customers" Relationship="Self.FK__Orders__Customer__5CD6CB2B" FromRole="Orders" ToRole="Customers" />
     <NavigationProperty Name="InventoryExport" Relationship="Self.FK_InventoryExport_Orders" FromRole="Orders" ToRole="InventoryExport" />
     <NavigationProperty Name="OrderItems" Relationship="Self.FK_OrderItems_OrderId" FromRole="Orders" ToRole="OrderItems" />
@@ -120,7 +136,7 @@
       <PropertyRef Name="StatusId" />
     </Key>
     <Property Name="StatusId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="StatusName" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="StatusName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="Orders" Relationship="Self.FK_Orders_OrderStatuses" FromRole="OrderStatuses" ToRole="Orders" />
   </EntityType>
   <EntityType Name="PaymentMethods">
@@ -220,6 +236,30 @@
       </Principal>
       <Dependent Role="OrderItems">
         <PropertyRef Name="BookId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CartItems_Books">
+    <End Role="Books" Type="Self.Books" Multiplicity="0..1" />
+    <End Role="CartItems" Type="Self.CartItems" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Books">
+        <PropertyRef Name="BookId" />
+      </Principal>
+      <Dependent Role="CartItems">
+        <PropertyRef Name="BookId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CartItems_Customers">
+    <End Role="Customers" Type="Self.Customers" Multiplicity="0..1" />
+    <End Role="CartItems" Type="Self.CartItems" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customers">
+        <PropertyRef Name="CustomerId" />
+      </Principal>
+      <Dependent Role="CartItems">
+        <PropertyRef Name="CustomerId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -334,6 +374,7 @@
   <EntityContainer Name="BookstoreDBEntities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Authors" EntityType="Self.Authors" />
     <EntitySet Name="Books" EntityType="Self.Books" />
+    <EntitySet Name="CartItems" EntityType="Self.CartItems" />
     <EntitySet Name="Categories" EntityType="Self.Categories" />
     <EntitySet Name="Customers" EntityType="Self.Customers" />
     <EntitySet Name="InventoryDetail" EntityType="Self.InventoryDetail" />
@@ -365,6 +406,14 @@
     <AssociationSet Name="FK__OrderItem__BookI__60A75C0F" Association="Self.FK__OrderItem__BookI__60A75C0F">
       <End Role="Books" EntitySet="Books" />
       <End Role="OrderItems" EntitySet="OrderItems" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CartItems_Books" Association="Self.FK_CartItems_Books">
+      <End Role="Books" EntitySet="Books" />
+      <End Role="CartItems" EntitySet="CartItems" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CartItems_Customers" Association="Self.FK_CartItems_Customers">
+      <End Role="Customers" EntitySet="Customers" />
+      <End Role="CartItems" EntitySet="CartItems" />
     </AssociationSet>
     <AssociationSet Name="FK__Orders__Customer__5CD6CB2B" Association="Self.FK__Orders__Customer__5CD6CB2B">
       <End Role="Customers" EntitySet="Customers" />

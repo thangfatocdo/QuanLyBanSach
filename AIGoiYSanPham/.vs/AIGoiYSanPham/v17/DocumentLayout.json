@@ -1,0 +1,190 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Documents\\HocTap\\DATN\\Project\\AIGoiYSanPham\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{5393BCA9-D779-4E68-94DE-3F199B0A0D36}|AIGoiYSanPham.csproj|d:\\documents\\hoctap\\datn\\project\\aigoiysanpham\\controllers\\recommendercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5393BCA9-D779-4E68-94DE-3F199B0A0D36}|AIGoiYSanPham.csproj|solutionrelative:controllers\\recommendercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5393BCA9-D779-4E68-94DE-3F199B0A0D36}|AIGoiYSanPham.csproj|D:\\Documents\\HocTap\\DATN\\Project\\AIGoiYSanPham\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5393BCA9-D779-4E68-94DE-3F199B0A0D36}|AIGoiYSanPham.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5393BCA9-D779-4E68-94DE-3F199B0A0D36}|AIGoiYSanPham.csproj|D:\\Documents\\HocTap\\DATN\\Project\\AIGoiYSanPham\\models\\recommendertrainer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5393BCA9-D779-4E68-94DE-3F199B0A0D36}|AIGoiYSanPham.csproj|solutionrelative:models\\recommendertrainer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5393BCA9-D779-4E68-94DE-3F199B0A0D36}|AIGoiYSanPham.csproj|d:\\documents\\hoctap\\datn\\project\\aigoiysanpham\\models\\recommenderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5393BCA9-D779-4E68-94DE-3F199B0A0D36}|AIGoiYSanPham.csproj|solutionrelative:models\\recommenderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5393BCA9-D779-4E68-94DE-3F199B0A0D36}|AIGoiYSanPham.csproj|d:\\documents\\hoctap\\datn\\project\\aigoiysanpham\\models\\bookrating.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5393BCA9-D779-4E68-94DE-3F199B0A0D36}|AIGoiYSanPham.csproj|solutionrelative:models\\bookrating.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5393BCA9-D779-4E68-94DE-3F199B0A0D36}|AIGoiYSanPham.csproj|d:\\documents\\hoctap\\datn\\project\\aigoiysanpham\\models\\bookratingprediction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5393BCA9-D779-4E68-94DE-3F199B0A0D36}|AIGoiYSanPham.csproj|solutionrelative:models\\bookratingprediction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5393BCA9-D779-4E68-94DE-3F199B0A0D36}|AIGoiYSanPham.csproj|D:\\Documents\\HocTap\\DATN\\Project\\AIGoiYSanPham\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{5393BCA9-D779-4E68-94DE-3F199B0A0D36}|AIGoiYSanPham.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5393BCA9-D779-4E68-94DE-3F199B0A0D36}|AIGoiYSanPham.csproj|D:\\Documents\\HocTap\\DATN\\Project\\AIGoiYSanPham\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{5393BCA9-D779-4E68-94DE-3F199B0A0D36}|AIGoiYSanPham.csproj|solutionrelative:properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5393BCA9-D779-4E68-94DE-3F199B0A0D36}|AIGoiYSanPham.csproj|D:\\Documents\\HocTap\\DATN\\Project\\AIGoiYSanPham\\entities\\bookstoredbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5393BCA9-D779-4E68-94DE-3F199B0A0D36}|AIGoiYSanPham.csproj|solutionrelative:entities\\bookstoredbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5393BCA9-D779-4E68-94DE-3F199B0A0D36}|AIGoiYSanPham.csproj|D:\\Documents\\HocTap\\DATN\\Project\\AIGoiYSanPham\\aigoiysanpham.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{5393BCA9-D779-4E68-94DE-3F199B0A0D36}|AIGoiYSanPham.csproj|solutionrelative:aigoiysanpham.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 76,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "RecommenderService.cs",
+              "DocumentMoniker": "D:\\Documents\\HocTap\\DATN\\Project\\AIGoiYSanPham\\Models\\RecommenderService.cs",
+              "RelativeDocumentMoniker": "Models\\RecommenderService.cs",
+              "ToolTip": "D:\\Documents\\HocTap\\DATN\\Project\\AIGoiYSanPham\\Models\\RecommenderService.cs",
+              "RelativeToolTip": "Models\\RecommenderService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-18T16:03:39.575Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "BookRatingPrediction.cs",
+              "DocumentMoniker": "D:\\Documents\\HocTap\\DATN\\Project\\AIGoiYSanPham\\Models\\BookRatingPrediction.cs",
+              "RelativeDocumentMoniker": "Models\\BookRatingPrediction.cs",
+              "ToolTip": "D:\\Documents\\HocTap\\DATN\\Project\\AIGoiYSanPham\\Models\\BookRatingPrediction.cs",
+              "RelativeToolTip": "Models\\BookRatingPrediction.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-18T16:03:21.466Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "BookRating.cs",
+              "DocumentMoniker": "D:\\Documents\\HocTap\\DATN\\Project\\AIGoiYSanPham\\Models\\BookRating.cs",
+              "RelativeDocumentMoniker": "Models\\BookRating.cs",
+              "ToolTip": "D:\\Documents\\HocTap\\DATN\\Project\\AIGoiYSanPham\\Models\\BookRating.cs",
+              "RelativeToolTip": "Models\\BookRating.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-18T16:03:17.216Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "RecommenderController.cs",
+              "DocumentMoniker": "D:\\Documents\\HocTap\\DATN\\Project\\AIGoiYSanPham\\Controllers\\RecommenderController.cs",
+              "RelativeDocumentMoniker": "Controllers\\RecommenderController.cs",
+              "ToolTip": "D:\\Documents\\HocTap\\DATN\\Project\\AIGoiYSanPham\\Controllers\\RecommenderController.cs",
+              "RelativeToolTip": "Controllers\\RecommenderController.cs",
+              "ViewState": "AQIAAAwAAAAAAAAAAAAYwBwAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-18T10:44:02.269Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "D:\\Documents\\HocTap\\DATN\\Project\\AIGoiYSanPham\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "D:\\Documents\\HocTap\\DATN\\Project\\AIGoiYSanPham\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAQAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-05-18T07:52:08.685Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "RecommenderTrainer.cs",
+              "DocumentMoniker": "D:\\Documents\\HocTap\\DATN\\Project\\AIGoiYSanPham\\Models\\RecommenderTrainer.cs",
+              "RelativeDocumentMoniker": "Models\\RecommenderTrainer.cs",
+              "ToolTip": "D:\\Documents\\HocTap\\DATN\\Project\\AIGoiYSanPham\\Models\\RecommenderTrainer.cs",
+              "RelativeToolTip": "Models\\RecommenderTrainer.cs",
+              "ViewState": "AQIAABAAAAAAAAAAAAAzwBIAAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-18T07:48:39.178Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Documents\\HocTap\\DATN\\Project\\AIGoiYSanPham\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "D:\\Documents\\HocTap\\DATN\\Project\\AIGoiYSanPham\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABcAAAADAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-18T06:17:22.29Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "BookstoreDbContext.cs",
+              "DocumentMoniker": "D:\\Documents\\HocTap\\DATN\\Project\\AIGoiYSanPham\\Entities\\BookstoreDbContext.cs",
+              "RelativeDocumentMoniker": "Entities\\BookstoreDbContext.cs",
+              "ToolTip": "D:\\Documents\\HocTap\\DATN\\Project\\AIGoiYSanPham\\Entities\\BookstoreDbContext.cs",
+              "RelativeToolTip": "Entities\\BookstoreDbContext.cs",
+              "ViewState": "AQIAABMAAAAAAAAAAAA5wAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-18T07:12:51.282Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "AIGoiYSanPham.csproj",
+              "DocumentMoniker": "D:\\Documents\\HocTap\\DATN\\Project\\AIGoiYSanPham\\AIGoiYSanPham.csproj",
+              "RelativeDocumentMoniker": "AIGoiYSanPham.csproj",
+              "ToolTip": "D:\\Documents\\HocTap\\DATN\\Project\\AIGoiYSanPham\\AIGoiYSanPham.csproj",
+              "RelativeToolTip": "AIGoiYSanPham.csproj",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-05-18T06:58:23.529Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "D:\\Documents\\HocTap\\DATN\\Project\\AIGoiYSanPham\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "Properties\\launchSettings.json",
+              "ToolTip": "D:\\Documents\\HocTap\\DATN\\Project\\AIGoiYSanPham\\Properties\\launchSettings.json",
+              "RelativeToolTip": "Properties\\launchSettings.json",
+              "ViewState": "AQIAABAAAAAAAAAAAAAcwCYAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-05-18T13:29:59.973Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

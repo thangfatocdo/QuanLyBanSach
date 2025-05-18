@@ -21,12 +21,23 @@
     <Property Name="ImageUrl" Type="nvarchar" MaxLength="255" />
     <Property Name="CreatedAt" Type="datetime" />
   </EntityType>
+  <EntityType Name="CartItems">
+    <Key>
+      <PropertyRef Name="CartItemId" />
+    </Key>
+    <Property Name="CartItemId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CustomerId" Type="int" />
+    <Property Name="BookId" Type="int" />
+    <Property Name="Quantity" Type="int" />
+    <Property Name="CreatedAt" Type="datetime" />
+  </EntityType>
   <EntityType Name="Categories">
     <Key>
       <PropertyRef Name="CategoryId" />
     </Key>
     <Property Name="CategoryId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="CategoryName" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Alias" Type="nvarchar" MaxLength="100" />
   </EntityType>
   <EntityType Name="Customers">
     <Key>
@@ -91,13 +102,14 @@
     <Property Name="PaymentMethodId" Type="int" />
     <Property Name="StatusId" Type="int" />
     <Property Name="Address" Type="nvarchar" MaxLength="255" />
+    <Property Name="CustomerName" Type="nvarchar" MaxLength="255" />
   </EntityType>
   <EntityType Name="OrderStatuses">
     <Key>
       <PropertyRef Name="StatusId" />
     </Key>
     <Property Name="StatusId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="StatusName" Type="nchar" MaxLength="50" Nullable="false" />
+    <Property Name="StatusName" Type="nvarchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="PaymentMethods">
     <Key>
@@ -253,6 +265,30 @@ warning 6013: The table/view 'BookstoreDB.dbo.Statistic' does not have a primary
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_CartItems_Books">
+    <End Role="Books" Type="Self.Books" Multiplicity="0..1" />
+    <End Role="CartItems" Type="Self.CartItems" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Books">
+        <PropertyRef Name="BookId" />
+      </Principal>
+      <Dependent Role="CartItems">
+        <PropertyRef Name="BookId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CartItems_Customers">
+    <End Role="Customers" Type="Self.Customers" Multiplicity="0..1" />
+    <End Role="CartItems" Type="Self.CartItems" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customers">
+        <PropertyRef Name="CustomerId" />
+      </Principal>
+      <Dependent Role="CartItems">
+        <PropertyRef Name="CustomerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_InventoryDetail_InventoryExport">
     <End Role="InventoryExport" Type="Self.InventoryExport" Multiplicity="0..1" />
     <End Role="InventoryDetail" Type="Self.InventoryDetail" Multiplicity="*" />
@@ -316,6 +352,7 @@ warning 6013: The table/view 'BookstoreDB.dbo.Statistic' does not have a primary
   <EntityContainer Name="BookstoreDBModelStoreContainer">
     <EntitySet Name="Authors" EntityType="Self.Authors" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Books" EntityType="Self.Books" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CartItems" EntityType="Self.CartItems" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Categories" EntityType="Self.Categories" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Customers" EntityType="Self.Customers" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="InventoryDetail" EntityType="Self.InventoryDetail" Schema="dbo" store:Type="Tables" />
@@ -363,6 +400,14 @@ warning 6013: The table/view 'BookstoreDB.dbo.Statistic' does not have a primary
     <AssociationSet Name="FK__Orders__Customer__5CD6CB2B" Association="Self.FK__Orders__Customer__5CD6CB2B">
       <End Role="Customers" EntitySet="Customers" />
       <End Role="Orders" EntitySet="Orders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CartItems_Books" Association="Self.FK_CartItems_Books">
+      <End Role="Books" EntitySet="Books" />
+      <End Role="CartItems" EntitySet="CartItems" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CartItems_Customers" Association="Self.FK_CartItems_Customers">
+      <End Role="Customers" EntitySet="Customers" />
+      <End Role="CartItems" EntitySet="CartItems" />
     </AssociationSet>
     <AssociationSet Name="FK_InventoryDetail_InventoryExport" Association="Self.FK_InventoryDetail_InventoryExport">
       <End Role="InventoryExport" EntitySet="InventoryExport" />

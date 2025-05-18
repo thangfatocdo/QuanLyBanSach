@@ -16,6 +16,7 @@ namespace QuanLyKhoSach.Model
         public formUserAdd()
         {
             InitializeComponent();
+            txtPass.PasswordChar = '*';
         }
         public int? UserId { get; set; }
 

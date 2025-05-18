@@ -70,7 +70,7 @@
                     <div class="col-lg-7">
                         <div class="shop-details-content">
                             <div class="title-wrapper">
-                                <h2>Lâu Đài Trên Không</h2>
+                                <h2>@Model.Title</h2>
                                 <h5>Stock availability.</h5>
                             </div>
                             <div class="star">
@@ -82,13 +82,10 @@
                                 <span>(1 Customer Reviews)</span>
                             </div>
                             <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec pulvinar, tortor quis
-                                varius pretium est felis scelerisque nulla, vitae placerat justo nunc a massa. Aenean
-                                nec montes vestibulum urna vel imperdiet ipsum. Orci varius natoque penatibus et magnis
-                                dis ridicul parturient montes.
+                                @Model.Description
                             </p>
                             <div class="price-list">
-                                <h3>$16.00</h3>
+                                <h3>@Model.Price VNĐ</h3>
                             </div>
                             <div class="cart-wrapper">
                                 <div class="quantity-basket">
@@ -130,8 +127,9 @@
                                         </div>
                                     </div>
                                 </div>
-                                <a href="shop-details.html" class="theme-btn"><i
-                                        class="fa-solid fa-basket-shopping"></i> Add To Cart</a>
+                            <button class="theme-btn add-to-cart" data-bookid="@Model.BookId">
+                                <i class="fa-solid fa-basket-shopping"></i> Add To Cart
+                            </button>
                                 <div class="icon-box">
                                     <a href="shop-details.html" class="icon">
                                         <i class="far fa-heart"></i>
@@ -148,7 +146,7 @@
                                             <span>SKU:</span> FTC1020B65D
                                         </li>
                                         <li>
-                                            <span>Category:</span> Kids Toys
+                                            <span>Thể loại:</span> @Model.Category.CategoryName
                                         </li>
                                     </ul>
                                     <ul>
@@ -670,3 +668,33 @@
             </div>
         </div>
     </section>
+@* Bắt sự kiện Add to Cart *@
+@section Scripts {
+    <script>
+        document.querySelectorAll('.add-to-cart').forEach(btn => {
+            btn.addEventListener('click', async (e) => {
+                e.preventDefault(); // chặn mặc định (nếu là <a>)
+                const bookId = btn.getAttribute('data-bookid');
+                // Lấy số lượng từ input trên detail page (id="qty2")
+                const qtyInput = document.getElementById('qty2');
+                let amount = 1;
+                if (qtyInput) {
+                    amount = parseInt(qtyInput.value) || 1;
+                }
+
+                // Gọi API với cả amount
+                const res = await fetch(`/api/cart/add?bookID=${bookId}&amount=${amount}`, {
+                    method: 'POST'
+                });
+                const data = await res.json();
+                if (data.success) {
+                    // Thông báo nhẹ
+                    showToast("Đã thêm vào giỏ hàng!");
+                } else {
+                    alert('Lỗi thêm giỏ hàng.');
+                }
+            });
+        });
+
+    </script>
+}

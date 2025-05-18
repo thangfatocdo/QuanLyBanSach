@@ -252,11 +252,11 @@
                             {
                                 foreach (var item in Model)
                                 {
-                                    string url = $"/{item.BookId}.html";
+                                    string url = $"/{item.BookId}.html";//gán đường dẫn bên controller
                                     <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".2s">
                                         <div class="shop-box-items">
                                             <div class="book-thumb center">
-                                                <a href="@url"><img src="~/assets/img/book/01.png" alt="img"></a>
+                                                <a href="@url"><img src="~/Images/@item.ImageUrl" alt="@item.Title"></a>
                                                 <ul class="post-box">
                                                     <li>
                                                         Hot
@@ -290,9 +290,9 @@
                                                     </li>
                                                 </ul>
                                                 <div class="shop-button">
-                                                    <a href="shop-details.html" class="theme-btn">
-                                                        <i class="fa-solid fa-basket-shopping"></i> Add To Cart
-                                                    </a>
+                                                    <button class="theme-btn add-to-cart" data-bookid="@item.BookId">
+                                                        <i class="fa-solid fa-basket-shopping"></i> Thêm vào giỏ
+                                                    </button>
                                                 </div>
                                             </div>
                                         </div>
@@ -303,7 +303,7 @@
                     </div>
                         </div>
                 
-                    </div>
+                    </div> @* phần 11 *@
             <div class="page-nav-wrap text-center">
                 <ul>
                     <li><a class="previous" href="shop.html">Previous</a></li>
@@ -318,3 +318,24 @@
             </div>
         </div>
     </section>
+@section Scripts {
+    <script>
+        document.querySelectorAll('.add-to-cart').forEach(btn => {
+            btn.addEventListener('click', async (e) => {
+                e.preventDefault(); // chặn mặc định (nếu là <a>)
+                const bookId = btn.getAttribute('data-bookid');
+                const res = await fetch(`/api/cart/add?bookID=${bookId}`, {
+                    method: 'POST'
+                });
+                const data = await res.json();
+                if (data.success) {
+                    // Thông báo nhẹ
+                    showToast("Đã thêm vào giỏ hàng!");
+                } else {
+                    alert('Lỗi thêm giỏ hàng.');
+                }
+            });
+        });
+    </script>
+}
+

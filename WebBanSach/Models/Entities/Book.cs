@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 
 namespace WebBanSach.Models.Entities;
+
 public partial class Book
 {
     public int BookId { get; set; }
@@ -23,6 +24,8 @@ public partial class Book
     public DateTime? CreatedAt { get; set; }
 
     public virtual Author? Author { get; set; }
+
+    public virtual ICollection<CartItem> CartItems { get; set; } = new List<CartItem>();
 
     public virtual Category? Category { get; set; }
 

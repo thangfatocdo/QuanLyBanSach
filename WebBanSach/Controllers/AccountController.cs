@@ -2,6 +2,10 @@
 using WebBanSach.Models.ViewModels;
 using WebBanSach.Models.Entities;
 using WebBanSach.Models;
+using Microsoft.AspNetCore.Authentication;
+using System.Security.Claims;
+using Microsoft.EntityFrameworkCore;
+using WebBanSach.Extension;
 
 namespace WebBanSach.Controllers
 {
@@ -54,29 +58,51 @@ namespace WebBanSach.Controllers
             return View();
         }
         [HttpPost]
-        public IActionResult Login(LoginViewModel model)
+        public async Task<IActionResult> Login(LoginViewModel model)
         {
             if (ModelState.IsValid)
             {
-                // Tìm khách hàng theo email và password
                 var customer = context.Customers
                     .FirstOrDefault(c => c.Email == model.Email && c.Password == model.Password);
 
                 if (customer != null)
                 {
-                    // Lưu thông tin vào session
-                    HttpContext.Session.SetInt32("CustomerId", customer.CustomerId);
-                    HttpContext.Session.SetString("CustomerName", customer.FullName);
+                    // Tạo Claims
+                    var claims = new List<Claim>
+            {
+                new Claim(ClaimTypes.NameIdentifier, customer.CustomerId.ToString()),
+                new Claim(ClaimTypes.Name, customer.FullName),
+                new Claim(ClaimTypes.Email, customer.Email)
+            };
+                    // 1. Xóa session cart cũ
+                    HttpContext.Session.Remove("GioHang");
 
-                    // TODO: Nếu muốn xử lý RememberMe thì cần dùng cookie
+                    // 2. Lấy cart từ DB (CartItems) cho customer này
+                    var dbCart = context.CartItems
+                        .Include(ci => ci.Book)
+                        .Where(ci => ci.CustomerId == customer.CustomerId)
+                        .ToList();
+
+                    // 3. Chuyển thành ViewModel
+                    var vmCart = dbCart.Select(ci => new CartViewModel
+                    {
+                        book = ci.Book,
+                        amount = (int)ci.Quantity
+                    }).ToList();
+
+                    var identity = new ClaimsIdentity(claims, "MyCookieAuth");
+                    var principal = new ClaimsPrincipal(identity);
+
+                    // Ghi cookie
+                    await HttpContext.SignInAsync("MyCookieAuth", principal, new AuthenticationProperties
+                    {
+                        IsPersistent = model.RememberMe // từ checkbox
+                    });
 
                     return RedirectToAction("Index", "Home");
                 }
-                else
-                {
-                    ModelState.AddModelError("", "Email hoặc mật khẩu không đúng.");
-                    return View(model);
-                }
+
+                ModelState.AddModelError("", "Email hoặc mật khẩu không đúng.");
             }
 
             return View(model);
@@ -91,16 +117,10 @@ namespace WebBanSach.Controllers
         {
             return View();
         }
-        public IActionResult Logout()
+        public async Task<IActionResult> Logout()
         {
-            // Xoá các session liên quan đến đăng nhập
-            HttpContext.Session.Remove("CustomerId");
-            HttpContext.Session.Remove("CustomerName");
-
-            // Chuyển hướng về trang chủ
+            await HttpContext.SignOutAsync("MyCookieAuth");
             return RedirectToAction("Index", "Home");
         }
-
-
     }
 }

@@ -1,23 +1,45 @@
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 using WebBanSach.Models.ViewModels;
 using WebBanSach.Models.Entities;
+using System.Security.Claims;
 
 namespace WebBanSach.Controllers
 {
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly BookstoreDbContext context;
+        private readonly AiRecommendationClient _recService;
 
-        public HomeController(ILogger<HomeController> logger)
+
+
+        public HomeController(ILogger<HomeController> logger, BookstoreDbContext context, AiRecommendationClient recService)
         {
             _logger = logger;
+            this.context = context;
+            _recService = recService;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
+            // Lấy userId từ Claims (nếu chưa login -> không recommend)
+            var userIdStr = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            if (!int.TryParse(userIdStr, out var userId))
+            {
+                // Trả về view với model rỗng
+                return View(new List<Book>());
+            }
+
+            // Gọi AI gợi ý
+            var recIds = await _recService.RecommendAsync(userId, 10);
+            // Lấy sách tương ứng
+            var recBooks = context.Books.Where(b => recIds.Contains(b.BookId)).ToList();
+            ViewBag.RecommendBooks = recBooks;
             return View();
         }
+
+
 
         public IActionResult Privacy()
         {
@@ -38,5 +60,7 @@ namespace WebBanSach.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+
+
     }
 }

@@ -31,7 +31,6 @@ namespace QuanLyKhoSach.View
 
             // Lấy danh sách có Include quan hệ
             var OrderList = context.Orders
-                .Include("Customers")
                 .Include("PaymentMethods")
                 .Include("OrderStatuses") //muốn dùng .Include(b => b.XYZ) thì thêm using System.Data.Entity;
                 .AsQueryable();
@@ -40,7 +39,7 @@ namespace QuanLyKhoSach.View
             {
                 keyword = keyword.ToLower();
                 OrderList = OrderList.Where(b =>
-                    b.Customers.FullName.ToLower().Contains(keyword));
+                    b.CustomerName.ToLower().Contains(keyword));
             }
             //đổ dữ liệu
             int index = 1;
@@ -49,7 +48,7 @@ namespace QuanLyKhoSach.View
                 dgvOrder.Rows.Add(
                     index++,
                     b.OrderId,
-                    b.Customers.FullName,
+                    b.CustomerName,
                     b.OrderDate,
                     b.PaymentMethods.MethodName,
                     b.ReceiveDate,

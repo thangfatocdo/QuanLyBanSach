@@ -1,8 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using PagedList.Core;
-using System.Data.Entity;
-using WebBanSach.Models;
 using WebBanSach.Models.Entities;
+using Microsoft.EntityFrameworkCore;
 
 namespace WebBanSach.Controllers
 {
@@ -20,8 +19,8 @@ namespace WebBanSach.Controllers
             try
             {
                 var pageNumber = page == null || page <= 0 ? 1 : page.Value;
-                var pageSize = 10;
-                var lsBooks = context.Books.AsNoTracking().OrderByDescending(x => x.CreatedAt);
+                var pageSize = 13;
+                var lsBooks = context.Books.AsNoTracking().OrderByDescending(x => x.BookId);
                 PagedList<Book> models = new PagedList<Book>(lsBooks, pageNumber, pageSize);
                 ViewBag.CurrentPage = pageNumber;
                 return View(models);
@@ -31,15 +30,15 @@ namespace WebBanSach.Controllers
                 return RedirectToAction("Index", "Home");
             }
         }
-        [Route("/{Alias}-{id}", Name = "ListBook")]
-        public IActionResult List(int id, int page=1)
+        [Route("/{Alias}", Name = "CatListBook")]
+        public IActionResult List(string Alias, int page = 1)
         {
             try
             {
                 var pageSize = 10;
-                var danhmuc = context.Categories.Find(id);
+                var danhmuc = context.Categories.AsNoTracking().SingleOrDefault(x => x.Alias == Alias);
                 var lsBooks = context.Books.AsNoTracking().
-                    Where(c => c.CategoryId == id).
+                    Where(x => x.CategoryId == danhmuc.CategoryId).
                     OrderByDescending(x => x.CreatedAt);
                 PagedList<Book> models = new PagedList<Book>(lsBooks, page, pageSize);
                 ViewBag.CurrentPage = page;
@@ -51,12 +50,12 @@ namespace WebBanSach.Controllers
                 return RedirectToAction("Index", "Home");
             }
         }
-        [Route("/{Alias}-{id}.html", Name = "BookDetails")]
+        [Route("/{id}.html", Name = "BookDetails")] //gán đường dẫn bên view index
         public IActionResult BookDetail(int id)
         {
             try
             {
-                var book = context.Books.Include(c => c.Category).FirstOrDefault(b => b.BookId == id);
+                var book = context.Books.Include(b => b.Category).FirstOrDefault(b => b.BookId == id);
                 if (book == null)
                 {
                     return RedirectToAction("Index");

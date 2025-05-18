@@ -2,14 +2,14 @@
 
 public class LoginViewModel
 {
-    [Required(ErrorMessage = "Email is required.")]
+    [Required(ErrorMessage = "Cần nhập Email.")]
     [EmailAddress]
     public string Email { get; set; }
 
-    [Required(ErrorMessage = "Password is required.")]
+    [Required(ErrorMessage = "Cần nhập mật khẩu.")]
     [DataType(DataType.Password)]
     public string Password { get; set; }
 
-    [Display(Name = "Remember me?")]
+    [Display(Name = "Lưu tài khoản?")]
     public bool RememberMe { get; set; }
 }

@@ -19,6 +19,7 @@ namespace QuanLyKhoSach
         {
             this.InventoryDetail = new HashSet<InventoryDetail>();
             this.OrderItems = new HashSet<OrderItems>();
+            this.CartItems = new HashSet<CartItems>();
         }
     
         public int BookId { get; set; }
@@ -38,5 +39,7 @@ namespace QuanLyKhoSach
         public virtual ICollection<InventoryDetail> InventoryDetail { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<OrderItems> OrderItems { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<CartItems> CartItems { get; set; }
     }
 }

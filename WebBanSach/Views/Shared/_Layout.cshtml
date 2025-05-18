@@ -31,6 +31,30 @@
     <link rel="stylesheet" href="~/assets/css/icomoon.css">
     <!--<< Main.css >>-->
     <link rel="stylesheet" href="~/assets/css/main.css">
+    <style>
+        .toast-notify {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(76, 175, 80, 0.9); /* xanh hơi mờ */
+            color: white;
+            padding: 30px 60px; /* ô to hơn */
+            min-width: 240px; /* độ rộng tối thiểu */
+            border-radius: 6px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            font-size: 16px; /* chữ to hơn */
+            backdrop-filter: blur(4px); /* mờ nền phía sau */
+        }
+
+            .toast-notify .tick-icon {
+                margin-right: 12px;
+                font-size: 20px; /* icon lớn hơn */
+            }
+    </style>
 </head>
 
 <body>
@@ -197,7 +221,9 @@
     <!--<< Main.js >>-->
     <script src="~/assets/js/main.js"></script>
     @await Component.InvokeAsync("Notyf")
+    @await Html.PartialAsync("_ToastNotify")
     @await RenderSectionAsync("Scripts", required: false)
+    <script>function showToast(message, duration = 1500) { const msg = document.createElement('div'); msg.className = 'toast-notify'; msg.innerHTML = `<i class="fa-solid fa-circle-check tick-icon"></i> ${message}`; document.body.append(msg); setTimeout(() => msg.remove(), duration); }</script>
 </body>
 
 </html>

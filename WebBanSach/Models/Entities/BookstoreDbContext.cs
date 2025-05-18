@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 
 namespace WebBanSach.Models.Entities;
+
 public partial class BookstoreDbContext : DbContext
 {
     public BookstoreDbContext()
@@ -18,6 +19,8 @@ public partial class BookstoreDbContext : DbContext
 
     public virtual DbSet<Book> Books { get; set; }
 
+    public virtual DbSet<CartItem> CartItems { get; set; }
+
     public virtual DbSet<Category> Categories { get; set; }
 
     public virtual DbSet<Customer> Customers { get; set; }
@@ -32,6 +35,10 @@ public partial class BookstoreDbContext : DbContext
 
     public virtual DbSet<OrderItem> OrderItems { get; set; }
 
+    public virtual DbSet<OrderStatus> OrderStatuses { get; set; }
+
+    public virtual DbSet<PaymentMethod> PaymentMethods { get; set; }
+
     public virtual DbSet<Publisher> Publishers { get; set; }
 
     public virtual DbSet<Statistic> Statistics { get; set; }
@@ -40,7 +47,7 @@ public partial class BookstoreDbContext : DbContext
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
-        => optionsBuilder.UseSqlServer("data source=DESKTOP-7B1B1GQ\\SQLEXPRESS;initial catalog=BookstoreDB;persist security info=True;user id=sa;password=123456;encrypt=True;trustservercertificate=True");
+        => optionsBuilder.UseSqlServer("Data Source=DESKTOP-7B1B1GQ\\SQLEXPRESS;Initial Catalog=BookstoreDB;Persist Security Info=True;User ID=sa;Password=123456;Trust Server Certificate=True");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -75,10 +82,28 @@ public partial class BookstoreDbContext : DbContext
                 .HasConstraintName("FK__Books__Publisher__4316F928");
         });
 
+        modelBuilder.Entity<CartItem>(entity =>
+        {
+            entity.HasKey(e => e.CartItemId).HasName("PK__CartItem__488B0B0AFD3CB87E");
+
+            entity.Property(e => e.CreatedAt)
+                .HasDefaultValueSql("(getdate())")
+                .HasColumnType("datetime");
+
+            entity.HasOne(d => d.Book).WithMany(p => p.CartItems)
+                .HasForeignKey(d => d.BookId)
+                .HasConstraintName("FK_CartItems_Books");
+
+            entity.HasOne(d => d.Customer).WithMany(p => p.CartItems)
+                .HasForeignKey(d => d.CustomerId)
+                .HasConstraintName("FK_CartItems_Customers");
+        });
+
         modelBuilder.Entity<Category>(entity =>
         {
             entity.HasKey(e => e.CategoryId).HasName("PK__Categori__19093A0BA0873815");
 
+            entity.Property(e => e.Alias).HasMaxLength(100);
             entity.Property(e => e.CategoryName).HasMaxLength(100);
         });
 
@@ -99,9 +124,16 @@ public partial class BookstoreDbContext : DbContext
 
             entity.ToTable("InventoryDetail");
 
+            entity.Property(e => e.IepId).HasColumnName("Iep_Id");
+            entity.Property(e => e.Type).HasMaxLength(10);
+
             entity.HasOne(d => d.Book).WithMany(p => p.InventoryDetails)
                 .HasForeignKey(d => d.BookId)
                 .HasConstraintName("FK__Inventory__BookI__4D94879B");
+
+            entity.HasOne(d => d.Iep).WithMany(p => p.InventoryDetails)
+                .HasForeignKey(d => d.IepId)
+                .HasConstraintName("FK_InventoryDetail_InventoryExport");
 
             entity.HasOne(d => d.Import).WithMany(p => p.InventoryDetails)
                 .HasForeignKey(d => d.ImportId)
@@ -110,17 +142,18 @@ public partial class BookstoreDbContext : DbContext
 
         modelBuilder.Entity<InventoryExport>(entity =>
         {
-            entity.HasKey(e => e.IepId).HasName("PK__Inventor__BAFE2D153C045C24");
+            entity.HasKey(e => e.IepId);
 
             entity.ToTable("InventoryExport");
 
-            entity.Property(e => e.IepId)
-                .HasMaxLength(50)
-                .HasColumnName("Iep_Id");
+            entity.Property(e => e.IepId).HasColumnName("Iep_Id");
             entity.Property(e => e.ExportDate)
                 .HasColumnType("datetime")
                 .HasColumnName("Export_Date");
-            entity.Property(e => e.OrderId).HasMaxLength(50);
+
+            entity.HasOne(d => d.Order).WithMany(p => p.InventoryExports)
+                .HasForeignKey(d => d.OrderId)
+                .HasConstraintName("FK_InventoryExport_Orders");
 
             entity.HasOne(d => d.User).WithMany(p => p.InventoryExports)
                 .HasForeignKey(d => d.UserId)
@@ -147,14 +180,21 @@ public partial class BookstoreDbContext : DbContext
         {
             entity.HasKey(e => e.OrderId).HasName("PK__Orders__C3905BCF04297B5A");
 
+            entity.Property(e => e.Address).HasMaxLength(255);
             entity.Property(e => e.OrderDate).HasColumnType("datetime");
-            entity.Property(e => e.Payment).HasMaxLength(50);
             entity.Property(e => e.ReceiveDate).HasColumnType("datetime");
-            entity.Property(e => e.Status).HasMaxLength(50);
 
             entity.HasOne(d => d.Customer).WithMany(p => p.Orders)
                 .HasForeignKey(d => d.CustomerId)
                 .HasConstraintName("FK__Orders__Customer__5CD6CB2B");
+
+            entity.HasOne(d => d.PaymentMethod).WithMany(p => p.Orders)
+                .HasForeignKey(d => d.PaymentMethodId)
+                .HasConstraintName("FK_Orders_PaymentMethods");
+
+            entity.HasOne(d => d.Status).WithMany(p => p.Orders)
+                .HasForeignKey(d => d.StatusId)
+                .HasConstraintName("FK_Orders_OrderStatuses");
         });
 
         modelBuilder.Entity<OrderItem>(entity =>
@@ -171,6 +211,18 @@ public partial class BookstoreDbContext : DbContext
             entity.HasOne(d => d.Order).WithMany(p => p.OrderItems)
                 .HasForeignKey(d => d.OrderId)
                 .HasConstraintName("FK_OrderItems_OrderId");
+        });
+
+        modelBuilder.Entity<OrderStatus>(entity =>
+        {
+            entity.HasKey(e => e.StatusId);
+
+            entity.Property(e => e.StatusName).HasMaxLength(50);
+        });
+
+        modelBuilder.Entity<PaymentMethod>(entity =>
+        {
+            entity.Property(e => e.MethodName).HasMaxLength(50);
         });
 
         modelBuilder.Entity<Publisher>(entity =>
