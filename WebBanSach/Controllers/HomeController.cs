@@ -32,7 +32,7 @@ namespace WebBanSach.Controllers
             }
 
             // Gọi AI gợi ý
-            var recIds = await _recService.RecommendAsync(userId, 10);
+            var recIds = await _recService.RecommendAsync(userId, 5);
             // Lấy sách tương ứng
             var recBooks = context.Books.Where(b => recIds.Contains(b.BookId)).ToList();
             ViewBag.RecommendBooks = recBooks;

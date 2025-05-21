@@ -1,9 +1,13 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Configuration;
 using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Net.Http;
+using System.Net.Http.Headers;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace QuanLyKhoSach.Model
@@ -136,41 +140,86 @@ namespace QuanLyKhoSach.Model
         }
 
         //add hình từ máy
-        private void btnBrowse_Click(object sender, EventArgs e)
+        private async void btnBrowse_Click(object sender, EventArgs e)
         {
             OpenFileDialog ofd = new OpenFileDialog();
             ofd.Filter = "Image Files (*.jpg; *.jpeg; *.png)|*.jpg;*.jpeg;*.png";
 
             if (ofd.ShowDialog() == DialogResult.OK)
             {
-                // 1. Copy vào folder local WinForms (Images)
                 string fileName = Path.GetFileName(ofd.FileName);
                 string localFolder = Path.Combine(Application.StartupPath, "Images");
                 Directory.CreateDirectory(localFolder);
                 string localPath = Path.Combine(localFolder, fileName);
                 File.Copy(ofd.FileName, localPath, true);
 
-                // 2. Copy tiếp vào folder Web (wwwroot/Images)
-                string webFolder = ConfigurationManager.AppSettings["WebImagesFolder"];
-                if (!string.IsNullOrEmpty(webFolder))
+                // Load hình lên PictureBox
+                picBox.Image = Image.FromFile(localPath);
+
+                // Gửi ảnh lên Web
+                string uploadedFileName = await UploadImageToWebAsync(ofd.FileName);
+
+                if (!string.IsNullOrEmpty(uploadedFileName))
                 {
-                    try
+                    selectedImageFileName = uploadedFileName;
+                }
+            }
+        }
+
+        private async Task<string> UploadImageToWebAsync(string filePath)
+        {
+            var client = new HttpClient();
+            var url = "https://localhost:7254/api/upload-image";
+
+            try
+            {
+                using (var form = new MultipartFormDataContent())
+                {
+                    var fileBytes = File.ReadAllBytes(filePath);
+                    var fileContent = new ByteArrayContent(fileBytes);
+                    fileContent.Headers.ContentType = MediaTypeHeaderValue.Parse("multipart/form-data");
+                    form.Add(fileContent, "file", Path.GetFileName(filePath));
+
+                    var response = await client.PostAsync(url, form);
+                    if (response.IsSuccessStatusCode)
                     {
-                        Directory.CreateDirectory(webFolder);
-                        string webPath = Path.Combine(webFolder, fileName);
-                        File.Copy(ofd.FileName, webPath, true);
+                        var json = await response.Content.ReadAsStringAsync();
+                        dynamic result = JsonConvert.DeserializeObject(json);
+                        return (string)result.fileName;
                     }
-                    catch (Exception ex)
+                    else
                     {
-                        MessageBox.Show($"Không copy được ảnh sang Web folder:\n{ex.Message}",
-                                        "Lỗi đồng bộ ảnh", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        MessageBox.Show(
+                            "Gửi ảnh lên Web thất bại! Server trả về: " + response.StatusCode,
+                            "Lỗi",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Error
+                        );
+                        return null;
                     }
                 }
-
-
-                // 3. Cập nhật PictureBox và biến lưu tên file
-                selectedImageFileName = fileName;
-                picBox.Image = Image.FromFile(localPath);
+            }
+            catch (HttpRequestException)
+            {
+                // lỗi kết nối, 404, DNS fail, timeout…
+                MessageBox.Show(
+                    "Không thể kết nối đến server. Vui lòng thử lại sau.",
+                    "Lỗi kết nối",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning
+                );
+                return null;
+            }
+            catch (Exception ex)
+            {
+                // bất kỳ lỗi nào khác
+                MessageBox.Show(
+                    "Đã xảy ra lỗi: " + ex.Message,
+                    "Lỗi",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error
+                );
+                return null;
             }
         }
     }
