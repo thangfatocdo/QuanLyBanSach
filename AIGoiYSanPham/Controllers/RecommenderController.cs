@@ -10,6 +10,7 @@ namespace AIGoiYSanPham.Controllers
         private readonly RecommenderTrainer _trainer;
         private readonly RecommenderService _svc;
         private readonly BookstoreDbContext _db;
+
         public RecommenderController(
             RecommenderTrainer trainer,
             RecommenderService svc, BookstoreDbContext db)
@@ -36,6 +37,7 @@ namespace AIGoiYSanPham.Controllers
             var recs = _svc.Recommend(userId, allIds, topN);
             // recs là List<(int ProductId, float Score)>
             var idsOnly = recs.Select(x => x.BookId).ToList();
+
             return Ok(idsOnly);
         }
     }

@@ -62,3 +62,5 @@ D:\Documents\HocTap\DATN\Project\QuanLyKhoSach\obj\Debug\QuanLyKhoSach.csproj.Co
 D:\Documents\HocTap\DATN\Project\QuanLyKhoSach\obj\Debug\QuanLyKh.3457E4A4.Up2Date
 D:\Documents\HocTap\DATN\Project\QuanLyKhoSach\obj\Debug\QuanLyKhoSach.exe
 D:\Documents\HocTap\DATN\Project\QuanLyKhoSach\obj\Debug\QuanLyKhoSach.pdb
+D:\Documents\HocTap\DATN\Project\QuanLyKhoSach\bin\Debug\Newtonsoft.Json.dll
+D:\Documents\HocTap\DATN\Project\QuanLyKhoSach\bin\Debug\Newtonsoft.Json.xml

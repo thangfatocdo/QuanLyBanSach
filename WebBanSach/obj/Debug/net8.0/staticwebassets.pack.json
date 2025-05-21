@@ -409,6 +409,10 @@
       "PackagePath": "staticwebassets\\assets\\img\\logo\\black-logo.svg"
     },
     {
+      "Id": "D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\wwwroot\\assets\\img\\logo\\haidang.png",
+      "PackagePath": "staticwebassets\\assets\\img\\logo\\haidang.png"
+    },
+    {
       "Id": "D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\wwwroot\\assets\\img\\logo\\red-Logo.png",
       "PackagePath": "staticwebassets\\assets\\img\\logo\\red-Logo.png"
     },
@@ -1001,12 +1005,24 @@
       "PackagePath": "staticwebassets\\images\\51KzbusN2VL._AC_UF1000,1000_QL80_.jpg"
     },
     {
+      "Id": "D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\wwwroot\\images\\7297a4f2647a71fdaff95c02a99b10b6.png",
+      "PackagePath": "staticwebassets\\images\\7297a4f2647a71fdaff95c02a99b10b6.png"
+    },
+    {
       "Id": "D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\wwwroot\\images\\9798707538155.jpg",
       "PackagePath": "staticwebassets\\images\\9798707538155.jpg"
     },
     {
+      "Id": "D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\wwwroot\\images\\Picsart_23-04-22_14-21-59-998.jpg",
+      "PackagePath": "staticwebassets\\images\\Picsart_23-04-22_14-21-59-998.jpg"
+    },
+    {
       "Id": "D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\wwwroot\\images\\Xinhua_zidian.jpg",
       "PackagePath": "staticwebassets\\images\\Xinhua_zidian.jpg"
+    },
+    {
+      "Id": "D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\wwwroot\\images\\a6bade970bcd6f9feb607c0e7ef7cb13.png",
+      "PackagePath": "staticwebassets\\images\\a6bade970bcd6f9feb607c0e7ef7cb13.png"
     },
     {
       "Id": "D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\wwwroot\\images\\bia-1_6_6.jpg",
@@ -1015,6 +1031,10 @@
     {
       "Id": "D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\wwwroot\\images\\book-covers-big-2019101610.jpg",
       "PackagePath": "staticwebassets\\images\\book-covers-big-2019101610.jpg"
+    },
+    {
+      "Id": "D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\wwwroot\\images\\dacnhantam86.jpg",
+      "PackagePath": "staticwebassets\\images\\dacnhantam86.jpg"
     },
     {
       "Id": "D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\wwwroot\\images\\hh_bia_1_nhung_nguoi_khon_kho_1_8aec34095c624ee4b0bfdf628df1e20d_master.jpg",
@@ -1051,6 +1071,14 @@
     {
       "Id": "D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\wwwroot\\images\\toan-lop-5-nxb-giao-duc.jpg",
       "PackagePath": "staticwebassets\\images\\toan-lop-5-nxb-giao-duc.jpg"
+    },
+    {
+      "Id": "D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\wwwroot\\images\\trang-tri-bia-sach-5.jpg",
+      "PackagePath": "staticwebassets\\images\\trang-tri-bia-sach-5.jpg"
+    },
+    {
+      "Id": "D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\wwwroot\\images\\vn-11134258-7ra0g-m9o75sa523k2bd.png",
+      "PackagePath": "staticwebassets\\images\\vn-11134258-7ra0g-m9o75sa523k2bd.png"
     },
     {
       "Id": "D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\wwwroot\\js\\site.js",

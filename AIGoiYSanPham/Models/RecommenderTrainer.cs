@@ -24,13 +24,15 @@ namespace AIGoiYSanPham.Models
         {
             // 1) Load data từ DB
             var ratings = _db.OrderItems
-                .Select(oi => new BookRating
-                {
-                    UserId = (uint)oi.Order.CustomerId,
-                    BookId = (uint)oi.BookId,
-                    Label = (float)oi.BookQuantity
-                })
-                .ToList();
+               .Where(oi => oi.Order.CustomerId != null)
+               .GroupBy(oi => new { oi.Order.CustomerId, oi.BookId })
+               .Select(g => new BookRating
+               {
+                   UserId = (uint)g.Key.CustomerId.Value,
+                   BookId = (uint)g.Key.BookId,
+                   Label = g.Sum(x => (float)x.BookQuantity)
+               })
+               .ToList();
 
             if (!ratings.Any())
                 throw new InvalidOperationException("Không có dữ liệu OrderItems để train.");
@@ -58,6 +60,7 @@ namespace AIGoiYSanPham.Models
 
             // 5) Huấn luyện
             var model = pipeline.Fit(split.TrainSet);
+            
 
             // 6) Lưu model (dùng schema gốc để chứa key mapping)
             Directory.CreateDirectory(Path.GetDirectoryName(_modelPath)!);
