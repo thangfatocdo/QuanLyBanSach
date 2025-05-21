@@ -3,11 +3,11 @@
   "WorkspaceRootPath": "D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{9245713E-BB27-4898-8B18-12807CE0F43C}|WebBanSach.csproj|D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\services\\airecommendationclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{9245713E-BB27-4898-8B18-12807CE0F43C}|WebBanSach.csproj|d:\\documents\\hoctap\\datn\\project\\webbansach\\services\\airecommendationclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9245713E-BB27-4898-8B18-12807CE0F43C}|WebBanSach.csproj|solutionrelative:services\\airecommendationclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9245713E-BB27-4898-8B18-12807CE0F43C}|WebBanSach.csproj|d:\\documents\\hoctap\\datn\\project\\webbansach\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{9245713E-BB27-4898-8B18-12807CE0F43C}|WebBanSach.csproj|D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9245713E-BB27-4898-8B18-12807CE0F43C}|WebBanSach.csproj|solutionrelative:controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -71,8 +71,7 @@
               "RelativeToolTip": "Controllers\\HomeController.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAABoAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-20T03:29:01.302Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-20T03:29:01.302Z"
             },
             {
               "$type": "Document",

@@ -25,7 +25,7 @@ if (argsList.Contains("console"))
     // 3) Lấy test user (ví dụ 4) và chạy Recommend
     var userId = 4;
     var allBookIds = db.Books.Select(b => b.BookId).ToList();
-    var recs = svc.Recommend(userId, allBookIds, topN: 10);
+    var recs = svc.Recommend(userId, allBookIds, topN: 5);
 
     // 4) In ra console
     Console.WriteLine($"Recommendations for user {userId}:");
