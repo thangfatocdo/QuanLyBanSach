@@ -19,6 +19,8 @@ public partial class BookstoreDbContext : DbContext
 
     public virtual DbSet<Book> Books { get; set; }
 
+    public virtual DbSet<BookRating> BookRatings { get; set; }
+
     public virtual DbSet<CartItem> CartItems { get; set; }
 
     public virtual DbSet<Category> Categories { get; set; }
@@ -47,7 +49,7 @@ public partial class BookstoreDbContext : DbContext
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
-        => optionsBuilder.UseSqlServer("Data Source=DESKTOP-7B1B1GQ\\SQLEXPRESS;Initial Catalog=BookstoreDB;Persist Security Info=True;User ID=sa;Password=123456;Trust Server Certificate=True");
+        => optionsBuilder.UseSqlServer("data source=DESKTOP-7B1B1GQ\\SQLEXPRESS;initial catalog=BookstoreDB;persist security info=True;user id=sa;password=123456;encrypt=True;trustservercertificate=True");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -80,6 +82,25 @@ public partial class BookstoreDbContext : DbContext
             entity.HasOne(d => d.Publisher).WithMany(p => p.Books)
                 .HasForeignKey(d => d.PublisherId)
                 .HasConstraintName("FK__Books__Publisher__4316F928");
+        });
+
+        modelBuilder.Entity<BookRating>(entity =>
+        {
+            entity.HasKey(e => e.RatingId).HasName("PK__BookRati__FCCDF87C1231667A");
+
+            entity.Property(e => e.CreatedAt)
+                .HasDefaultValueSql("(getdate())")
+                .HasColumnType("datetime");
+
+            entity.HasOne(d => d.Book).WithMany(p => p.BookRatings)
+                .HasForeignKey(d => d.BookId)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK__BookRatin__BookI__7849DB76");
+
+            entity.HasOne(d => d.Customer).WithMany(p => p.BookRatings)
+                .HasForeignKey(d => d.CustomerId)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK__BookRatin__Custo__7755B73D");
         });
 
         modelBuilder.Entity<CartItem>(entity =>
@@ -181,8 +202,11 @@ public partial class BookstoreDbContext : DbContext
             entity.HasKey(e => e.OrderId).HasName("PK__Orders__C3905BCF04297B5A");
 
             entity.Property(e => e.Address).HasMaxLength(255);
+            entity.Property(e => e.CustomerName).HasMaxLength(255);
             entity.Property(e => e.OrderDate).HasColumnType("datetime");
+            entity.Property(e => e.Phone).HasMaxLength(20);
             entity.Property(e => e.ReceiveDate).HasColumnType("datetime");
+            entity.Property(e => e.TotalPrice).HasColumnType("decimal(10, 2)");
 
             entity.HasOne(d => d.Customer).WithMany(p => p.Orders)
                 .HasForeignKey(d => d.CustomerId)
@@ -202,7 +226,7 @@ public partial class BookstoreDbContext : DbContext
             entity.HasKey(e => e.OrderItemId).HasName("PK__OrderIte__2F302202735DA814");
 
             entity.Property(e => e.OrderItemId).HasColumnName("OrderItem_Id");
-            entity.Property(e => e.CustomerPhone).HasMaxLength(20);
+            entity.Property(e => e.BookPrice).HasColumnType("decimal(10, 2)");
 
             entity.HasOne(d => d.Book).WithMany(p => p.OrderItems)
                 .HasForeignKey(d => d.BookId)

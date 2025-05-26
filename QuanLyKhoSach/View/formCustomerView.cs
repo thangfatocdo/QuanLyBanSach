@@ -29,12 +29,14 @@ namespace QuanLyKhoSach.View
             dgvCustomer.Rows.Clear();
             dgvCustomer.AllowUserToAddRows = false;
             // Lấy dữ liệu từ Entity Framework
-            var customerList = context.Customers.AsQueryable();
+            var customerList = context.Customers.AsNoTracking() // chỉ lấy dữ liệu ra để đọc, không theo dõi nữa
+                .AsQueryable();
             // Lọc danh sách theo từ khóa
             if (!string.IsNullOrWhiteSpace(keyword))
             {
                 keyword = keyword.ToLower();
                 customerList = customerList.Where(c =>
+                    c.CustomerId.ToString().Contains(keyword) ||
                     c.FullName.ToLower().Contains(keyword) ||
                     c.Phone.ToLower().Contains(keyword) ||
                     c.Address.ToLower().Contains(keyword) ||
@@ -52,6 +54,7 @@ namespace QuanLyKhoSach.View
         private void btnAdd_Click(object sender, EventArgs e)
         {
             formMain.BlurBackground(new formCustomerAdd());
+            LoadCustomers();
         }
 
         private void txtSearch_TextChanged(object sender, EventArgs e)

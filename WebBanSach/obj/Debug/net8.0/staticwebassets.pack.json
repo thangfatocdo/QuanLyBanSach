@@ -1017,6 +1017,10 @@
       "PackagePath": "staticwebassets\\images\\Picsart_23-04-22_14-21-59-998.jpg"
     },
     {
+      "Id": "D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\wwwroot\\images\\Screenshot 2025-05-25 130804.png",
+      "PackagePath": "staticwebassets\\images\\Screenshot 2025-05-25 130804.png"
+    },
+    {
       "Id": "D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\wwwroot\\images\\Xinhua_zidian.jpg",
       "PackagePath": "staticwebassets\\images\\Xinhua_zidian.jpg"
     },
@@ -1033,12 +1037,24 @@
       "PackagePath": "staticwebassets\\images\\book-covers-big-2019101610.jpg"
     },
     {
+      "Id": "D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\wwwroot\\images\\content.jpg",
+      "PackagePath": "staticwebassets\\images\\content.jpg"
+    },
+    {
       "Id": "D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\wwwroot\\images\\dacnhantam86.jpg",
       "PackagePath": "staticwebassets\\images\\dacnhantam86.jpg"
     },
     {
       "Id": "D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\wwwroot\\images\\hh_bia_1_nhung_nguoi_khon_kho_1_8aec34095c624ee4b0bfdf628df1e20d_master.jpg",
       "PackagePath": "staticwebassets\\images\\hh_bia_1_nhung_nguoi_khon_kho_1_8aec34095c624ee4b0bfdf628df1e20d_master.jpg"
+    },
+    {
+      "Id": "D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\wwwroot\\images\\images (1).jpg",
+      "PackagePath": "staticwebassets\\images\\images (1).jpg"
+    },
+    {
+      "Id": "D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\wwwroot\\images\\images (2).jpg",
+      "PackagePath": "staticwebassets\\images\\images (2).jpg"
     },
     {
       "Id": "D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\wwwroot\\images\\istockphoto-815768296-1024x1024.jpg",

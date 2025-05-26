@@ -11,11 +11,9 @@ public partial class OrderItem
 
     public int? BookId { get; set; }
 
-    public double? BookPrice { get; set; }
+    public decimal? BookPrice { get; set; }
 
     public int? BookQuantity { get; set; }
-
-    public string? CustomerPhone { get; set; }
 
     public virtual Book? Book { get; set; }
 

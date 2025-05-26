@@ -79,7 +79,7 @@ namespace QuanLyKhoSach
 
         private void btnOder_Click(object sender, EventArgs e)
         {
-            AddControls(new formOderView());
+            AddControls(new formOrderView());
         }
 
         private void btnBook_Click(object sender, EventArgs e)
@@ -91,6 +91,11 @@ namespace QuanLyKhoSach
         {
             AddControls(new formImportView());
 
+        }
+
+        private void Home_Click(object sender, EventArgs e)
+        {
+            AddControls(new formHomeView());
         }
     }
 }

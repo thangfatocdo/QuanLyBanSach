@@ -27,14 +27,14 @@ namespace QuanLyKhoSach.Model
         private void formBookAdd_Load(object sender, EventArgs e)
         {
             LoadComboBox();
-
+            //nếu bookId khác null thì load data
             if (BookId != null)
             {
                 var book = context.Books.Find(BookId);
                 if (book != null)
                 {
                     txtName.Text = book.Title;
-                    txtPrice.Text = book.Price.ToString();
+                    txtPrice.Text = book.Price.ToString("#,##0");
                     txtDesc.Text = book.Description;
 
                     cbCatetegory.SelectedValue = book.CategoryId;

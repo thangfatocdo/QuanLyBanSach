@@ -24,12 +24,13 @@ namespace QuanLyKhoSach
         public Nullable<int> CustomerId { get; set; }
         public Nullable<System.DateTime> OrderDate { get; set; }
         public Nullable<System.DateTime> ReceiveDate { get; set; }
-        public Nullable<double> TotalPrice { get; set; }
+        public decimal TotalPrice { get; set; }
         public int OrderId { get; set; }
         public Nullable<int> PaymentMethodId { get; set; }
         public Nullable<int> StatusId { get; set; }
         public string Address { get; set; }
         public string CustomerName { get; set; }
+        public string Phone { get; set; }
     
         public virtual Customers Customers { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

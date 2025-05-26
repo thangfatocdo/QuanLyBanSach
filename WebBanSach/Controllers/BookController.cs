@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using PagedList.Core;
-using WebBanSach.Models.Entities;
 using Microsoft.EntityFrameworkCore;
 using System.Security.Claims;
+using WebBanSach.Models.Entities;
 
 namespace WebBanSach.Controllers
 {
@@ -16,15 +16,35 @@ namespace WebBanSach.Controllers
             this.context = context;
         }
         [Route("shop.html", Name = "BookShop")]
-        public IActionResult Index(int? page)
+        public IActionResult Index(int? categoryId, int? page)
         {
             try
             {
                 var pageNumber = page == null || page <= 0 ? 1 : page.Value;
-                var pageSize = 13;
-                var lsBooks = context.Books.AsNoTracking().OrderByDescending(x => x.BookId);
-                PagedList<Book> models = new PagedList<Book>(lsBooks, pageNumber, pageSize);
+                var pageSize = 8;
+                var query = context.Books.AsQueryable();
+
+                // Nếu có lọc theo thể loại
+                if (categoryId.HasValue)
+                {
+                    query = query.Where(b => b.CategoryId == categoryId);
+                }
+
+                var models = new PagedList<Book>(
+                    query.AsNoTracking().OrderByDescending(b => b.BookId),
+                    pageNumber, pageSize
+                );
+
+                // Gửi danh sách thể loại và category đang chọn
+                var categories = context.Categories.OrderBy(c => c.CategoryName).ToList();
+                ViewBag.Categories = categories;
+                ViewBag.SelectedCategoryId = categoryId;
                 ViewBag.CurrentPage = pageNumber;
+
+                // Lấy danh sách đánh giá cho sách
+                var ratings = context.BookRatings
+                    .ToList();
+                ViewBag.BookRatings = ratings;
                 return View(models);
             }
             catch
@@ -32,27 +52,11 @@ namespace WebBanSach.Controllers
                 return RedirectToAction("Index", "Home");
             }
         }
-        [Route("/{Alias}", Name = "CatListBook")]
-        public IActionResult List(string Alias, int page = 1)
-        {
-            try
-            {
-                var pageSize = 10;
-                var danhmuc = context.Categories.AsNoTracking().SingleOrDefault(x => x.Alias == Alias);
-                var lsBooks = context.Books.AsNoTracking().
-                    Where(x => x.CategoryId == danhmuc.CategoryId).
-                    OrderByDescending(x => x.CreatedAt);
-                PagedList<Book> models = new PagedList<Book>(lsBooks, page, pageSize);
-                ViewBag.CurrentPage = page;
-                ViewBag.CurrentCat = danhmuc;
-                return View(models);
-            }
-            catch
-            {
-                return RedirectToAction("Index", "Home");
-            }
-        }
-        [Route("/{id}.html", Name = "BookDetails")] //gán đường dẫn bên view index
+
+
+
+
+            [Route("/{id}.html", Name = "BookDetails")] //gán đường dẫn bên view index
         public async Task<IActionResult> BookDetail(int id)
         {
             try
@@ -68,8 +72,9 @@ namespace WebBanSach.Controllers
                 if (!int.TryParse(userIdStr, out var userId))
                 {
                     // Trả về view với model rỗng
-                    return View(new List<Book>());
+                    ViewBag.RecommendBooks = new List<Book>();
                 }
+
 
                 // Lấy danh sách sách gợi ý
                 if (userIdStr != null)
@@ -81,16 +86,54 @@ namespace WebBanSach.Controllers
                     ViewBag.RecommendBooks = recBooks;
                 }
 
+                // Lấy danh sách đánh giá cho sách
+                var ratings = context.BookRatings
+                    .Include(r => r.Customer)
+                    .Where(r => r.BookId == id)
+                    .OrderByDescending(r => r.CreatedAt)
+                    .ToList();
+                ViewBag.BookRatings = ratings;
+                // Nếu đã đăng nhập, kiểm tra user đã đánh giá chưa
+                if (int.TryParse(userIdStr, out var currentUserId))
+                {
+                    var myRating = context.BookRatings.FirstOrDefault(r => r.BookId == id && r.CustomerId == currentUserId);
+                    ViewBag.MyRating = myRating;
+                }
+
                 return View(book);
             }
             catch
             {
                 return RedirectToAction("Index", "Home");
             }
-
-
-
         }
+        [HttpPost]
+        public IActionResult SubmitRating(BookRating model)
+        {
+            var userIdStr = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            if (!int.TryParse(userIdStr, out var userId))
+                return RedirectToAction("Login", "Account");
+
+            var existing = context.BookRatings.FirstOrDefault(r => r.BookId == model.BookId && r.CustomerId == userId);
+            if (existing != null)
+            {
+                // Cập nhật
+                existing.RatingValue = model.RatingValue;
+                existing.Comment = model.Comment;
+                existing.CreatedAt = DateTime.Now;
+            }
+            else
+            {
+                // Thêm mới
+                model.CustomerId = userId;
+                model.CreatedAt = DateTime.Now;
+                context.BookRatings.Add(model);
+            }
+
+            context.SaveChanges();
+            return RedirectToRoute("BookDetails", new { id = model.BookId });
+        }
+
         [HttpPost("api/upload-image")]
         public async Task<IActionResult> UploadImage(IFormFile file)
         {

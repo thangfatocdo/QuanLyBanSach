@@ -23,10 +23,6 @@ namespace QuanLyKhoSach.Model
             this.Close();
         }
 
-        private void formCategoryAdd_Load(object sender, EventArgs e)
-        {
-
-        }
         public int? CategoryId { get; set; }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -34,7 +30,7 @@ namespace QuanLyKhoSach.Model
             // Kiểm tra dữ liệu
             if (string.IsNullOrWhiteSpace(txtName.Text))
             {
-                MessageBox.Show("Vui lòng nhập tên khách hàng!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Vui lòng nhập tên thể loại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtName.Focus();
                 return;
             }
@@ -62,6 +58,7 @@ namespace QuanLyKhoSach.Model
                 context.SaveChanges();
 
                 MessageBox.Show("Lưu thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.DialogResult = DialogResult.OK; // <--- THÊM DÒNG NÀY
                 this.Close();
             }
             catch (Exception ex)

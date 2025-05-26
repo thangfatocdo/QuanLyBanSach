@@ -8,6 +8,19 @@
     <Property Name="AuthorName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
     <NavigationProperty Name="Books" Relationship="Self.FK__Books__AuthorId__412EB0B6" FromRole="Authors" ToRole="Books" />
   </EntityType>
+  <EntityType Name="BookRatings">
+    <Key>
+      <PropertyRef Name="RatingId" />
+    </Key>
+    <Property Name="RatingId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CustomerId" Type="Int32" Nullable="false" />
+    <Property Name="BookId" Type="Int32" Nullable="false" />
+    <Property Name="RatingValue" Type="Int32" />
+    <Property Name="Comment" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedAt" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Books" Relationship="Self.FK__BookRatin__BookI__7849DB76" FromRole="BookRatings" ToRole="Books" />
+    <NavigationProperty Name="Customers" Relationship="Self.FK__BookRatin__Custo__7755B73D" FromRole="BookRatings" ToRole="Customers" />
+  </EntityType>
   <EntityType Name="Books">
     <Key>
       <PropertyRef Name="BookId" />
@@ -22,6 +35,7 @@
     <Property Name="ImageUrl" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
     <Property Name="CreatedAt" Type="DateTime" Precision="3" />
     <NavigationProperty Name="Authors" Relationship="Self.FK__Books__AuthorId__412EB0B6" FromRole="Books" ToRole="Authors" />
+    <NavigationProperty Name="BookRatings" Relationship="Self.FK__BookRatin__BookI__7849DB76" FromRole="Books" ToRole="BookRatings" />
     <NavigationProperty Name="Categories" Relationship="Self.FK__Books__CategoryI__4222D4EF" FromRole="Books" ToRole="Categories" />
     <NavigationProperty Name="Publishers" Relationship="Self.FK__Books__Publisher__4316F928" FromRole="Books" ToRole="Publishers" />
     <NavigationProperty Name="InventoryDetail" Relationship="Self.FK__Inventory__BookI__4D94879B" FromRole="Books" ToRole="InventoryDetail" />
@@ -59,6 +73,7 @@
     <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
     <Property Name="Address" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
     <Property Name="Password" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="BookRatings" Relationship="Self.FK__BookRatin__Custo__7755B73D" FromRole="Customers" ToRole="BookRatings" />
     <NavigationProperty Name="CartItems" Relationship="Self.FK_CartItems_Customers" FromRole="Customers" ToRole="CartItems" />
     <NavigationProperty Name="Orders" Relationship="Self.FK__Orders__Customer__5CD6CB2B" FromRole="Customers" ToRole="Orders" />
   </EntityType>
@@ -106,9 +121,8 @@
     <Property Name="OrderItem_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="OrderId" Type="Int32" />
     <Property Name="BookId" Type="Int32" />
-    <Property Name="BookPrice" Type="Double" />
+    <Property Name="BookPrice" Type="Decimal" Precision="10" Scale="2" />
     <Property Name="BookQuantity" Type="Int32" />
-    <Property Name="CustomerPhone" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="Books" Relationship="Self.FK__OrderItem__BookI__60A75C0F" FromRole="OrderItems" ToRole="Books" />
     <NavigationProperty Name="Orders" Relationship="Self.FK_OrderItems_OrderId" FromRole="OrderItems" ToRole="Orders" />
   </EntityType>
@@ -119,12 +133,13 @@
     <Property Name="CustomerId" Type="Int32" />
     <Property Name="OrderDate" Type="DateTime" Precision="3" />
     <Property Name="ReceiveDate" Type="DateTime" Precision="3" />
-    <Property Name="TotalPrice" Type="Double" />
+    <Property Name="TotalPrice" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
     <Property Name="OrderId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="PaymentMethodId" Type="Int32" />
     <Property Name="StatusId" Type="Int32" />
     <Property Name="Address" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
     <Property Name="CustomerName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Phone" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="Customers" Relationship="Self.FK__Orders__Customer__5CD6CB2B" FromRole="Orders" ToRole="Customers" />
     <NavigationProperty Name="InventoryExport" Relationship="Self.FK_InventoryExport_Orders" FromRole="Orders" ToRole="InventoryExport" />
     <NavigationProperty Name="OrderItems" Relationship="Self.FK_OrderItems_OrderId" FromRole="Orders" ToRole="OrderItems" />
@@ -188,6 +203,30 @@
       </Principal>
       <Dependent Role="Books">
         <PropertyRef Name="AuthorId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__BookRatin__BookI__7849DB76">
+    <End Role="Books" Type="Self.Books" Multiplicity="1" />
+    <End Role="BookRatings" Type="Self.BookRatings" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Books">
+        <PropertyRef Name="BookId" />
+      </Principal>
+      <Dependent Role="BookRatings">
+        <PropertyRef Name="BookId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__BookRatin__Custo__7755B73D">
+    <End Role="Customers" Type="Self.Customers" Multiplicity="1" />
+    <End Role="BookRatings" Type="Self.BookRatings" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customers">
+        <PropertyRef Name="CustomerId" />
+      </Principal>
+      <Dependent Role="BookRatings">
+        <PropertyRef Name="CustomerId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -373,6 +412,7 @@
   </Association>
   <EntityContainer Name="BookstoreDBEntities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Authors" EntityType="Self.Authors" />
+    <EntitySet Name="BookRatings" EntityType="Self.BookRatings" />
     <EntitySet Name="Books" EntityType="Self.Books" />
     <EntitySet Name="CartItems" EntityType="Self.CartItems" />
     <EntitySet Name="Categories" EntityType="Self.Categories" />
@@ -390,6 +430,14 @@
     <AssociationSet Name="FK__Books__AuthorId__412EB0B6" Association="Self.FK__Books__AuthorId__412EB0B6">
       <End Role="Authors" EntitySet="Authors" />
       <End Role="Books" EntitySet="Books" />
+    </AssociationSet>
+    <AssociationSet Name="FK__BookRatin__BookI__7849DB76" Association="Self.FK__BookRatin__BookI__7849DB76">
+      <End Role="Books" EntitySet="Books" />
+      <End Role="BookRatings" EntitySet="BookRatings" />
+    </AssociationSet>
+    <AssociationSet Name="FK__BookRatin__Custo__7755B73D" Association="Self.FK__BookRatin__Custo__7755B73D">
+      <End Role="Customers" EntitySet="Customers" />
+      <End Role="BookRatings" EntitySet="BookRatings" />
     </AssociationSet>
     <AssociationSet Name="FK__Books__CategoryI__4222D4EF" Association="Self.FK__Books__CategoryI__4222D4EF">
       <End Role="Categories" EntitySet="Categories" />

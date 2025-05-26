@@ -11,16 +11,20 @@
       "RelativeMoniker": "D:0:0:{5393BCA9-D779-4E68-94DE-3F199B0A0D36}|AIGoiYSanPham.csproj|solutionrelative:models\\recommendertrainer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{5393BCA9-D779-4E68-94DE-3F199B0A0D36}|AIGoiYSanPham.csproj|D:\\Documents\\HocTap\\DATN\\Project\\AIGoiYSanPham\\readme.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{5393BCA9-D779-4E68-94DE-3F199B0A0D36}|AIGoiYSanPham.csproj|solutionrelative:readme.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5393BCA9-D779-4E68-94DE-3F199B0A0D36}|AIGoiYSanPham.csproj|D:\\Documents\\HocTap\\DATN\\Project\\AIGoiYSanPham\\models\\recommenderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5393BCA9-D779-4E68-94DE-3F199B0A0D36}|AIGoiYSanPham.csproj|solutionrelative:models\\recommenderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{5393BCA9-D779-4E68-94DE-3F199B0A0D36}|AIGoiYSanPham.csproj|D:\\Documents\\HocTap\\DATN\\Project\\AIGoiYSanPham\\controllers\\recommendercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5393BCA9-D779-4E68-94DE-3F199B0A0D36}|AIGoiYSanPham.csproj|solutionrelative:controllers\\recommendercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{5393BCA9-D779-4E68-94DE-3F199B0A0D36}|AIGoiYSanPham.csproj|D:\\Documents\\HocTap\\DATN\\Project\\AIGoiYSanPham\\models\\bookratingprediction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5393BCA9-D779-4E68-94DE-3F199B0A0D36}|AIGoiYSanPham.csproj|solutionrelative:models\\bookratingprediction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5393BCA9-D779-4E68-94DE-3F199B0A0D36}|AIGoiYSanPham.csproj|D:\\Documents\\HocTap\\DATN\\Project\\AIGoiYSanPham\\models\\recommenderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5393BCA9-D779-4E68-94DE-3F199B0A0D36}|AIGoiYSanPham.csproj|solutionrelative:models\\recommenderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{5393BCA9-D779-4E68-94DE-3F199B0A0D36}|AIGoiYSanPham.csproj|D:\\Documents\\HocTap\\DATN\\Project\\AIGoiYSanPham\\models\\errorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -50,11 +54,23 @@
       "DocumentGroups": [
         {
           "DockedWidth": 76,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Readme.txt",
+              "DocumentMoniker": "D:\\Documents\\HocTap\\DATN\\Project\\AIGoiYSanPham\\Readme.txt",
+              "RelativeDocumentMoniker": "Readme.txt",
+              "ToolTip": "D:\\Documents\\HocTap\\DATN\\Project\\AIGoiYSanPham\\Readme.txt",
+              "RelativeToolTip": "Readme.txt",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
+              "WhenOpened": "2025-05-21T09:39:18.54Z"
             },
             {
               "$type": "Document",
@@ -64,14 +80,14 @@
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "D:\\Documents\\HocTap\\DATN\\Project\\AIGoiYSanPham\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAAAAgAAAAqAAAA",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAgAAAAqAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-20T04:30:04.118Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "BookRatingPrediction.cs",
               "DocumentMoniker": "D:\\Documents\\HocTap\\DATN\\Project\\AIGoiYSanPham\\Models\\BookRatingPrediction.cs",
               "RelativeDocumentMoniker": "Models\\BookRatingPrediction.cs",
@@ -83,7 +99,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "BookRating.cs",
               "DocumentMoniker": "D:\\Documents\\HocTap\\DATN\\Project\\AIGoiYSanPham\\Models\\BookRating.cs",
               "RelativeDocumentMoniker": "Models\\BookRating.cs",
@@ -95,13 +111,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "RecommenderController.cs",
               "DocumentMoniker": "D:\\Documents\\HocTap\\DATN\\Project\\AIGoiYSanPham\\Controllers\\RecommenderController.cs",
               "RelativeDocumentMoniker": "Controllers\\RecommenderController.cs",
               "ToolTip": "D:\\Documents\\HocTap\\DATN\\Project\\AIGoiYSanPham\\Controllers\\RecommenderController.cs",
               "RelativeToolTip": "Controllers\\RecommenderController.cs",
-              "ViewState": "AQIAABgAAAAAAAAAAAAQwCwAAAAAAAAA",
+              "ViewState": "AQIAAA0AAAAAAAAAAAAzwCwAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-18T10:44:02.269Z"
             },
@@ -113,13 +129,13 @@
               "RelativeDocumentMoniker": "Models\\RecommenderTrainer.cs",
               "ToolTip": "D:\\Documents\\HocTap\\DATN\\Project\\AIGoiYSanPham\\Models\\RecommenderTrainer.cs",
               "RelativeToolTip": "Models\\RecommenderTrainer.cs",
-              "ViewState": "AQIAACIAAAAAAAAAAAAYwEkAAAAjAAAA",
+              "ViewState": "AQIAABEAAAAAAAAAAAAQwCgAAABNAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-18T07:48:39.178Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "ErrorViewModel.cs",
               "DocumentMoniker": "D:\\Documents\\HocTap\\DATN\\Project\\AIGoiYSanPham\\Models\\ErrorViewModel.cs",
               "RelativeDocumentMoniker": "Models\\ErrorViewModel.cs",
@@ -131,7 +147,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 3,
               "Title": "RecommenderService.cs",
               "DocumentMoniker": "D:\\Documents\\HocTap\\DATN\\Project\\AIGoiYSanPham\\Models\\RecommenderService.cs",
               "RelativeDocumentMoniker": "Models\\RecommenderService.cs",
@@ -143,7 +159,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "appsettings.json",
               "DocumentMoniker": "D:\\Documents\\HocTap\\DATN\\Project\\AIGoiYSanPham\\appsettings.json",
               "RelativeDocumentMoniker": "appsettings.json",
@@ -155,7 +171,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "AIGoiYSanPham.csproj",
               "DocumentMoniker": "D:\\Documents\\HocTap\\DATN\\Project\\AIGoiYSanPham\\AIGoiYSanPham.csproj",
               "RelativeDocumentMoniker": "AIGoiYSanPham.csproj",
@@ -167,7 +183,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "launchSettings.json",
               "DocumentMoniker": "D:\\Documents\\HocTap\\DATN\\Project\\AIGoiYSanPham\\Properties\\launchSettings.json",
               "RelativeDocumentMoniker": "Properties\\launchSettings.json",

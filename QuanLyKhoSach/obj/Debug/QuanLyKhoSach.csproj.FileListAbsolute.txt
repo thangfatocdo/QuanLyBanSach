@@ -55,7 +55,6 @@ D:\Documents\HocTap\DATN\Project\QuanLyKhoSach\obj\Debug\QuanLyKhoSach.View.form
 D:\Documents\HocTap\DATN\Project\QuanLyKhoSach\obj\Debug\QuanLyKhoSach.View.formCategoryView.resources
 D:\Documents\HocTap\DATN\Project\QuanLyKhoSach\obj\Debug\QuanLyKhoSach.View.formCustomerView.resources
 D:\Documents\HocTap\DATN\Project\QuanLyKhoSach\obj\Debug\QuanLyKhoSach.View.formImportView.resources
-D:\Documents\HocTap\DATN\Project\QuanLyKhoSach\obj\Debug\QuanLyKhoSach.View.formOderView.resources
 D:\Documents\HocTap\DATN\Project\QuanLyKhoSach\obj\Debug\QuanLyKhoSach.View.formUserView.resources
 D:\Documents\HocTap\DATN\Project\QuanLyKhoSach\obj\Debug\QuanLyKhoSach.csproj.GenerateResource.cache
 D:\Documents\HocTap\DATN\Project\QuanLyKhoSach\obj\Debug\QuanLyKhoSach.csproj.CoreCompileInputs.cache
@@ -64,3 +63,5 @@ D:\Documents\HocTap\DATN\Project\QuanLyKhoSach\obj\Debug\QuanLyKhoSach.exe
 D:\Documents\HocTap\DATN\Project\QuanLyKhoSach\obj\Debug\QuanLyKhoSach.pdb
 D:\Documents\HocTap\DATN\Project\QuanLyKhoSach\bin\Debug\Newtonsoft.Json.dll
 D:\Documents\HocTap\DATN\Project\QuanLyKhoSach\bin\Debug\Newtonsoft.Json.xml
+D:\Documents\HocTap\DATN\Project\QuanLyKhoSach\obj\Debug\QuanLyKhoSach.View.formOrderView.resources
+D:\Documents\HocTap\DATN\Project\QuanLyKhoSach\obj\Debug\QuanLyKhoSach.View.formHomeView.resources

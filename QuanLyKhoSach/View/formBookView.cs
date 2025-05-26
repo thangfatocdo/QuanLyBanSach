@@ -35,12 +35,14 @@ namespace QuanLyKhoSach.View
                 .Include("Categories")
                 .Include("Authors")
                 .Include("Publishers") //muốn dùng .Include(b => b.XYZ) thì thêm using System.Data.Entity;
+                .AsNoTracking() // chỉ lấy dữ liệu ra để đọc, không theo dõi nữa
                 .AsQueryable();
 
             if (!string.IsNullOrWhiteSpace(keyword))
             {
                 keyword = keyword.ToLower();
                 bookList = bookList.Where(b =>
+                    b.BookId.ToString().Contains(keyword)||
                     b.Title.ToLower().Contains(keyword) ||
                     b.Categories.CategoryName.ToLower().Contains(keyword) ||
                     b.Authors.AuthorName.ToLower().Contains(keyword) ||
@@ -57,7 +59,7 @@ namespace QuanLyKhoSach.View
                     b.Categories?.CategoryName,
                     b.Authors?.AuthorName,
                     b.Publishers?.PublisherName,
-                    b.Price
+                    b.Price.ToString("#,##0")
                 );
             }
         }
@@ -65,6 +67,7 @@ namespace QuanLyKhoSach.View
         private void btnAdd_Click(object sender, EventArgs e)
         {
             formMain.BlurBackground(new formBookAdd());
+            LoadBooks();
         }
         //nút edit
         private void dgvBook_CellContentClick(object sender, DataGridViewCellEventArgs e)

@@ -71,6 +71,9 @@
     <Compile Include="Authors.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="BookRatings.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Books.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -133,6 +136,9 @@
     </Compile>
     <Compile Include="Model\formOrderAdd.cs">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Model\formOrderAdd.Designer.cs">
+      <DependentUpon>formOrderAdd.cs</DependentUpon>
     </Compile>
     <Compile Include="Model\formUserAdd.cs">
       <SubType>Form</SubType>
@@ -211,17 +217,23 @@
     <Compile Include="View\formCustomerView.Designer.cs">
       <DependentUpon>formCustomerView.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\formHomeView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\formHomeView.Designer.cs">
+      <DependentUpon>formHomeView.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\formImportView.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="View\formImportView.Designer.cs">
       <DependentUpon>formImportView.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\formOderView.cs">
+    <Compile Include="View\formOrderView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\formOderView.Designer.cs">
-      <DependentUpon>formOderView.cs</DependentUpon>
+    <Compile Include="View\formOrderView.Designer.cs">
+      <DependentUpon>formOrderView.cs</DependentUpon>
     </Compile>
     <Compile Include="View\formUserView.cs">
       <SubType>Form</SubType>
@@ -276,11 +288,14 @@
     <EmbeddedResource Include="View\formCustomerView.resx">
       <DependentUpon>formCustomerView.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\formHomeView.resx">
+      <DependentUpon>formHomeView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\formImportView.resx">
       <DependentUpon>formImportView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\formOderView.resx">
-      <DependentUpon>formOderView.cs</DependentUpon>
+    <EmbeddedResource Include="View\formOrderView.resx">
+      <DependentUpon>formOrderView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\formUserView.resx">
       <DependentUpon>formUserView.cs</DependentUpon>

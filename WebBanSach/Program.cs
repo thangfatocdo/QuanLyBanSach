@@ -28,8 +28,10 @@ builder.Services.AddAuthentication("MyCookieAuth")
 //Đăng ký HttpClient để gọi AI service
 builder.Services.AddHttpClient("AIClient", client =>
 {
-    client.BaseAddress = new Uri("http://localhost:5000/api/recommender/"); // địa chỉ project AI
+    var aiBaseUrl = builder.Configuration["AI:BaseUrl"];
+    client.BaseAddress = new Uri(aiBaseUrl);
 });
+
 var app = builder.Build();
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
@@ -55,3 +57,6 @@ app.MapControllerRoute(
     pattern: "{controller=Home}/{action=Index}/{id?}");
 
 app.Run();
+
+
+//dotnet ef dbcontext scaffold "data source=DESKTOP-7B1B1GQ\SQLEXPRESS;initial catalog=BookstoreDB;persist security info=True;user id=sa;password=123456;encrypt=True;trustservercertificate=True" Microsoft.EntityFrameworkCore.SqlServer -o Models -f

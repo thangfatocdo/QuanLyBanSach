@@ -11,7 +11,7 @@ public partial class Order
 
     public DateTime? ReceiveDate { get; set; }
 
-    public double? TotalPrice { get; set; }
+    public decimal TotalPrice { get; set; }
 
     public int OrderId { get; set; }
 
@@ -20,7 +20,10 @@ public partial class Order
     public int? StatusId { get; set; }
 
     public string? Address { get; set; }
+
     public string? CustomerName { get; set; }
+
+    public string? Phone { get; set; }
 
     public virtual Customer? Customer { get; set; }
 

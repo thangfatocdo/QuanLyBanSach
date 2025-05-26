@@ -3,36 +3,40 @@
   "WorkspaceRootPath": "D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{9245713E-BB27-4898-8B18-12807CE0F43C}|WebBanSach.csproj|d:\\documents\\hoctap\\datn\\project\\webbansach\\services\\airecommendationclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9245713E-BB27-4898-8B18-12807CE0F43C}|WebBanSach.csproj|solutionrelative:services\\airecommendationclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9245713E-BB27-4898-8B18-12807CE0F43C}|WebBanSach.csproj|D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9245713E-BB27-4898-8B18-12807CE0F43C}|WebBanSach.csproj|solutionrelative:controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9245713E-BB27-4898-8B18-12807CE0F43C}|WebBanSach.csproj|D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\controllers\\bookcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9245713E-BB27-4898-8B18-12807CE0F43C}|WebBanSach.csproj|solutionrelative:controllers\\bookcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9245713E-BB27-4898-8B18-12807CE0F43C}|WebBanSach.csproj|D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9245713E-BB27-4898-8B18-12807CE0F43C}|WebBanSach.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9245713E-BB27-4898-8B18-12807CE0F43C}|WebBanSach.csproj|D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\controllers\\shoppingcartcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9245713E-BB27-4898-8B18-12807CE0F43C}|WebBanSach.csproj|solutionrelative:controllers\\shoppingcartcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{9245713E-BB27-4898-8B18-12807CE0F43C}|WebBanSach.csproj|d:\\documents\\hoctap\\datn\\project\\webbansach\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{9245713E-BB27-4898-8B18-12807CE0F43C}|WebBanSach.csproj|solutionrelative:views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{9245713E-BB27-4898-8B18-12807CE0F43C}|WebBanSach.csproj|D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\views\\book\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{9245713E-BB27-4898-8B18-12807CE0F43C}|WebBanSach.csproj|solutionrelative:views\\book\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9245713E-BB27-4898-8B18-12807CE0F43C}|WebBanSach.csproj|D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{9245713E-BB27-4898-8B18-12807CE0F43C}|WebBanSach.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{9245713E-BB27-4898-8B18-12807CE0F43C}|WebBanSach.csproj|D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9245713E-BB27-4898-8B18-12807CE0F43C}|WebBanSach.csproj|solutionrelative:controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9245713E-BB27-4898-8B18-12807CE0F43C}|WebBanSach.csproj|D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\models\\viewmodels\\cartviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9245713E-BB27-4898-8B18-12807CE0F43C}|WebBanSach.csproj|solutionrelative:models\\viewmodels\\cartviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{9245713E-BB27-4898-8B18-12807CE0F43C}|WebBanSach.csproj|D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\services\\airecommendationclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9245713E-BB27-4898-8B18-12807CE0F43C}|WebBanSach.csproj|solutionrelative:services\\airecommendationclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9245713E-BB27-4898-8B18-12807CE0F43C}|WebBanSach.csproj|D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\controllers\\bookcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9245713E-BB27-4898-8B18-12807CE0F43C}|WebBanSach.csproj|solutionrelative:controllers\\bookcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9245713E-BB27-4898-8B18-12807CE0F43C}|WebBanSach.csproj|D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9245713E-BB27-4898-8B18-12807CE0F43C}|WebBanSach.csproj|solutionrelative:controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9245713E-BB27-4898-8B18-12807CE0F43C}|WebBanSach.csproj|D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\models\\entities\\bookrating.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9245713E-BB27-4898-8B18-12807CE0F43C}|WebBanSach.csproj|solutionrelative:models\\entities\\bookrating.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9245713E-BB27-4898-8B18-12807CE0F43C}|WebBanSach.csproj|D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9245713E-BB27-4898-8B18-12807CE0F43C}|WebBanSach.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9245713E-BB27-4898-8B18-12807CE0F43C}|WebBanSach.csproj|D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\models\\entities\\author.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9245713E-BB27-4898-8B18-12807CE0F43C}|WebBanSach.csproj|solutionrelative:models\\entities\\author.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -42,109 +46,120 @@
       "DocumentGroups": [
         {
           "DockedWidth": 76,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 1,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\Views\\Book\\Index.cshtml",
-              "RelativeDocumentMoniker": "Views\\Book\\Index.cshtml",
-              "ToolTip": "D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\Views\\Book\\Index.cshtml",
-              "RelativeToolTip": "Views\\Book\\Index.cshtml",
-              "ViewState": "AQIAANUAAAAAAAAAAAAAAAUBAAA7AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-19T13:28:46.037Z",
-              "IsPinned": true
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "HomeController.cs",
-              "DocumentMoniker": "D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\Controllers\\HomeController.cs",
-              "RelativeDocumentMoniker": "Controllers\\HomeController.cs",
-              "ToolTip": "D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\Controllers\\HomeController.cs",
-              "RelativeToolTip": "Controllers\\HomeController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAABoAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-20T03:29:01.302Z"
+              "DocumentIndex": 0,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Home\\Index.cshtml",
+              "ToolTip": "D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "Views\\Home\\Index.cshtml",
+              "ViewState": "AQIAAD8AAAAAAAAAAAAAAFoAAAAwAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-25T15:38:30.708Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\Views\\Book\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Book\\Index.cshtml",
+              "ToolTip": "D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\Views\\Book\\Index.cshtml",
+              "RelativeToolTip": "Views\\Book\\Index.cshtml",
+              "ViewState": "AQIAAAYBAAAAAAAAAAAAABUBAAA8AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-25T14:24:45.487Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "AiRecommendationClient.cs",
               "DocumentMoniker": "D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\Services\\AiRecommendationClient.cs",
               "RelativeDocumentMoniker": "Services\\AiRecommendationClient.cs",
               "ToolTip": "D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\Services\\AiRecommendationClient.cs",
               "RelativeToolTip": "Services\\AiRecommendationClient.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAA1AAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAaAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-20T03:28:46.871Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Program.cs",
-              "DocumentMoniker": "D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AQIAAA8AAAAAAAAAAAAAABsAAAATAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-18T05:59:35.797Z"
+              "WhenOpened": "2025-05-25T15:34:26.152Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "Controllers\\HomeController.cs",
+              "ToolTip": "D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "Controllers\\HomeController.cs",
+              "ViewState": "AQIAABAAAAAAAAAAAAAmwCkAAAAqAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-25T15:34:01.073Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "BookRating.cs",
+              "DocumentMoniker": "D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\Models\\Entities\\BookRating.cs",
+              "RelativeDocumentMoniker": "Models\\Entities\\BookRating.cs",
+              "ToolTip": "D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\Models\\Entities\\BookRating.cs",
+              "RelativeToolTip": "Models\\Entities\\BookRating.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAjAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-25T10:10:30.257Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "AccountController.cs",
+              "DocumentMoniker": "D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\Controllers\\AccountController.cs",
+              "RelativeDocumentMoniker": "Controllers\\AccountController.cs",
+              "ToolTip": "D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\Controllers\\AccountController.cs",
+              "RelativeToolTip": "Controllers\\AccountController.cs",
+              "ViewState": "AQIAAE4AAAAAAAAAAAAowAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-25T07:00:13.017Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "BookController.cs",
               "DocumentMoniker": "D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\Controllers\\BookController.cs",
               "RelativeDocumentMoniker": "Controllers\\BookController.cs",
               "ToolTip": "D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\Controllers\\BookController.cs",
               "RelativeToolTip": "Controllers\\BookController.cs",
-              "ViewState": "AQIAAFAAAAAAAAAAAAAUwHAAAAABAAAA",
+              "ViewState": "AQIAAB4AAAAAAAAAAAAYwCsAAAAQAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-16T02:45:42.086Z"
+              "WhenOpened": "2025-05-25T04:15:05.397Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "ShoppingCartController.cs",
-              "DocumentMoniker": "D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\Controllers\\ShoppingCartController.cs",
-              "RelativeDocumentMoniker": "Controllers\\ShoppingCartController.cs",
-              "ToolTip": "D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\Controllers\\ShoppingCartController.cs",
-              "RelativeToolTip": "Controllers\\ShoppingCartController.cs",
-              "ViewState": "AQIAAAsBAAAAAAAAAAAmwB8BAAA0AAAA",
+              "DocumentIndex": 8,
+              "Title": "Author.cs",
+              "DocumentMoniker": "D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\Models\\Entities\\Author.cs",
+              "RelativeDocumentMoniker": "Models\\Entities\\Author.cs",
+              "ToolTip": "D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\Models\\Entities\\Author.cs",
+              "RelativeToolTip": "Models\\Entities\\Author.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-15T04:09:12.329Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\appsettings.json",
-              "RelativeDocumentMoniker": "appsettings.json",
-              "ToolTip": "D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\appsettings.json",
-              "RelativeToolTip": "appsettings.json",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAAEAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-05-18T07:55:17.02Z"
+              "WhenOpened": "2025-05-25T04:07:47.644Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 7,
-              "Title": "CartViewModel.cs",
-              "DocumentMoniker": "D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\Models\\ViewModels\\CartViewModel.cs",
-              "RelativeDocumentMoniker": "Models\\ViewModels\\CartViewModel.cs",
-              "ToolTip": "D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\Models\\ViewModels\\CartViewModel.cs",
-              "RelativeToolTip": "Models\\ViewModels\\CartViewModel.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AQIAACUAAAAAAAAAAAAAADAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-15T10:25:33.285Z"
+              "WhenOpened": "2025-05-25T04:06:13.97Z"
             }
           ]
         }

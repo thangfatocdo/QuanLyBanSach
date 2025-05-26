@@ -1,9 +1,15 @@
 ﻿@model WebBanSach.Models.Entities.Book
 @using WebBanSach.Models.Entities
 @{
-    ViewData["Title"] = Model.Title;
+    var ratings = ViewBag.BookRatings as List<BookRating>;
+    var myRating = ViewBag.MyRating as BookRating;
+    // Tính trung bình và làm tròn
+    double avgRating = ratings.Any()
+        ? ratings.Average(r => r.RatingValue ?? 0)
+        : 0;
+    int rounded = (int)Math.Round(avgRating, MidpointRounding.AwayFromZero);
+    int total = ratings.Count;
 }
-
 <!-- Shop Details Section Start -->
     <section class="shop-details-section fix section-padding">
         <div class="container">
@@ -73,14 +79,22 @@
                                 <h2>@Model.Title</h2>
                                 <h5>Còn Hàng</h5>
                             </div>
-                            <div class="star">
-                                <a href="shop-details.html"> <i class="fas fa-star"></i></a>
-                                <a href="shop-details.html"><i class="fas fa-star"></i></a>
-                                <a href="shop-details.html"> <i class="fas fa-star"></i></a>
-                                <a href="shop-details.html"><i class="fas fa-star"></i></a>
-                                <a href="shop-details.html"><i class="fa-regular fa-star"></i></a>
-                                <span>(1 Đánh giá)</span>
-                            </div>
+                        <div class="star">
+                            @* Hiển thị average stars *@
+                            @for (int i = 1; i <= 5; i++)
+                            {
+                                if (i <= rounded)
+                                {
+                                    <i class="fa-solid fa-star"></i>
+                                }
+                                else
+                                {
+                                    <i class="fa-regular fa-star"></i>
+                                }
+                            }
+                            <span>(@avgRating.ToString("0.0") sao · @total đánh giá)</span>
+                        </div>
+
                             <p>
                                 @* TODO: SHORTDESC *@
                             </p>
@@ -95,7 +109,7 @@
                                         <button class="qtyplus" aria-hidden="true">+</button>
                                     </p>
                                 </div> 
-                                <button type="button"  class="theme-btn style-2" data-bs-toggle="modal" data-bs-target="#readMoreModal">
+                                @* <button type="button"  class="theme-btn style-2" data-bs-toggle="modal" data-bs-target="#readMoreModal">
                                     Đọc thử
                                   </button>
                                   <!-- Read More Modal -->
@@ -126,7 +140,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                </div> *@
                             <button class="theme-btn add-to-cart" data-bookid="@Model.BookId">
                                 <i class="fa-solid fa-basket-shopping"></i> Thêm vào giỏ
                             </button>
@@ -196,7 +210,7 @@
                         <li class="nav-item" role="presentation">
                             <a href="#review" data-bs-toggle="tab" class="nav-link" aria-selected="false" tabindex="-1"
                                 role="tab">
-                                <h6>reviews (3)</h6>
+                                <h6>Đánh giá</h6>
                             </a>
                         </li>
                     </ul>
@@ -210,82 +224,66 @@
                         </div>
                         <div id="review" class="tab-pane fade" role="tabpanel">
                             <div class="review-items">
-                                <div class="review-wrap-area d-flex gap-4">
-                                    <div class="review-thumb">
-                                        <img src="~/assets/img/shop-details/review.png" alt="img">
-                                    </div>
-                                    <div class="review-content">
-                                        <div
-                                            class="head-area d-flex flex-wrap gap-2 align-items-center justify-content-between">
-                                            <div class="cont">
-                                                <h5><a href="news-details.html">Leslie Alexander</a></h5>
-                                                <span>February 10, 2024 at 2:37 pm</span>
+                            @if (ratings != null && ratings.Any())
+                            {
+                                foreach (var rating in ratings)
+                                {
+                                    <div class="review-wrap-area d-flex gap-4">
+                                        <div class="review-content">
+                                            <div class="head-area d-flex justify-content-between">
+                                                <div>
+                                                    <h5>@rating.Customer.FullName</h5>
+                                                    <span>@rating.CreatedAt?.ToString("dd/MM/yyyy HH:mm")</span>
+                                                </div>
+                                                <div class="star">
+                                                    @for (int i = 1; i <= 5; i++)
+                                                    {
+                                                        if (i <= rating.RatingValue)
+                                                        {
+                                                            <i class="fa-solid fa-star"></i>
+                                                        }
+                                                        else
+                                                        {
+                                                            <i class="fa-regular fa-star"></i>
+                                                        }
+                                                    }
+                                                </div>
                                             </div>
-                                            <div class="star">
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-regular fa-star"></i>
-                                            </div>
-                                        </div>
-                                        <p class="mt-30 mb-4">
-                                            Neque porro est qui dolorem ipsum quia quaed inventor veritatis et quasi
-                                            architecto var sed efficitur turpis gilla sed sit amet finibus eros. Lorem
-                                            Ipsum is <br> simply dummy
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="review-title mt-5 py-15 mb-30">
-                                    <h4>Your Rating*</h4>
-                                    <div class="rate-now d-flex align-items-center">
-                                        <p>Your Rating*</p>
-                                        <div class="star">
-                                            <i class="fa-light fa-star"></i>
-                                            <i class="fa-light fa-star"></i>
-                                            <i class="fa-light fa-star"></i>
-                                            <i class="fa-light fa-star"></i>
-                                            <i class="fa-light fa-star"></i>
+                                            <p class="mt-2">@rating.Comment</p>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="review-form">
-                                    <form action="#" id="contact-form" method="POST">
-                                        <div class="row g-4">
-                                            <div class="col-lg-6">
-                                                <div class="form-clt">
-                                                    <span>Your Name*</span>
-                                                    <input type="text" name="name" id="name" placeholder="Your Name">
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-6">
-                                                <div class="form-clt">
-                                                    <span>Your Email*</span>
-                                                    <input type="text" name="email" id="email" placeholder="Your Email">
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-12 wow fadeInUp animated" data-wow-delay=".8">
-                                                <div class="form-clt">
-                                                    <span>Message*</span>
-                                                    <textarea name="message" id="message"
-                                                        placeholder="Write Message"></textarea>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-12 wow fadeInUp animated" data-wow-delay=".9">
-                                                <div class="form-check d-flex gap-2 from-customradio">
-                                                    <input type="checkbox" class="form-check-input"
-                                                        name="flexRadioDefault" id="flexRadioDefault12">
-                                                    <label class="form-check-label" for="flexRadioDefault12">
-                                                        i accept your terms & conditions
-                                                    </label>
-                                                </div>
-                                                <button type="submit" class="theme-btn">
-                                                    Submit now
-                                                </button>
-                                            </div>
+                                }
+                            }
+                            else
+                            {
+                                <p>Chưa có đánh giá nào cho sách này.</p>
+                            }
+                            @if (User.Identity.IsAuthenticated)
+                            {
+                                <div class="review-form mt-5">
+                                    <form asp-action="SubmitRating" method="post">
+                                        <input type="hidden" name="BookId" value="@Model.BookId" />
+                                        <input type="hidden" name="RatingId" value="@myRating?.RatingId" />
+                                        <label>Chọn số sao:</label>
+                                        <div class="rating-stars mb-3" id="starRating">
+                                            @for (int i = 1; i <= 5; i++)
+                                            {
+                                                <i class="fa fa-star @(myRating?.RatingValue >= i ? "active" : "")" data-value="@i"></i>
+                                            }
                                         </div>
+                                        <input type="hidden" name="RatingValue" id="RatingValue" value="@myRating?.RatingValue" />
+                                        <label>Bình luận:</label>
+                                        <textarea name="Comment" class="form-control mb-3" placeholder="Viết cảm nhận...">@myRating?.Comment</textarea>
+
+                                        <button type="submit" class="theme-btn">Gửi đánh giá</button>
                                     </form>
                                 </div>
+                            }
+                            else
+                            {
+                                <p>Bạn cần <a href="/Account/Login">đăng nhập</a> để đánh giá.</p>
+                            }
+           
                             </div>
                         </div>
                     </div>
@@ -386,3 +384,54 @@
 
     </script>
 }
+<style>
+    .rating-stars i {
+        font-size: 24px;
+        color: #ccc;
+        cursor: pointer;
+        transition: color 0.2s;
+    }
+
+        /* Hover: giữ ngôi sao đang hover màu cam */
+        .rating-stars i:hover {
+            color: #FF6500;
+        }
+
+            / Các sao sau thì mờ */
+            .rating-stars i:hover ~ i {
+                color: #ddd;
+            }
+
+        /*Khi đã chọn (active) */
+        .rating-stars i.active {
+        color: #FF6500;
+        }
+</style>
+<script>
+    const stars = document.querySelectorAll('#starRating i');
+    const ratingInput = document.getElementById('RatingValue');
+
+    stars.forEach(star => {
+        star.addEventListener('click', () => {
+            const selectedValue = parseInt(star.getAttribute('data-value'));
+            ratingInput.value = selectedValue;
+
+            stars.forEach(s => {
+                s.classList.remove('active');
+                if (parseInt(s.getAttribute('data-value')) <= selectedValue) {
+                    s.classList.add('active');
+                }
+            });
+        });
+    });
+</script>
+<style>
+    /* Header star color */
+    .shop-details-content .star i.fa-solid.fa-star {
+        color: #FF6500;
+    }
+
+    .shop-details-content .star i.fa-regular.fa-star {
+        color: #ccc;
+    }
+</style>

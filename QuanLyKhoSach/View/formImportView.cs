@@ -31,12 +31,14 @@ namespace QuanLyKhoSach.View
             // Lấy danh sách có Include quan hệ
             var ImmportList = context.InventoryImport
                 .Include("Users") //muốn dùng .Include(b => b.XYZ) thì thêm using System.Data.Entity;
+                .AsNoTracking() // chỉ lấy dữ liệu ra để đọc, không theo dõi nữa
                 .AsQueryable();
 
             if (!string.IsNullOrWhiteSpace(keyword))
             {
                 keyword = keyword.ToLower();
                 ImmportList = ImmportList.Where(b =>
+                    b.ImportId.ToString().Contains(keyword) ||
                     b.Users.FullName.ToLower().Contains(keyword));
             }
             //đổ dữ liệu
@@ -57,6 +59,7 @@ namespace QuanLyKhoSach.View
         private void btnAdd_Click(object sender, EventArgs e)
         {
             formMain.BlurBackground(new formImportAdd());
+            LoadImports();
         }
 
         private void txtSearch_TextChanged(object sender, EventArgs e)

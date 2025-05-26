@@ -17,9 +17,8 @@ namespace QuanLyKhoSach
         public int OrderItem_Id { get; set; }
         public Nullable<int> OrderId { get; set; }
         public Nullable<int> BookId { get; set; }
-        public Nullable<double> BookPrice { get; set; }
+        public Nullable<decimal> BookPrice { get; set; }
         public Nullable<int> BookQuantity { get; set; }
-        public string CustomerPhone { get; set; }
     
         public virtual Books Books { get; set; }
         public virtual Orders Orders { get; set; }

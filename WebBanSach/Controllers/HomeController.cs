@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 using WebBanSach.Models.ViewModels;
-using WebBanSach.Models.Entities;
 using System.Security.Claims;
+using WebBanSach.Models.Entities;
 
 namespace WebBanSach.Controllers
 {
@@ -36,6 +36,10 @@ namespace WebBanSach.Controllers
             // Lấy sách tương ứng
             var recBooks = context.Books.Where(b => recIds.Contains(b.BookId)).ToList();
             ViewBag.RecommendBooks = recBooks;
+            // Lấy danh sách đánh giá cho sách
+            var ratings = context.BookRatings
+                .ToList();
+            ViewBag.BookRatings = ratings;
             return View();
         }
 
@@ -60,7 +64,6 @@ namespace WebBanSach.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
-
 
     }
 }

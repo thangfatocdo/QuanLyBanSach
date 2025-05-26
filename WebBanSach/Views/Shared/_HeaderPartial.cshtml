@@ -1,4 +1,7 @@
-﻿    <!-- Sticky Header Section start  -->
+﻿@inject WebBanSach.Models.Entities.BookstoreDbContext context
+
+
+<!-- Sticky Header Section start  -->
 <header class="header-2 sticky-header">
     <div class="mega-menu-wrapper">
         <div class="header-main">
@@ -113,56 +116,28 @@
                         <div class="category__items-2" style="display: none;">
                             <div class="category-item">
                                 <nav>
+                                    @{
+                                        var categories = context.Categories
+                                        .Select(c => new
+                                        {
+                                            c.CategoryId,
+                                            c.CategoryName,
+                                            Count = context.Books.Count(b => b.CategoryId == c.CategoryId)
+                                        }).ToList();
+                                    }
+
                                     <ul>
-                                        <li>
-                                            <a href="shop-details.html">
-                                                <span>Novel Books</span>
-                                                <span>(8)</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="shop-details.html">
-                                                <span>Poetry Books</span>
-                                                <span>(5)</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="shop-details.html">
-                                                <span>History Books</span>
-                                                <span>(7)</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="shop-details.html">
-                                                <span>Movement Books</span>
-                                                <span>(3)</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="shop-details.html">
-                                                <span>Independence Books </span>
-                                                <span>(4)</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="shop-details.html">
-                                                <span>Technology Books</span>
-                                                <span>(2)</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="shop-details.html">
-                                                <span>Political Books</span>
-                                                <span>(1)</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="shop-details.html">
-                                                <span>Romantic Books</span>
-                                                <span>(7)</span>
-                                            </a>
-                                        </li>
+                                        @foreach (var cat in categories)
+                                        {
+                                            <li>
+                                                <a asp-controller="Book" asp-action="Index" asp-route-categoryId="@cat.CategoryId">
+                                                    <span>@cat.CategoryName</span>
+                                                    <span>(@cat.Count)</span>
+                                                </a>
+                                            </li>
+                                        }
                                     </ul>
+
                                 </nav>
                             </div>
                         </div>

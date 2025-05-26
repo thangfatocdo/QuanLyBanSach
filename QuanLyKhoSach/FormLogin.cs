@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QuanLyKhoSach.Model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -38,7 +39,7 @@ namespace QuanLyKhoSach
             try
             {
                 string user = txtUsername.Text.Trim();
-                string pass = txtPass.Text.Trim();
+                string pass = PasswordHelper.Hash(txtPass.Text.Trim());
 
                 // Tìm người dùng trong database bằng EF
                 var acc = context.Users.FirstOrDefault(u => u.Username == user && u.Password == pass);

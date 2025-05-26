@@ -25,6 +25,8 @@ public partial class Book
 
     public virtual Author? Author { get; set; }
 
+    public virtual ICollection<BookRating> BookRatings { get; set; } = new List<BookRating>();
+
     public virtual ICollection<CartItem> CartItems { get; set; } = new List<CartItem>();
 
     public virtual Category? Category { get; set; }

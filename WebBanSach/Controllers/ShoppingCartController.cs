@@ -5,6 +5,7 @@ using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Security.Claims;
 using WebBanSach.Extension;
+using WebBanSach.Models;
 using WebBanSach.Models.Entities;
 using WebBanSach.Models.ViewModels;
 
@@ -268,7 +269,7 @@ namespace WebBanSach.Controllers
                 Address = $"{model.AddressDetail}, {model.Ward}, {model.District}, {model.Province}, {model.Country}",
                 PaymentMethodId = model.SelectedPaymentMethodId,
                 StatusId = 1, // chờ xác nhận
-                TotalPrice = (float)cartItems.Sum(ci => ci.book.Price * ci.amount)
+                TotalPrice = cartItems.Sum(ci => ci.book.Price * ci.amount)
             };
             context.Orders.Add(order);
             context.SaveChanges();
@@ -280,7 +281,7 @@ namespace WebBanSach.Controllers
                 {
                     OrderId = order.OrderId,
                     BookId = item.book.BookId,
-                    BookPrice = (float)item.book.Price,
+                    BookPrice = item.book.Price,
                     BookQuantity = item.amount
                 });
             }

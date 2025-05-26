@@ -26,6 +26,7 @@ namespace QuanLyKhoSach
         }
     
         public virtual DbSet<Authors> Authors { get; set; }
+        public virtual DbSet<BookRatings> BookRatings { get; set; }
         public virtual DbSet<Books> Books { get; set; }
         public virtual DbSet<CartItems> CartItems { get; set; }
         public virtual DbSet<Categories> Categories { get; set; }

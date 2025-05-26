@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formCustomerAdd));
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.btnClose = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
@@ -43,11 +42,8 @@
             this.label5 = new System.Windows.Forms.Label();
             this.txtPass = new Guna.UI2.WinForms.Guna2TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.txtPic = new Guna.UI2.WinForms.Guna2CirclePictureBox();
-            this.btnBrowse = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel2.SuspendLayout();
             this.guna2Panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtPic)).BeginInit();
             this.SuspendLayout();
             // 
             // guna2Panel2
@@ -250,42 +246,11 @@
             this.label6.TabIndex = 12;
             this.label6.Text = "Mật khẩu";
             // 
-            // txtPic
-            // 
-            this.txtPic.FillColor = System.Drawing.Color.Transparent;
-            this.txtPic.Image = ((System.Drawing.Image)(resources.GetObject("txtPic.Image")));
-            this.txtPic.ImageRotate = 0F;
-            this.txtPic.Location = new System.Drawing.Point(954, 288);
-            this.txtPic.Name = "txtPic";
-            this.txtPic.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.txtPic.Size = new System.Drawing.Size(113, 112);
-            this.txtPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.txtPic.TabIndex = 14;
-            this.txtPic.TabStop = false;
-            // 
-            // btnBrowse
-            // 
-            this.btnBrowse.AutoRoundedCorners = true;
-            this.btnBrowse.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnBrowse.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnBrowse.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnBrowse.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnBrowse.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnBrowse.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnBrowse.ForeColor = System.Drawing.Color.White;
-            this.btnBrowse.Location = new System.Drawing.Point(954, 406);
-            this.btnBrowse.Name = "btnBrowse";
-            this.btnBrowse.Size = new System.Drawing.Size(113, 45);
-            this.btnBrowse.TabIndex = 15;
-            this.btnBrowse.Text = "Tải lên tệp";
-            // 
             // formCustomerAdd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1148, 641);
-            this.Controls.Add(this.btnBrowse);
-            this.Controls.Add(this.txtPic);
             this.Controls.Add(this.txtPass);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.txtAddress);
@@ -304,7 +269,6 @@
             this.guna2Panel2.ResumeLayout(false);
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtPic)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -321,8 +285,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private Guna.UI2.WinForms.Guna2CirclePictureBox txtPic;
-        private Guna.UI2.WinForms.Guna2Button btnBrowse;
         public Guna.UI2.WinForms.Guna2TextBox txtName;
         public Guna.UI2.WinForms.Guna2TextBox txtPhone;
         public Guna.UI2.WinForms.Guna2TextBox txtEmail;

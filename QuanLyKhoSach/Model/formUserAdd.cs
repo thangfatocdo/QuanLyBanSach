@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Security.Cryptography;
 
 namespace QuanLyKhoSach.Model
 {
@@ -67,7 +68,7 @@ namespace QuanLyKhoSach.Model
                         Username = txtUsename.Text.Trim(),
                         FullName = txtName.Text.Trim(),
 
-                        Password = txtPass.Text.Trim(),
+                        Password = PasswordHelper.Hash(txtPass.Text.Trim()),
                     };
 
                     context.Users.Add(newUsers);
@@ -80,7 +81,7 @@ namespace QuanLyKhoSach.Model
                         existing.Username = txtUsename.Text.Trim();    
                         existing.FullName = txtName.Text.Trim();
 
-                        existing.Password = txtPass.Text.Trim();
+                        existing.Password = PasswordHelper.Hash(txtPass.Text.Trim());
 
                     }
                 }
@@ -98,6 +99,18 @@ namespace QuanLyKhoSach.Model
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();   
+        }
+    }
+    public static class PasswordHelper
+    {
+        public static string Hash(string raw)
+        {
+            using (SHA256 sha = SHA256.Create())
+            {
+                byte[] bytes = Encoding.UTF8.GetBytes(raw);
+                byte[] hash = sha.ComputeHash(bytes);
+                return BitConverter.ToString(hash).Replace("-", "").ToLower();
+            }
         }
     }
 }

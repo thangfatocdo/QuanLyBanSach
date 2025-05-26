@@ -1,12 +1,16 @@
 ﻿@model PagedList.Core.IPagedList<WebBanSach.Models.Entities.Book>
+@using WebBanSach.Models.Entities
 
 @{
     ViewData["Title"] = "Shop - " + ViewBag.CurrentPage;
     Layout = "~/Views/Shared/_Layout.cshtml";
     int PageCurrent = ViewBag.CurrentPage;
     int PageNext = PageCurrent + 1;
-}
+    var categories = ViewBag.Categories as List<Category>;
+    var selectedCategoryId = ViewBag.SelectedCategoryId as int?;
+    var ratings = ViewBag.BookRatings as List<BookRating>;
 
+}
 <!-- Breadcumb Section Start -->
     <div class="breadcrumb-wrapper">
         <div class="book1">
@@ -78,7 +82,7 @@
                         <div class="main-sidebar">
                             <div class="single-sidebar-widget">
                                 <div class="wid-title">
-                                    <h5>Search</h5>
+                                    <h5>Tìm kiếm</h5>
                                 </div>
                                 <form action="#" class="search-toggle-box">
                                     <div class="input-area search-container">
@@ -91,17 +95,26 @@
                             </div>
                             <div class="single-sidebar-widget">
                                 <div class="wid-title">
-                                    <h5>Categories</h5>
+                                    <h5>Thể loại</h5>
                                 </div>
-                                <div class="categories-list">
-                                    <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                            <div class="categories-list category-scroll">
+                                <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                                    <li class="nav-item" role="presentation">
+                                        <a class="nav-link @(selectedCategoryId == null ? "active" : "")"
+                                           href="@Url.RouteUrl("BookShop", new { categoryId = (int?)null })">
+                                            Tất cả các sách
+                                        </a>
+                                    </li>
+                                    @foreach (var cat in categories)
+                                    {
                                         <li class="nav-item" role="presentation">
-                                            <button class="nav-link active" id="pills-arts-tab" data-bs-toggle="pill"
-                                                data-bs-target="#pills-arts" type="button" role="tab"
-                                                aria-controls="pills-arts" aria-selected="true">Arts &
-                                                Photography</button>
+                                            <a class="nav-link @(selectedCategoryId == cat.CategoryId ? "active" : "")"
+                                               href="@Url.RouteUrl("BookShop", new { categoryId = cat.CategoryId })">
+                                                @cat.CategoryName
+                                            </a>
                                         </li>
-                                    </ul>
+                                    }
+                                </ul>
                                 </div>
                             </div>
                             <div class="single-sidebar-widget">
@@ -147,7 +160,7 @@
                             </div>
                             <div class="single-sidebar-widget mb-0">
                                 <div class="wid-title">
-                                    <h5>By Review</h5>
+                                    <h5>Bằng đánh giá</h5>
                                 </div>
                                 <div class="categories-list">
                                     <label class="checkbox-single d-flex align-items-center">
@@ -252,6 +265,17 @@
                             {
                                 foreach (var item in Model)
                                 {
+                                    // Lọc rating chỉ của cuốn này
+                                    var stats = ratings
+                                    .Where(r => r.BookId == item.BookId)
+                                    .ToList();
+
+                                    // Tính trung bình & tổng
+                                    double avg = stats.Any()
+                                    ? stats.Average(r => r.RatingValue ?? 0)
+                                    : 0;
+                                    int rounded = (int)Math.Round(avg, MidpointRounding.AwayFromZero);
+                                    int count = stats.Count;
                                     string url = $"/{item.BookId}.html";//gán đường dẫn bên controller
                                     <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".2s">
                                         <div class="shop-box-items">
@@ -285,8 +309,9 @@
                                                 <ul class="price-list">
                                                     <li>@item.Price.ToString("#,##0")VNĐ</li>
                                                     <li>
+                                                        @* Hiển thị sao theo rounded riêng *@
                                                         <i class="fa-solid fa-star"></i>
-                                                        3.4 (25)
+                                                        <span>@avg.ToString("0.0") (@count) </span>
                                                     </li>
                                                 </ul>
                                                 <div class="shop-button">
@@ -301,18 +326,61 @@
                             }
                         </div>
                     </div>
-                        </div>
+                    </div>
                 
                     </div> @* phần 11 *@
+            @* pagination cho BookShop *@
             <div class="page-nav-wrap text-center">
                 <ul>
-                    <li><a class="previous" href="shop.html">Previous</a></li>
-                    <li><a class="page-numbers" href="shop.html">1</a></li>
-                    <li><a class="page-numbers" href="shop.html">2</a></li>
-                    <li><a class="page-numbers" href="shop.html">3</a></li>
-                    <li><a class="page-numbers" href="shop.html">...</a></li>
-                    <li><a class="next" href="shop.html">Next</a></li>
+                    @* Previous button *@
+                    @if (Model.HasPreviousPage)
+                    {
+                        <li>
+                            <a class="previous"
+                               href="@Url.RouteUrl("BookShop", new { page = Model.PageNumber - 1, categoryId = selectedCategoryId })">
+                                Previous
+                            </a>
+                        </li>
+                    }
+                    else
+                    {
+                        <li class="disabled"><span>Previous</span></li>
+                    }
+
+                    @* Số trang *@
+                    @for (int i = 1; i <= Model.PageCount; i++)
+                    {
+                        if (i == Model.PageNumber)
+                        {
+                            <li><span class="page-numbers current">@i</span></li>
+                        }
+                        else
+                        {
+                            <li>
+                                <a class="page-numbers"
+                                   href="@Url.RouteUrl("BookShop", new { page = i, categoryId = selectedCategoryId })">
+                                    @i
+                                </a>
+                            </li>
+                        }
+                    }
+
+                    @* Next button *@
+                    @if (Model.HasNextPage)
+                    {
+                        <li>
+                            <a class="next"
+                               href="@Url.RouteUrl("BookShop", new { page = Model.PageNumber + 1, categoryId = selectedCategoryId })">
+                                Next
+                            </a>
+                        </li>
+                    }
+                    else
+                    {
+                        <li class="disabled"><span>Next</span></li>
+                    }
                 </ul>
+
             </div>
                 </div>
             </div>
@@ -339,3 +407,20 @@
     </script>
 }
 
+<style>
+    .category-scroll {
+        max-height: 300px;
+        overflow-y: auto;
+        padding-right: 5px;
+    }
+
+        /* Tùy chọn: làm thanh cuộn trông tinh tế hơn */
+        .category-scroll::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .category-scroll::-webkit-scrollbar-thumb {
+            background-color: #ccc;
+            border-radius: 4px;
+        }
+</style>

@@ -1,11 +1,11 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using WebBanSach.Models.ViewModels;
-using WebBanSach.Models.Entities;
 using WebBanSach.Models;
 using Microsoft.AspNetCore.Authentication;
 using System.Security.Claims;
 using Microsoft.EntityFrameworkCore;
 using WebBanSach.Extension;
+using WebBanSach.Models.Entities;
 
 namespace WebBanSach.Controllers
 {

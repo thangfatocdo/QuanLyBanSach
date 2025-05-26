@@ -1,6 +1,8 @@
-﻿@using WebBanSach.Models.Entities
+﻿@using WebBanSach.Models;
+@using WebBanSach.Models.Entities
 @{
     ViewData["Title"] = "Home Page";
+    var ratings = ViewBag.BookRatings as List<BookRating>;
 }
 
 <!-- Hero Section start  -->
@@ -76,7 +78,17 @@
                 @if (lsBooks != null && lsBooks.Any())
                 {
                     foreach (var item in lsBooks)
-                    {
+                    { // Lọc rating chỉ của cuốn này
+                        var stats = ratings
+                        .Where(r => r.BookId == item.BookId)
+                        .ToList();
+
+                        // Tính trung bình & tổng
+                        double avg = stats.Any()
+                        ? stats.Average(r => r.RatingValue ?? 0)
+                        : 0;
+                        int rounded = (int)Math.Round(avg, MidpointRounding.AwayFromZero);
+                        int count = stats.Count;
                         string url = $"/{item.BookId}.html";//gán đường dẫn bên controller
                         <div class="swiper-slide">
                             <div class="shop-box-items style-2">
@@ -100,6 +112,11 @@
                                     <h3>@item.Title</h3>
                                     <ul class="price-list">
                                         <li>@item.Price.ToString("#,##0")VNĐ</li>
+                                        <li>
+                                            @* Hiển thị sao theo rounded riêng *@
+                                            <i class="fa-solid fa-star"></i>
+                                            <span>@avg.ToString("0.0") (@count) </span>
+                                        </li>
                                     </ul>
                                 </div>
                                 <div class="shop-button">

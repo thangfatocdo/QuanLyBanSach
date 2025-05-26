@@ -1,6 +1,6 @@
 ﻿namespace QuanLyKhoSach.View
 {
-    partial class formOderView
+    partial class formOrderView
     {
         /// <summary>
         /// Required designer variable.
@@ -31,20 +31,21 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formOderView));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formOrderView));
             this.dgvOrder = new Guna.UI2.WinForms.Guna2DataGridView();
             this.dgvSr = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvid = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvCustomer = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvoderday = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvpayment = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dvgrecive = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dvgPhone = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvstatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvtotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dvgEdit = new System.Windows.Forms.DataGridViewImageColumn();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.cbOrderStatus = new Guna.UI2.WinForms.Guna2ComboBox();
             this.txtSearch = new Guna.UI2.WinForms.Guna2TextBox();
-            this.btnAdd = new Guna.UI2.WinForms.Guna2Button();
             this.lblSearch = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrder)).BeginInit();
@@ -76,7 +77,7 @@
             this.dgvCustomer,
             this.dgvoderday,
             this.dgvpayment,
-            this.dvgrecive,
+            this.dvgPhone,
             this.dgvstatus,
             this.dgvtotal,
             this.dvgEdit});
@@ -118,6 +119,7 @@
             this.dgvOrder.ThemeStyle.RowsStyle.Height = 24;
             this.dgvOrder.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvOrder.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.dgvOrder.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvOrder_CellContentClick);
             // 
             // dgvSr
             // 
@@ -163,13 +165,13 @@
             this.dgvpayment.Name = "dgvpayment";
             this.dgvpayment.ReadOnly = true;
             // 
-            // dvgrecive
+            // dvgPhone
             // 
-            this.dvgrecive.FillWeight = 83.43296F;
-            this.dvgrecive.HeaderText = "Ngày nhận";
-            this.dvgrecive.MinimumWidth = 6;
-            this.dvgrecive.Name = "dvgrecive";
-            this.dvgrecive.ReadOnly = true;
+            this.dvgPhone.FillWeight = 83.43296F;
+            this.dvgPhone.HeaderText = "Số điện thoại";
+            this.dvgPhone.MinimumWidth = 6;
+            this.dvgPhone.Name = "dvgPhone";
+            this.dvgPhone.ReadOnly = true;
             // 
             // dgvstatus
             // 
@@ -201,8 +203,9 @@
             // 
             // guna2Panel1
             // 
+            this.guna2Panel1.Controls.Add(this.label2);
+            this.guna2Panel1.Controls.Add(this.cbOrderStatus);
             this.guna2Panel1.Controls.Add(this.txtSearch);
-            this.guna2Panel1.Controls.Add(this.btnAdd);
             this.guna2Panel1.Controls.Add(this.lblSearch);
             this.guna2Panel1.Controls.Add(this.label1);
             this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -210,6 +213,33 @@
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.Size = new System.Drawing.Size(1201, 164);
             this.guna2Panel1.TabIndex = 5;
+            // 
+            // label2
+            // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(598, 50);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(116, 23);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "Lọc trạng thái";
+            // 
+            // cbOrderStatus
+            // 
+            this.cbOrderStatus.AutoRoundedCorners = true;
+            this.cbOrderStatus.BackColor = System.Drawing.Color.Transparent;
+            this.cbOrderStatus.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbOrderStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbOrderStatus.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbOrderStatus.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbOrderStatus.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cbOrderStatus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cbOrderStatus.ItemHeight = 30;
+            this.cbOrderStatus.Location = new System.Drawing.Point(581, 76);
+            this.cbOrderStatus.Name = "cbOrderStatus";
+            this.cbOrderStatus.Size = new System.Drawing.Size(153, 36);
+            this.cbOrderStatus.TabIndex = 4;
+            this.cbOrderStatus.SelectedIndexChanged += new System.EventHandler(this.cbOderStatus_SelectedIndexChanged);
             // 
             // txtSearch
             // 
@@ -234,27 +264,7 @@
             this.txtSearch.Size = new System.Drawing.Size(379, 48);
             this.txtSearch.TabIndex = 3;
             this.txtSearch.TextOffset = new System.Drawing.Point(5, 0);
-            // 
-            // btnAdd
-            // 
-            this.btnAdd.Animated = true;
-            this.btnAdd.AutoRoundedCorners = true;
-            this.btnAdd.BorderRadius = 28;
-            this.btnAdd.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnAdd.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnAdd.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnAdd.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnAdd.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(61)))), ((int)(((byte)(204)))));
-            this.btnAdd.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnAdd.ForeColor = System.Drawing.Color.White;
-            this.btnAdd.Image = ((System.Drawing.Image)(resources.GetObject("btnAdd.Image")));
-            this.btnAdd.ImageSize = new System.Drawing.Size(25, 25);
-            this.btnAdd.Location = new System.Drawing.Point(78, 76);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(149, 58);
-            this.btnAdd.TabIndex = 2;
-            this.btnAdd.Text = "Thêm mới";
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
             // lblSearch
             // 
@@ -270,20 +280,21 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(72, 31);
+            this.label1.Location = new System.Drawing.Point(91, 67);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(120, 32);
             this.label1.TabIndex = 0;
             this.label1.Text = "Đơn hàng";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
-            // formOderView
+            // formOrderView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1201, 670);
             this.Controls.Add(this.dgvOrder);
             this.Controls.Add(this.guna2Panel1);
-            this.Name = "formOderView";
+            this.Name = "formOrderView";
             this.Text = "formOderView";
             this.Load += new System.EventHandler(this.formOderView_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrder)).EndInit();
@@ -298,7 +309,6 @@
         private Guna.UI2.WinForms.Guna2DataGridView dgvOrder;
         public Guna.UI2.WinForms.Guna2Panel guna2Panel1;
         public Guna.UI2.WinForms.Guna2TextBox txtSearch;
-        public Guna.UI2.WinForms.Guna2Button btnAdd;
         public System.Windows.Forms.Label lblSearch;
         public System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvSr;
@@ -306,9 +316,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvCustomer;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvoderday;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvpayment;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dvgrecive;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dvgPhone;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvstatus;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvtotal;
         private System.Windows.Forms.DataGridViewImageColumn dvgEdit;
+        public System.Windows.Forms.Label label2;
+        private Guna.UI2.WinForms.Guna2ComboBox cbOrderStatus;
     }
 }

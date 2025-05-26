@@ -30,24 +30,30 @@ namespace QuanLyKhoSach.View
 
             // Lấy dữ liệu từ Entity Framework
 
-            var CategoryList = context.Categories.AsQueryable();
+            var CategoryList = context.Categories.AsNoTracking() // chỉ lấy dữ liệu ra để đọc, không theo dõi nữa
+                .AsQueryable();
             if (!string.IsNullOrWhiteSpace(keyword))
             {
                 keyword = keyword.ToLower();
                 CategoryList = CategoryList.Where(c =>
+                    c.CategoryId.ToString().Contains(keyword) ||
                     c.CategoryName.ToLower().Contains(keyword));
             }
             // Đổ dữ liệu
             int index = 1;
             foreach (var c in CategoryList)
             {
-                dgvCategory.Rows.Add(index++, c.CategoryId,c.CategoryName);
+                dgvCategory.Rows.Add(index++, c.CategoryId, c.CategoryName);
             }
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            formMain.BlurBackground(new formCategoryAdd());
+            formCategoryAdd frm = new formCategoryAdd();
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+                LoadCategory();
+            }
         }
 
         private void dgvCategory_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -59,8 +65,10 @@ namespace QuanLyKhoSach.View
                 frm.txtName.Text = dgvCategory.CurrentRow.Cells["dgvName"].Value?.ToString();
                 // Truyền id để biết đang sửa ai
                 frm.CategoryId = Convert.ToInt32(dgvCategory.CurrentRow.Cells["dgvid"].Value);
-                frm.ShowDialog();
-                LoadCategory(); // Load lại danh sách sau khi sửa
+                if (frm.ShowDialog() == DialogResult.OK)
+                {
+                    LoadCategory(); // Chỉ load lại nếu có thay đổi
+                }
             }
         }
 

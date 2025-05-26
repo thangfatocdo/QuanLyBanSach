@@ -9,6 +9,18 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="BookRatings">
+      <EntityTypeMapping TypeName="BookstoreDBModel.BookRatings">
+        <MappingFragment StoreEntitySet="BookRatings">
+          <ScalarProperty Name="RatingId" ColumnName="RatingId" />
+          <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
+          <ScalarProperty Name="BookId" ColumnName="BookId" />
+          <ScalarProperty Name="RatingValue" ColumnName="RatingValue" />
+          <ScalarProperty Name="Comment" ColumnName="Comment" />
+          <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="Books">
       <EntityTypeMapping TypeName="BookstoreDBModel.Books">
         <MappingFragment StoreEntitySet="Books">
@@ -96,7 +108,6 @@
           <ScalarProperty Name="BookId" ColumnName="BookId" />
           <ScalarProperty Name="BookPrice" ColumnName="BookPrice" />
           <ScalarProperty Name="BookQuantity" ColumnName="BookQuantity" />
-          <ScalarProperty Name="CustomerPhone" ColumnName="CustomerPhone" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -112,6 +123,7 @@
           <ScalarProperty Name="StatusId" ColumnName="StatusId" />
           <ScalarProperty Name="Address" ColumnName="Address" />
           <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

@@ -45,7 +45,7 @@ namespace QuanLyKhoSach.View
             dgvUser.AllowUserToAddRows = false;
 
             // Lấy dữ liệu từ Entity Framework
-            var userList = context.Users.AsQueryable();
+            var userList = context.Users.AsNoTracking().AsQueryable();
 
             if (!string.IsNullOrWhiteSpace(keyword))
             {
@@ -65,6 +65,7 @@ namespace QuanLyKhoSach.View
         private void btnAdd_Click(object sender, EventArgs e)
         {
             formMain.BlurBackground(new formUserAdd());
+            LoadUsers();
         }
 
         private void txtSearch_TextChanged(object sender, EventArgs e)

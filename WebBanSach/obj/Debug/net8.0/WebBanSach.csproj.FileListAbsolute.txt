@@ -718,7 +718,6 @@ D:\Documents\HocTap\DATN\Project\WebBanSach\bin\Debug\net8.0\runtimes\osx-arm64\
 D:\Documents\HocTap\DATN\Project\WebBanSach\bin\Debug\net8.0\runtimes\osx-x64\native\libLdaNative.dylib
 D:\Documents\HocTap\DATN\Project\WebBanSach\bin\Debug\net8.0\runtimes\win-x64\native\LdaNative.dll
 D:\Documents\HocTap\DATN\Project\WebBanSach\bin\Debug\net8.0\runtimes\win-x86\native\LdaNative.dll
-D:\Documents\HocTap\DATN\Project\WebBanSach\bin\Debug\net8.0\model.zip
 D:\Documents\HocTap\DATN\Project\WebBanSach\bin\Debug\net8.0\Microsoft.ML.dll
 D:\Documents\HocTap\DATN\Project\WebBanSach\bin\Debug\net8.0\Microsoft.ML.Recommender.dll
 D:\Documents\HocTap\DATN\Project\WebBanSach\bin\Debug\net8.0\runtimes\linux-x64\native\libMatrixFactorizationNative.so
