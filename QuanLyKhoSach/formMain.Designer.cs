@@ -37,7 +37,7 @@
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
             this.btnUser = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button5 = new Guna.UI2.WinForms.Guna2Button();
+            this.btn_ThongKe = new Guna.UI2.WinForms.Guna2Button();
             this.btnCustomer = new Guna.UI2.WinForms.Guna2Button();
             this.btnOder = new Guna.UI2.WinForms.Guna2Button();
             this.btnImport = new Guna.UI2.WinForms.Guna2Button();
@@ -107,6 +107,7 @@
             this.CenterPanel.Name = "CenterPanel";
             this.CenterPanel.Size = new System.Drawing.Size(1176, 627);
             this.CenterPanel.TabIndex = 5;
+            this.CenterPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.CenterPanel_Paint);
             // 
             // guna2PictureBox1
             // 
@@ -124,7 +125,7 @@
             // 
             this.guna2Panel3.BorderRadius = 60;
             this.guna2Panel3.Controls.Add(this.btnUser);
-            this.guna2Panel3.Controls.Add(this.guna2Button5);
+            this.guna2Panel3.Controls.Add(this.btn_ThongKe);
             this.guna2Panel3.Controls.Add(this.btnCustomer);
             this.guna2Panel3.Controls.Add(this.btnOder);
             this.guna2Panel3.Controls.Add(this.btnImport);
@@ -167,28 +168,29 @@
             this.btnUser.Text = "User";
             this.btnUser.Click += new System.EventHandler(this.btnUser_Click);
             // 
-            // guna2Button5
+            // btn_ThongKe
             // 
-            this.guna2Button5.AutoRoundedCorners = true;
-            this.guna2Button5.BackColor = System.Drawing.Color.Transparent;
-            this.guna2Button5.BorderRadius = 25;
-            this.guna2Button5.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-            this.guna2Button5.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button5.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button5.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button5.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button5.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.guna2Button5.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2Button5.ForeColor = System.Drawing.Color.White;
-            this.guna2Button5.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button5.Image")));
-            this.guna2Button5.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.guna2Button5.ImageOffset = new System.Drawing.Point(15, 0);
-            this.guna2Button5.ImageSize = new System.Drawing.Size(25, 25);
-            this.guna2Button5.Location = new System.Drawing.Point(12, 483);
-            this.guna2Button5.Name = "guna2Button5";
-            this.guna2Button5.Size = new System.Drawing.Size(219, 53);
-            this.guna2Button5.TabIndex = 6;
-            this.guna2Button5.Text = "Thống kê";
+            this.btn_ThongKe.AutoRoundedCorners = true;
+            this.btn_ThongKe.BackColor = System.Drawing.Color.Transparent;
+            this.btn_ThongKe.BorderRadius = 25;
+            this.btn_ThongKe.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.btn_ThongKe.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btn_ThongKe.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btn_ThongKe.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btn_ThongKe.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btn_ThongKe.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btn_ThongKe.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btn_ThongKe.ForeColor = System.Drawing.Color.White;
+            this.btn_ThongKe.Image = ((System.Drawing.Image)(resources.GetObject("btn_ThongKe.Image")));
+            this.btn_ThongKe.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btn_ThongKe.ImageOffset = new System.Drawing.Point(15, 0);
+            this.btn_ThongKe.ImageSize = new System.Drawing.Size(25, 25);
+            this.btn_ThongKe.Location = new System.Drawing.Point(12, 483);
+            this.btn_ThongKe.Name = "btn_ThongKe";
+            this.btn_ThongKe.Size = new System.Drawing.Size(219, 53);
+            this.btn_ThongKe.TabIndex = 6;
+            this.btn_ThongKe.Text = "Thống kê";
+            this.btn_ThongKe.Click += new System.EventHandler(this.btn_ThongKe_Click);
             // 
             // btnCustomer
             // 
@@ -395,7 +397,7 @@
         private Guna.UI2.WinForms.Guna2Button btnImport;
         private Guna.UI2.WinForms.Guna2Button btnBook;
         private Guna.UI2.WinForms.Guna2Button btnCategory;
-        private Guna.UI2.WinForms.Guna2Button guna2Button5;
+        private Guna.UI2.WinForms.Guna2Button btn_ThongKe;
         private Guna.UI2.WinForms.Guna2Button btnUser;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
     }

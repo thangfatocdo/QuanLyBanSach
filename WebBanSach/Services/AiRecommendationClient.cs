@@ -13,7 +13,12 @@ public class AiRecommendationClient
     => (await _http.PostAsync("retrain", null)).IsSuccessStatusCode;
 
     // Gọi recommend
-    public async Task<List<int>> RecommendAsync(int userId, int topN = 5)
-    => await _http.GetFromJsonAsync<List<int>>($"recommend?userId={userId}&topN={topN}")
-       ?? new List<int>();
+    public async Task<List<RecommendationDto>> RecommendAsync(int userId, int topN = 15)
+        => await _http.GetFromJsonAsync<List<RecommendationDto>>($"recommend?userId={userId}&topN={topN}")
+           ?? new List<RecommendationDto>();
+}
+public class RecommendationDto
+{
+    public int BookId { get; set; }
+    public float Score { get; set; }
 }

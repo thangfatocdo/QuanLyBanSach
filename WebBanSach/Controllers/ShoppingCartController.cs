@@ -32,7 +32,7 @@ namespace WebBanSach.Controllers
                 {
                     var userId = int.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier));
                     var dbItems = context.CartItems
-                        .Include(ci => ci.Book)
+                        .Include(ci => ci.Book).ThenInclude(b => b.BookImages)
                         .Where(ci => ci.CustomerId == userId)
                         .ToList();
 
@@ -207,9 +207,21 @@ namespace WebBanSach.Controllers
                 var userId = int.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier));
                 var customer = context.Customers.Find(userId);
 
-                // Prefill tên & phone
+                // Prefill thông tin
                 vm.RecipientName = customer.FullName;
                 vm.Phone = customer.Phone;
+                if (!string.IsNullOrEmpty(customer.Address))
+                {
+                    var parts = customer.Address.Split(',', StringSplitOptions.TrimEntries);
+
+                    if (parts.Length >= 4)
+                    {
+                        vm.AddressDetail = parts[0];
+                        vm.Ward = parts[1];
+                        vm.District = parts[2];
+                        vm.Province = parts[3];
+                    }
+                }
 
                 // Lấy giỏ DB (bảng CartItems)
                 vm.CartItems = context.CartItems
@@ -269,6 +281,7 @@ namespace WebBanSach.Controllers
                 Address = $"{model.AddressDetail}, {model.Ward}, {model.District}, {model.Province}, {model.Country}",
                 PaymentMethodId = model.SelectedPaymentMethodId,
                 StatusId = 1, // chờ xác nhận
+                Phone = model.Phone,
                 TotalPrice = cartItems.Sum(ci => ci.book.Price * ci.amount)
             };
             context.Orders.Add(order);
@@ -286,11 +299,22 @@ namespace WebBanSach.Controllers
                 });
             }
             context.SaveChanges();
-            var ok = await _aiClient.RetrainAsync();
-            if (!ok)
+
+            // Gửi thông báo broadcast
+            await OneSignalHelper.SendBroadcastAsync(
+                "Đơn hàng mới",
+                $"Bạn vừa nhận được đơn hàng #{order.OrderId}!"
+            );
+
+            // 🔁 Gọi retrain nếu KH là người dùng đăng nhập
+            if (userId != null)
             {
-                TempData["ToastMessage"] = "Retrain fail!";
-                TempData["ToastType"] = "error";
+                var ok = await _aiClient.RetrainAsync();
+                if (!ok)
+                {
+                    TempData["ToastMessage"] = "Retrain fail!";
+                    TempData["ToastType"] = "error";
+                }
             }
             // 4. Xóa cart
             if (User.Identity.IsAuthenticated)
@@ -308,8 +332,50 @@ namespace WebBanSach.Controllers
             TempData["ToastType"] = "success"; // hoặc error, info...
 
             return RedirectToAction("Index", "Book");
-
-
         }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Reorder(int orderId)
+        {
+            var userId = int.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier));
+
+            var order = context.Orders
+                .Include(o => o.OrderItems)
+                .FirstOrDefault(o => o.OrderId == orderId && o.CustomerId == userId);
+
+            if (order == null)
+            {
+                TempData["ToastMessage"] = "Không tìm thấy đơn hàng.";
+                TempData["ToastType"] = "error";
+                return RedirectToAction("Profile", "Account");
+            }
+
+            foreach (var item in order.OrderItems)
+            {
+                var existing = context.CartItems
+                    .FirstOrDefault(ci => ci.CustomerId == userId && ci.BookId == item.BookId);
+
+                if (existing != null)
+                {
+                    existing.Quantity += item.BookQuantity ?? 1;
+                }
+                else
+                {
+                    context.CartItems.Add(new CartItem
+                    {
+                        CustomerId = userId,
+                        BookId = item.BookId ?? 0,
+                        Quantity = item.BookQuantity ?? 1
+                    });
+                }
+            }
+
+            context.SaveChanges();
+
+            TempData["ToastMessage"] = "Đã thêm lại sản phẩm vào giỏ hàng.";
+            TempData["ToastType"] = "success";
+            return RedirectToAction("Index");
+        }
+
     }
 }

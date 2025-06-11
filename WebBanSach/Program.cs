@@ -15,7 +15,16 @@ builder.Services.AddDbContext<BookstoreDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("BookstoreDB")));
 builder.Services.AddNotyf(config => { config.DurationInSeconds = 10; config.IsDismissable = true; config.Position = NotyfPosition.BottomRight; });
 builder.Services.AddNotyf(config => { config.DurationInSeconds = 3; config.IsDismissable = true; config.Position = NotyfPosition.TopRight; });
-
+//bật CORS đẻ upload từ winform
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowAll", policy =>
+    {
+        policy.AllowAnyOrigin()
+              .AllowAnyHeader()
+              .AllowAnyMethod();
+    });
+});
 // Thêm cấu hình Authentication bằng cookie
 builder.Services.AddAuthentication("MyCookieAuth")
     .AddCookie("MyCookieAuth", options =>
@@ -46,7 +55,7 @@ app.MapControllerRoute(
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 app.UseSession();
-
+app.UseCors("AllowAll");
 app.UseRouting();
 app.UseNotyf();
 app.UseAuthentication(); // <-- BẮT BUỘC có dòng này
@@ -59,4 +68,4 @@ app.MapControllerRoute(
 app.Run();
 
 
-//dotnet ef dbcontext scaffold "data source=DESKTOP-7B1B1GQ\SQLEXPRESS;initial catalog=BookstoreDB;persist security info=True;user id=sa;password=123456;encrypt=True;trustservercertificate=True" Microsoft.EntityFrameworkCore.SqlServer -o Models -f
+//dotnet ef dbcontext scaffold "Data Source=SQL1001.site4now.net;Initial Catalog=db_ab9f8d_bookstoredb;Persist Security Info=True;User ID=db_ab9f8d_bookstoredb_admin;Password=thanglolo1090;Trust Server Certificate=True" Microsoft.EntityFrameworkCore.SqlServer -o Model -f

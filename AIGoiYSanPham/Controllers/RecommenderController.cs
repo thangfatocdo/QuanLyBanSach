@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using AIGoiYSanPham.Models;
+using AIGoiYSanPham.Entities;
 
 namespace AIGoiYSanPham.Controllers
 {
@@ -30,15 +31,56 @@ namespace AIGoiYSanPham.Controllers
 
         // GET api/recommender/recommend?userId=4&topN=5
         [HttpGet("recommend")]
-        public IActionResult Recommend(int userId, int topN = 5)
+        public IActionResult Recommend(int userId, int topN = int.MaxValue)
         {
-            // Lấy toàn bộ BookId
-            var allIds = _db.Books.Select(b => b.BookId);
-            var recs = _svc.Recommend(userId, allIds, topN);
-            // recs là List<(int ProductId, float Score)>
-            var idsOnly = recs.Select(x => x.BookId).ToList();
+            // 1. Lấy toàn bộ sách
+            var allBookIds = _db.Books.Select(b => b.BookId).ToList();
 
-            return Ok(idsOnly);
+            // 2. Dự đoán điểm cho toàn bộ sách
+            var fullRecs = _svc.Recommend(userId, allBookIds, allBookIds.Count);
+
+            // 3. Nếu tất cả đều NaN → fallback theo đánh giá
+            if (fullRecs.All(x => float.IsNaN(x.Score)))
+            {
+                var fallback = _db.BookRatings
+                    .GroupBy(x => x.BookId)
+                    .Select(g => new RecommendationDto
+                    {
+                        BookId = g.Key,
+                        Score = (float)g.Average(x => x.RatingValue ?? 0)
+                    })
+                    .OrderByDescending(x => x.Score)
+                    .Take(topN)
+                    .ToList();
+
+                return Ok(fallback);
+            }
+
+            // 4. Normalize theo full list
+            var valid = fullRecs.Where(x => !float.IsNaN(x.Score)).ToList();
+            var min = valid.Min(x => x.Score);
+            var max = valid.Max(x => x.Score);
+
+            var normalized = valid
+                .Select(x => new RecommendationDto
+                {
+                    BookId = x.BookId,
+                    Score = max > min
+                        ? (x.Score - min) / (max - min) * 100f
+                        : 100f
+                })
+                .OrderByDescending(x => x.Score)
+                .Take(topN)
+                .ToList();
+
+            return Ok(normalized);
         }
+
+
     }
+}
+public class RecommendationDto
+{
+    public int BookId { get; set; }
+    public float Score { get; set; }
 }

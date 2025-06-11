@@ -7,6 +7,14 @@
     <Property Name="AuthorId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="AuthorName" Type="nvarchar" MaxLength="100" Nullable="false" />
   </EntityType>
+  <EntityType Name="BookImages">
+    <Key>
+      <PropertyRef Name="ImageId" />
+    </Key>
+    <Property Name="ImageId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="BookId" Type="int" />
+    <Property Name="ImageUrl" Type="nvarchar" MaxLength="255" />
+  </EntityType>
   <EntityType Name="BookRatings">
     <Key>
       <PropertyRef Name="RatingId" />
@@ -139,7 +147,7 @@
     <Property Name="Phone" Type="nvarchar" MaxLength="20" />
   </EntityType>
   <!--Errors Found During Generation:
-warning 6013: The table/view 'BookstoreDB.dbo.Statistic' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+warning 6013: The table/view 'db_ab9f8d_bookstoredb.dbo.Statistic' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
         <EntityType Name="Statistic">
           <Property Name="Title" Type="nvarchar" MaxLength="100" />
           <Property Name="Total_BooksSold" Type="int" />
@@ -148,16 +156,6 @@ warning 6013: The table/view 'BookstoreDB.dbo.Statistic' does not have a primary
           <Property Name="Total_Quantity" Type="int" />
           <Property Name="YearRevenue" Type="int" />
         </EntityType>-->
-  <EntityType Name="sysdiagrams">
-    <Key>
-      <PropertyRef Name="diagram_id" />
-    </Key>
-    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
-    <Property Name="principal_id" Type="int" Nullable="false" />
-    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="version" Type="int" />
-    <Property Name="definition" Type="varbinary(max)" />
-  </EntityType>
   <EntityType Name="Users">
     <Key>
       <PropertyRef Name="UserId" />
@@ -167,8 +165,9 @@ warning 6013: The table/view 'BookstoreDB.dbo.Statistic' does not have a primary
     <Property Name="Password" Type="nvarchar" MaxLength="100" Nullable="false" />
     <Property Name="FullName" Type="nvarchar" MaxLength="100" />
     <Property Name="Role" Type="nvarchar" MaxLength="20" />
+    <Property Name="ImageUrl" Type="nvarchar" MaxLength="255" />
   </EntityType>
-  <Association Name="FK__BookRatin__BookI__7849DB76">
+  <Association Name="FK__BookRatin__BookI__5BE2A6F2">
     <End Role="Books" Type="Self.Books" Multiplicity="1" />
     <End Role="BookRatings" Type="Self.BookRatings" Multiplicity="*" />
     <ReferentialConstraint>
@@ -180,7 +179,7 @@ warning 6013: The table/view 'BookstoreDB.dbo.Statistic' does not have a primary
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__BookRatin__Custo__7755B73D">
+  <Association Name="FK__BookRatin__Custo__5CD6CB2B">
     <End Role="Customers" Type="Self.Customers" Multiplicity="1" />
     <End Role="BookRatings" Type="Self.BookRatings" Multiplicity="*" />
     <ReferentialConstraint>
@@ -192,7 +191,7 @@ warning 6013: The table/view 'BookstoreDB.dbo.Statistic' does not have a primary
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Books__AuthorId__412EB0B6">
+  <Association Name="FK__Books__AuthorId__5DCAEF64">
     <End Role="Authors" Type="Self.Authors" Multiplicity="0..1" />
     <End Role="Books" Type="Self.Books" Multiplicity="*" />
     <ReferentialConstraint>
@@ -204,7 +203,7 @@ warning 6013: The table/view 'BookstoreDB.dbo.Statistic' does not have a primary
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Books__CategoryI__4222D4EF">
+  <Association Name="FK__Books__CategoryI__5EBF139D">
     <End Role="Categories" Type="Self.Categories" Multiplicity="0..1" />
     <End Role="Books" Type="Self.Books" Multiplicity="*" />
     <ReferentialConstraint>
@@ -216,7 +215,7 @@ warning 6013: The table/view 'BookstoreDB.dbo.Statistic' does not have a primary
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Books__Publisher__4316F928">
+  <Association Name="FK__Books__Publisher__5FB337D6">
     <End Role="Publishers" Type="Self.Publishers" Multiplicity="0..1" />
     <End Role="Books" Type="Self.Books" Multiplicity="*" />
     <ReferentialConstraint>
@@ -228,7 +227,7 @@ warning 6013: The table/view 'BookstoreDB.dbo.Statistic' does not have a primary
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Inventory__BookI__4D94879B">
+  <Association Name="FK__Inventory__BookI__628FA481">
     <End Role="Books" Type="Self.Books" Multiplicity="0..1" />
     <End Role="InventoryDetail" Type="Self.InventoryDetail" Multiplicity="*" />
     <ReferentialConstraint>
@@ -240,7 +239,7 @@ warning 6013: The table/view 'BookstoreDB.dbo.Statistic' does not have a primary
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Inventory__Impor__4CA06362">
+  <Association Name="FK__Inventory__Impor__6383C8BA">
     <End Role="InventoryImport" Type="Self.InventoryImport" Multiplicity="0..1" />
     <End Role="InventoryDetail" Type="Self.InventoryDetail" Multiplicity="*" />
     <ReferentialConstraint>
@@ -252,19 +251,7 @@ warning 6013: The table/view 'BookstoreDB.dbo.Statistic' does not have a primary
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Inventory__UserI__48CFD27E">
-    <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
-    <End Role="InventoryImport" Type="Self.InventoryImport" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Users">
-        <PropertyRef Name="UserId" />
-      </Principal>
-      <Dependent Role="InventoryImport">
-        <PropertyRef Name="UserId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK__Inventory__UserI__6477ECF3">
+  <Association Name="FK__Inventory__UserI__656C112C">
     <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
     <End Role="InventoryExport" Type="Self.InventoryExport" Multiplicity="*" />
     <ReferentialConstraint>
@@ -276,7 +263,19 @@ warning 6013: The table/view 'BookstoreDB.dbo.Statistic' does not have a primary
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__OrderItem__BookI__60A75C0F">
+  <Association Name="FK__Inventory__UserI__6754599E">
+    <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+    <End Role="InventoryImport" Type="Self.InventoryImport" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="InventoryImport">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__OrderItem__BookI__68487DD7">
     <End Role="Books" Type="Self.Books" Multiplicity="0..1" />
     <End Role="OrderItems" Type="Self.OrderItems" Multiplicity="*" />
     <ReferentialConstraint>
@@ -288,7 +287,7 @@ warning 6013: The table/view 'BookstoreDB.dbo.Statistic' does not have a primary
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Orders__Customer__5CD6CB2B">
+  <Association Name="FK__Orders__Customer__6A30C649">
     <End Role="Customers" Type="Self.Customers" Multiplicity="0..1" />
     <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
     <ReferentialConstraint>
@@ -297,6 +296,18 @@ warning 6013: The table/view 'BookstoreDB.dbo.Statistic' does not have a primary
       </Principal>
       <Dependent Role="Orders">
         <PropertyRef Name="CustomerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BookImages_Books">
+    <End Role="Books" Type="Self.Books" Multiplicity="0..1" />
+    <End Role="BookImages" Type="Self.BookImages" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Books">
+        <PropertyRef Name="BookId" />
+      </Principal>
+      <Dependent Role="BookImages">
+        <PropertyRef Name="BookId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -386,6 +397,7 @@ warning 6013: The table/view 'BookstoreDB.dbo.Statistic' does not have a primary
   </Association>
   <EntityContainer Name="BookstoreDBModelStoreContainer">
     <EntitySet Name="Authors" EntityType="Self.Authors" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BookImages" EntityType="Self.BookImages" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="BookRatings" EntityType="Self.BookRatings" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Books" EntityType="Self.Books" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="CartItems" EntityType="Self.CartItems" Schema="dbo" store:Type="Tables" />
@@ -399,51 +411,54 @@ warning 6013: The table/view 'BookstoreDB.dbo.Statistic' does not have a primary
     <EntitySet Name="OrderStatuses" EntityType="Self.OrderStatuses" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="PaymentMethods" EntityType="Self.PaymentMethods" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Publishers" EntityType="Self.Publishers" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
-    <AssociationSet Name="FK__BookRatin__BookI__7849DB76" Association="Self.FK__BookRatin__BookI__7849DB76">
+    <AssociationSet Name="FK__BookRatin__BookI__5BE2A6F2" Association="Self.FK__BookRatin__BookI__5BE2A6F2">
       <End Role="Books" EntitySet="Books" />
       <End Role="BookRatings" EntitySet="BookRatings" />
     </AssociationSet>
-    <AssociationSet Name="FK__BookRatin__Custo__7755B73D" Association="Self.FK__BookRatin__Custo__7755B73D">
+    <AssociationSet Name="FK__BookRatin__Custo__5CD6CB2B" Association="Self.FK__BookRatin__Custo__5CD6CB2B">
       <End Role="Customers" EntitySet="Customers" />
       <End Role="BookRatings" EntitySet="BookRatings" />
     </AssociationSet>
-    <AssociationSet Name="FK__Books__AuthorId__412EB0B6" Association="Self.FK__Books__AuthorId__412EB0B6">
+    <AssociationSet Name="FK__Books__AuthorId__5DCAEF64" Association="Self.FK__Books__AuthorId__5DCAEF64">
       <End Role="Authors" EntitySet="Authors" />
       <End Role="Books" EntitySet="Books" />
     </AssociationSet>
-    <AssociationSet Name="FK__Books__CategoryI__4222D4EF" Association="Self.FK__Books__CategoryI__4222D4EF">
+    <AssociationSet Name="FK__Books__CategoryI__5EBF139D" Association="Self.FK__Books__CategoryI__5EBF139D">
       <End Role="Categories" EntitySet="Categories" />
       <End Role="Books" EntitySet="Books" />
     </AssociationSet>
-    <AssociationSet Name="FK__Books__Publisher__4316F928" Association="Self.FK__Books__Publisher__4316F928">
+    <AssociationSet Name="FK__Books__Publisher__5FB337D6" Association="Self.FK__Books__Publisher__5FB337D6">
       <End Role="Publishers" EntitySet="Publishers" />
       <End Role="Books" EntitySet="Books" />
     </AssociationSet>
-    <AssociationSet Name="FK__Inventory__BookI__4D94879B" Association="Self.FK__Inventory__BookI__4D94879B">
+    <AssociationSet Name="FK__Inventory__BookI__628FA481" Association="Self.FK__Inventory__BookI__628FA481">
       <End Role="Books" EntitySet="Books" />
       <End Role="InventoryDetail" EntitySet="InventoryDetail" />
     </AssociationSet>
-    <AssociationSet Name="FK__Inventory__Impor__4CA06362" Association="Self.FK__Inventory__Impor__4CA06362">
+    <AssociationSet Name="FK__Inventory__Impor__6383C8BA" Association="Self.FK__Inventory__Impor__6383C8BA">
       <End Role="InventoryImport" EntitySet="InventoryImport" />
       <End Role="InventoryDetail" EntitySet="InventoryDetail" />
     </AssociationSet>
-    <AssociationSet Name="FK__Inventory__UserI__48CFD27E" Association="Self.FK__Inventory__UserI__48CFD27E">
-      <End Role="Users" EntitySet="Users" />
-      <End Role="InventoryImport" EntitySet="InventoryImport" />
-    </AssociationSet>
-    <AssociationSet Name="FK__Inventory__UserI__6477ECF3" Association="Self.FK__Inventory__UserI__6477ECF3">
+    <AssociationSet Name="FK__Inventory__UserI__656C112C" Association="Self.FK__Inventory__UserI__656C112C">
       <End Role="Users" EntitySet="Users" />
       <End Role="InventoryExport" EntitySet="InventoryExport" />
     </AssociationSet>
-    <AssociationSet Name="FK__OrderItem__BookI__60A75C0F" Association="Self.FK__OrderItem__BookI__60A75C0F">
+    <AssociationSet Name="FK__Inventory__UserI__6754599E" Association="Self.FK__Inventory__UserI__6754599E">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="InventoryImport" EntitySet="InventoryImport" />
+    </AssociationSet>
+    <AssociationSet Name="FK__OrderItem__BookI__68487DD7" Association="Self.FK__OrderItem__BookI__68487DD7">
       <End Role="Books" EntitySet="Books" />
       <End Role="OrderItems" EntitySet="OrderItems" />
     </AssociationSet>
-    <AssociationSet Name="FK__Orders__Customer__5CD6CB2B" Association="Self.FK__Orders__Customer__5CD6CB2B">
+    <AssociationSet Name="FK__Orders__Customer__6A30C649" Association="Self.FK__Orders__Customer__6A30C649">
       <End Role="Customers" EntitySet="Customers" />
       <End Role="Orders" EntitySet="Orders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BookImages_Books" Association="Self.FK_BookImages_Books">
+      <End Role="Books" EntitySet="Books" />
+      <End Role="BookImages" EntitySet="BookImages" />
     </AssociationSet>
     <AssociationSet Name="FK_CartItems_Books" Association="Self.FK_CartItems_Books">
       <End Role="Books" EntitySet="Books" />

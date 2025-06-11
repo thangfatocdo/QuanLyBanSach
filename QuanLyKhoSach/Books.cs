@@ -17,6 +17,7 @@ namespace QuanLyKhoSach
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Books()
         {
+            this.BookImages = new HashSet<BookImages>();
             this.BookRatings = new HashSet<BookRatings>();
             this.InventoryDetail = new HashSet<InventoryDetail>();
             this.OrderItems = new HashSet<OrderItems>();
@@ -34,6 +35,8 @@ namespace QuanLyKhoSach
         public Nullable<System.DateTime> CreatedAt { get; set; }
     
         public virtual Authors Authors { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<BookImages> BookImages { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<BookRatings> BookRatings { get; set; }
         public virtual Categories Categories { get; set; }

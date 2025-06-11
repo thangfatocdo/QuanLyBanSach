@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="Doan1.views.SplashPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    BackgroundColor="#FB9E3A"                                
+    NavigationPage.HasNavigationBar="False">
+    <VerticalStackLayout
+        Padding="20"
+        Spacing="10"
+        VerticalOptions="FillAndExpand"
+        HorizontalOptions="FillAndExpand">
+
+        <Image 
+            Source="icSplashBg.png"                            
+            WidthRequest="300"
+            HorizontalOptions="Start" />
+        <BoxView 
+            HeightRequest="20" 
+            Color="#FB9E3A" />
+
+        <Image 
+            Source="logo.jpg"                              
+                HorizontalOptions="Center" />
+        <BoxView 
+            HeightRequest="10" 
+            Color="#FB9E3A" />
+
+                <Label 
+            Text="Nhà Sách Hải Đăng"
+            FontSize="32"
+            FontAttributes="Bold"
+            TextColor="White"
+            HorizontalOptions="Center" />
+
+                <BoxView 
+            HeightRequest="5" 
+            Color="#FB9E3A" />
+
+
+                <Label 
+            Text="Version 1.0.0"
+            TextColor="White"
+            HorizontalOptions="Center" />
+
+
+                <BoxView 
+            VerticalOptions="FillAndExpand" 
+            Color="#FB9E3A" />
+
+                <Label 
+            Text="Copyright by Do Huu Thang"
+            TextColor="White"
+            FontAttributes="Bold"
+            HorizontalOptions="Center" />
+
+
+                <BoxView 
+            HeightRequest="30" 
+            Color="#FB9E3A" />
+    </VerticalStackLayout>
+</ContentPage>

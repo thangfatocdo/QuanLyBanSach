@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:vm="clr-namespace:Doan1.ViewModels"
+    xmlns:sys="clr-namespace:System;assembly=netstandard"
+    x:Class="Doan1.views.BillDetailPage"
+    Title="Chi tiết đơn hàng"
+    BackgroundColor="White">
+
+    <!-- Thiết lập BindingContext -->
+    <ContentPage.BindingContext>
+        <vm:BillDetailViewModel />
+    </ContentPage.BindingContext>
+
+    <ScrollView>
+        <VerticalStackLayout Spacing="0">
+
+            <!-- Header -->
+            <Frame Margin="12,16,12,0"
+             Padding="0"
+             CornerRadius="24"
+             HasShadow="False"
+             BackgroundColor="White">
+                <Grid Padding="0,8"
+              ColumnDefinitions="40,*,Auto"
+              VerticalOptions="Center">
+
+                    <!-- Nút back -->
+                    <ImageButton
+            Source="back.png"
+            WidthRequest="24"
+            HeightRequest="24"
+            BackgroundColor="Transparent"
+            Clicked="OnBackClicked"
+            VerticalOptions="Center"
+            HorizontalOptions="Center"
+            Margin="8,0,0,0" />
+
+                    <!-- Thông tin hóa đơn -->
+                    <VerticalStackLayout
+            Grid.Column="1"
+            Spacing="2"
+            VerticalOptions="Center">
+                        <Label
+              Text="{Binding BillId, StringFormat='Đơn hàng #{0}'}"
+              FontAttributes="Bold"
+              FontSize="17"
+              TextColor="Black" />
+                        <Label
+              Text="{Binding Date, StringFormat='{0:dd/MM/yyyy HH:mm}'}"
+              FontSize="13"
+              TextColor="#888" />
+                    </VerticalStackLayout>
+
+                    <!-- Trạng thái -->
+                    <Frame
+            Grid.Column="2"
+            Padding="10,2"
+            CornerRadius="10"
+            BackgroundColor="#4CAF50"
+            HasShadow="False"
+            VerticalOptions="Center"
+            Margin="0,0,12,0">
+                        <Label
+              Text="{Binding SelectedStatus}"
+              FontSize="12"
+              TextColor="White"
+              HorizontalOptions="Center" />
+                    </Frame>
+
+                </Grid>
+            </Frame>
+
+            <!-- Thông tin người nhận & địa chỉ -->
+            <Frame Margin="12,16,12,0"
+             Padding="16"
+             CornerRadius="24"
+             HasShadow="False"
+             BackgroundColor="White">
+                <VerticalStackLayout Spacing="4">
+
+                    <Label
+            Text="Thông tin giao hàng"
+            FontSize="15"
+            FontAttributes="Bold"
+            TextColor="Black" />
+
+                    <Label
+            Text="{Binding CustomerName,StringFormat='Tên: {0}'}"
+            FontSize="14"
+            TextColor="Black" />
+
+                    <Label
+            Text="{Binding Phone,StringFormat='SĐT: {0}'}"
+            FontSize="14"
+            TextColor="Black" />
+
+                    <Label
+            Text="{Binding Address,StringFormat='Địa chỉ: {0}'}"
+            FontSize="14"
+            TextColor="Black" />
+                    <Label
+            Text="{Binding PaymentMethod,StringFormat='Phương thức: {0}'}"
+            FontSize="14"
+            TextColor="Black" />
+                    <Label
+            Text="{Binding Amount, StringFormat='Tổng cộng: {0:N0} đ'}"
+            FontAttributes="Bold"
+            FontSize="16"
+            HorizontalOptions="End"
+            TextColor="Black" />
+
+                </VerticalStackLayout>
+            </Frame>
+
+            <!-- Danh sách sản phẩm -->
+            <Frame Margin="12,16,12,0"
+             Padding="0"
+             CornerRadius="24"
+             HasShadow="False"
+             BackgroundColor="White">
+                <VerticalStackLayout>
+
+                    <Label
+            Text="Danh sách sản phẩm"
+            FontSize="15"
+            FontAttributes="Bold"
+            Margin="18,18,0,8"
+            TextColor="Black" />
+
+                    <CollectionView
+            ItemsSource="{Binding Items}"
+            SelectionMode="None">
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <Grid
+                  ColumnDefinitions="*,Auto,Auto"
+                  Padding="18,0,18,0"
+                  HeightRequest="56">
+
+                                    <VerticalStackLayout
+                    Grid.Column="0"
+                    Spacing="2"
+                    VerticalOptions="Center">
+                                        <Label
+                      Text="{Binding Title}"
+                      FontAttributes="Bold"
+                      FontSize="15"
+                      TextColor="Black" />
+                                        <Label
+                      Text="{Binding BookPrice, StringFormat='{0:N0} đ'}"
+                      FontSize="12"
+                      TextColor="#888888" />
+                                    </VerticalStackLayout>
+
+                                    <Label
+                    Grid.Column="1"
+                    Text="{Binding BookQuantity, StringFormat='{0:N0} x'}"
+                    FontSize="12"
+                    TextColor="#888888"
+                    VerticalOptions="Center"
+                    Margin="8,0,12,0" />
+
+                                    <Label
+                    Grid.Column="2"
+                    Text="{Binding LineTotal, StringFormat='{0:N0} đ'}"
+                    FontAttributes="Bold"
+                    FontSize="14"
+                    VerticalOptions="Center" />
+
+                                </Grid>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+
+                </VerticalStackLayout>
+            </Frame>
+
+            <!-- Chọn trạng thái -->
+            <!-- Cập nhật trạng thái đơn hàng -->
+            <VerticalStackLayout Margin="18,16,18,0" Spacing="4">
+                <Label Text="Cập nhật trạng thái đơn hàng" FontSize="14"  FontAttributes="Bold" TextColor="#333" />
+
+                <Frame CornerRadius="6" Padding="0"
+         BackgroundColor="White" BorderColor="#E0E0E0" HasShadow="False"
+         HeightRequest="60" HorizontalOptions="FillAndExpand">
+
+                    <!-- Dùng ItemsSource và SelectedItem binding -->
+                    <Picker
+      ItemsSource="{Binding StatusList}"
+      SelectedItem="{Binding SelectedStatus}"
+      Title="Chọn trạng thái"
+      FontSize="14"
+      HorizontalTextAlignment="Center"
+      VerticalOptions="Center" />
+                </Frame>
+            </VerticalStackLayout>
+
+            <!-- Nút hành động -->
+            <Grid
+        ColumnDefinitions="*,*"
+        Margin="0,32,0,24">
+                <Button
+          Text="Lưu thay đổi"
+          Command="{Binding SaveCommand}"
+          BackgroundColor="#4CAF50"
+          TextColor="White"
+          CornerRadius="10"
+          FontSize="15"
+          HeightRequest="44"
+          Margin="32,0,16,0" />
+                <Button
+          Text="Hủy"
+          Clicked="OnBackClicked"
+          BackgroundColor="#FFD600"
+          TextColor="White"
+          CornerRadius="10"
+          FontSize="15"
+          HeightRequest="44"
+          Margin="16,0,32,0"
+          Grid.Column="1" />
+            </Grid>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

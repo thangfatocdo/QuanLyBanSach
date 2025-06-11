@@ -97,5 +97,15 @@ namespace QuanLyKhoSach
         {
             AddControls(new formHomeView());
         }
+
+        private void btn_ThongKe_Click(object sender, EventArgs e)
+        {
+            AddControls(new formReportView());
+        }
+
+        private void CenterPanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

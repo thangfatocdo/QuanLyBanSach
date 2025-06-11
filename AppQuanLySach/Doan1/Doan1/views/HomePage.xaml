@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:charts="clr-namespace:Microcharts.Maui;assembly=Microcharts.Maui"
+             x:Class="Doan1.views.HomePage"
+             Title="HomePage"
+             BackgroundColor="White">
+    <Grid RowDefinitions="Auto,*,Auto">
+
+        <!-- Top Section -->
+        <ScrollView Grid.Row="1">
+            <VerticalStackLayout Padding="20" Spacing="20">
+
+                <!-- Dropdown -->
+                <Grid>
+                    <!-- Button nhìn giống dropdown -->
+                    <Button x:Name="DropdownButton"
+                            Text="Hôm nay ▼"
+                            BackgroundColor="#f0f0f0"
+                            TextColor="Black"
+                            FontSize="14"
+                            CornerRadius="10"
+                            Padding="10,5"
+                            Clicked="DropdownButton_Clicked"
+                            HorizontalOptions="Start"/>
+
+                    <!-- Picker ẩn -->
+                    <Picker x:Name="DayPicker"
+                            ItemsSource="{Binding Days}"
+                            SelectedItem="{Binding SelectedDay}"
+                            IsVisible="False"/>
+                </Grid>
+
+                <!-- Thống kê -->
+                <Frame Padding="15" CornerRadius="15" HasShadow="False" BorderColor="#ddd">
+                    <VerticalStackLayout Spacing="8">
+                        <Grid ColumnDefinitions="*,*" RowDefinitions="Auto">
+                            <VerticalStackLayout>
+                                <Label Text="20 hóa đơn" FontSize="12"/>
+                                <Label Text="2.08" FontSize="18" TextColor="Blue"/>
+                                <Label Text="triệu" FontSize="12"/>
+                            </VerticalStackLayout>
+
+                            <VerticalStackLayout Grid.Column="1">
+                                <Label Text="3 đơn chưa hoàn thành" FontSize="12"/>
+                                <Label Text="503 ngàn" FontSize="18" TextColor="Green"/>
+                            </VerticalStackLayout>
+                        </Grid>
+
+                        <BoxView HeightRequest="1" BackgroundColor="#e0e0e0" />
+
+                        <Label Text="Khách đang xem: 4"
+                               FontSize="14"
+                               HorizontalOptions="Center"/>
+                    </VerticalStackLayout>
+                </Frame>
+
+                <!-- Placeholder -->
+                <Frame HeightRequest="100"
+                       BackgroundColor="#eeeeee"
+                       CornerRadius="20"
+                       HasShadow="False"/>
+
+                <!-- Doanh thu -->
+                <Frame Padding="15" CornerRadius="20" HasShadow="False" BackgroundColor="#FAFAFA">
+                    <VerticalStackLayout>
+                        <Grid ColumnDefinitions="*,Auto">
+                            <Label Text="Doanh Thu" FontSize="16" FontAttributes="Bold"/>
+                            <Image Source="arrow_right.png" WidthRequest="18" HeightRequest="18"/>
+                        </Grid>
+
+                        <!-- Tabs -->
+                        <HorizontalStackLayout Spacing="10" Margin="0,10">
+                            <Button Text="Ngày"
+                                    FontSize="12"
+                                    TextColor="#007AFF"
+                                    BackgroundColor="#D9F1FF"
+                                    CornerRadius="10"
+                                    Padding="10,4"
+                                    HeightRequest="30"
+                                    Clicked="OnTabClicked"/>
+                            <Button Text="Thứ"
+                                    FontSize="12"
+                                    TextColor="Gray"
+                                    BackgroundColor="Transparent"
+                                    Padding="10,4"
+                                    HeightRequest="30"
+                                    Clicked="OnTabClicked"/>
+                            <Button Text="Giờ"
+                                    FontSize="12"
+                                    TextColor="Gray"
+                                    BackgroundColor="Transparent"
+                                    Padding="10,4"
+                                    HeightRequest="30"
+                                    Clicked="OnTabClicked"/>
+                        </HorizontalStackLayout>
+
+                        <!-- Biểu đồ -->
+                        <charts:ChartView HeightRequest="200"
+                                          Chart="{Binding RevenueChart}" />
+                    </VerticalStackLayout>
+                </Frame>
+            </VerticalStackLayout>
+        </ScrollView>
+
+
+    </Grid>
+
+</ContentPage>

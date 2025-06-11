@@ -1,5 +1,6 @@
 ﻿@model WebBanSach.Models.Entities.Book
 @using WebBanSach.Models.Entities
+@using System.Linq
 @{
     var ratings = ViewBag.BookRatings as List<BookRating>;
     var myRating = ViewBag.MyRating as BookRating;
@@ -9,6 +10,7 @@
         : 0;
     int rounded = (int)Math.Round(avgRating, MidpointRounding.AwayFromZero);
     int total = ratings.Count;
+
 }
 <!-- Shop Details Section Start -->
     <section class="shop-details-section fix section-padding">
@@ -17,60 +19,140 @@
                 <div class="row g-4">
                     <div class="col-lg-5">
                         <div class="shop-details-image">
-                            <div class="tab-content">
+                        <!-- Phần hiển thị ảnh to -->
+                        <div class="tab-content">
+                            @if (Model.BookImages == null || !Model.BookImages.Any())
+                            {
+                                <!-- Chỉ 1 ảnh default -->
                                 <div id="thumb1" class="tab-pane fade show active">
                                     <div class="shop-details-thumb">
-                                    <img src="~/Images/@Model.ImageUrl" alt="@Model.Title">
+                                        <a href="~/Images/@Model.ImageUrl"
+                                           data-lightbox="book-gallery"
+                                           data-title="@Model.Title">
+                                            <img src="~/Images/@Model.ImageUrl"
+                                                 alt="@Model.Title"
+                                                 style="width:315px; height:402px; object-fit:cover;" />
+                                        </a>
                                     </div>
                                 </div>
-                                <div id="thumb2" class="tab-pane fade">
-                                    <div class="shop-details-thumb">
-                                        <img src="~/assets/img/shop-details/02.png" alt="img">
+                            }
+                            else
+                            {
+                                int totalCount = Model.BookImages.Count;
+                                int showCount = Math.Min(4, totalCount);   // số ảnh sẽ có link trong tab-content
+
+                                @* 1) Tạo 5 (hoặc ít hơn) tab-pane đầu tiên, mỗi ảnh được gán 1 <a data-lightbox> *@
+                                @for (int i = 0; i < showCount; i++)
+                                {
+                                    var imgUrl = Model.BookImages.ElementAt(i).ImageUrl;
+                                    var isActive = (i == 0) ? "show active" : "fade";
+
+                                    <div id="thumb@(i + 1)" class="tab-pane @isActive">
+                                        <div class="shop-details-thumb">
+                                            <a href="~/Images/@imgUrl"
+                                               data-lightbox="book-gallery"
+                                               data-title="@Model.Title">
+                                                <img src="~/Images/@imgUrl"
+                                                     alt="@Model.Title"
+                                                     style="width:315px; height:402px; object-fit:cover;" />
+                                            </a>
+                                        </div>
                                     </div>
-                                </div>
-                                <div id="thumb3" class="tab-pane fade">
-                                    <div class="shop-details-thumb">
-                                        <img src="~/assets/img/shop-details/03.png" alt="img">
+                                }
+
+                                @* 2) Tạo các tab-pane còn lại (ảnh thứ 6, 7,…), nhưng KHÔNG có <a data-lightbox>
+                            (chỉ show <img> bình thường) để tránh trùng link với +N *@
+                                @for (int i = showCount; i < totalCount; i++)
+                                {
+                                    var imgUrl = Model.BookImages.ElementAt(i).ImageUrl;
+                                    var idx = i + 1;
+                                    <div id="thumb@idx" class="tab-pane fade">
+                                        <div class="shop-details-thumb">
+                                            <!-- Ở đây chỉ là <img> thôi, không bọc <a data-lightbox> để tránh dup -->
+                                            <img src="~/Images/@imgUrl"
+                                                 alt="@Model.Title"
+                                                 style="width:315px; height:402px; object-fit:cover;" />
+                                        </div>
                                     </div>
-                                </div>
-                                <div id="thumb4" class="tab-pane fade">
-                                    <div class="shop-details-thumb">
-                                        <img src="~/assets/img/shop-details/04.png" alt="img">
-                                    </div>
-                                </div>
-                                <div id="thumb5" class="tab-pane fade">
-                                    <div class="shop-details-thumb">
-                                        <img src="~/assets/img/shop-details/05.png" alt="img">
-                                    </div>
-                                </div>
-                            </div>
-                            <ul class="nav">
+                                }
+                            }
+                        </div>
+
+                        <!-- Phần thumbnail nhỏ bên dưới -->
+                        <ul class="nav">
+                            @if (Model.BookImages == null || !Model.BookImages.Any())
+                            {
                                 <li class="nav-item">
                                     <a href="#thumb1" data-bs-toggle="tab" class="nav-link active">
-                                        <img src="~/assets/img/shop-details/sm-1.png" alt="img">
+                                        <img src="~/Images/@Model.ImageUrl"
+                                             alt="@Model.Title"
+                                             style="width:60px; height:80px; object-fit:cover;" />
                                     </a>
                                 </li>
-                                <li class="nav-item">
-                                    <a href="#thumb2" data-bs-toggle="tab" class="nav-link">
-                                        <img src="~/assets/img/shop-details/sm-2.png" alt="img">
+                            }
+                            else
+                            {
+                                int totalCount = Model.BookImages.Count;
+                                int showCount = Math.Min(4, totalCount);    // số thumbnail hiển thị bình thường
+                                int remain = totalCount - showCount;        // số ảnh dư (ảnh thứ 6,7,…)
+
+                                @* 1) Hiển thị thumbnail (chuyển tab) cho 5 ảnh đầu *@
+                                @for (int i = 0; i < showCount; i++)
+                                {
+                                    var imgUrl = Model.BookImages.ElementAt(i).ImageUrl;
+                                    var isActive = (i == 0) ? "active" : "";
+
+                                    <li class="nav-item">
+                                        <a href="#thumb@(i + 1)" data-bs-toggle="tab" class="nav-link @isActive">
+                                            <img src="~/Images/@imgUrl"
+                                                 alt="@Model.Title"
+                                                 style="width:60px; height:80px; object-fit:cover;" />
+                                        </a>
+                                    </li>
+                                }
+
+                                @* 2) Nếu có ảnh dư (remain > 0) thì tạo thumbnail “+N” *@
+                                @if (remain > 0)
+                                {
+                                    // Ảnh thứ 6 để Lightbox mở khi click +N
+                                    var sixthUrl = Model.BookImages.ElementAt(showCount).ImageUrl;
+
+                                    <li class="nav-item">
+                                        <a href="~/Images/@sixthUrl"
+                                           data-lightbox="book-gallery"
+                                           data-title="@Model.Title"
+                                           class="nav-link">
+                                            <div style="
+                        width:60px;
+                        height:80px;
+                        background-color:rgba(0,0,0,0.6);
+                        color:white;
+                        display:flex;
+                        align-items:center;
+                        justify-content:center;
+                        font-size:14px;">
+                                                +@remain
+                                            </div>
+                                        </a>
+                                    </li>
+                                }
+
+                                @* 3) Tạo các <a> ẩn (hidden) cho ảnh thứ 7 trở đi, để Lightbox “nhận” đủ gallery
+                            (chú ý: không include ảnh thứ 6 nữa vì đã có thẻ +N) *@
+                                @for (int i = showCount + 1; i < totalCount; i++)
+                                {
+                                    var hiddenUrl = Model.BookImages.ElementAt(i).ImageUrl;
+                                    <a href="~/Images/@hiddenUrl"
+                                       data-lightbox="book-gallery"
+                                       data-title="@Model.Title"
+                                       style="display:none;">
+                                        @* Hidden anchor, Lightbox sẽ đưa ảnh này vào gallery *@
                                     </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="#thumb3" data-bs-toggle="tab" class="nav-link">
-                                        <img src="~/assets/img/shop-details/sm-3.png" alt="img">
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="#thumb4" data-bs-toggle="tab" class="nav-link">
-                                        <img src="~/assets/img/shop-details/sm-4.png" alt="img">
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="#thumb5" data-bs-toggle="tab" class="nav-link">
-                                        <img src="~/assets/img/shop-details/sm-5.png" alt="img">
-                                    </a>
-                                </li>
-                            </ul>
+                                }
+                            }
+                        </ul>
+
+
                         </div>
                     </div>
                     <div class="col-lg-7">
@@ -109,48 +191,10 @@
                                         <button class="qtyplus" aria-hidden="true">+</button>
                                     </p>
                                 </div> 
-                                @* <button type="button"  class="theme-btn style-2" data-bs-toggle="modal" data-bs-target="#readMoreModal">
-                                    Đọc thử
-                                  </button>
-                                  <!-- Read More Modal -->
-                                <div class="modal fade" id="readMoreModal" tabindex="-1" aria-labelledby="readMoreModalLabel" aria-hidden="true">
-                                    <div class="modal-dialog"> 
-                                        <div class="modal-content">
-                                            <div class="modal-body" style="background-image: url(~/assets/img/popupBg.png);"> 
-                                                <div class="close-btn">
-                                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                                        aria-label="Close"></button>
-                                                </div>
-                                                <div class="readMoreBox"> 
-                                                    <div class="content">
-                                                        <h3 id="readMoreModalLabel">The Role Of Book</h3>
-                                                        <p>
-                                                            Educating the Public <br>
-                                                            Political books play a crucial role in educating the public about political theories, historical events, policies, and the workings of governments. They provide readers with insights into complex political concepts and the historical context behind current events, helping to foster a more informed citizenry. <br><br>
-
-                                                            Shaping Public Opinion <br>
-                                                            Authors of political books often aim to influence public opinion by presenting arguments and perspectives on various issues. These books can sway readers' views, either reinforcing their existing beliefs or challenging them to consider alternative viewpoints. This influence can extend to political debates and discussions in the public sphere. <br><br>
-
-                                                            Documenting History <br>
-                                                            Political books serve as valuable records of historical events and political movements. They document the thoughts, actions, and decisions of political leaders and activists, providing future generations with a detailed account of significant periods and events. This historical documentation is essential for understanding the evolution of political systems and ideologies.
-
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div> *@
                             <button class="theme-btn add-to-cart" data-bookid="@Model.BookId">
                                 <i class="fa-solid fa-basket-shopping"></i> Thêm vào giỏ
                             </button>
                                 <div class="icon-box">
-                                    <a href="shop-details.html" class="icon">
-                                        <i class="far fa-heart"></i>
-                                    </a>
-                                    <a href="shop-details.html" class="icon-2">
-                                        <img src="~/assets/img/icon/shuffle.svg" alt="svg-icon">
-                                    </a>
                                 </div>
                             </div>
                             <div class="category-box">
@@ -303,20 +347,26 @@
         <div class="swiper book-slider">
             <div class="swiper-wrapper">
                 @{
-                    // Lấy danh sách sách gợi ý từ Controller
                     var lsBooks = ViewBag.RecommendBooks as List<Book>;
+                    // Thêm: lấy list RecommendationDto (BookId + Score)
+                    var recItems = ViewBag.RecommendItems as List<RecommendationDto>;
                 }
 
                 @if (lsBooks != null && lsBooks.Any())
                 {
                     foreach (var item in lsBooks)
                     {
+                        // Lấy Score tương ứng
+                        var score = recItems?
+                        .FirstOrDefault(r => r.BookId == item.BookId)
+                        ?.Score ?? 0f;
+                        var firstImg = item.BookImages?.FirstOrDefault()?.ImageUrl ?? "default.jpg";
                         string url = $"/{item.BookId}.html";//gán đường dẫn bên controller
                         <div class="swiper-slide">
                             <div class="shop-box-items style-2">
                                 <div class="book-thumb center">
                                     <a href="@url">
-                                        <img src="~/Images/@item.ImageUrl" alt="@item.Title" />
+                                        <img src ="~/Images/@firstImg" alt="@item.Title" />
                                     </a>
                                     <ul class="shop-icon d-grid justify-content-center align-items-center">
                                         <li>
@@ -332,6 +382,8 @@
                                 </div>
                                 <div class="shop-content">
                                     <h3>@item.Title</h3>
+                                    @* Hiển thị độ phù hợp do AI gợi ý *@
+                                    <p>Độ phù hợp với bạn: <strong>@score.ToString("0.00")%</strong></p>
                                     <ul class="price-list">
                                         <li>@item.Price.ToString("#,##0")VNĐ</li>
                                     </ul>

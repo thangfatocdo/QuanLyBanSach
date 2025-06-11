@@ -61,7 +61,8 @@ namespace QuanLyKhoSach.View
                 }
             }
 
-
+            // Sắp xếp theo OrderDate giảm dần (đơn mới nhất lên trước)
+            OrderList = OrderList.OrderByDescending(o => o.OrderDate);
             //đổ dữ liệu
             int index = 1;
             foreach (var b in OrderList.ToList())
@@ -97,7 +98,6 @@ namespace QuanLyKhoSach.View
                 formOrderAdd frm = new formOrderAdd();
                 frm.OrderId = Convert.ToInt32(dgvOrder.CurrentRow.Cells["dgvid"].Value);
                 frm.ShowDialog();
-                LoadOrders(); // gọi lại hàm load danh sách đơn hàng
             }
             else if (dgvOrder.CurrentCell.OwningColumn.Name == "dgvDetail")
             {

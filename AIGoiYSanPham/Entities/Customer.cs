@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace AIGoiYSanPham.Models;
+namespace AIGoiYSanPham.Entities;
 
 public partial class Customer
 {
@@ -16,6 +16,8 @@ public partial class Customer
     public string? Address { get; set; }
 
     public string? Password { get; set; }
+
+    public virtual ICollection<BookRating> BookRatings { get; set; } = new List<BookRating>();
 
     public virtual ICollection<CartItem> CartItems { get; set; } = new List<CartItem>();
 

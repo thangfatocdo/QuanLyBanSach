@@ -6,7 +6,16 @@
     </Key>
     <Property Name="AuthorId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="AuthorName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
-    <NavigationProperty Name="Books" Relationship="Self.FK__Books__AuthorId__412EB0B6" FromRole="Authors" ToRole="Books" />
+    <NavigationProperty Name="Books" Relationship="Self.FK__Books__AuthorId__5DCAEF64" FromRole="Authors" ToRole="Books" />
+  </EntityType>
+  <EntityType Name="BookImages">
+    <Key>
+      <PropertyRef Name="ImageId" />
+    </Key>
+    <Property Name="ImageId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BookId" Type="Int32" />
+    <Property Name="ImageUrl" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Books" Relationship="Self.FK_BookImages_Books" FromRole="BookImages" ToRole="Books" />
   </EntityType>
   <EntityType Name="BookRatings">
     <Key>
@@ -18,8 +27,8 @@
     <Property Name="RatingValue" Type="Int32" />
     <Property Name="Comment" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="CreatedAt" Type="DateTime" Precision="3" />
-    <NavigationProperty Name="Books" Relationship="Self.FK__BookRatin__BookI__7849DB76" FromRole="BookRatings" ToRole="Books" />
-    <NavigationProperty Name="Customers" Relationship="Self.FK__BookRatin__Custo__7755B73D" FromRole="BookRatings" ToRole="Customers" />
+    <NavigationProperty Name="Books" Relationship="Self.FK__BookRatin__BookI__5BE2A6F2" FromRole="BookRatings" ToRole="Books" />
+    <NavigationProperty Name="Customers" Relationship="Self.FK__BookRatin__Custo__5CD6CB2B" FromRole="BookRatings" ToRole="Customers" />
   </EntityType>
   <EntityType Name="Books">
     <Key>
@@ -34,12 +43,13 @@
     <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="ImageUrl" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
     <Property Name="CreatedAt" Type="DateTime" Precision="3" />
-    <NavigationProperty Name="Authors" Relationship="Self.FK__Books__AuthorId__412EB0B6" FromRole="Books" ToRole="Authors" />
-    <NavigationProperty Name="BookRatings" Relationship="Self.FK__BookRatin__BookI__7849DB76" FromRole="Books" ToRole="BookRatings" />
-    <NavigationProperty Name="Categories" Relationship="Self.FK__Books__CategoryI__4222D4EF" FromRole="Books" ToRole="Categories" />
-    <NavigationProperty Name="Publishers" Relationship="Self.FK__Books__Publisher__4316F928" FromRole="Books" ToRole="Publishers" />
-    <NavigationProperty Name="InventoryDetail" Relationship="Self.FK__Inventory__BookI__4D94879B" FromRole="Books" ToRole="InventoryDetail" />
-    <NavigationProperty Name="OrderItems" Relationship="Self.FK__OrderItem__BookI__60A75C0F" FromRole="Books" ToRole="OrderItems" />
+    <NavigationProperty Name="Authors" Relationship="Self.FK__Books__AuthorId__5DCAEF64" FromRole="Books" ToRole="Authors" />
+    <NavigationProperty Name="BookImages" Relationship="Self.FK_BookImages_Books" FromRole="Books" ToRole="BookImages" />
+    <NavigationProperty Name="BookRatings" Relationship="Self.FK__BookRatin__BookI__5BE2A6F2" FromRole="Books" ToRole="BookRatings" />
+    <NavigationProperty Name="Categories" Relationship="Self.FK__Books__CategoryI__5EBF139D" FromRole="Books" ToRole="Categories" />
+    <NavigationProperty Name="Publishers" Relationship="Self.FK__Books__Publisher__5FB337D6" FromRole="Books" ToRole="Publishers" />
+    <NavigationProperty Name="InventoryDetail" Relationship="Self.FK__Inventory__BookI__628FA481" FromRole="Books" ToRole="InventoryDetail" />
+    <NavigationProperty Name="OrderItems" Relationship="Self.FK__OrderItem__BookI__68487DD7" FromRole="Books" ToRole="OrderItems" />
     <NavigationProperty Name="CartItems" Relationship="Self.FK_CartItems_Books" FromRole="Books" ToRole="CartItems" />
   </EntityType>
   <EntityType Name="CartItems">
@@ -61,7 +71,7 @@
     <Property Name="CategoryId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="CategoryName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="Alias" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-    <NavigationProperty Name="Books" Relationship="Self.FK__Books__CategoryI__4222D4EF" FromRole="Categories" ToRole="Books" />
+    <NavigationProperty Name="Books" Relationship="Self.FK__Books__CategoryI__5EBF139D" FromRole="Categories" ToRole="Books" />
   </EntityType>
   <EntityType Name="Customers">
     <Key>
@@ -73,9 +83,9 @@
     <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
     <Property Name="Address" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
     <Property Name="Password" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-    <NavigationProperty Name="BookRatings" Relationship="Self.FK__BookRatin__Custo__7755B73D" FromRole="Customers" ToRole="BookRatings" />
+    <NavigationProperty Name="BookRatings" Relationship="Self.FK__BookRatin__Custo__5CD6CB2B" FromRole="Customers" ToRole="BookRatings" />
     <NavigationProperty Name="CartItems" Relationship="Self.FK_CartItems_Customers" FromRole="Customers" ToRole="CartItems" />
-    <NavigationProperty Name="Orders" Relationship="Self.FK__Orders__Customer__5CD6CB2B" FromRole="Customers" ToRole="Orders" />
+    <NavigationProperty Name="Orders" Relationship="Self.FK__Orders__Customer__6A30C649" FromRole="Customers" ToRole="Orders" />
   </EntityType>
   <EntityType Name="InventoryDetail">
     <Key>
@@ -87,8 +97,8 @@
     <Property Name="Quantity" Type="Int32" Nullable="false" />
     <Property Name="Iep_Id" Type="Int32" />
     <Property Name="Type" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
-    <NavigationProperty Name="Books" Relationship="Self.FK__Inventory__BookI__4D94879B" FromRole="InventoryDetail" ToRole="Books" />
-    <NavigationProperty Name="InventoryImport" Relationship="Self.FK__Inventory__Impor__4CA06362" FromRole="InventoryDetail" ToRole="InventoryImport" />
+    <NavigationProperty Name="Books" Relationship="Self.FK__Inventory__BookI__628FA481" FromRole="InventoryDetail" ToRole="Books" />
+    <NavigationProperty Name="InventoryImport" Relationship="Self.FK__Inventory__Impor__6383C8BA" FromRole="InventoryDetail" ToRole="InventoryImport" />
     <NavigationProperty Name="InventoryExport" Relationship="Self.FK_InventoryDetail_InventoryExport" FromRole="InventoryDetail" ToRole="InventoryExport" />
   </EntityType>
   <EntityType Name="InventoryExport">
@@ -100,7 +110,7 @@
     <Property Name="Iep_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="OrderId" Type="Int32" />
     <NavigationProperty Name="InventoryDetail" Relationship="Self.FK_InventoryDetail_InventoryExport" FromRole="InventoryExport" ToRole="InventoryDetail" />
-    <NavigationProperty Name="Users" Relationship="Self.FK__Inventory__UserI__6477ECF3" FromRole="InventoryExport" ToRole="Users" />
+    <NavigationProperty Name="Users" Relationship="Self.FK__Inventory__UserI__656C112C" FromRole="InventoryExport" ToRole="Users" />
     <NavigationProperty Name="Orders" Relationship="Self.FK_InventoryExport_Orders" FromRole="InventoryExport" ToRole="Orders" />
   </EntityType>
   <EntityType Name="InventoryImport">
@@ -111,8 +121,8 @@
     <Property Name="UserId" Type="Int32" />
     <Property Name="ImportDate" Type="DateTime" Precision="3" />
     <Property Name="Note" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-    <NavigationProperty Name="InventoryDetail" Relationship="Self.FK__Inventory__Impor__4CA06362" FromRole="InventoryImport" ToRole="InventoryDetail" />
-    <NavigationProperty Name="Users" Relationship="Self.FK__Inventory__UserI__48CFD27E" FromRole="InventoryImport" ToRole="Users" />
+    <NavigationProperty Name="InventoryDetail" Relationship="Self.FK__Inventory__Impor__6383C8BA" FromRole="InventoryImport" ToRole="InventoryDetail" />
+    <NavigationProperty Name="Users" Relationship="Self.FK__Inventory__UserI__6754599E" FromRole="InventoryImport" ToRole="Users" />
   </EntityType>
   <EntityType Name="OrderItems">
     <Key>
@@ -123,7 +133,7 @@
     <Property Name="BookId" Type="Int32" />
     <Property Name="BookPrice" Type="Decimal" Precision="10" Scale="2" />
     <Property Name="BookQuantity" Type="Int32" />
-    <NavigationProperty Name="Books" Relationship="Self.FK__OrderItem__BookI__60A75C0F" FromRole="OrderItems" ToRole="Books" />
+    <NavigationProperty Name="Books" Relationship="Self.FK__OrderItem__BookI__68487DD7" FromRole="OrderItems" ToRole="Books" />
     <NavigationProperty Name="Orders" Relationship="Self.FK_OrderItems_OrderId" FromRole="OrderItems" ToRole="Orders" />
   </EntityType>
   <EntityType Name="Orders">
@@ -140,7 +150,7 @@
     <Property Name="Address" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
     <Property Name="CustomerName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
     <Property Name="Phone" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
-    <NavigationProperty Name="Customers" Relationship="Self.FK__Orders__Customer__5CD6CB2B" FromRole="Orders" ToRole="Customers" />
+    <NavigationProperty Name="Customers" Relationship="Self.FK__Orders__Customer__6A30C649" FromRole="Orders" ToRole="Customers" />
     <NavigationProperty Name="InventoryExport" Relationship="Self.FK_InventoryExport_Orders" FromRole="Orders" ToRole="InventoryExport" />
     <NavigationProperty Name="OrderItems" Relationship="Self.FK_OrderItems_OrderId" FromRole="Orders" ToRole="OrderItems" />
     <NavigationProperty Name="OrderStatuses" Relationship="Self.FK_Orders_OrderStatuses" FromRole="Orders" ToRole="OrderStatuses" />
@@ -170,17 +180,7 @@
     <Property Name="PublisherName" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="Address" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
     <Property Name="Phone" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
-    <NavigationProperty Name="Books" Relationship="Self.FK__Books__Publisher__4316F928" FromRole="Publishers" ToRole="Books" />
-  </EntityType>
-  <EntityType Name="sysdiagrams">
-    <Key>
-      <PropertyRef Name="diagram_id" />
-    </Key>
-    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="principal_id" Type="Int32" Nullable="false" />
-    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="version" Type="Int32" />
-    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <NavigationProperty Name="Books" Relationship="Self.FK__Books__Publisher__5FB337D6" FromRole="Publishers" ToRole="Books" />
   </EntityType>
   <EntityType Name="Users">
     <Key>
@@ -191,10 +191,11 @@
     <Property Name="Password" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="FullName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
     <Property Name="Role" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
-    <NavigationProperty Name="InventoryExport" Relationship="Self.FK__Inventory__UserI__6477ECF3" FromRole="Users" ToRole="InventoryExport" />
-    <NavigationProperty Name="InventoryImport" Relationship="Self.FK__Inventory__UserI__48CFD27E" FromRole="Users" ToRole="InventoryImport" />
+    <NavigationProperty Name="InventoryExport" Relationship="Self.FK__Inventory__UserI__656C112C" FromRole="Users" ToRole="InventoryExport" />
+    <NavigationProperty Name="InventoryImport" Relationship="Self.FK__Inventory__UserI__6754599E" FromRole="Users" ToRole="InventoryImport" />
+    <Property Name="ImageUrl" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
   </EntityType>
-  <Association Name="FK__Books__AuthorId__412EB0B6">
+  <Association Name="FK__Books__AuthorId__5DCAEF64">
     <End Role="Authors" Type="Self.Authors" Multiplicity="0..1" />
     <End Role="Books" Type="Self.Books" Multiplicity="*" />
     <ReferentialConstraint>
@@ -206,7 +207,19 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__BookRatin__BookI__7849DB76">
+  <Association Name="FK_BookImages_Books">
+    <End Role="Books" Type="Self.Books" Multiplicity="0..1" />
+    <End Role="BookImages" Type="Self.BookImages" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Books">
+        <PropertyRef Name="BookId" />
+      </Principal>
+      <Dependent Role="BookImages">
+        <PropertyRef Name="BookId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__BookRatin__BookI__5BE2A6F2">
     <End Role="Books" Type="Self.Books" Multiplicity="1" />
     <End Role="BookRatings" Type="Self.BookRatings" Multiplicity="*" />
     <ReferentialConstraint>
@@ -218,7 +231,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__BookRatin__Custo__7755B73D">
+  <Association Name="FK__BookRatin__Custo__5CD6CB2B">
     <End Role="Customers" Type="Self.Customers" Multiplicity="1" />
     <End Role="BookRatings" Type="Self.BookRatings" Multiplicity="*" />
     <ReferentialConstraint>
@@ -230,7 +243,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Books__CategoryI__4222D4EF">
+  <Association Name="FK__Books__CategoryI__5EBF139D">
     <End Role="Categories" Type="Self.Categories" Multiplicity="0..1" />
     <End Role="Books" Type="Self.Books" Multiplicity="*" />
     <ReferentialConstraint>
@@ -242,7 +255,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Books__Publisher__4316F928">
+  <Association Name="FK__Books__Publisher__5FB337D6">
     <End Role="Publishers" Type="Self.Publishers" Multiplicity="0..1" />
     <End Role="Books" Type="Self.Books" Multiplicity="*" />
     <ReferentialConstraint>
@@ -254,7 +267,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Inventory__BookI__4D94879B">
+  <Association Name="FK__Inventory__BookI__628FA481">
     <End Role="Books" Type="Self.Books" Multiplicity="0..1" />
     <End Role="InventoryDetail" Type="Self.InventoryDetail" Multiplicity="*" />
     <ReferentialConstraint>
@@ -266,7 +279,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__OrderItem__BookI__60A75C0F">
+  <Association Name="FK__OrderItem__BookI__68487DD7">
     <End Role="Books" Type="Self.Books" Multiplicity="0..1" />
     <End Role="OrderItems" Type="Self.OrderItems" Multiplicity="*" />
     <ReferentialConstraint>
@@ -302,7 +315,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Orders__Customer__5CD6CB2B">
+  <Association Name="FK__Orders__Customer__6A30C649">
     <End Role="Customers" Type="Self.Customers" Multiplicity="0..1" />
     <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
     <ReferentialConstraint>
@@ -314,7 +327,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Inventory__Impor__4CA06362">
+  <Association Name="FK__Inventory__Impor__6383C8BA">
     <End Role="InventoryImport" Type="Self.InventoryImport" Multiplicity="0..1" />
     <End Role="InventoryDetail" Type="Self.InventoryDetail" Multiplicity="*" />
     <ReferentialConstraint>
@@ -338,7 +351,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Inventory__UserI__6477ECF3">
+  <Association Name="FK__Inventory__UserI__656C112C">
     <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
     <End Role="InventoryExport" Type="Self.InventoryExport" Multiplicity="*" />
     <ReferentialConstraint>
@@ -362,7 +375,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Inventory__UserI__48CFD27E">
+  <Association Name="FK__Inventory__UserI__6754599E">
     <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
     <End Role="InventoryImport" Type="Self.InventoryImport" Multiplicity="*" />
     <ReferentialConstraint>
@@ -412,6 +425,7 @@
   </Association>
   <EntityContainer Name="BookstoreDBEntities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Authors" EntityType="Self.Authors" />
+    <EntitySet Name="BookImages" EntityType="Self.BookImages" />
     <EntitySet Name="BookRatings" EntityType="Self.BookRatings" />
     <EntitySet Name="Books" EntityType="Self.Books" />
     <EntitySet Name="CartItems" EntityType="Self.CartItems" />
@@ -425,33 +439,36 @@
     <EntitySet Name="OrderStatuses" EntityType="Self.OrderStatuses" />
     <EntitySet Name="PaymentMethods" EntityType="Self.PaymentMethods" />
     <EntitySet Name="Publishers" EntityType="Self.Publishers" />
-    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
     <EntitySet Name="Users" EntityType="Self.Users" />
-    <AssociationSet Name="FK__Books__AuthorId__412EB0B6" Association="Self.FK__Books__AuthorId__412EB0B6">
+    <AssociationSet Name="FK__Books__AuthorId__5DCAEF64" Association="Self.FK__Books__AuthorId__5DCAEF64">
       <End Role="Authors" EntitySet="Authors" />
       <End Role="Books" EntitySet="Books" />
     </AssociationSet>
-    <AssociationSet Name="FK__BookRatin__BookI__7849DB76" Association="Self.FK__BookRatin__BookI__7849DB76">
+    <AssociationSet Name="FK_BookImages_Books" Association="Self.FK_BookImages_Books">
+      <End Role="Books" EntitySet="Books" />
+      <End Role="BookImages" EntitySet="BookImages" />
+    </AssociationSet>
+    <AssociationSet Name="FK__BookRatin__BookI__5BE2A6F2" Association="Self.FK__BookRatin__BookI__5BE2A6F2">
       <End Role="Books" EntitySet="Books" />
       <End Role="BookRatings" EntitySet="BookRatings" />
     </AssociationSet>
-    <AssociationSet Name="FK__BookRatin__Custo__7755B73D" Association="Self.FK__BookRatin__Custo__7755B73D">
+    <AssociationSet Name="FK__BookRatin__Custo__5CD6CB2B" Association="Self.FK__BookRatin__Custo__5CD6CB2B">
       <End Role="Customers" EntitySet="Customers" />
       <End Role="BookRatings" EntitySet="BookRatings" />
     </AssociationSet>
-    <AssociationSet Name="FK__Books__CategoryI__4222D4EF" Association="Self.FK__Books__CategoryI__4222D4EF">
+    <AssociationSet Name="FK__Books__CategoryI__5EBF139D" Association="Self.FK__Books__CategoryI__5EBF139D">
       <End Role="Categories" EntitySet="Categories" />
       <End Role="Books" EntitySet="Books" />
     </AssociationSet>
-    <AssociationSet Name="FK__Books__Publisher__4316F928" Association="Self.FK__Books__Publisher__4316F928">
+    <AssociationSet Name="FK__Books__Publisher__5FB337D6" Association="Self.FK__Books__Publisher__5FB337D6">
       <End Role="Publishers" EntitySet="Publishers" />
       <End Role="Books" EntitySet="Books" />
     </AssociationSet>
-    <AssociationSet Name="FK__Inventory__BookI__4D94879B" Association="Self.FK__Inventory__BookI__4D94879B">
+    <AssociationSet Name="FK__Inventory__BookI__628FA481" Association="Self.FK__Inventory__BookI__628FA481">
       <End Role="Books" EntitySet="Books" />
       <End Role="InventoryDetail" EntitySet="InventoryDetail" />
     </AssociationSet>
-    <AssociationSet Name="FK__OrderItem__BookI__60A75C0F" Association="Self.FK__OrderItem__BookI__60A75C0F">
+    <AssociationSet Name="FK__OrderItem__BookI__68487DD7" Association="Self.FK__OrderItem__BookI__68487DD7">
       <End Role="Books" EntitySet="Books" />
       <End Role="OrderItems" EntitySet="OrderItems" />
     </AssociationSet>
@@ -463,11 +480,11 @@
       <End Role="Customers" EntitySet="Customers" />
       <End Role="CartItems" EntitySet="CartItems" />
     </AssociationSet>
-    <AssociationSet Name="FK__Orders__Customer__5CD6CB2B" Association="Self.FK__Orders__Customer__5CD6CB2B">
+    <AssociationSet Name="FK__Orders__Customer__6A30C649" Association="Self.FK__Orders__Customer__6A30C649">
       <End Role="Customers" EntitySet="Customers" />
       <End Role="Orders" EntitySet="Orders" />
     </AssociationSet>
-    <AssociationSet Name="FK__Inventory__Impor__4CA06362" Association="Self.FK__Inventory__Impor__4CA06362">
+    <AssociationSet Name="FK__Inventory__Impor__6383C8BA" Association="Self.FK__Inventory__Impor__6383C8BA">
       <End Role="InventoryImport" EntitySet="InventoryImport" />
       <End Role="InventoryDetail" EntitySet="InventoryDetail" />
     </AssociationSet>
@@ -475,7 +492,7 @@
       <End Role="InventoryExport" EntitySet="InventoryExport" />
       <End Role="InventoryDetail" EntitySet="InventoryDetail" />
     </AssociationSet>
-    <AssociationSet Name="FK__Inventory__UserI__6477ECF3" Association="Self.FK__Inventory__UserI__6477ECF3">
+    <AssociationSet Name="FK__Inventory__UserI__656C112C" Association="Self.FK__Inventory__UserI__656C112C">
       <End Role="Users" EntitySet="Users" />
       <End Role="InventoryExport" EntitySet="InventoryExport" />
     </AssociationSet>
@@ -483,7 +500,7 @@
       <End Role="Orders" EntitySet="Orders" />
       <End Role="InventoryExport" EntitySet="InventoryExport" />
     </AssociationSet>
-    <AssociationSet Name="FK__Inventory__UserI__48CFD27E" Association="Self.FK__Inventory__UserI__48CFD27E">
+    <AssociationSet Name="FK__Inventory__UserI__6754599E" Association="Self.FK__Inventory__UserI__6754599E">
       <End Role="Users" EntitySet="Users" />
       <End Role="InventoryImport" EntitySet="InventoryImport" />
     </AssociationSet>

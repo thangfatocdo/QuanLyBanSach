@@ -8,11 +8,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="author" content="gramentheme">
-    <meta name="description" content="Bookle - Book Store WooCommerce Html Template ">
+    <meta name="description" content="Nhà sách Hải Đăng">
     <!-- ======== Page title ============ -->
-    <title>Bookle - Book Store WooCommerce Html Template</title>
+    <title>Nhà sách Hải Đăng</title>
     <!--<< Favcion >>-->
-    <link rel="shortcut icon" href="~/assets/img/favicon.png">
+    <link rel="shortcut icon" href="~/assets/img/logo/haidang.png">
     <!--<< Bootstrap min.css >>-->
     <link rel="stylesheet" href="~/assets/css/bootstrap.min.css">
     <!--<< All Min Css >>-->
@@ -31,6 +31,11 @@
     <link rel="stylesheet" href="~/assets/css/icomoon.css">
     <!--<< Main.css >>-->
     <link rel="stylesheet" href="~/assets/css/main.css">
+    <!-- jQuery (nhu cầu của Lightbox2) -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Lightbox2 CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" rel="stylesheet" />
+
     <style>
         .toast-notify {
             position: fixed;
@@ -223,6 +228,8 @@
     <script src="~/assets/js/gsap.min.js"></script>
     <!--<< Main.js >>-->
     <script src="~/assets/js/main.js"></script>
+    <!-- Lightbox2 JS (đặt ở cuối body hoặc trong _Layout trước thẻ đóng </body>) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
     @await Component.InvokeAsync("Notyf")
     @await Html.PartialAsync("_ToastNotify")
     @await RenderSectionAsync("Scripts", required: false)

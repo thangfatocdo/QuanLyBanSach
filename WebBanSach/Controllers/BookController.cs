@@ -16,35 +16,72 @@ namespace WebBanSach.Controllers
             this.context = context;
         }
         [Route("shop.html", Name = "BookShop")]
-        public IActionResult Index(int? categoryId, int? page)
+        public IActionResult Index(int? categoryId, int? page, decimal? minPrice, decimal? maxPrice, int? rating, string sort)
         {
             try
             {
-                var pageNumber = page == null || page <= 0 ? 1 : page.Value;
-                var pageSize = 8;
-                var query = context.Books.AsQueryable();
+                var pageNumber = page.GetValueOrDefault(1);
+                const int pageSize = 8;
 
-                // Nếu có lọc theo thể loại
+                // 1. Fetch all ratings (dùng cho hiển thị count)
+                var allRatings = context.BookRatings.ToList();
+
+                // 2. Build query động cho phép gắn thêm các điều kiện
+                var query = context.Books.Include(b => b.BookImages).AsQueryable();
+
                 if (categoryId.HasValue)
+                    query = query.Where(b => b.CategoryId == categoryId.Value);
+
+                if (minPrice.HasValue)
+                    query = query.Where(b => b.Price >= minPrice.Value);
+                if (maxPrice.HasValue)
+                    query = query.Where(b => b.Price <= maxPrice.Value);
+                // lọc sách có trung bình >= s và < s+1
+                if (rating.HasValue)
                 {
-                    query = query.Where(b => b.CategoryId == categoryId);
+                    decimal s = rating.Value;
+                    query = query.Where(b =>
+                        context.BookRatings
+                               .Where(r => r.BookId == b.BookId)
+                               .Average(r => (decimal?)(r.RatingValue ?? 0)) >= s
+                        && context.BookRatings
+                               .Where(r => r.BookId == b.BookId)
+                               .Average(r => (decimal?)(r.RatingValue ?? 0)) < s + 1
+                    );
                 }
-
+                // CHỌN SORT
+                switch (sort)
+                {
+                    case "price_desc":
+                        query = query.Include(b => b.BookImages).OrderByDescending(b => b.Price);
+                        break;
+                    case "price_asc":
+                        query = query.Include(b => b.BookImages).OrderBy(b => b.Price);
+                        break;
+                    case "latest":
+                        query = query.Include(b => b.BookImages).OrderByDescending(b => b.CreatedAt);
+                        break;
+                    case "oldest":
+                        query = query.Include(b => b.BookImages).OrderBy(b => b.CreatedAt);
+                        break;
+                    default:
+                        query = query.Include(b => b.BookImages).OrderByDescending(b => b.BookId);
+                        break;
+                }
+                // 3. Paging & other ViewBag
                 var models = new PagedList<Book>(
-                    query.AsNoTracking().OrderByDescending(b => b.BookId),
-                    pageNumber, pageSize
-                );
+                    query.AsNoTracking(),
+                    pageNumber, pageSize);
 
-                // Gửi danh sách thể loại và category đang chọn
-                var categories = context.Categories.OrderBy(c => c.CategoryName).ToList();
-                ViewBag.Categories = categories;
+                ViewBag.BookRatings = allRatings;
+                ViewBag.SelectedRating = rating;
+                ViewBag.Categories = context.Categories.OrderBy(c => c.CategoryName).ToList();
                 ViewBag.SelectedCategoryId = categoryId;
                 ViewBag.CurrentPage = pageNumber;
+                ViewBag.MinPrice = minPrice;
+                ViewBag.MaxPrice = maxPrice;
+                ViewBag.SortOption = sort;
 
-                // Lấy danh sách đánh giá cho sách
-                var ratings = context.BookRatings
-                    .ToList();
-                ViewBag.BookRatings = ratings;
                 return View(models);
             }
             catch
@@ -53,15 +90,17 @@ namespace WebBanSach.Controllers
             }
         }
 
-
-
-
-            [Route("/{id}.html", Name = "BookDetails")] //gán đường dẫn bên view index
+        [Route("/{id}.html", Name = "BookDetails")] //gán đường dẫn bên view index
         public async Task<IActionResult> BookDetail(int id)
         {
             try
             {
-                var book = context.Books.Include(b => b.Category).Include(b => b.Author).Include(b => b.Publisher).FirstOrDefault(b => b.BookId == id);
+                var book = context.Books
+                    .Include(b => b.Category)
+                    .Include(b => b.Author)
+                    .Include(b => b.Publisher)
+                    .Include(b => b.BookImages) // 👈 dòng quan trọng
+                    .FirstOrDefault(b => b.BookId == id);
                 if (book == null)
                 {
                     return RedirectToAction("Index");
@@ -69,6 +108,8 @@ namespace WebBanSach.Controllers
 
                 // Lấy userId từ Claims (nếu chưa login -> không recommend)
                 var userIdStr = User.FindFirstValue(ClaimTypes.NameIdentifier);
+                List<RecommendationDto> recItems = new();
+                List<Book> recBooks = new();
                 if (!int.TryParse(userIdStr, out var userId))
                 {
                     // Trả về view với model rỗng
@@ -79,13 +120,28 @@ namespace WebBanSach.Controllers
                 // Lấy danh sách sách gợi ý
                 if (userIdStr != null)
                 {
-                    // Gọi AI gợi ý
-                    var recIds = await _recService.RecommendAsync(userId, 10);
-                    // Lấy sách tương ứng
-                    var recBooks = context.Books.Where(b => recIds.Contains(b.BookId)).ToList();
-                    ViewBag.RecommendBooks = recBooks;
-                }
+                    // 1) Lấy cả BookId + Score
+                    recItems = await _recService.RecommendAsync(userId);
 
+                    // 2) Lấy chi tiết sách
+                    var ids = recItems.Select(r => r.BookId).ToList();
+                    var rawBooks = context.Books
+                    .Include(b => b.BookImages)
+                    .Where(b => ids.Contains(b.BookId))
+                    .ToList();
+
+                    // Sắp xếp lại theo thứ tự điểm Score từ AI
+                    recBooks = recItems
+                        .Join(rawBooks,
+                              rec => rec.BookId,
+                              book => book.BookId,
+                              (rec, book) => new { Book = book, Score = rec.Score })
+                        .OrderByDescending(x => x.Score)
+                        .Select(x => x.Book)
+                        .ToList();
+                }
+                ViewBag.RecommendItems = recItems;
+                ViewBag.RecommendBooks = recBooks;
                 // Lấy danh sách đánh giá cho sách
                 var ratings = context.BookRatings
                     .Include(r => r.Customer)
@@ -151,6 +207,37 @@ namespace WebBanSach.Controllers
             }
 
             return Ok(new { fileName });
+        }
+
+        [HttpGet]
+        public IActionResult Search(string q, int? categoryId, int page = 1)
+        {
+            int pageSize = 8;
+
+            var query = context.Books.Include(b => b.BookImages).AsQueryable();
+
+            if (!string.IsNullOrEmpty(q))
+            {
+                query = query.Where(b => b.Title.Contains(q) || b.Author.AuthorName.Contains(q));
+            }
+
+            if (categoryId.HasValue)
+            {
+                query = query.Where(b => b.CategoryId == categoryId.Value);
+            }
+
+            var books = query
+                .OrderByDescending(b => b.CreatedAt)
+                .ToPagedList(page, pageSize);
+
+            // Gán lại dữ liệu ViewBag để dùng chung với View Index
+            ViewBag.CurrentPage = page;
+            ViewBag.SelectedCategoryId = categoryId;
+            ViewBag.Categories = context.Categories.ToList();
+            ViewBag.BookRatings = context.BookRatings.ToList();
+            ViewBag.SearchKeyword = q;
+
+            return View("Index", books);
         }
     }
 }

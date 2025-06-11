@@ -75,7 +75,6 @@ namespace QuanLyKhoSach.View
                 //gán Id để biết đang sửa cái nào
                 frm.ImportId = Convert.ToInt32(dgvImport.CurrentRow.Cells["dgvid"].Value);
                 frm.ShowDialog();
-                LoadImports();
             }
             else if (dgvImport.CurrentCell.OwningColumn.Name == "dgvDetail")
             {

@@ -3,6 +3,7 @@ using System.Diagnostics;
 using WebBanSach.Models.ViewModels;
 using System.Security.Claims;
 using WebBanSach.Models.Entities;
+using Microsoft.EntityFrameworkCore;
 
 namespace WebBanSach.Controllers
 {
@@ -23,27 +24,60 @@ namespace WebBanSach.Controllers
 
         public async Task<IActionResult> Index()
         {
-            // Lấy userId từ Claims (nếu chưa login -> không recommend)
             var userIdStr = User.FindFirstValue(ClaimTypes.NameIdentifier);
-            if (!int.TryParse(userIdStr, out var userId))
-            {
-                // Trả về view với model rỗng
-                return View(new List<Book>());
-            }
+            List<RecommendationDto> recItems;
+            List<Book> recBooks;
 
-            // Gọi AI gợi ý
-            var recIds = await _recService.RecommendAsync(userId, 5);
-            // Lấy sách tương ứng
-            var recBooks = context.Books.Where(b => recIds.Contains(b.BookId)).ToList();
-            ViewBag.RecommendBooks = recBooks;
-            // Lấy danh sách đánh giá cho sách
-            var ratings = context.BookRatings
+            if (int.TryParse(userIdStr, out var userId))
+            {
+                // 1) Lấy cả BookId + Score
+                recItems = await _recService.RecommendAsync(userId);
+
+                // 2) Lấy chi tiết sách
+                var ids = recItems.Select(r => r.BookId).ToList();
+                var rawBooks = context.Books
+                    .Include(b => b.BookImages)
+                    .Where(b => ids.Contains(b.BookId))
+                    .ToList();
+
+                // Sắp xếp lại theo thứ tự điểm Score từ AI
+                recBooks = recItems
+                    .Join(rawBooks,
+                          rec => rec.BookId,
+                          book => book.BookId,
+                          (rec, book) => new { Book = book, Score = rec.Score })
+                    .OrderByDescending(x => x.Score)
+                    .Select(x => x.Book)
+                    .ToList();
+            }
+            else
+            {
+                // Nếu chưa login → fallback: sách có rating cao
+                recItems = null;
+                recBooks = context.BookRatings
+                    .Where(r => r.RatingValue != null)
+                    .GroupBy(r => r.BookId)
+                    .Select(g => new
+                    {
+                        BookId = g.Key,
+                        AvgRating = g.Average(r => r.RatingValue)
+                    })
+                    .OrderByDescending(x => x.AvgRating)
+                    .Take(10)
+                    .Join(context.Books, x => x.BookId, b => b.BookId, (x, b) => b)
+                    .ToList();
+            }
+            ViewBag.RecommendItems = recItems;    // List<RecommendationDto> or null
+            ViewBag.RecommendBooks = recBooks;    // List<Book>
+            ViewBag.BookRatings = context.BookRatings.ToList();
+            ViewBag.TopRatedBooks = context.Books
+                .Include(b => b.BookImages)
+                .OrderByDescending(b => b.BookRatings.Average(r => r.RatingValue))
+                .Take(10)
                 .ToList();
-            ViewBag.BookRatings = ratings;
+
             return View();
         }
-
-
 
         public IActionResult Privacy()
         {

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace AIGoiYSanPham.Models;
+namespace AIGoiYSanPham.Entities;
 
 public partial class InventoryImport
 {

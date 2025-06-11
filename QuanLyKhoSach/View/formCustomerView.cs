@@ -70,7 +70,6 @@ namespace QuanLyKhoSach.View
                 //Truyền id để biết đang sửa ai
                 frm.CustomerId = Convert.ToInt32(dgvCustomer.CurrentRow.Cells["dgvid"].Value);
                 frm.ShowDialog();
-                LoadCustomers();
             }
         }
     }

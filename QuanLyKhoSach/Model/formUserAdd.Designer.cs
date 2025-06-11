@@ -132,6 +132,7 @@
             this.btnBrowse.Size = new System.Drawing.Size(113, 45);
             this.btnBrowse.TabIndex = 27;
             this.btnBrowse.Text = "Tải lên tệp";
+            this.btnBrowse.Click += new System.EventHandler(this.btnBrowse_Click);
             // 
             // txtPic
             // 

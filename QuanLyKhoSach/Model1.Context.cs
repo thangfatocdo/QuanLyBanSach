@@ -26,6 +26,7 @@ namespace QuanLyKhoSach
         }
     
         public virtual DbSet<Authors> Authors { get; set; }
+        public virtual DbSet<BookImages> BookImages { get; set; }
         public virtual DbSet<BookRatings> BookRatings { get; set; }
         public virtual DbSet<Books> Books { get; set; }
         public virtual DbSet<CartItems> CartItems { get; set; }
@@ -39,7 +40,6 @@ namespace QuanLyKhoSach
         public virtual DbSet<OrderStatuses> OrderStatuses { get; set; }
         public virtual DbSet<PaymentMethods> PaymentMethods { get; set; }
         public virtual DbSet<Publishers> Publishers { get; set; }
-        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<Users> Users { get; set; }
     }
 }

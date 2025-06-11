@@ -65,10 +65,7 @@ namespace QuanLyKhoSach.View
                 frm.txtName.Text = dgvCategory.CurrentRow.Cells["dgvName"].Value?.ToString();
                 // Truyền id để biết đang sửa ai
                 frm.CategoryId = Convert.ToInt32(dgvCategory.CurrentRow.Cells["dgvid"].Value);
-                if (frm.ShowDialog() == DialogResult.OK)
-                {
-                    LoadCategory(); // Chỉ load lại nếu có thay đổi
-                }
+                frm.ShowDialog();
             }
         }
 

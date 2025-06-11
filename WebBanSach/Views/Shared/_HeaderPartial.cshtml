@@ -73,9 +73,6 @@
                                 </form>
                             </div>
                             <div class="menu-cart">
-                                <a href="wishlist.html" class="cart-icon">
-                                    <i class="fa-regular fa-heart"></i>
-                                </a>
                                 <a asp-controller="ShoppingCart" asp-action="Index" class="cart-icon">
                                     <i class="fa-regular fa-cart-shopping"></i>
                                 </a>
@@ -142,9 +139,9 @@
                             </div>
                         </div>
                     </div>
-                    <form action="#" class="search-toggle-box d-md-block">
+                    <form asp-controller="Book" asp-action="Search" method="get" class="search-toggle-box">
                         <div class="input-area">
-                            <input type="text" placeholder="Tìm theo từ khóa, tác giả">
+                            <input type="text" name="q" placeholder="Tìm sách hoặc tác giả...">
                             <button class="cmn-btn">
                                 <i class="far fa-search"></i>
                             </button>
@@ -170,7 +167,7 @@
                     @if (User.Identity.IsAuthenticated)
                     {
                         <div class="d-flex align-items-center gap-3">
-                            <span class="text-dark">@User.Identity.Name</span>
+                            <a asp-controller="Account" asp-action="Profile">@User.Identity.Name</a>
                             <a asp-controller="Account" asp-action="Logout" class="theme-btn rounded-1">Đăng xuất</a>
                         </div>
                     }

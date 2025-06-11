@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Shell
+    x:Class="Doan1.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:Doan1.views"
+    Shell.FlyoutBehavior="Disabled"
+    Title="Doan1">
+
+    <TabBar x:Name="Phonetabs">
+        <Tab Title="Trang chủ" Icon="icon_home.png">
+            <ShellContent ContentTemplate="{DataTemplate local:HomePage}" />
+        </Tab>
+        <Tab Title="Đơn hàng" Icon="icon_orders.png">
+            <ShellContent ContentTemplate="{DataTemplate local:BillPage}" />
+        </Tab>
+        <Tab Title="Cài đặt" Icon="icon_settings.png">
+            <ShellContent ContentTemplate="{DataTemplate local:SettingPage}" />
+        </Tab>
+    </TabBar>
+
+</Shell>

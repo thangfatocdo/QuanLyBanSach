@@ -61,6 +61,7 @@ namespace QuanLyKhoSach.Model
                     // Gán trạng thái
                     string status = order.OrderStatuses?.StatusName ?? "";
                     choduyet.Checked = status == "Chờ duyệt";
+                    daduyet.Checked = status == "Đã duyệt";
                     danggiao.Checked = status == "Đang giao";
                     dagiao.Checked = status == "Đã giao";
                     trahang.Checked = status == "Trả hàng";
@@ -114,7 +115,41 @@ namespace QuanLyKhoSach.Model
                 else if (daduyet.Checked)
                     order.StatusId = context.OrderStatuses.FirstOrDefault(s => s.StatusName == "Đã duyệt")?.StatusId;
                 else if (danggiao.Checked)
+                {
                     order.StatusId = context.OrderStatuses.FirstOrDefault(s => s.StatusName == "Đang giao")?.StatusId;
+                    // ⚠ Kiểm tra nếu đơn này chưa từng xuất kho trước đó
+                    bool hasExported = context.InventoryExport.Any(o => o.OrderId == order.OrderId);
+                    if (!hasExported)
+                    {
+                        // 1. Tạo phiếu xuất
+                        var export = new InventoryExport
+                        {
+                            OrderId = order.OrderId,
+                            UserId = formMain.CurrentUserId, // bạn đã có biến CurrentUserId rồi
+                            Export_Date = DateTime.Now
+                        };
+                        context.InventoryExport.Add(export);
+                        context.SaveChanges(); // để lấy Iep_Id
+
+                        // 2. Lặp qua các món trong đơn hàng và tạo InventoryDetail kiểu Export
+                        var orderItems = context.OrderItems.Where(oi => oi.OrderId == order.OrderId).ToList();
+                        foreach (var item in orderItems)
+                        {
+                            var detail = new InventoryDetail
+                            {
+                                Iep_Id = export.Iep_Id,
+                                BookId = item.BookId ?? 0,
+                                Quantity = item.BookQuantity ?? 0,
+                                Type = "Export"
+                            };
+                            context.InventoryDetail.Add(detail);
+                        }
+
+                        context.SaveChanges(); // Lưu luôn detail
+                        MessageBox.Show("Đơn hàng đang giao – hệ thống đã tự động xuất kho.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+
                 else if (dagiao.Checked)
                     order.StatusId = context.OrderStatuses.FirstOrDefault(s => s.StatusName == "Đã giao")?.StatusId;
                 else if (trahang.Checked)

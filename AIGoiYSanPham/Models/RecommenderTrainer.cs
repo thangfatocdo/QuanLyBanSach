@@ -4,7 +4,8 @@ using System.Linq;
 using Microsoft.ML;
 using Microsoft.ML.Data;
 using Microsoft.ML.Trainers;
-using AIGoiYSanPham.Models;   // Cho BookRating, BookstoreDbContext
+using AIGoiYSanPham.Models;
+using AIGoiYSanPham.Entities;   // Cho BookRating, BookstoreDbContext
 
 namespace AIGoiYSanPham.Models
 {
@@ -26,11 +27,11 @@ namespace AIGoiYSanPham.Models
             var ratings = _db.OrderItems
                .Where(oi => oi.Order.CustomerId != null)
                .GroupBy(oi => new { oi.Order.CustomerId, oi.BookId })
-               .Select(g => new BookRating
+               .Select(g => new BookRatingEntry
                {
                    UserId = (uint)g.Key.CustomerId.Value,
                    BookId = (uint)g.Key.BookId,
-                   Label = g.Sum(x => (float)x.BookQuantity)
+                   Label = (float)g.Count()
                })
                .ToList();
 
@@ -45,15 +46,15 @@ namespace AIGoiYSanPham.Models
 
             // 4) Xây pipeline: map UserId/BookId → key, rồi append MatrixFactorization
             var pipeline = _mlContext.Transforms.Conversion
-                .MapValueToKey(outputColumnName: "userIndex", inputColumnName: nameof(BookRating.UserId))
+                .MapValueToKey(outputColumnName: "userIndex", inputColumnName: nameof(BookRatingEntry.UserId))
                 .Append(_mlContext.Transforms.Conversion
-                    .MapValueToKey(outputColumnName: "bookIndex", inputColumnName: nameof(BookRating.BookId)))
+                    .MapValueToKey(outputColumnName: "bookIndex", inputColumnName: nameof(BookRatingEntry.BookId)))
                 .Append(_mlContext.Recommendation().Trainers.MatrixFactorization(
                     new MatrixFactorizationTrainer.Options
                     {
                         MatrixColumnIndexColumnName = "userIndex",
                         MatrixRowIndexColumnName    = "bookIndex",
-                        LabelColumnName             = nameof(BookRating.Label),
+                        LabelColumnName             = nameof(BookRatingEntry.Label),
                         NumberOfIterations          = 20,
                         ApproximationRank           = 100
                     }));

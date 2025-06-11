@@ -149,6 +149,10 @@
       "PackagePath": "staticwebassets\\assets\\img\\book-shape.png"
     },
     {
+      "Id": "D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\wwwroot\\assets\\img\\book.png",
+      "PackagePath": "staticwebassets\\assets\\img\\book.png"
+    },
+    {
       "Id": "D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\wwwroot\\assets\\img\\book\\01.png",
       "PackagePath": "staticwebassets\\assets\\img\\book\\01.png"
     },
@@ -251,6 +255,10 @@
     {
       "Id": "D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\wwwroot\\assets\\img\\google.png",
       "PackagePath": "staticwebassets\\assets\\img\\google.png"
+    },
+    {
+      "Id": "D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\wwwroot\\assets\\img\\hero-girl.png",
+      "PackagePath": "staticwebassets\\assets\\img\\hero-girl.png"
     },
     {
       "Id": "D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\wwwroot\\assets\\img\\hero\\bg-shape.png",
@@ -993,12 +1001,56 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\wwwroot\\images\\0.jpg",
+      "PackagePath": "staticwebassets\\images\\0.jpg"
+    },
+    {
+      "Id": "D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\wwwroot\\images\\1.jpg",
+      "PackagePath": "staticwebassets\\images\\1.jpg"
+    },
+    {
       "Id": "D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\wwwroot\\images\\1e936b8d-d513-4efd-bb6e-1a37111a444e.png",
       "PackagePath": "staticwebassets\\images\\1e936b8d-d513-4efd-bb6e-1a37111a444e.png"
     },
     {
+      "Id": "D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\wwwroot\\images\\2.jpg",
+      "PackagePath": "staticwebassets\\images\\2.jpg"
+    },
+    {
+      "Id": "D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\wwwroot\\images\\20250530_183613.jpg",
+      "PackagePath": "staticwebassets\\images\\20250530_183613.jpg"
+    },
+    {
+      "Id": "D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\wwwroot\\images\\2025_03_14_08_45_15_1-390x510.webp",
+      "PackagePath": "staticwebassets\\images\\2025_03_14_08_45_15_1-390x510.webp"
+    },
+    {
       "Id": "D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\wwwroot\\images\\280111.jpg",
       "PackagePath": "staticwebassets\\images\\280111.jpg"
+    },
+    {
+      "Id": "D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\wwwroot\\images\\3.jpg",
+      "PackagePath": "staticwebassets\\images\\3.jpg"
+    },
+    {
+      "Id": "D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\wwwroot\\images\\360_F_193980561_lymRkyDG6roPxmgA6x27fEaq3O3z3Mcf.jpg",
+      "PackagePath": "staticwebassets\\images\\360_F_193980561_lymRkyDG6roPxmgA6x27fEaq3O3z3Mcf.jpg"
+    },
+    {
+      "Id": "D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\wwwroot\\images\\4.jpg",
+      "PackagePath": "staticwebassets\\images\\4.jpg"
+    },
+    {
+      "Id": "D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\wwwroot\\images\\482972888_1831112931046010_4249061154573870314_n.jpg",
+      "PackagePath": "staticwebassets\\images\\482972888_1831112931046010_4249061154573870314_n.jpg"
+    },
+    {
+      "Id": "D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\wwwroot\\images\\482977841_1831112934379343_8419955419487929339_n.jpg",
+      "PackagePath": "staticwebassets\\images\\482977841_1831112934379343_8419955419487929339_n.jpg"
+    },
+    {
+      "Id": "D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\wwwroot\\images\\484061657_1831112917712678_6159135518375939639_n.jpg",
+      "PackagePath": "staticwebassets\\images\\484061657_1831112917712678_6159135518375939639_n.jpg"
     },
     {
       "Id": "D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\wwwroot\\images\\51KzbusN2VL._AC_UF1000,1000_QL80_.jpg",
@@ -1007,6 +1059,26 @@
     {
       "Id": "D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\wwwroot\\images\\7297a4f2647a71fdaff95c02a99b10b6.png",
       "PackagePath": "staticwebassets\\images\\7297a4f2647a71fdaff95c02a99b10b6.png"
+    },
+    {
+      "Id": "D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\wwwroot\\images\\8934974179238.webp",
+      "PackagePath": "staticwebassets\\images\\8934974179238.webp"
+    },
+    {
+      "Id": "D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\wwwroot\\images\\8935235236400.webp",
+      "PackagePath": "staticwebassets\\images\\8935235236400.webp"
+    },
+    {
+      "Id": "D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\wwwroot\\images\\8935279171644.webp",
+      "PackagePath": "staticwebassets\\images\\8935279171644.webp"
+    },
+    {
+      "Id": "D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\wwwroot\\images\\9786043775099.webp",
+      "PackagePath": "staticwebassets\\images\\9786043775099.webp"
+    },
+    {
+      "Id": "D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\wwwroot\\images\\9786047773329.webp",
+      "PackagePath": "staticwebassets\\images\\9786047773329.webp"
     },
     {
       "Id": "D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\wwwroot\\images\\9798707538155.jpg",
@@ -1041,8 +1113,16 @@
       "PackagePath": "staticwebassets\\images\\content.jpg"
     },
     {
+      "Id": "D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\wwwroot\\images\\cuoc-chien-kiem-loai-hiem---outline-01.webp",
+      "PackagePath": "staticwebassets\\images\\cuoc-chien-kiem-loai-hiem---outline-01.webp"
+    },
+    {
       "Id": "D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\wwwroot\\images\\dacnhantam86.jpg",
       "PackagePath": "staticwebassets\\images\\dacnhantam86.jpg"
+    },
+    {
+      "Id": "D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\wwwroot\\images\\dao_duc_kinh_1_2020_06_12_16_17_39.webp",
+      "PackagePath": "staticwebassets\\images\\dao_duc_kinh_1_2020_06_12_16_17_39.webp"
     },
     {
       "Id": "D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\wwwroot\\images\\hh_bia_1_nhung_nguoi_khon_kho_1_8aec34095c624ee4b0bfdf628df1e20d_master.jpg",
@@ -1055,6 +1135,10 @@
     {
       "Id": "D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\wwwroot\\images\\images (2).jpg",
       "PackagePath": "staticwebassets\\images\\images (2).jpg"
+    },
+    {
+      "Id": "D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\wwwroot\\images\\istockphoto-618634976-612x612.jpg",
+      "PackagePath": "staticwebassets\\images\\istockphoto-618634976-612x612.jpg"
     },
     {
       "Id": "D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\wwwroot\\images\\istockphoto-815768296-1024x1024.jpg",
@@ -1071,6 +1155,38 @@
     {
       "Id": "D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\wwwroot\\images\\nhagiakim.jpg",
       "PackagePath": "staticwebassets\\images\\nhagiakim.jpg"
+    },
+    {
+      "Id": "D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\wwwroot\\images\\pngtree-gold-number-1-png-image_2158836.jpg",
+      "PackagePath": "staticwebassets\\images\\pngtree-gold-number-1-png-image_2158836.jpg"
+    },
+    {
+      "Id": "D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\wwwroot\\images\\pngtree-gold-number-2-png-image_2158838.jpg",
+      "PackagePath": "staticwebassets\\images\\pngtree-gold-number-2-png-image_2158838.jpg"
+    },
+    {
+      "Id": "D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\wwwroot\\images\\pngtree-gold-number-3-png-image_2158840.jpg",
+      "PackagePath": "staticwebassets\\images\\pngtree-gold-number-3-png-image_2158840.jpg"
+    },
+    {
+      "Id": "D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\wwwroot\\images\\pngtree-gold-number-4-png-image_2158842.jpg",
+      "PackagePath": "staticwebassets\\images\\pngtree-gold-number-4-png-image_2158842.jpg"
+    },
+    {
+      "Id": "D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\wwwroot\\images\\pngtree-gold-number-5-png-image_2158844.jpg",
+      "PackagePath": "staticwebassets\\images\\pngtree-gold-number-5-png-image_2158844.jpg"
+    },
+    {
+      "Id": "D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\wwwroot\\images\\pngtree-gold-number-6-png-image_2158846.jpg",
+      "PackagePath": "staticwebassets\\images\\pngtree-gold-number-6-png-image_2158846.jpg"
+    },
+    {
+      "Id": "D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\wwwroot\\images\\pngtree-gold-number-7-png-image_2158848.jpg",
+      "PackagePath": "staticwebassets\\images\\pngtree-gold-number-7-png-image_2158848.jpg"
+    },
+    {
+      "Id": "D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\wwwroot\\images\\pngtree-gold-number-9-png-image_2158853.jpg",
+      "PackagePath": "staticwebassets\\images\\pngtree-gold-number-9-png-image_2158853.jpg"
     },
     {
       "Id": "D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\wwwroot\\images\\sach-giao-khoa-dai-so-va-giai-tich-11-co-ban.png",
@@ -1095,6 +1211,14 @@
     {
       "Id": "D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\wwwroot\\images\\vn-11134258-7ra0g-m9o75sa523k2bd.png",
       "PackagePath": "staticwebassets\\images\\vn-11134258-7ra0g-m9o75sa523k2bd.png"
+    },
+    {
+      "Id": "D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\wwwroot\\images\\z5458631230813_639bb254be8a2bcb9276d51c26d89e82.webp",
+      "PackagePath": "staticwebassets\\images\\z5458631230813_639bb254be8a2bcb9276d51c26d89e82.webp"
+    },
+    {
+      "Id": "D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\wwwroot\\images\\z6580541295945_c8fb670638ba68e8a60260582c7d6a03.jpg",
+      "PackagePath": "staticwebassets\\images\\z6580541295945_c8fb670638ba68e8a60260582c7d6a03.jpg"
     },
     {
       "Id": "D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\wwwroot\\js\\site.js",

@@ -78,7 +78,6 @@ namespace QuanLyKhoSach.View
                 //gán Id để biết đang sửa cái nào
                 frm.BookId = Convert.ToInt32(dgvBook.CurrentRow.Cells["dgvid"].Value);
                 frm.ShowDialog();
-                LoadBooks();
             }
         }
 

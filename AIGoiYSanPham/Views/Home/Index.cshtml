@@ -1,8 +1,21 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Demo Gợi ý sách bằng AI";
+    var logs = ViewBag.Logs as List<string> ?? new List<string>();
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<h2>🔍 Demo Gợi ý Sách từ AI</h2>
+
+<form method="post">
+    <label>Nhập ID Khách hàng:</label>
+    <input type="number" name="customerId" required />
+    <button type="submit" class="btn btn-primary">Train & Gợi ý</button>
+</form>
+
+@if (logs.Any())
+{
+    <hr />
+    <h4>📜 Log:</h4>
+    <pre style="background:#f3f3f3;padding:15px;border-radius:5px;">
+@string.Join("\n", logs)
+    </pre>
+}
