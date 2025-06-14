@@ -15,7 +15,7 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Doan1
-build_property.ProjectDir = D:\Documents\HocTap\DATN\Project\Doan1\Doan1\
+build_property.ProjectDir = D:\Documents\HocTap\DATN\Project\AppQuanLySach\Doan1\Doan1\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.CsWinRTAotExportsEnabled = 
@@ -24,61 +24,61 @@ build_property.CsWinRTRcwFactoryFallbackGeneratorForceOptOut =
 build_property.CsWinRTCcwLookupTableGeneratorEnabled = true
 build_property.CsWinRTMergeReferencedActivationFactories = 
 
-[D:/Documents/HocTap/DATN/Project/Doan1/Doan1/App.xaml]
+[D:/Documents/HocTap/DATN/Project/AppQuanLySach/Doan1/Doan1/App.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Doan1.App.xaml
 build_metadata.AdditionalFiles.TargetPath = App.xaml
 build_metadata.AdditionalFiles.RelativePath = App.xaml
 
-[D:/Documents/HocTap/DATN/Project/Doan1/Doan1/AppShell.xaml]
+[D:/Documents/HocTap/DATN/Project/AppQuanLySach/Doan1/Doan1/AppShell.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Doan1.AppShell.xaml
 build_metadata.AdditionalFiles.TargetPath = AppShell.xaml
 build_metadata.AdditionalFiles.RelativePath = AppShell.xaml
 
-[D:/Documents/HocTap/DATN/Project/Doan1/Doan1/Resources/Styles/Colors.xaml]
+[D:/Documents/HocTap/DATN/Project/AppQuanLySach/Doan1/Doan1/Resources/Styles/Colors.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Doan1.Resources.Styles.Colors.xaml
 build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Colors.xaml
 build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Colors.xaml
 
-[D:/Documents/HocTap/DATN/Project/Doan1/Doan1/Resources/Styles/Styles.xaml]
+[D:/Documents/HocTap/DATN/Project/AppQuanLySach/Doan1/Doan1/Resources/Styles/Styles.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Doan1.Resources.Styles.Styles.xaml
 build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Styles.xaml
 build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Styles.xaml
 
-[D:/Documents/HocTap/DATN/Project/Doan1/Doan1/views/BillDetailPage.xaml]
+[D:/Documents/HocTap/DATN/Project/AppQuanLySach/Doan1/Doan1/views/BillDetailPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Doan1.views.BillDetailPage.xaml
 build_metadata.AdditionalFiles.TargetPath = views\BillDetailPage.xaml
 build_metadata.AdditionalFiles.RelativePath = views\BillDetailPage.xaml
 
-[D:/Documents/HocTap/DATN/Project/Doan1/Doan1/views/BillPage.xaml]
+[D:/Documents/HocTap/DATN/Project/AppQuanLySach/Doan1/Doan1/views/BillPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Doan1.views.BillPage.xaml
 build_metadata.AdditionalFiles.TargetPath = views\BillPage.xaml
 build_metadata.AdditionalFiles.RelativePath = views\BillPage.xaml
 
-[D:/Documents/HocTap/DATN/Project/Doan1/Doan1/views/HomePage.xaml]
+[D:/Documents/HocTap/DATN/Project/AppQuanLySach/Doan1/Doan1/views/HomePage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Doan1.views.HomePage.xaml
 build_metadata.AdditionalFiles.TargetPath = views\HomePage.xaml
 build_metadata.AdditionalFiles.RelativePath = views\HomePage.xaml
 
-[D:/Documents/HocTap/DATN/Project/Doan1/Doan1/views/LoginPage.xaml]
+[D:/Documents/HocTap/DATN/Project/AppQuanLySach/Doan1/Doan1/views/LoginPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Doan1.views.LoginPage.xaml
 build_metadata.AdditionalFiles.TargetPath = views\LoginPage.xaml
 build_metadata.AdditionalFiles.RelativePath = views\LoginPage.xaml
 
-[D:/Documents/HocTap/DATN/Project/Doan1/Doan1/views/SettingPage.xaml]
+[D:/Documents/HocTap/DATN/Project/AppQuanLySach/Doan1/Doan1/views/SettingPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Doan1.views.SettingPage.xaml
 build_metadata.AdditionalFiles.TargetPath = views\SettingPage.xaml
 build_metadata.AdditionalFiles.RelativePath = views\SettingPage.xaml
 
-[D:/Documents/HocTap/DATN/Project/Doan1/Doan1/views/SplashPage.xaml]
+[D:/Documents/HocTap/DATN/Project/AppQuanLySach/Doan1/Doan1/views/SplashPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Doan1.views.SplashPage.xaml
 build_metadata.AdditionalFiles.TargetPath = views\SplashPage.xaml

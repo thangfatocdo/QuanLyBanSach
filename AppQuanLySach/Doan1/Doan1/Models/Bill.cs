@@ -16,4 +16,12 @@ public class MobileOrder
     public DateTime? OrderDate { get; set; }
     public string CustomerName { get; set; }
     public string StatusName { get; set; }
+    public List<Item> Items { get; set; }
+    public class Item
+    {
+        public int BookId { get; set; }
+        public string Title { get; set; }
+        public int BookQuantity { get; set; }
+        public string ImageUrl { get; set; }
+    }
 }

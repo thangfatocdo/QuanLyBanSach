@@ -10,6 +10,31 @@
         <member name="P:Doan1.ViewModels.DashboardViewModel.RevenueChart">
             <inheritdoc cref="F:Doan1.ViewModels.DashboardViewModel.revenueChart"/>
         </member>
+        <member name="P:Doan1.ViewModels.DashboardViewModel.TotalOrderCount">
+            <inheritdoc cref="F:Doan1.ViewModels.DashboardViewModel.totalOrderCount"/>
+        </member>
+        <member name="P:Doan1.ViewModels.DashboardViewModel.UncompletedOrderCount">
+            <inheritdoc cref="F:Doan1.ViewModels.DashboardViewModel.uncompletedOrderCount"/>
+        </member>
+        <member name="P:Doan1.ViewModels.DashboardViewModel.SelectedDate">
+            <inheritdoc cref="F:Doan1.ViewModels.DashboardViewModel.selectedDate"/>
+        </member>
+        <member name="P:Doan1.ViewModels.DashboardViewModel.TopBooks">
+            <inheritdoc cref="F:Doan1.ViewModels.DashboardViewModel.topBooks"/>
+        </member>
+        <member name="P:Doan1.ViewModels.DashboardViewModel.SelectedTimeRange">
+            <inheritdoc cref="F:Doan1.ViewModels.DashboardViewModel.selectedTimeRange"/>
+        </member>
+        <member name="M:Doan1.ViewModels.DashboardViewModel.OnSelectedDateChanged(System.DateTime)">
+            <summary>Executes the logic for when <see cref="P:Doan1.ViewModels.DashboardViewModel.SelectedDate"/> just changed.</summary>
+            <param name="value">The new property value that was set.</param>
+            <remarks>This method is invoked right after the value of <see cref="P:Doan1.ViewModels.DashboardViewModel.SelectedDate"/> is changed.</remarks>
+        </member>
+        <member name="M:Doan1.ViewModels.DashboardViewModel.OnSelectedTimeRangeChanged(Doan1.ViewModels.DashboardViewModel.TimeRange)">
+            <summary>Executes the logic for when <see cref="P:Doan1.ViewModels.DashboardViewModel.SelectedTimeRange"/> just changed.</summary>
+            <param name="value">The new property value that was set.</param>
+            <remarks>This method is invoked right after the value of <see cref="P:Doan1.ViewModels.DashboardViewModel.SelectedTimeRange"/> is changed.</remarks>
+        </member>
         <member name="T:Doan1.ViewModels.SettingViewModel">
             <inheritdoc/>
         </member>
@@ -28,6 +53,21 @@
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.RevenueChart">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "RevenueChart" generated properties.</summary>
         </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.TotalOrderCount">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "TotalOrderCount" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.UncompletedOrderCount">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "UncompletedOrderCount" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.SelectedDate">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "SelectedDate" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.TopBooks">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "TopBooks" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.SelectedTimeRange">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "SelectedTimeRange" generated properties.</summary>
+        </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.FullName">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "FullName" generated properties.</summary>
         </member>
@@ -42,6 +82,21 @@
         </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.RevenueChart">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "RevenueChart" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.TotalOrderCount">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "TotalOrderCount" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.UncompletedOrderCount">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "UncompletedOrderCount" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.SelectedDate">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "SelectedDate" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.TopBooks">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "TopBooks" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.SelectedTimeRange">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "SelectedTimeRange" generated properties.</summary>
         </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.FullName">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "FullName" generated properties.</summary>

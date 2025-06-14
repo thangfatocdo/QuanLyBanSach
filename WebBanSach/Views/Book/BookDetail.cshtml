@@ -201,7 +201,7 @@
                                 <div class="category-list">
                                     <ul>
                                         <li>
-                                            <span>Tác giả:</span> @Model.Author.AuthorName
+                                            <span>Tác giả:</span> @Model.AuthorName
                                         </li>
                                         <li>
                                             <span>Thể loại:</span> @Model.Category.CategoryName
@@ -410,31 +410,38 @@
 @section Scripts {
     <script>
         document.querySelectorAll('.add-to-cart').forEach(btn => {
-            btn.addEventListener('click', async (e) => {
-                e.preventDefault(); // chặn mặc định (nếu là <a>)
+            btn.addEventListener('click', async e => {
+                e.preventDefault();
+
                 const bookId = btn.getAttribute('data-bookid');
                 // Lấy số lượng từ input trên detail page (id="qty2")
                 const qtyInput = document.getElementById('qty2');
-                let amount = 1;
-                if (qtyInput) {
-                    amount = parseInt(qtyInput.value) || 1;
-                }
+                const amount = qtyInput
+                    ? (parseInt(qtyInput.value, 10) || 1)
+                    : 1;
 
                 // Gọi API với cả amount
                 const res = await fetch(`/api/cart/add?bookID=${bookId}&amount=${amount}`, {
                     method: 'POST'
                 });
                 const data = await res.json();
+
                 if (data.success) {
-                    // Thông báo nhẹ
+                    // Cập nhật lại số trên icon cart (tất cả các icon)
+                    document
+                        .querySelectorAll('.menu-cart .cart-icon[data-count]')
+                        .forEach(icon => {
+                            icon.setAttribute('data-count', data.cartTotalQuantity);
+                        });
+
                     showToast("Đã thêm vào giỏ hàng!");
                 } else {
                     alert('Lỗi thêm giỏ hàng.');
                 }
             });
         });
-
     </script>
+
 }
 <style>
     .rating-stars i {

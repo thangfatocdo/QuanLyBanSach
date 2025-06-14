@@ -29,12 +29,12 @@
       "PackagePath": "staticwebassets\\assets\\css\\magnific-popup.css"
     },
     {
-      "Id": "D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\wwwroot\\assets\\css\\main.css",
-      "PackagePath": "staticwebassets\\assets\\css\\main.css"
-    },
-    {
       "Id": "D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\wwwroot\\assets\\css\\main.css.map",
       "PackagePath": "staticwebassets\\assets\\css\\main.css.map"
+    },
+    {
+      "Id": "D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\wwwroot\\assets\\css\\main2.css",
+      "PackagePath": "staticwebassets\\assets\\css\\main2.css"
     },
     {
       "Id": "D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\wwwroot\\assets\\css\\meanmenu.css",

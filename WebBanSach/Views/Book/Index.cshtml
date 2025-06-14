@@ -408,19 +408,45 @@
 @section Scripts {
     <script>
         document.querySelectorAll('.add-to-cart').forEach(btn => {
-            btn.addEventListener('click', async (e) => {
-                e.preventDefault(); // chặn mặc định (nếu là <a>)
+            btn.addEventListener('click', e => {
+                e.preventDefault();
+
                 const bookId = btn.getAttribute('data-bookid');
-                const res = await fetch(`/api/cart/add?bookID=${bookId}`, {
-                    method: 'POST'
-                });
-                const data = await res.json();
-                if (data.success) {
-                    // Thông báo nhẹ
-                    showToast("Đã thêm vào giỏ hàng!");
-                } else {
-                    alert('Lỗi thêm giỏ hàng.');
-                }
+                const cartIcons = document.querySelectorAll('.menu-cart .cart-icon[data-count]');
+
+                // --- 1. Backup số cũ ---
+                const oldCount = parseInt(cartIcons[0].getAttribute('data-count'), 10) || 0;
+
+                // --- 2. Optimistic UI update: tăng lên ngay ---
+                cartIcons.forEach(icon =>
+                    icon.setAttribute('data-count', oldCount + 1)
+                );
+                showToast("Đã thêm vào giỏ hàng!");
+
+                // --- 3. Gọi API rồi sync hoặc revert ---
+                fetch(`/api/cart/add?bookID=${bookId}`, { method: 'POST' })
+                    .then(res => res.json())
+                    .then(data => {
+                        if (!data.success) {
+                            // revert về số cũ nếu lỗi
+                            cartIcons.forEach(icon =>
+                                icon.setAttribute('data-count', oldCount)
+                            );
+                            alert('Lỗi thêm giỏ hàng, đã phục hồi số lượng.');
+                        } else {
+                            // sync lại với server (nếu server trả khác)
+                            cartIcons.forEach(icon =>
+                                icon.setAttribute('data-count', data.cartTotalQuantity)
+                            );
+                        }
+                    })
+                    .catch(() => {
+                        // revert nếu lỗi network
+                        cartIcons.forEach(icon =>
+                            icon.setAttribute('data-count', oldCount)
+                        );
+                        alert('Lỗi mạng, đã phục hồi số lượng.');
+                    });
             });
         });
     </script>

@@ -48,7 +48,7 @@ namespace QuanLyKhoSach
                 {
                     formMain.CurrentUserId = acc.UserId;
                     // Mở form chính sau khi login thành công
-                    this.Hide();
+                    this.Hide(); 
                     formMain mainForm = new formMain();
                     mainForm.ShowDialog();
                     this.Close();

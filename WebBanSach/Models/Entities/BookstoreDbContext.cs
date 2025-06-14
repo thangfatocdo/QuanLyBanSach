@@ -66,16 +66,14 @@ public partial class BookstoreDbContext : DbContext
         {
             entity.HasKey(e => e.BookId).HasName("PK__Books__3DE0C20771FD99E5");
 
+            entity.Property(e => e.AuthorName).HasMaxLength(200);
             entity.Property(e => e.CreatedAt)
                 .HasDefaultValueSql("(getdate())")
                 .HasColumnType("datetime");
             entity.Property(e => e.ImageUrl).HasMaxLength(255);
+            entity.Property(e => e.IsVisible).HasDefaultValue(true);
             entity.Property(e => e.Price).HasColumnType("decimal(10, 2)");
             entity.Property(e => e.Title).HasMaxLength(200);
-
-            entity.HasOne(d => d.Author).WithMany(p => p.Books)
-                .HasForeignKey(d => d.AuthorId)
-                .HasConstraintName("FK__Books__AuthorId__5DCAEF64");
 
             entity.HasOne(d => d.Category).WithMany(p => p.Books)
                 .HasForeignKey(d => d.CategoryId)

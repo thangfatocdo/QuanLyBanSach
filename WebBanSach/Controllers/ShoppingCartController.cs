@@ -64,7 +64,7 @@ namespace WebBanSach.Controllers
 
                     if (cartItem != null)
                     {
-                        cartItem.Quantity = amount ?? cartItem.Quantity + 1;
+                        cartItem.Quantity = amount ?? (cartItem.Quantity + 1);
                     }
                     else
                     {
@@ -82,25 +82,32 @@ namespace WebBanSach.Controllers
                         .Where(ci => ci.CustomerId == userId && ci.BookId == bookID)
                         .Select(ci => ci.Quantity * ci.Book.Price)
                         .Single();
+
                     var cartTotal = context.CartItems
                         .Where(ci => ci.CustomerId == userId)
                         .Sum(ci => ci.Quantity * ci.Book.Price);
+
+                    var cartTotalQuantity = context.CartItems
+                        .Where(ci => ci.CustomerId == userId)
+                        .Sum(ci => ci.Quantity ?? 0);
 
                     return Json(new
                     {
                         success = true,
                         bookID = bookID,
-                        quantity = amount ?? context.CartItems
+                        quantity = context.CartItems
                                       .Single(ci => ci.CustomerId == userId && ci.BookId == bookID).Quantity,
                         subtotal,
-                        cartTotal
+                        cartTotal,
+                        cartTotalQuantity
                     });
                 }
                 else
                 {
-                    // === Fallback session cũ ===
+                    // === Fallback session ===
                     var gioHang = GioHang;
                     var item = gioHang.SingleOrDefault(p => p.book.BookId == bookID);
+
                     if (item != null)
                     {
                         item.amount = amount ?? (item.amount + 1);
@@ -108,13 +115,19 @@ namespace WebBanSach.Controllers
                     else
                     {
                         var hh = context.Books.Single(p => p.BookId == bookID);
-                        item = new CartViewModel { book = hh, amount = amount ?? 1 };
+                        item = new CartViewModel
+                        {
+                            book = hh,
+                            amount = amount ?? 1
+                        };
                         gioHang.Add(item);
                     }
+
                     HttpContext.Session.Set("GioHang", gioHang);
 
                     var subtotal = item.TotalMoney;
                     var cartTotal = gioHang.Sum(x => x.TotalMoney);
+                    var cartTotalQuantity = gioHang.Sum(x => x.amount);
 
                     return Json(new
                     {
@@ -122,7 +135,8 @@ namespace WebBanSach.Controllers
                         bookID,
                         quantity = item.amount,
                         subtotal,
-                        cartTotal
+                        cartTotal,
+                        cartTotalQuantity
                     });
                 }
             }
@@ -131,6 +145,7 @@ namespace WebBanSach.Controllers
                 return Json(new { success = false });
             }
         }
+
 
 
         [HttpPost]
@@ -143,19 +158,22 @@ namespace WebBanSach.Controllers
                 {
                     var userId = int.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier));
                     var dbItem = context.CartItems
-                                      .SingleOrDefault(ci => ci.CustomerId == userId && ci.BookId == bookID);
+                        .SingleOrDefault(ci => ci.CustomerId == userId && ci.BookId == bookID);
                     if (dbItem != null)
                     {
                         context.CartItems.Remove(dbItem);
                         context.SaveChanges();
                     }
 
-                    // Tính lại tổng
+                    // Tính lại tổng tiền và tổng số lượng
                     var cartTotal = context.CartItems
                         .Where(ci => ci.CustomerId == userId)
                         .Sum(ci => ci.Quantity * ci.Book.Price);
+                    var cartTotalQuantity = context.CartItems
+                        .Where(ci => ci.CustomerId == userId)
+                        .Sum(ci => ci.Quantity ?? 0);
 
-                    return Json(new { success = true, cartTotal });
+                    return Json(new { success = true, cartTotal, cartTotalQuantity });
                 }
                 else
                 {
@@ -165,7 +183,9 @@ namespace WebBanSach.Controllers
                     HttpContext.Session.Set("GioHang", gioHang);
 
                     var cartTotal = gioHang.Sum(x => x.TotalMoney);
-                    return Json(new { success = true, cartTotal });
+                    var cartTotalQuantity = gioHang.Sum(x => x.amount);
+
+                    return Json(new { success = true, cartTotal, cartTotalQuantity });
                 }
             }
             catch
@@ -173,6 +193,7 @@ namespace WebBanSach.Controllers
                 return Json(new { success = false });
             }
         }
+
         [Route("cart.html", Name = "Cart")]
         public IActionResult Index()
         {

@@ -26,15 +26,15 @@ namespace QuanLyKhoSach
     
         public int BookId { get; set; }
         public string Title { get; set; }
-        public Nullable<int> AuthorId { get; set; }
         public Nullable<int> CategoryId { get; set; }
         public Nullable<int> PublisherId { get; set; }
         public decimal Price { get; set; }
         public string Description { get; set; }
         public string ImageUrl { get; set; }
         public Nullable<System.DateTime> CreatedAt { get; set; }
+        public string AuthorName { get; set; }
+        public bool IsVisible { get; set; }
     
-        public virtual Authors Authors { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<BookImages> BookImages { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

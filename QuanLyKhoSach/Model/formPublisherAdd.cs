@@ -1,0 +1,79 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace QuanLyKhoSach.Model
+{
+    public partial class formPublisherAdd : Sample
+    {
+        BookstoreDBEntities context = new BookstoreDBEntities();
+        public formPublisherAdd()
+        {
+            InitializeComponent();
+        }
+        public int? PublisherID { get; set; }
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+        private void btnSave_Click_1(object sender, EventArgs e)
+        {
+            // Kiểm tra dữ liệu
+            if (string.IsNullOrWhiteSpace(txtName.Text))
+            {
+                MessageBox.Show("Vui lòng nhập tên nhà xuất bản!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtName.Focus();
+                return;
+            }
+
+            try
+            {
+                if (PublisherID == null) // THÊM MỚI
+                {
+                    // Tạo đối tượng khách hàng mới
+                    Publishers newPublisher = new Publishers
+                    {
+                        PublisherName = txtName.Text.Trim()
+                    };
+
+                    context.Publishers.Add(newPublisher);
+                }
+                else // SỬA
+                {
+                    var existing = context.Publishers.Find(PublisherID);
+                    if (existing != null)
+                    {
+                        existing.PublisherName = txtName.Text.Trim();
+                    }
+                }
+                context.SaveChanges();
+
+                MessageBox.Show("Lưu thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.DialogResult = DialogResult.OK; // <--- THÊM DÒNG NÀY
+                this.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi lưu: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+       
+
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnClose_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+    }
+}

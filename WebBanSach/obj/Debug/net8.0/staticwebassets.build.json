@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "jgYY8E2zRzeuuTWVVVoLMf2BzTZBGENs77xCbBNPPgg=",
+  "Hash": "jtwZCKE3w+6ZC4JNayurdEihuLcnW1ExneqoLQFJqTI=",
   "Source": "WebBanSach",
   "BasePath": "_content/WebBanSach",
   "Mode": "Default",
@@ -245,25 +245,6 @@
       "OriginalItemSpec": "wwwroot\\assets\\css\\magnific-popup.css"
     },
     {
-      "Identity": "D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\wwwroot\\assets\\css\\main.css",
-      "SourceId": "WebBanSach",
-      "SourceType": "Discovered",
-      "ContentRoot": "D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\wwwroot\\",
-      "BasePath": "_content/WebBanSach",
-      "RelativePath": "assets/css/main.css",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\assets\\css\\main.css"
-    },
-    {
       "Identity": "D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\wwwroot\\assets\\css\\main.css.map",
       "SourceId": "WebBanSach",
       "SourceType": "Discovered",
@@ -281,6 +262,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\assets\\css\\main.css.map"
+    },
+    {
+      "Identity": "D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\wwwroot\\assets\\css\\main2.css",
+      "SourceId": "WebBanSach",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\wwwroot\\",
+      "BasePath": "_content/WebBanSach",
+      "RelativePath": "assets/css/main2.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\css\\main2.css"
     },
     {
       "Identity": "D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\wwwroot\\assets\\css\\meanmenu.css",

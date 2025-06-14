@@ -28,7 +28,7 @@ namespace WebBanSach.Controllers
 
                 // 2. Build query động cho phép gắn thêm các điều kiện
                 var query = context.Books.Include(b => b.BookImages).AsQueryable();
-
+                query = query.Where(b => b.IsVisible);
                 if (categoryId.HasValue)
                     query = query.Where(b => b.CategoryId == categoryId.Value);
 
@@ -97,7 +97,6 @@ namespace WebBanSach.Controllers
             {
                 var book = context.Books
                     .Include(b => b.Category)
-                    .Include(b => b.Author)
                     .Include(b => b.Publisher)
                     .Include(b => b.BookImages) // 👈 dòng quan trọng
                     .FirstOrDefault(b => b.BookId == id);
@@ -105,6 +104,9 @@ namespace WebBanSach.Controllers
                 {
                     return RedirectToAction("Index");
                 }
+                // Nếu sách đã bị ẩn
+                if (!book.IsVisible)
+                    return View("SoldOut", book);
 
                 // Lấy userId từ Claims (nếu chưa login -> không recommend)
                 var userIdStr = User.FindFirstValue(ClaimTypes.NameIdentifier);
@@ -215,10 +217,10 @@ namespace WebBanSach.Controllers
             int pageSize = 8;
 
             var query = context.Books.Include(b => b.BookImages).AsQueryable();
-
+            query = query.Where(b => b.IsVisible);
             if (!string.IsNullOrEmpty(q))
             {
-                query = query.Where(b => b.Title.Contains(q) || b.Author.AuthorName.Contains(q));
+                query = query.Where(b => b.Title.Contains(q) || b.AuthorName.Contains(q));
             }
 
             if (categoryId.HasValue)

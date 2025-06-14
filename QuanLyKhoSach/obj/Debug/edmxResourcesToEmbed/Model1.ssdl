@@ -32,13 +32,14 @@
     </Key>
     <Property Name="BookId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Title" Type="nvarchar" MaxLength="200" Nullable="false" />
-    <Property Name="AuthorId" Type="int" />
     <Property Name="CategoryId" Type="int" />
     <Property Name="PublisherId" Type="int" />
     <Property Name="Price" Type="decimal" Precision="10" Scale="2" Nullable="false" />
     <Property Name="Description" Type="nvarchar(max)" />
     <Property Name="ImageUrl" Type="nvarchar" MaxLength="255" />
     <Property Name="CreatedAt" Type="datetime" />
+    <Property Name="AuthorName" Type="nvarchar" MaxLength="200" />
+    <Property Name="IsVisible" Type="bit" Nullable="false" />
   </EntityType>
   <EntityType Name="CartItems">
     <Key>
@@ -156,6 +157,16 @@ warning 6013: The table/view 'db_ab9f8d_bookstoredb.dbo.Statistic' does not have
           <Property Name="Total_Quantity" Type="int" />
           <Property Name="YearRevenue" Type="int" />
         </EntityType>-->
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
   <EntityType Name="Users">
     <Key>
       <PropertyRef Name="UserId" />
@@ -188,18 +199,6 @@ warning 6013: The table/view 'db_ab9f8d_bookstoredb.dbo.Statistic' does not have
       </Principal>
       <Dependent Role="BookRatings">
         <PropertyRef Name="CustomerId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK__Books__AuthorId__5DCAEF64">
-    <End Role="Authors" Type="Self.Authors" Multiplicity="0..1" />
-    <End Role="Books" Type="Self.Books" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Authors">
-        <PropertyRef Name="AuthorId" />
-      </Principal>
-      <Dependent Role="Books">
-        <PropertyRef Name="AuthorId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -411,6 +410,7 @@ warning 6013: The table/view 'db_ab9f8d_bookstoredb.dbo.Statistic' does not have
     <EntitySet Name="OrderStatuses" EntityType="Self.OrderStatuses" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="PaymentMethods" EntityType="Self.PaymentMethods" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Publishers" EntityType="Self.Publishers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
     <AssociationSet Name="FK__BookRatin__BookI__5BE2A6F2" Association="Self.FK__BookRatin__BookI__5BE2A6F2">
       <End Role="Books" EntitySet="Books" />
@@ -419,10 +419,6 @@ warning 6013: The table/view 'db_ab9f8d_bookstoredb.dbo.Statistic' does not have
     <AssociationSet Name="FK__BookRatin__Custo__5CD6CB2B" Association="Self.FK__BookRatin__Custo__5CD6CB2B">
       <End Role="Customers" EntitySet="Customers" />
       <End Role="BookRatings" EntitySet="BookRatings" />
-    </AssociationSet>
-    <AssociationSet Name="FK__Books__AuthorId__5DCAEF64" Association="Self.FK__Books__AuthorId__5DCAEF64">
-      <End Role="Authors" EntitySet="Authors" />
-      <End Role="Books" EntitySet="Books" />
     </AssociationSet>
     <AssociationSet Name="FK__Books__CategoryI__5EBF139D" Association="Self.FK__Books__CategoryI__5EBF139D">
       <End Role="Categories" EntitySet="Categories" />

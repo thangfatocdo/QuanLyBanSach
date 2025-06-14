@@ -40,6 +40,7 @@ namespace QuanLyKhoSach
         public virtual DbSet<OrderStatuses> OrderStatuses { get; set; }
         public virtual DbSet<PaymentMethods> PaymentMethods { get; set; }
         public virtual DbSet<Publishers> Publishers { get; set; }
+        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<Users> Users { get; set; }
     }
 }

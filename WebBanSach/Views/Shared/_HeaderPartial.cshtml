@@ -1,5 +1,22 @@
 ﻿@inject WebBanSach.Models.Entities.BookstoreDbContext context
-
+@using System.Security.Claims
+@using WebBanSach.Extension
+@using WebBanSach.Models.ViewModels
+@{
+    int cartCount = 0;
+    if (User.Identity.IsAuthenticated)
+    {
+        int userId = int.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier));
+        cartCount = context.CartItems
+            .Where(x => x.CustomerId == userId)
+            .Sum(x => x.Quantity ?? 0);
+    }
+    else
+    {
+        var gioHang = Context.Session.Get<List<CartViewModel>>("GioHang") ?? new List<CartViewModel>();
+        cartCount = gioHang.Sum(x => x.amount);
+    }
+}
 
 <!-- Sticky Header Section start  -->
 <header class="header-2 sticky-header">
@@ -73,7 +90,7 @@
                                 </form>
                             </div>
                             <div class="menu-cart">
-                                <a asp-controller="ShoppingCart" asp-action="Index" class="cart-icon">
+                                <a asp-controller="ShoppingCart" asp-action="Index" class="cart-icon" data-count="@cartCount">
                                     <i class="fa-regular fa-cart-shopping"></i>
                                 </a>
                                 <div class="header-humbager ml-30">
@@ -153,9 +170,10 @@
                     <a href="wishlist.html" class="cart-icon">
                         <i class="fa-regular fa-heart"></i>
                     </a>
-                    <a asp-controller="ShoppingCart" asp-action="Index" class="cart-icon">
+                    <a asp-controller="ShoppingCart" asp-action="Index" class="cart-icon" data-count="@cartCount">
                         <i class="fa-regular fa-cart-shopping"></i>
                     </a>
+
                     <div class="header-humbager ml-30">
                         <a class="sidebar__toggle" href="javascript:void(0)">
                             <div class="bar-icon-2">

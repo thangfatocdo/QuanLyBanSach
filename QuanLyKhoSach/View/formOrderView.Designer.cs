@@ -90,13 +90,13 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvOrder.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvOrder.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvOrder.Location = new System.Drawing.Point(12, 170);
+            this.dgvOrder.Location = new System.Drawing.Point(54, 170);
             this.dgvOrder.Name = "dgvOrder";
             this.dgvOrder.ReadOnly = true;
             this.dgvOrder.RowHeadersVisible = false;
             this.dgvOrder.RowHeadersWidth = 51;
             this.dgvOrder.RowTemplate.Height = 24;
-            this.dgvOrder.Size = new System.Drawing.Size(1177, 488);
+            this.dgvOrder.Size = new System.Drawing.Size(1091, 441);
             this.dgvOrder.TabIndex = 6;
             this.dgvOrder.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dgvOrder.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -203,12 +203,13 @@
             // 
             // guna2Panel1
             // 
+            this.guna2Panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.guna2Panel1.Controls.Add(this.label2);
             this.guna2Panel1.Controls.Add(this.cbOrderStatus);
             this.guna2Panel1.Controls.Add(this.txtSearch);
             this.guna2Panel1.Controls.Add(this.lblSearch);
             this.guna2Panel1.Controls.Add(this.label1);
-            this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.guna2Panel1.Location = new System.Drawing.Point(0, 0);
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.Size = new System.Drawing.Size(1201, 164);
@@ -218,7 +219,7 @@
             // 
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(598, 50);
+            this.label2.Location = new System.Drawing.Point(475, 52);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(116, 23);
             this.label2.TabIndex = 5;
@@ -235,7 +236,7 @@
             this.cbOrderStatus.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.cbOrderStatus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.cbOrderStatus.ItemHeight = 30;
-            this.cbOrderStatus.Location = new System.Drawing.Point(581, 76);
+            this.cbOrderStatus.Location = new System.Drawing.Point(930, 79);
             this.cbOrderStatus.Name = "cbOrderStatus";
             this.cbOrderStatus.Size = new System.Drawing.Size(153, 36);
             this.cbOrderStatus.TabIndex = 4;
@@ -289,8 +290,8 @@
             // 
             // formOrderView
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 23F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.ClientSize = new System.Drawing.Size(1201, 670);
             this.Controls.Add(this.dgvOrder);
             this.Controls.Add(this.guna2Panel1);

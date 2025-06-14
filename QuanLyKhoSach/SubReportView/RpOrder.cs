@@ -19,6 +19,8 @@ namespace QuanLyKhoSach.SubReport
         public RpOrder()
         {
             InitializeComponent();
+            guna2DateTimePicker1.Value = DateTime.Today;
+            guna2DateTimePicker2.Value = DateTime.Today;
         }
         private void btnPrint_Click(object sender, EventArgs e)
         {
@@ -74,12 +76,14 @@ namespace QuanLyKhoSach.SubReport
             dt.Columns.Add("OrderDate", typeof(DateTime));
             dt.Columns.Add("Phone", typeof(string));
             dt.Columns.Add("TotalPrice", typeof(decimal));
-            // Tính ngày kết thúc bằng cách cộng 1 ngày để lọc chính xác cả ngày toDate
+
             DateTime toDateExclusive = toDate.AddDays(1);
 
-            // Lấy danh sách đơn hàng trong khoảng
+            // Lấy danh sách đơn hàng TRỪ các đơn đã hủy và trả hàng
             var orderList = context.Orders
-                .Where(o => o.OrderDate >= fromDate && o.OrderDate < toDateExclusive)
+                .Where(o => o.OrderDate >= fromDate && o.OrderDate < toDateExclusive
+                         && o.OrderStatuses.StatusName != "Đã hủy"
+                         && o.OrderStatuses.StatusName != "Trả hàng")
                 .Select(o => new
                 {
                     o.OrderId,
@@ -92,7 +96,6 @@ namespace QuanLyKhoSach.SubReport
                 })
                 .ToList();
 
-            // Đổ vào DataTable
             foreach (var item in orderList)
             {
                 dt.Rows.Add(
@@ -108,6 +111,5 @@ namespace QuanLyKhoSach.SubReport
 
             return dt;
         }
-
     }
 }

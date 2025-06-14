@@ -45,16 +45,18 @@
             this.txtName = new Guna.UI2.WinForms.Guna2TextBox();
             this.name = new System.Windows.Forms.Label();
             this.cbCatetegory = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.cbAuthor = new Guna.UI2.WinForms.Guna2ComboBox();
             this.cbNXB = new Guna.UI2.WinForms.Guna2ComboBox();
             this.txtPrice = new Guna.UI2.WinForms.Guna2TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtDesc = new System.Windows.Forms.RichTextBox();
             this.guna2AnimateWindow1 = new Guna.UI2.WinForms.Guna2AnimateWindow(this.components);
             this.dgvPicture = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.btnUpload = new Guna.UI2.WinForms.Guna2Button();
             this.dgvImg = new System.Windows.Forms.DataGridViewImageColumn();
             this.dgvDel = new System.Windows.Forms.DataGridViewImageColumn();
+            this.btnUpload = new Guna.UI2.WinForms.Guna2Button();
+            this.txtAuthor = new Guna.UI2.WinForms.Guna2TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.Hide = new Guna.UI2.WinForms.Guna2CustomCheckBox();
             this.guna2Panel2.SuspendLayout();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPicture)).BeginInit();
@@ -142,7 +144,7 @@
             // author
             // 
             this.author.AutoSize = true;
-            this.author.Location = new System.Drawing.Point(268, 369);
+            this.author.Location = new System.Drawing.Point(244, 369);
             this.author.Name = "author";
             this.author.Size = new System.Drawing.Size(62, 23);
             this.author.TabIndex = 22;
@@ -151,7 +153,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(463, 369);
+            this.label4.Location = new System.Drawing.Point(487, 380);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(114, 23);
             this.label4.TabIndex = 20;
@@ -160,7 +162,7 @@
             // email
             // 
             this.email.AutoSize = true;
-            this.email.Location = new System.Drawing.Point(80, 369);
+            this.email.Location = new System.Drawing.Point(68, 369);
             this.email.Name = "email";
             this.email.Size = new System.Drawing.Size(70, 23);
             this.email.TabIndex = 18;
@@ -207,26 +209,10 @@
             this.cbCatetegory.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.cbCatetegory.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.cbCatetegory.ItemHeight = 30;
-            this.cbCatetegory.Location = new System.Drawing.Point(72, 395);
+            this.cbCatetegory.Location = new System.Drawing.Point(60, 395);
             this.cbCatetegory.Name = "cbCatetegory";
             this.cbCatetegory.Size = new System.Drawing.Size(143, 36);
             this.cbCatetegory.TabIndex = 28;
-            // 
-            // cbAuthor
-            // 
-            this.cbAuthor.AutoRoundedCorners = true;
-            this.cbAuthor.BackColor = System.Drawing.Color.Transparent;
-            this.cbAuthor.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cbAuthor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbAuthor.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cbAuthor.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cbAuthor.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.cbAuthor.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.cbAuthor.ItemHeight = 30;
-            this.cbAuthor.Location = new System.Drawing.Point(272, 395);
-            this.cbAuthor.Name = "cbAuthor";
-            this.cbAuthor.Size = new System.Drawing.Size(143, 36);
-            this.cbAuthor.TabIndex = 29;
             // 
             // cbNXB
             // 
@@ -239,7 +225,7 @@
             this.cbNXB.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.cbNXB.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.cbNXB.ItemHeight = 30;
-            this.cbNXB.Location = new System.Drawing.Point(458, 395);
+            this.cbNXB.Location = new System.Drawing.Point(482, 406);
             this.cbNXB.Name = "cbNXB";
             this.cbNXB.Size = new System.Drawing.Size(143, 36);
             this.cbNXB.TabIndex = 30;
@@ -342,23 +328,6 @@
             this.dgvPicture.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.dgvPicture.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPicture_CellContentClick);
             // 
-            // btnUpload
-            // 
-            this.btnUpload.AutoRoundedCorners = true;
-            this.btnUpload.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnUpload.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnUpload.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnUpload.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnUpload.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnUpload.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnUpload.ForeColor = System.Drawing.Color.White;
-            this.btnUpload.Location = new System.Drawing.Point(1103, 501);
-            this.btnUpload.Name = "btnUpload";
-            this.btnUpload.Size = new System.Drawing.Size(113, 45);
-            this.btnUpload.TabIndex = 37;
-            this.btnUpload.Text = "Tải ảnh";
-            this.btnUpload.Click += new System.EventHandler(this.btnUpload_Click);
-            // 
             // dgvImg
             // 
             this.dgvImg.FillWeight = 173.2621F;
@@ -378,18 +347,83 @@
             this.dgvDel.Name = "dgvDel";
             this.dgvDel.ReadOnly = true;
             // 
+            // btnUpload
+            // 
+            this.btnUpload.AutoRoundedCorners = true;
+            this.btnUpload.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnUpload.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnUpload.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnUpload.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnUpload.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnUpload.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnUpload.ForeColor = System.Drawing.Color.White;
+            this.btnUpload.Location = new System.Drawing.Point(1103, 501);
+            this.btnUpload.Name = "btnUpload";
+            this.btnUpload.Size = new System.Drawing.Size(113, 45);
+            this.btnUpload.TabIndex = 37;
+            this.btnUpload.Text = "Tải ảnh";
+            this.btnUpload.Click += new System.EventHandler(this.btnUpload_Click);
+            // 
+            // txtAuthor
+            // 
+            this.txtAuthor.AutoRoundedCorners = true;
+            this.txtAuthor.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtAuthor.DefaultText = "";
+            this.txtAuthor.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtAuthor.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtAuthor.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtAuthor.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtAuthor.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtAuthor.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtAuthor.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtAuthor.Location = new System.Drawing.Point(233, 396);
+            this.txtAuthor.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtAuthor.Name = "txtAuthor";
+            this.txtAuthor.PlaceholderText = "";
+            this.txtAuthor.SelectedText = "";
+            this.txtAuthor.Size = new System.Drawing.Size(219, 48);
+            this.txtAuthor.TabIndex = 38;
+            this.txtAuthor.TextOffset = new System.Drawing.Point(10, 0);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(432, 512);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(104, 23);
+            this.label10.TabIndex = 44;
+            this.label10.Text = "Ẩn khỏi web";
+            // 
+            // Hide
+            // 
+            this.Hide.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.Hide.CheckedState.BorderRadius = 2;
+            this.Hide.CheckedState.BorderThickness = 0;
+            this.Hide.CheckedState.FillColor = System.Drawing.Color.Lime;
+            this.Hide.Location = new System.Drawing.Point(530, 501);
+            this.Hide.Name = "Hide";
+            this.Hide.Size = new System.Drawing.Size(71, 46);
+            this.Hide.TabIndex = 43;
+            this.Hide.Text = "guna2CustomCheckBox1";
+            this.Hide.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.Hide.UncheckedState.BorderRadius = 2;
+            this.Hide.UncheckedState.BorderThickness = 0;
+            this.Hide.UncheckedState.FillColor = System.Drawing.Color.Gainsboro;
+            // 
             // formBookAdd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1340, 715);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.Hide);
+            this.Controls.Add(this.txtAuthor);
             this.Controls.Add(this.btnUpload);
             this.Controls.Add(this.dgvPicture);
             this.Controls.Add(this.txtDesc);
             this.Controls.Add(this.txtPrice);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.cbNXB);
-            this.Controls.Add(this.cbAuthor);
             this.Controls.Add(this.cbCatetegory);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.author);
@@ -425,7 +459,6 @@
         public Guna.UI2.WinForms.Guna2TextBox txtName;
         private System.Windows.Forms.Label name;
         private Guna.UI2.WinForms.Guna2ComboBox cbCatetegory;
-        private Guna.UI2.WinForms.Guna2ComboBox cbAuthor;
         private Guna.UI2.WinForms.Guna2ComboBox cbNXB;
         public Guna.UI2.WinForms.Guna2TextBox txtPrice;
         private System.Windows.Forms.Label label2;
@@ -435,5 +468,8 @@
         private Guna.UI2.WinForms.Guna2Button btnUpload;
         private System.Windows.Forms.DataGridViewImageColumn dgvImg;
         private System.Windows.Forms.DataGridViewImageColumn dgvDel;
+        public Guna.UI2.WinForms.Guna2TextBox txtAuthor;
+        private System.Windows.Forms.Label label10;
+        private Guna.UI2.WinForms.Guna2CustomCheckBox Hide;
     }
 }

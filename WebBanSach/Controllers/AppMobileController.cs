@@ -23,7 +23,9 @@ namespace WebBanSach.Controllers
         {
             var orders = await _context.Orders
                 .Include(o => o.OrderItems)
-                .ThenInclude(i => i.Book).Include(o => o.Status)
+                    .ThenInclude(i => i.Book)
+                        .ThenInclude(b => b.BookImages) // để lấy ảnh
+                .Include(o => o.Status)
                 .OrderByDescending(o => o.OrderDate)
                 .Select(o => new
                 {
@@ -35,8 +37,12 @@ namespace WebBanSach.Controllers
                     Items = o.OrderItems.Select(i => new
                     {
                         i.Book.Title,
-                        i.BookPrice,
-                        i.BookQuantity
+                        BookPrice = i.BookPrice,
+                        BookQuantity = i.BookQuantity,
+                        ImageUrl = i.Book.BookImages
+                            .OrderBy(img => img.ImageId)
+                            .Select(img => img.ImageUrl)
+                            .FirstOrDefault() ?? "default.jpg" // fallback nếu không có ảnh
                     })
                 })
                 .ToListAsync();

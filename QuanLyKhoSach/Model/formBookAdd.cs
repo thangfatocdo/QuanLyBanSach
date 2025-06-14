@@ -41,10 +41,10 @@ namespace QuanLyKhoSach.Model
                     txtName.Text = book.Title;
                     txtPrice.Text = book.Price.ToString("#,##0");
                     txtDesc.Text = book.Description;
-
+                    txtAuthor.Text = book.AuthorName;
                     cbCatetegory.SelectedValue = book.CategoryId;
-                    cbAuthor.SelectedValue = book.AuthorId;
                     cbNXB.SelectedValue = book.PublisherId;
+                    Hide.Checked = !book.IsVisible;
                 }
             }
             if (BookId != null)
@@ -88,11 +88,6 @@ namespace QuanLyKhoSach.Model
             cbCatetegory.DataSource = context.Categories.ToList();
             cbCatetegory.DisplayMember = "CategoryName";
             cbCatetegory.ValueMember = "CategoryId";
-
-            cbAuthor.DataSource = context.Authors.ToList();
-            cbAuthor.DisplayMember = "AuthorName";
-            cbAuthor.ValueMember = "AuthorId";
-
             cbNXB.DataSource = context.Publishers.ToList();
             cbNXB.DisplayMember = "PublisherName";
             cbNXB.ValueMember = "PublisherId";
@@ -124,8 +119,8 @@ namespace QuanLyKhoSach.Model
                 return;
             }
 
-            if (cbAuthor.SelectedValue == null
-             || cbCatetegory.SelectedValue == null
+            if (
+             cbCatetegory.SelectedValue == null
              || cbNXB.SelectedValue == null)
             {
                 MessageBox.Show("Vui lòng chọn đủ Thể loại, Tác giả, NXB!", "Thông báo",
@@ -146,10 +141,11 @@ namespace QuanLyKhoSach.Model
                         Price = decimal.Parse(txtPrice.Text),
                         Description = txtDesc.Text.Trim(),
                         CategoryId = (int)cbCatetegory.SelectedValue,
-                        AuthorId = (int)cbAuthor.SelectedValue,
+                        AuthorName = txtAuthor.Text.Trim(),
                         PublisherId = (int)cbNXB.SelectedValue,
                         // Nếu bạn vẫn muốn lưu cover cũ ở cột ImageUrl, gán selectedImageFileName
-                        ImageUrl = selectedImageFileName
+                        ImageUrl = selectedImageFileName,
+                        IsVisible = !Hide.Checked // nếu check "ẩn" thì Visible = false
                     };
                     context.Books.Add(bookEntity);
                 }
@@ -168,9 +164,11 @@ namespace QuanLyKhoSach.Model
                     bookEntity.Price = decimal.Parse(txtPrice.Text);
                     bookEntity.Description = txtDesc.Text.Trim();
                     bookEntity.CategoryId = (int)cbCatetegory.SelectedValue;
-                    bookEntity.AuthorId = (int)cbAuthor.SelectedValue;
+                    bookEntity.AuthorName = txtAuthor.Text.Trim();
                     bookEntity.PublisherId = (int)cbNXB.SelectedValue;
                     bookEntity.ImageUrl = selectedImageFileName;
+                    bookEntity.IsVisible = !Hide.Checked;
+
                 }
 
                 // 3. Lưu để có BookId nếu là thêm mới

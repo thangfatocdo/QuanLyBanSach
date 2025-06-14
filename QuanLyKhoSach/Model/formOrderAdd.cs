@@ -161,7 +161,10 @@ namespace QuanLyKhoSach.Model
                     MessageBox.Show("Vui lòng chọn trạng thái!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
-
+                // Cập nhật lại thông tin liên hệ nếu có sửa
+                order.CustomerName = txtCustomerName.Text.Trim();
+                order.Phone = txtPhone.Text.Trim();
+                order.Address = txtAddress.Text.Trim();
                 context.SaveChanges();
                 MessageBox.Show("Cập nhật trạng thái thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close();

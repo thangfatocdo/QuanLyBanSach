@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "9sgQTTbF8XQ9Dx3Lracx93bXknAx+09wlF3vux3hSyICKKimQHfTmkicLu5S50Ykd5n6otJQQyGggH15mDC0Mw==",
+  "dgSpecHash": "9pOxwgVALa9zK5eWMf74NPPmRkxHek5DW7g4Eb2LCvyN3+BBJDGFVIZIDwnMymDsvTFmTekYBGZW9K6hWZoOXw==",
   "success": true,
-  "projectFilePath": "D:\\Documents\\HocTap\\DATN\\Project\\Doan1\\Doan1\\Doan1.csproj",
+  "projectFilePath": "D:\\Documents\\HocTap\\DATN\\Project\\AppQuanLySach\\Doan1\\Doan1\\Doan1.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\admin\\.nuget\\packages\\communitytoolkit.mvvm\\8.4.0\\communitytoolkit.mvvm.8.4.0.nupkg.sha512",
     "C:\\Users\\admin\\.nuget\\packages\\googlegson\\2.10.1.4\\googlegson.2.10.1.4.nupkg.sha512",

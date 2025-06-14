@@ -6,14 +6,14 @@
 <!-- Breadcumb Section Start -->
 <div class="breadcrumb-wrapper">
     <div class="book1">
-        <img src="assets/img/hero/book1.png" alt="book">
+        <img src="assets/img/book.png" alt="book">
     </div>
     <div class="book2">
         <img src="assets/img/hero/book2.png" alt="book">
     </div>
     <div class="container">
         <div class="page-heading">
-            <h1>Cart</h1>
+            <h1>Giỏ hàng</h1>
             <div class="page-header">
                 <ul class="breadcrumb-items wow fadeInUp" data-wow-delay=".3s">
                     <li>
@@ -176,37 +176,65 @@
             });
         });
 
-        // 2. Xóa sản phẩm (bỏ confirm)
+        // 2. Xóa sản phẩm (bỏ confirm có sử dụng fake ui)
+
         document.querySelectorAll('.remove-item').forEach(btn => {
-            btn.addEventListener('click', async e => {
+            btn.addEventListener('click', e => {
                 e.preventDefault();
                 const tr = btn.closest('tr');
                 const bookId = tr.dataset.bookid;
 
-                // Gọi API xóa
-                const res = await fetch(`/api/cart/remove?bookID=${bookId}`, {
-                    method: 'POST'
+                // --- Backup row + subtotal + count ---
+                const backupRow = tr.cloneNode(true);
+                const oldSubtotal = parseInt(
+                    tr.querySelector('.subtotal-price').textContent.replace(/[^0-9]/g, ''),
+                    10
+                );
+
+                const oldTotal = [...document.querySelectorAll('.sub-price')]
+                    .map(el => parseInt(el.textContent.replace(/[^0-9]/g, ''), 10))
+                    .reduce((a, b) => Math.max(a, b), 0); // chọn số lớn hơn nếu hiển thị 2 vị trí
+
+                const cartIcon = document.querySelector('.menu-cart .cart-icon[data-count]');
+                const oldCount = parseInt(cartIcon.getAttribute('data-count'), 10) || 0;
+
+                // --- Cập nhật UI trước ---
+                tr.remove();
+                const newTotal = oldTotal - oldSubtotal;
+                document.querySelectorAll('.sub-price').forEach(el => {
+                    el.textContent = newTotal.toLocaleString() + 'VND';
                 });
-                const data = await res.json();
-                if (data.success) {
-                    tr.remove();
+                cartIcon.setAttribute('data-count', oldCount - 1);
 
-                    // Tính lại tổng từ các subtotal-price còn lại
-                    let total = 0;
-                    document.querySelectorAll('tr[data-bookid]').forEach(row => {
-                        const txt = row.querySelector('.subtotal-price').textContent.replace(/[^0-9]/g, '');
-                        total += parseInt(txt);
+                // --- Gọi API ---
+                fetch(`/api/cart/remove?bookID=${bookId}`, { method: 'POST' })
+                    .then(res => res.json())
+                    .then(data => {
+                        if (!data.success) {
+                            // Revert nếu thất bại
+                            document.querySelector('tbody').appendChild(backupRow);
+                            document.querySelectorAll('.sub-price').forEach(el => {
+                                el.textContent = oldTotal.toLocaleString() + 'VND';
+                            });
+                            cartIcon.setAttribute('data-count', oldCount);
+                            alert('Xóa không thành công, đã phục hồi UI.');
+                        } else {
+                            // Cập nhật lại count chính xác từ server
+                            cartIcon.setAttribute('data-count', data.cartTotalQuantity);
+                        }
+                    })
+                    .catch(() => {
+                        // Revert nếu lỗi mạng
+                        document.querySelector('tbody').appendChild(backupRow);
+                        document.querySelectorAll('.sub-price').forEach(el => {
+                            el.textContent = oldTotal.toLocaleString() + 'VND';
+                        });
+                        cartIcon.setAttribute('data-count', oldCount);
+                        alert('Lỗi mạng, đã phục hồi UI.');
                     });
-
-                    // Cập nhật cả 2 vị trí Tổng phụ và Thành tiền
-                    document.querySelectorAll('.sub-price').forEach(el =>
-                        el.textContent = total.toLocaleString() + 'VND'
-                    );
-                } else {
-                    alert('Xóa không thành công.');
-                }
             });
         });
+
     </script>
 }
 

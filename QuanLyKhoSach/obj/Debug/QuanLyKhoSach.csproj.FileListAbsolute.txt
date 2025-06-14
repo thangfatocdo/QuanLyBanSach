@@ -114,3 +114,5 @@ D:\Documents\HocTap\DATN\Project\QuanLyKhoSach\bin\Debug\log4net.xml
 D:\Documents\HocTap\DATN\Project\QuanLyKhoSach\obj\Debug\QuanLyKhoSach.formPrint.resources
 D:\Documents\HocTap\DATN\Project\QuanLyKhoSach\obj\Debug\QuanLyKhoSach.View.formReportView.resources
 D:\Documents\HocTap\DATN\Project\QuanLyKhoSach\obj\Debug\QuanLyKhoSach.SubReport.RpOrder.resources
+D:\Documents\HocTap\DATN\Project\QuanLyKhoSach\obj\Debug\QuanLyKhoSach.View.formPublisherView.resources
+D:\Documents\HocTap\DATN\Project\QuanLyKhoSach\obj\Debug\QuanLyKhoSach.Model.formPublisherAdd.resources

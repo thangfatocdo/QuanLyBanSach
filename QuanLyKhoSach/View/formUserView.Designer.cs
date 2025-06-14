@@ -89,7 +89,7 @@
             this.dgvUser.RowHeadersVisible = false;
             this.dgvUser.RowHeadersWidth = 51;
             this.dgvUser.RowTemplate.Height = 24;
-            this.dgvUser.Size = new System.Drawing.Size(993, 450);
+            this.dgvUser.Size = new System.Drawing.Size(993, 398);
             this.dgvUser.TabIndex = 4;
             this.dgvUser.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dgvUser.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -249,8 +249,8 @@
             // 
             // formUserView
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 23F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.ClientSize = new System.Drawing.Size(1106, 651);
             this.Controls.Add(this.dgvUser);
             this.Controls.Add(this.guna2Panel1);

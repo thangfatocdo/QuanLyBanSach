@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Documents\\HocTap\\DATN\\Project\\Doan1\\Doan1\\Doan1.csproj": {}
+    "D:\\Documents\\HocTap\\DATN\\Project\\AppQuanLySach\\Doan1\\Doan1\\Doan1.csproj": {}
   },
   "projects": {
-    "D:\\Documents\\HocTap\\DATN\\Project\\Doan1\\Doan1\\Doan1.csproj": {
+    "D:\\Documents\\HocTap\\DATN\\Project\\AppQuanLySach\\Doan1\\Doan1\\Doan1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Documents\\HocTap\\DATN\\Project\\Doan1\\Doan1\\Doan1.csproj",
+        "projectUniqueName": "D:\\Documents\\HocTap\\DATN\\Project\\AppQuanLySach\\Doan1\\Doan1\\Doan1.csproj",
         "projectName": "Doan1",
-        "projectPath": "D:\\Documents\\HocTap\\DATN\\Project\\Doan1\\Doan1\\Doan1.csproj",
+        "projectPath": "D:\\Documents\\HocTap\\DATN\\Project\\AppQuanLySach\\Doan1\\Doan1\\Doan1.csproj",
         "packagesPath": "C:\\Users\\admin\\.nuget\\packages\\",
-        "outputPath": "D:\\Documents\\HocTap\\DATN\\Project\\Doan1\\Doan1\\obj\\",
+        "outputPath": "D:\\Documents\\HocTap\\DATN\\Project\\AppQuanLySach\\Doan1\\Doan1\\obj\\",
         "projectStyle": "PackageReference",
         "crossTargeting": true,
         "fallbackFolders": [

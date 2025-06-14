@@ -31,11 +31,18 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formImportView));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formImportView));
             this.dgvImport = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.dgvSr = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvid = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvImportdate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvnote = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvDetail = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dvgEdit = new System.Windows.Forms.DataGridViewImageColumn();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.txtSearch = new Guna.UI2.WinForms.Guna2TextBox();
             this.btnAdd = new Guna.UI2.WinForms.Guna2Button();
@@ -45,13 +52,6 @@
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvBook = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvQuantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvSr = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvid = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvImportdate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvnote = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvDetail = new System.Windows.Forms.DataGridViewImageColumn();
-            this.dvgEdit = new System.Windows.Forms.DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvImport)).BeginInit();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvImportDetail)).BeginInit();
@@ -93,13 +93,13 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvImport.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvImport.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvImport.Location = new System.Drawing.Point(12, 178);
+            this.dgvImport.Location = new System.Drawing.Point(78, 178);
             this.dgvImport.Name = "dgvImport";
             this.dgvImport.ReadOnly = true;
             this.dgvImport.RowHeadersVisible = false;
             this.dgvImport.RowHeadersWidth = 51;
             this.dgvImport.RowTemplate.Height = 24;
-            this.dgvImport.Size = new System.Drawing.Size(1124, 327);
+            this.dgvImport.Size = new System.Drawing.Size(1014, 252);
             this.dgvImport.TabIndex = 8;
             this.dgvImport.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dgvImport.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -123,6 +123,74 @@
             this.dgvImport.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvImport.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.dgvImport.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvImport_CellContentClick);
+            // 
+            // dgvSr
+            // 
+            this.dgvSr.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.dgvSr.FillWeight = 50F;
+            this.dgvSr.HeaderText = "#";
+            this.dgvSr.MinimumWidth = 50;
+            this.dgvSr.Name = "dgvSr";
+            this.dgvSr.ReadOnly = true;
+            this.dgvSr.Width = 50;
+            // 
+            // dgvid
+            // 
+            this.dgvid.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.dgvid.FillWeight = 80F;
+            this.dgvid.HeaderText = "Mã nhập";
+            this.dgvid.MinimumWidth = 50;
+            this.dgvid.Name = "dgvid";
+            this.dgvid.ReadOnly = true;
+            this.dgvid.Width = 160;
+            // 
+            // dgvName
+            // 
+            this.dgvName.FillWeight = 83.43296F;
+            this.dgvName.HeaderText = "Người nhập";
+            this.dgvName.MinimumWidth = 6;
+            this.dgvName.Name = "dgvName";
+            this.dgvName.ReadOnly = true;
+            // 
+            // dgvImportdate
+            // 
+            this.dgvImportdate.FillWeight = 98.9851F;
+            this.dgvImportdate.HeaderText = "Ngày nhập";
+            this.dgvImportdate.MinimumWidth = 6;
+            this.dgvImportdate.Name = "dgvImportdate";
+            this.dgvImportdate.ReadOnly = true;
+            // 
+            // dgvnote
+            // 
+            this.dgvnote.FillWeight = 83.43296F;
+            this.dgvnote.HeaderText = "Ghi chú";
+            this.dgvnote.MinimumWidth = 6;
+            this.dgvnote.Name = "dgvnote";
+            this.dgvnote.ReadOnly = true;
+            // 
+            // dgvDetail
+            // 
+            this.dgvDetail.FillWeight = 30F;
+            this.dgvDetail.HeaderText = "Chi tiết";
+            this.dgvDetail.Image = ((System.Drawing.Image)(resources.GetObject("dgvDetail.Image")));
+            this.dgvDetail.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.dgvDetail.MinimumWidth = 30;
+            this.dgvDetail.Name = "dgvDetail";
+            this.dgvDetail.ReadOnly = true;
+            this.dgvDetail.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDetail.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // dvgEdit
+            // 
+            this.dvgEdit.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.dvgEdit.FillWeight = 50F;
+            this.dvgEdit.HeaderText = "Edit";
+            this.dvgEdit.Image = ((System.Drawing.Image)(resources.GetObject("dvgEdit.Image")));
+            this.dvgEdit.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.dvgEdit.MinimumWidth = 50;
+            this.dvgEdit.Name = "dvgEdit";
+            this.dvgEdit.ReadOnly = true;
+            this.dvgEdit.Width = 50;
             // 
             // guna2Panel1
             // 
@@ -208,8 +276,7 @@
             this.dgvImportDetail.AllowUserToDeleteRows = false;
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
             this.dgvImportDetail.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
-            this.dgvImportDetail.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.dgvImportDetail.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(61)))), ((int)(((byte)(204)))));
@@ -234,13 +301,13 @@
             dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvImportDetail.DefaultCellStyle = dataGridViewCellStyle6;
             this.dgvImportDetail.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvImportDetail.Location = new System.Drawing.Point(78, 430);
+            this.dgvImportDetail.Location = new System.Drawing.Point(253, 436);
             this.dgvImportDetail.Name = "dgvImportDetail";
             this.dgvImportDetail.ReadOnly = true;
             this.dgvImportDetail.RowHeadersVisible = false;
             this.dgvImportDetail.RowHeadersWidth = 51;
             this.dgvImportDetail.RowTemplate.Height = 24;
-            this.dgvImportDetail.Size = new System.Drawing.Size(960, 245);
+            this.dgvImportDetail.Size = new System.Drawing.Size(698, 232);
             this.dgvImportDetail.TabIndex = 10;
             this.dgvImportDetail.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dgvImportDetail.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -289,78 +356,10 @@
             this.dgvQuantity.Name = "dgvQuantity";
             this.dgvQuantity.ReadOnly = true;
             // 
-            // dgvSr
-            // 
-            this.dgvSr.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.dgvSr.FillWeight = 50F;
-            this.dgvSr.HeaderText = "#";
-            this.dgvSr.MinimumWidth = 50;
-            this.dgvSr.Name = "dgvSr";
-            this.dgvSr.ReadOnly = true;
-            this.dgvSr.Width = 50;
-            // 
-            // dgvid
-            // 
-            this.dgvid.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.dgvid.FillWeight = 80F;
-            this.dgvid.HeaderText = "Mã nhập";
-            this.dgvid.MinimumWidth = 50;
-            this.dgvid.Name = "dgvid";
-            this.dgvid.ReadOnly = true;
-            this.dgvid.Width = 160;
-            // 
-            // dgvName
-            // 
-            this.dgvName.FillWeight = 83.43296F;
-            this.dgvName.HeaderText = "Người nhập";
-            this.dgvName.MinimumWidth = 6;
-            this.dgvName.Name = "dgvName";
-            this.dgvName.ReadOnly = true;
-            // 
-            // dgvImportdate
-            // 
-            this.dgvImportdate.FillWeight = 98.9851F;
-            this.dgvImportdate.HeaderText = "Ngày nhập";
-            this.dgvImportdate.MinimumWidth = 6;
-            this.dgvImportdate.Name = "dgvImportdate";
-            this.dgvImportdate.ReadOnly = true;
-            // 
-            // dgvnote
-            // 
-            this.dgvnote.FillWeight = 83.43296F;
-            this.dgvnote.HeaderText = "Ghi chú";
-            this.dgvnote.MinimumWidth = 6;
-            this.dgvnote.Name = "dgvnote";
-            this.dgvnote.ReadOnly = true;
-            // 
-            // dgvDetail
-            // 
-            this.dgvDetail.FillWeight = 30F;
-            this.dgvDetail.HeaderText = "Chi tiết";
-            this.dgvDetail.Image = ((System.Drawing.Image)(resources.GetObject("dgvDetail.Image")));
-            this.dgvDetail.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.dgvDetail.MinimumWidth = 30;
-            this.dgvDetail.Name = "dgvDetail";
-            this.dgvDetail.ReadOnly = true;
-            this.dgvDetail.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDetail.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // dvgEdit
-            // 
-            this.dvgEdit.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.dvgEdit.FillWeight = 50F;
-            this.dvgEdit.HeaderText = "Edit";
-            this.dvgEdit.Image = ((System.Drawing.Image)(resources.GetObject("dvgEdit.Image")));
-            this.dvgEdit.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.dvgEdit.MinimumWidth = 50;
-            this.dvgEdit.Name = "dvgEdit";
-            this.dvgEdit.ReadOnly = true;
-            this.dvgEdit.Width = 50;
-            // 
             // formImportView
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 23F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.ClientSize = new System.Drawing.Size(1148, 733);
             this.Controls.Add(this.dgvImportDetail);
             this.Controls.Add(this.dgvImport);
