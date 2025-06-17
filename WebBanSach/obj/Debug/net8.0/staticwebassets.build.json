@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "jtwZCKE3w+6ZC4JNayurdEihuLcnW1ExneqoLQFJqTI=",
+  "Hash": "HgGY22wEO9VT5c/l79V0v3EFirwqpTYrJgU0OSVSA+8=",
   "Source": "WebBanSach",
   "BasePath": "_content/WebBanSach",
   "Mode": "Default",
@@ -433,25 +433,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\assets\\img\\404.png"
-    },
-    {
-      "Identity": "D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\wwwroot\\assets\\img\\about.jpg",
-      "SourceId": "WebBanSach",
-      "SourceType": "Discovered",
-      "ContentRoot": "D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\wwwroot\\",
-      "BasePath": "_content/WebBanSach",
-      "RelativePath": "assets/img/about.jpg",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\assets\\img\\about.jpg"
     },
     {
       "Identity": "D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\wwwroot\\assets\\img\\affirm.png",
@@ -2751,6 +2732,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\assets\\img\\registrationbg.jpg"
+    },
+    {
+      "Identity": "D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\wwwroot\\assets\\img\\rick.jpg",
+      "SourceId": "WebBanSach",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\wwwroot\\",
+      "BasePath": "_content/WebBanSach",
+      "RelativePath": "assets/img/rick.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\img\\rick.jpg"
     },
     {
       "Identity": "D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\wwwroot\\assets\\img\\shop-banner.jpg",

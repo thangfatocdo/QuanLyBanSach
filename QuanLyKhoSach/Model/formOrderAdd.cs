@@ -1,4 +1,6 @@
-﻿using System;
+﻿using CrystalDecisions.CrystalReports.Engine;
+using QuanLyKhoSach.Report;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -185,6 +187,74 @@ namespace QuanLyKhoSach.Model
                         cb.Checked = false;
                 }
             }
+        }
+
+        private void btnPrint_Click(object sender, EventArgs e)
+        {
+            // 1. Phải có OrderId hợp lệ
+            if (!int.TryParse(txtOderID.Text, out int orderId))
+            {
+                MessageBox.Show("Chưa có mã đơn hoặc mã không hợp lệ để in hóa đơn!",
+                                "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // 2. Khởi tạo report (ReportInvoice là .rpt bạn thiết kế để in hoá đơn)
+            var dt = GetInvoiceData(orderId);        // DataTable từ code
+            var cr = new ReportReceipt();
+            cr.SetDataSource(dt);                    // Push DataTable vào
+            using (var frm = new formPrint())
+            {
+                frm.crystalReportViewer1.ReportSource = cr;
+                frm.crystalReportViewer1.Refresh();
+                frm.ShowDialog();
+            }
+        }
+        private DataTable GetInvoiceData(int orderId)
+        {
+            var dt = new DataTable();
+            dt.Columns.Add("OrderId", typeof(int));
+            dt.Columns.Add("OrderDate", typeof(DateTime));
+            dt.Columns.Add("CustomerName", typeof(string));
+            dt.Columns.Add("Phone", typeof(string));
+            dt.Columns.Add("Address", typeof(string));
+            dt.Columns.Add("PaymentMethod", typeof(string));
+            dt.Columns.Add("BookTitle", typeof(string));
+            dt.Columns.Add("Quantity", typeof(int));
+            dt.Columns.Add("UnitPrice", typeof(decimal));
+            dt.Columns.Add("LineTotal", typeof(decimal));
+
+            // Lấy đơn hàng kèm items
+            var order = context.Orders
+                .Include("PaymentMethods")
+                .Include("OrderItems")
+                .FirstOrDefault(o => o.OrderId == orderId);
+
+            if (order == null)
+                return dt;
+
+            foreach (var item in order.OrderItems)
+            {
+                var book = context.Books.Find(item.BookId);
+                string title = book?.Title ?? "(Không tìm thấy)";
+                int qty = item.BookQuantity ?? 0;
+                decimal price = item.BookPrice ?? 0m;
+
+                dt.Rows.Add(
+                    order.OrderId,
+                    order.OrderDate ?? DateTime.MinValue,
+                    order.CustomerName,
+                    order.Phone,
+                    order.Address,
+                    order.PaymentMethods?.MethodName ?? "",
+                    title,
+                    qty,
+                    price,
+                    qty * price
+                );
+            }
+
+            return dt;
         }
 
     }

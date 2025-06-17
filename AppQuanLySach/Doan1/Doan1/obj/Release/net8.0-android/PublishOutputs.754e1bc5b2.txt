@@ -1,0 +1,4 @@
+D:\Documents\HocTap\DATN\Project\AppQuanLySach\Doan1\Doan1\bin\Release\net8.0-android\publish\com.companyname.doan1-Signed.aab
+D:\Documents\HocTap\DATN\Project\AppQuanLySach\Doan1\Doan1\bin\Release\net8.0-android\publish\com.companyname.doan1.aab
+D:\Documents\HocTap\DATN\Project\AppQuanLySach\Doan1\Doan1\bin\Release\net8.0-android\publish\com.companyname.doan1-Signed.apk
+D:\Documents\HocTap\DATN\Project\AppQuanLySach\Doan1\Doan1\bin\Release\net8.0-android\publish\_Microsoft.Android.Resource.Designer.dll

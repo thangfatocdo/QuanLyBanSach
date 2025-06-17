@@ -104,7 +104,8 @@ public partial class DashboardViewModel : ObservableObject
                 PropertyNameCaseInsensitive = true
             });
 
-            var startOfWeek = DateTime.Today.AddDays(-(int)DateTime.Today.DayOfWeek + 1);
+            int offset = ((int)DateTime.Today.DayOfWeek - 1 + 7) % 7;
+            var startOfWeek = DateTime.Today.AddDays(-offset);
             var weekOrders = orders
                 .Where(o => o.OrderDate.HasValue && o.OrderDate.Value.Date >= startOfWeek)
                 .ToList();

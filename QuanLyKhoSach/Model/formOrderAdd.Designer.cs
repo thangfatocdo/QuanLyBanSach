@@ -105,6 +105,7 @@
             this.btnPrint.Size = new System.Drawing.Size(137, 57);
             this.btnPrint.TabIndex = 2;
             this.btnPrint.Text = "In hóa đơn";
+            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
             // btnClose
             // 

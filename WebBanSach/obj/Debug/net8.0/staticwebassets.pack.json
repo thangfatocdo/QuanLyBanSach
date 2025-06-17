@@ -81,10 +81,6 @@
       "PackagePath": "staticwebassets\\assets\\img\\PayPal.png"
     },
     {
-      "Id": "D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\wwwroot\\assets\\img\\about.jpg",
-      "PackagePath": "staticwebassets\\assets\\img\\about.jpg"
-    },
-    {
       "Id": "D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\wwwroot\\assets\\img\\affirm.png",
       "PackagePath": "staticwebassets\\assets\\img\\affirm.png"
     },
@@ -555,6 +551,10 @@
     {
       "Id": "D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\wwwroot\\assets\\img\\registrationbg.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\registrationbg.jpg"
+    },
+    {
+      "Id": "D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\wwwroot\\assets\\img\\rick.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\rick.jpg"
     },
     {
       "Id": "D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\wwwroot\\assets\\img\\shop-banner.jpg",
