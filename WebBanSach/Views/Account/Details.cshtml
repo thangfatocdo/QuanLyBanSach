@@ -1,4 +1,4 @@
-﻿@model WebBanSach.Models.Entities.Order
+﻿@model WebBanSach.Model.Order
 @{
     ViewData["Title"] = "Chi tiết đơn hàng #" + Model.OrderId;
 }
@@ -46,6 +46,7 @@
                 @if (Model.StatusId == 1 || Model.StatusId == 2)
                 {
                     <form asp-action="Cancel" asp-route-id="@Model.OrderId" method="post">
+                        @Html.AntiForgeryToken()
                         <button type="submit" class="btn btn-danger btn-lg">Huỷ đơn hàng</button>
                     </form>
                 }

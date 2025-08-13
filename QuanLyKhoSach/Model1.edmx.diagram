@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="f5b7f48329354192888b211d05dbb97f" Name="Diagram1">
+      <Diagram DiagramId="fc3c5763ad5c43c69c4469826d9c399d" Name="Diagram1">
         <EntityTypeShape EntityType="BookstoreDBModel.Authors" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="BookstoreDBModel.BookImages" Width="1.5" PointX="5.25" PointY="8.125" IsExpanded="true" />
         <EntityTypeShape EntityType="BookstoreDBModel.BookRatings" Width="1.5" PointX="5.25" PointY="4.75" IsExpanded="true" />
@@ -20,11 +20,10 @@
         <EntityTypeShape EntityType="BookstoreDBModel.OrderStatuses" Width="1.5" PointX="3.75" PointY="17.75" IsExpanded="true" />
         <EntityTypeShape EntityType="BookstoreDBModel.PaymentMethods" Width="1.5" PointX="3.75" PointY="20.125" IsExpanded="true" />
         <EntityTypeShape EntityType="BookstoreDBModel.Publishers" Width="1.5" PointX="0.75" PointY="5" IsExpanded="true" />
-        <EntityTypeShape EntityType="BookstoreDBModel.sysdiagrams" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="BookstoreDBModel.Users" Width="1.5" PointX="3.75" PointY="23.25" IsExpanded="true" />
         <AssociationConnector Association="BookstoreDBModel.FK_BookImages_Books" ManuallyRouted="false" />
-        <AssociationConnector Association="BookstoreDBModel.FK__BookRatin__BookI__5BE2A6F2" ManuallyRouted="false" />
-        <AssociationConnector Association="BookstoreDBModel.FK__BookRatin__Custo__5CD6CB2B" ManuallyRouted="false" />
+        <AssociationConnector Association="BookstoreDBModel.FK__BookRatin__BookI__5CD6CB2B" ManuallyRouted="false" />
+        <AssociationConnector Association="BookstoreDBModel.FK__BookRatin__Custo__5DCAEF64" ManuallyRouted="false" />
         <AssociationConnector Association="BookstoreDBModel.FK__Books__CategoryI__5EBF139D" ManuallyRouted="false" />
         <AssociationConnector Association="BookstoreDBModel.FK__Books__Publisher__5FB337D6" ManuallyRouted="false" />
         <AssociationConnector Association="BookstoreDBModel.FK__Inventory__BookI__628FA481" ManuallyRouted="false" />

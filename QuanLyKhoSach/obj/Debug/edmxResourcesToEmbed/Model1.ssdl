@@ -148,7 +148,7 @@
     <Property Name="Phone" Type="nvarchar" MaxLength="20" />
   </EntityType>
   <!--Errors Found During Generation:
-warning 6013: The table/view 'db_ab9f8d_bookstoredb.dbo.Statistic' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+warning 6013: The table/view 'db_abc8f4_quanlykhosach.dbo.Statistic' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
         <EntityType Name="Statistic">
           <Property Name="Title" Type="nvarchar" MaxLength="100" />
           <Property Name="Total_BooksSold" Type="int" />
@@ -157,16 +157,6 @@ warning 6013: The table/view 'db_ab9f8d_bookstoredb.dbo.Statistic' does not have
           <Property Name="Total_Quantity" Type="int" />
           <Property Name="YearRevenue" Type="int" />
         </EntityType>-->
-  <EntityType Name="sysdiagrams">
-    <Key>
-      <PropertyRef Name="diagram_id" />
-    </Key>
-    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
-    <Property Name="principal_id" Type="int" Nullable="false" />
-    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="version" Type="int" />
-    <Property Name="definition" Type="varbinary(max)" />
-  </EntityType>
   <EntityType Name="Users">
     <Key>
       <PropertyRef Name="UserId" />
@@ -178,7 +168,7 @@ warning 6013: The table/view 'db_ab9f8d_bookstoredb.dbo.Statistic' does not have
     <Property Name="Role" Type="nvarchar" MaxLength="20" />
     <Property Name="ImageUrl" Type="nvarchar" MaxLength="255" />
   </EntityType>
-  <Association Name="FK__BookRatin__BookI__5BE2A6F2">
+  <Association Name="FK__BookRatin__BookI__5CD6CB2B">
     <End Role="Books" Type="Self.Books" Multiplicity="1" />
     <End Role="BookRatings" Type="Self.BookRatings" Multiplicity="*" />
     <ReferentialConstraint>
@@ -190,7 +180,7 @@ warning 6013: The table/view 'db_ab9f8d_bookstoredb.dbo.Statistic' does not have
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__BookRatin__Custo__5CD6CB2B">
+  <Association Name="FK__BookRatin__Custo__5DCAEF64">
     <End Role="Customers" Type="Self.Customers" Multiplicity="1" />
     <End Role="BookRatings" Type="Self.BookRatings" Multiplicity="*" />
     <ReferentialConstraint>
@@ -410,13 +400,12 @@ warning 6013: The table/view 'db_ab9f8d_bookstoredb.dbo.Statistic' does not have
     <EntitySet Name="OrderStatuses" EntityType="Self.OrderStatuses" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="PaymentMethods" EntityType="Self.PaymentMethods" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Publishers" EntityType="Self.Publishers" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
-    <AssociationSet Name="FK__BookRatin__BookI__5BE2A6F2" Association="Self.FK__BookRatin__BookI__5BE2A6F2">
+    <AssociationSet Name="FK__BookRatin__BookI__5CD6CB2B" Association="Self.FK__BookRatin__BookI__5CD6CB2B">
       <End Role="Books" EntitySet="Books" />
       <End Role="BookRatings" EntitySet="BookRatings" />
     </AssociationSet>
-    <AssociationSet Name="FK__BookRatin__Custo__5CD6CB2B" Association="Self.FK__BookRatin__Custo__5CD6CB2B">
+    <AssociationSet Name="FK__BookRatin__Custo__5DCAEF64" Association="Self.FK__BookRatin__Custo__5DCAEF64">
       <End Role="Customers" EntitySet="Customers" />
       <End Role="BookRatings" EntitySet="BookRatings" />
     </AssociationSet>

@@ -29,6 +29,9 @@ namespace AIGoiYSanPham.Controllers
             trainer.TrainModelFromDb(); // retrain model
             logs.Add("✓ Huấn luyện thành công!");
 
+            var (testRmse, r2) = trainer.EvaluateModel();
+            logs.Add($"📊 RMSE: {testRmse:F4} | R²: {r2:F4}");
+
             var svc = new RecommenderService(trainer, context);
             logs.Add($"\n=== GỢI Ý CHO USER {customerId} ===");
 

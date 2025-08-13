@@ -3,36 +3,40 @@
   "WorkspaceRootPath": "D:\\Documents\\HocTap\\DATN\\Project\\AIGoiYSanPham\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{5393BCA9-D779-4E68-94DE-3F199B0A0D36}|AIGoiYSanPham.csproj|D:\\Documents\\HocTap\\DATN\\Project\\AIGoiYSanPham\\controllers\\recommendercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{5393BCA9-D779-4E68-94DE-3F199B0A0D36}|AIGoiYSanPham.csproj|d:\\documents\\hoctap\\datn\\project\\aigoiysanpham\\entities\\author.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5393BCA9-D779-4E68-94DE-3F199B0A0D36}|AIGoiYSanPham.csproj|solutionrelative:entities\\author.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5393BCA9-D779-4E68-94DE-3F199B0A0D36}|AIGoiYSanPham.csproj|d:\\documents\\hoctap\\datn\\project\\aigoiysanpham\\entities\\bookstoredbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5393BCA9-D779-4E68-94DE-3F199B0A0D36}|AIGoiYSanPham.csproj|solutionrelative:entities\\bookstoredbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5393BCA9-D779-4E68-94DE-3F199B0A0D36}|AIGoiYSanPham.csproj|D:\\Documents\\HocTap\\DATN\\Project\\AIGoiYSanPham\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5393BCA9-D779-4E68-94DE-3F199B0A0D36}|AIGoiYSanPham.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5393BCA9-D779-4E68-94DE-3F199B0A0D36}|AIGoiYSanPham.csproj|D:\\Documents\\HocTap\\DATN\\Project\\AIGoiYSanPham\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{5393BCA9-D779-4E68-94DE-3F199B0A0D36}|AIGoiYSanPham.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5393BCA9-D779-4E68-94DE-3F199B0A0D36}|AIGoiYSanPham.csproj|d:\\documents\\hoctap\\datn\\project\\aigoiysanpham\\controllers\\recommendercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5393BCA9-D779-4E68-94DE-3F199B0A0D36}|AIGoiYSanPham.csproj|solutionrelative:controllers\\recommendercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5393BCA9-D779-4E68-94DE-3F199B0A0D36}|AIGoiYSanPham.csproj|d:\\documents\\hoctap\\datn\\project\\aigoiysanpham\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{5393BCA9-D779-4E68-94DE-3F199B0A0D36}|AIGoiYSanPham.csproj|D:\\Documents\\HocTap\\DATN\\Project\\AIGoiYSanPham\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5393BCA9-D779-4E68-94DE-3F199B0A0D36}|AIGoiYSanPham.csproj|solutionrelative:controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5393BCA9-D779-4E68-94DE-3F199B0A0D36}|AIGoiYSanPham.csproj|D:\\Documents\\HocTap\\DATN\\Project\\AIGoiYSanPham\\models\\recommenderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5393BCA9-D779-4E68-94DE-3F199B0A0D36}|AIGoiYSanPham.csproj|solutionrelative:models\\recommenderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{5393BCA9-D779-4E68-94DE-3F199B0A0D36}|AIGoiYSanPham.csproj|D:\\Documents\\HocTap\\DATN\\Project\\AIGoiYSanPham\\models\\recommendertrainer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5393BCA9-D779-4E68-94DE-3F199B0A0D36}|AIGoiYSanPham.csproj|solutionrelative:models\\recommendertrainer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5393BCA9-D779-4E68-94DE-3F199B0A0D36}|AIGoiYSanPham.csproj|d:\\documents\\hoctap\\datn\\project\\aigoiysanpham\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{5393BCA9-D779-4E68-94DE-3F199B0A0D36}|AIGoiYSanPham.csproj|solutionrelative:views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{5393BCA9-D779-4E68-94DE-3F199B0A0D36}|AIGoiYSanPham.csproj|D:\\Documents\\HocTap\\DATN\\Project\\AIGoiYSanPham\\models\\recommenderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5393BCA9-D779-4E68-94DE-3F199B0A0D36}|AIGoiYSanPham.csproj|solutionrelative:models\\recommenderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5393BCA9-D779-4E68-94DE-3F199B0A0D36}|AIGoiYSanPham.csproj|d:\\documents\\hoctap\\datn\\project\\aigoiysanpham\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{5393BCA9-D779-4E68-94DE-3F199B0A0D36}|AIGoiYSanPham.csproj|D:\\Documents\\HocTap\\DATN\\Project\\AIGoiYSanPham\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{5393BCA9-D779-4E68-94DE-3F199B0A0D36}|AIGoiYSanPham.csproj|solutionrelative:views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5393BCA9-D779-4E68-94DE-3F199B0A0D36}|AIGoiYSanPham.csproj|d:\\documents\\hoctap\\datn\\project\\aigoiysanpham\\views\\home\\privacy.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{5393BCA9-D779-4E68-94DE-3F199B0A0D36}|AIGoiYSanPham.csproj|solutionrelative:views\\home\\privacy.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5393BCA9-D779-4E68-94DE-3F199B0A0D36}|AIGoiYSanPham.csproj|d:\\documents\\hoctap\\datn\\project\\aigoiysanpham\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5393BCA9-D779-4E68-94DE-3F199B0A0D36}|AIGoiYSanPham.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{5393BCA9-D779-4E68-94DE-3F199B0A0D36}|AIGoiYSanPham.csproj|D:\\Documents\\HocTap\\DATN\\Project\\AIGoiYSanPham\\models\\errorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -47,16 +51,12 @@
       "RelativeMoniker": "D:0:0:{5393BCA9-D779-4E68-94DE-3F199B0A0D36}|AIGoiYSanPham.csproj|solutionrelative:models\\bookratingentry.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5393BCA9-D779-4E68-94DE-3F199B0A0D36}|AIGoiYSanPham.csproj|D:\\Documents\\HocTap\\DATN\\Project\\AIGoiYSanPham\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{5393BCA9-D779-4E68-94DE-3F199B0A0D36}|AIGoiYSanPham.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{5393BCA9-D779-4E68-94DE-3F199B0A0D36}|AIGoiYSanPham.csproj|D:\\Documents\\HocTap\\DATN\\Project\\AIGoiYSanPham\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{5393BCA9-D779-4E68-94DE-3F199B0A0D36}|AIGoiYSanPham.csproj|solutionrelative:views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5393BCA9-D779-4E68-94DE-3F199B0A0D36}|AIGoiYSanPham.csproj|D:\\Documents\\HocTap\\DATN\\Project\\AIGoiYSanPham\\entities\\bookstoredbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5393BCA9-D779-4E68-94DE-3F199B0A0D36}|AIGoiYSanPham.csproj|solutionrelative:entities\\bookstoredbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5393BCA9-D779-4E68-94DE-3F199B0A0D36}|AIGoiYSanPham.csproj|D:\\Documents\\HocTap\\DATN\\Project\\AIGoiYSanPham\\entities\\author.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5393BCA9-D779-4E68-94DE-3F199B0A0D36}|AIGoiYSanPham.csproj|solutionrelative:entities\\author.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5393BCA9-D779-4E68-94DE-3F199B0A0D36}|AIGoiYSanPham.csproj|D:\\Documents\\HocTap\\DATN\\Project\\AIGoiYSanPham\\views\\home\\privacy.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{5393BCA9-D779-4E68-94DE-3F199B0A0D36}|AIGoiYSanPham.csproj|solutionrelative:views\\home\\privacy.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{5393BCA9-D779-4E68-94DE-3F199B0A0D36}|AIGoiYSanPham.csproj|D:\\Documents\\HocTap\\DATN\\Project\\AIGoiYSanPham\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
@@ -82,17 +82,17 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 2,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\Documents\\HocTap\\DATN\\Project\\AIGoiYSanPham\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "D:\\Documents\\HocTap\\DATN\\Project\\AIGoiYSanPham\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AQIAABIAAAAAAAAAAAAAAEwAAAAAAAAA",
+              "ViewState": "AQIAADAAAAAAAAAAAAAAAEoAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-20T04:30:04.118Z",
               "IsPinned": true,
@@ -104,124 +104,46 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "D:\\Documents\\HocTap\\DATN\\Project\\AIGoiYSanPham\\Views\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "D:\\Documents\\HocTap\\DATN\\Project\\AIGoiYSanPham\\Views\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AQIAABUAAAAAAAAAAAAAACcAAAANAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-06-11T06:14:12.437Z",
+              "DocumentIndex": 0,
+              "Title": "Author.cs",
+              "DocumentMoniker": "D:\\Documents\\HocTap\\DATN\\Project\\AIGoiYSanPham\\Entities\\Author.cs",
+              "RelativeDocumentMoniker": "Entities\\Author.cs",
+              "ToolTip": "D:\\Documents\\HocTap\\DATN\\Project\\AIGoiYSanPham\\Entities\\Author.cs",
+              "RelativeToolTip": "Entities\\Author.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-04T03:52:06.807Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "HomeController.cs",
-              "DocumentMoniker": "D:\\Documents\\HocTap\\DATN\\Project\\AIGoiYSanPham\\Controllers\\HomeController.cs",
-              "RelativeDocumentMoniker": "Controllers\\HomeController.cs",
-              "ToolTip": "D:\\Documents\\HocTap\\DATN\\Project\\AIGoiYSanPham\\Controllers\\HomeController.cs",
-              "RelativeToolTip": "Controllers\\HomeController.cs",
-              "ViewState": "AQIAABUAAAAAAAAAAAAYwCcAAABSAAAA",
+              "Title": "BookstoreDbContext.cs",
+              "DocumentMoniker": "D:\\Documents\\HocTap\\DATN\\Project\\AIGoiYSanPham\\Entities\\BookstoreDbContext.cs",
+              "RelativeDocumentMoniker": "Entities\\BookstoreDbContext.cs",
+              "ToolTip": "D:\\Documents\\HocTap\\DATN\\Project\\AIGoiYSanPham\\Entities\\BookstoreDbContext.cs",
+              "RelativeToolTip": "Entities\\BookstoreDbContext.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAABBAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-11T05:14:33.532Z",
+              "WhenOpened": "2025-08-04T03:51:31.687Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "D:\\Documents\\HocTap\\DATN\\Project\\AIGoiYSanPham\\Views\\Home\\Index.cshtml",
-              "RelativeDocumentMoniker": "Views\\Home\\Index.cshtml",
-              "ToolTip": "D:\\Documents\\HocTap\\DATN\\Project\\AIGoiYSanPham\\Views\\Home\\Index.cshtml",
-              "RelativeToolTip": "Views\\Home\\Index.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAABAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-06-11T05:09:22.446Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 4,
               "Title": "RecommenderController.cs",
               "DocumentMoniker": "D:\\Documents\\HocTap\\DATN\\Project\\AIGoiYSanPham\\Controllers\\RecommenderController.cs",
               "RelativeDocumentMoniker": "Controllers\\RecommenderController.cs",
               "ToolTip": "D:\\Documents\\HocTap\\DATN\\Project\\AIGoiYSanPham\\Controllers\\RecommenderController.cs",
               "RelativeToolTip": "Controllers\\RecommenderController.cs",
-              "ViewState": "AQIAABoAAAAAAAAAAAAkwE0AAAAAAAAA",
+              "ViewState": "AQIAADsAAAAAAAAAAAAgwCgAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-18T10:44:02.269Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "RecommenderTrainer.cs",
-              "DocumentMoniker": "D:\\Documents\\HocTap\\DATN\\Project\\AIGoiYSanPham\\Models\\RecommenderTrainer.cs",
-              "RelativeDocumentMoniker": "Models\\RecommenderTrainer.cs",
-              "ToolTip": "D:\\Documents\\HocTap\\DATN\\Project\\AIGoiYSanPham\\Models\\RecommenderTrainer.cs",
-              "RelativeToolTip": "Models\\RecommenderTrainer.cs",
-              "ViewState": "AQIAAC0AAAAAAAAAAAAkwEcAAAAiAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-27T02:55:20.533Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "RecommenderService.cs",
-              "DocumentMoniker": "D:\\Documents\\HocTap\\DATN\\Project\\AIGoiYSanPham\\Models\\RecommenderService.cs",
-              "RelativeDocumentMoniker": "Models\\RecommenderService.cs",
-              "ToolTip": "D:\\Documents\\HocTap\\DATN\\Project\\AIGoiYSanPham\\Models\\RecommenderService.cs",
-              "RelativeToolTip": "Models\\RecommenderService.cs",
-              "ViewState": "AQIAAAkAAAAAAAAAAAAAABsAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-26T13:14:16.593Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Privacy.cshtml",
-              "DocumentMoniker": "D:\\Documents\\HocTap\\DATN\\Project\\AIGoiYSanPham\\Views\\Home\\Privacy.cshtml",
-              "RelativeDocumentMoniker": "Views\\Home\\Privacy.cshtml",
-              "ToolTip": "D:\\Documents\\HocTap\\DATN\\Project\\AIGoiYSanPham\\Views\\Home\\Privacy.cshtml",
-              "RelativeToolTip": "Views\\Home\\Privacy.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-06-11T06:14:05.041Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 9,
-              "Title": "BookRatingPrediction.cs",
-              "DocumentMoniker": "D:\\Documents\\HocTap\\DATN\\Project\\AIGoiYSanPham\\Models\\BookRatingPrediction.cs",
-              "RelativeDocumentMoniker": "Models\\BookRatingPrediction.cs",
-              "ToolTip": "D:\\Documents\\HocTap\\DATN\\Project\\AIGoiYSanPham\\Models\\BookRatingPrediction.cs",
-              "RelativeToolTip": "Models\\BookRatingPrediction.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-18T16:03:21.466Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "BookRatingEntry.cs",
-              "DocumentMoniker": "D:\\Documents\\HocTap\\DATN\\Project\\AIGoiYSanPham\\Models\\BookRatingEntry.cs",
-              "RelativeDocumentMoniker": "Models\\BookRatingEntry.cs",
-              "ToolTip": "D:\\Documents\\HocTap\\DATN\\Project\\AIGoiYSanPham\\Models\\BookRatingEntry.cs",
-              "RelativeToolTip": "Models\\BookRatingEntry.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-06T16:47:19.201Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
               "Title": "ErrorViewModel.cs",
               "DocumentMoniker": "D:\\Documents\\HocTap\\DATN\\Project\\AIGoiYSanPham\\Models\\ErrorViewModel.cs",
               "RelativeDocumentMoniker": "Models\\ErrorViewModel.cs",
@@ -229,12 +151,35 @@
               "RelativeToolTip": "Models\\ErrorViewModel.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-20T03:48:07.958Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-20T03:48:07.958Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 8,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\Documents\\HocTap\\DATN\\Project\\AIGoiYSanPham\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Home\\Index.cshtml",
+              "ToolTip": "D:\\Documents\\HocTap\\DATN\\Project\\AIGoiYSanPham\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "Views\\Home\\Index.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABUAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-11T05:09:22.446Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "D:\\Documents\\HocTap\\DATN\\Project\\AIGoiYSanPham\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "Controllers\\HomeController.cs",
+              "ToolTip": "D:\\Documents\\HocTap\\DATN\\Project\\AIGoiYSanPham\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "Controllers\\HomeController.cs",
+              "ViewState": "AQIAAAoAAAAAAAAAAIA9wCEAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-11T05:14:33.532Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "appsettings.json",
               "DocumentMoniker": "D:\\Documents\\HocTap\\DATN\\Project\\AIGoiYSanPham\\appsettings.json",
               "RelativeDocumentMoniker": "appsettings.json",
@@ -242,20 +187,80 @@
               "RelativeToolTip": "appsettings.json",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAADPAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-06-06T15:59:45.066Z"
+              "WhenOpened": "2025-06-06T15:59:45.066Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "RecommenderService.cs",
+              "DocumentMoniker": "D:\\Documents\\HocTap\\DATN\\Project\\AIGoiYSanPham\\Models\\RecommenderService.cs",
+              "RelativeDocumentMoniker": "Models\\RecommenderService.cs",
+              "ToolTip": "D:\\Documents\\HocTap\\DATN\\Project\\AIGoiYSanPham\\Models\\RecommenderService.cs",
+              "RelativeToolTip": "Models\\RecommenderService.cs",
+              "ViewState": "AQIAAA8AAAAAAAAAAAAAABgAAABqAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-26T13:14:16.593Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "RecommenderTrainer.cs",
+              "DocumentMoniker": "D:\\Documents\\HocTap\\DATN\\Project\\AIGoiYSanPham\\Models\\RecommenderTrainer.cs",
+              "RelativeDocumentMoniker": "Models\\RecommenderTrainer.cs",
+              "ToolTip": "D:\\Documents\\HocTap\\DATN\\Project\\AIGoiYSanPham\\Models\\RecommenderTrainer.cs",
+              "RelativeToolTip": "Models\\RecommenderTrainer.cs",
+              "ViewState": "AQIAAEkAAAAAAAAAAAAIwFsAAAA6AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-27T02:55:20.533Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "BookRatingPrediction.cs",
+              "DocumentMoniker": "D:\\Documents\\HocTap\\DATN\\Project\\AIGoiYSanPham\\Models\\BookRatingPrediction.cs",
+              "RelativeDocumentMoniker": "Models\\BookRatingPrediction.cs",
+              "ToolTip": "D:\\Documents\\HocTap\\DATN\\Project\\AIGoiYSanPham\\Models\\BookRatingPrediction.cs",
+              "RelativeToolTip": "Models\\BookRatingPrediction.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-18T16:03:21.466Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "BookRatingEntry.cs",
+              "DocumentMoniker": "D:\\Documents\\HocTap\\DATN\\Project\\AIGoiYSanPham\\Models\\BookRatingEntry.cs",
+              "RelativeDocumentMoniker": "Models\\BookRatingEntry.cs",
+              "ToolTip": "D:\\Documents\\HocTap\\DATN\\Project\\AIGoiYSanPham\\Models\\BookRatingEntry.cs",
+              "RelativeToolTip": "Models\\BookRatingEntry.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-06T16:47:19.201Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 12,
-              "Title": "BookstoreDbContext.cs",
-              "DocumentMoniker": "D:\\Documents\\HocTap\\DATN\\Project\\AIGoiYSanPham\\Entities\\BookstoreDbContext.cs",
-              "RelativeDocumentMoniker": "Entities\\BookstoreDbContext.cs",
-              "ToolTip": "D:\\Documents\\HocTap\\DATN\\Project\\AIGoiYSanPham\\Entities\\BookstoreDbContext.cs",
-              "RelativeToolTip": "Entities\\BookstoreDbContext.cs",
-              "ViewState": "AQIAACYAAAAAAAAAAAAmwDUAAADjAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-06T16:47:26.931Z",
-              "EditorCaption": ""
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "D:\\Documents\\HocTap\\DATN\\Project\\AIGoiYSanPham\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "D:\\Documents\\HocTap\\DATN\\Project\\AIGoiYSanPham\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AQIAABUAAAAAAAAAAAAAACcAAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-11T06:14:12.437Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Privacy.cshtml",
+              "DocumentMoniker": "D:\\Documents\\HocTap\\DATN\\Project\\AIGoiYSanPham\\Views\\Home\\Privacy.cshtml",
+              "RelativeDocumentMoniker": "Views\\Home\\Privacy.cshtml",
+              "ToolTip": "D:\\Documents\\HocTap\\DATN\\Project\\AIGoiYSanPham\\Views\\Home\\Privacy.cshtml",
+              "RelativeToolTip": "Views\\Home\\Privacy.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-11T06:14:05.041Z"
             },
             {
               "$type": "Document",
@@ -268,18 +273,6 @@
               "ViewState": "AQIAABAAAAAAAAAAAAAcwCYAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
               "WhenOpened": "2025-05-18T13:29:59.973Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "Author.cs",
-              "DocumentMoniker": "D:\\Documents\\HocTap\\DATN\\Project\\AIGoiYSanPham\\Entities\\Author.cs",
-              "RelativeDocumentMoniker": "Entities\\Author.cs",
-              "ToolTip": "D:\\Documents\\HocTap\\DATN\\Project\\AIGoiYSanPham\\Entities\\Author.cs",
-              "RelativeToolTip": "Entities\\Author.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-04T13:36:50.384Z"
             },
             {
               "$type": "Document",
@@ -303,7 +296,8 @@
               "RelativeToolTip": "Entities\\BookRating.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-26T11:57:37.735Z"
+              "WhenOpened": "2025-05-26T11:57:37.735Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",

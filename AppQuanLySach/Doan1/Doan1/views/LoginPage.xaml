@@ -3,12 +3,79 @@
     x:Class="Doan1.views.LoginPage"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    BackgroundColor="White">
+    BackgroundColor="#FB9E3A"
+    Shell.NavBarIsVisible="False"
+    NavigationPage.HasNavigationBar="False">
 
-    <VerticalStackLayout Padding="30" Spacing="20">
-        <Label Text="Đăng nhập" FontSize="24" HorizontalOptions="Center" />
-        <Entry x:Name="txtUsername" Placeholder="Tên đăng nhập" />
-        <Entry x:Name="txtPassword" Placeholder="Mật khẩu" IsPassword="True" />
-        <Button Text="Đăng nhập" Clicked="OnLoginClicked" />
-    </VerticalStackLayout>
+    <Grid RowDefinitions="Auto, *" Padding="0">
+        <!-- Header với logo + text chào mừng -->
+        <StackLayout Grid.Row="0" Padding="30,40,30,20" Spacing="10" HorizontalOptions="Center">
+            <Image Source="logo.png"
+             WidthRequest="80" HeightRequest="80"
+             HorizontalOptions="Center" />
+            <Label Text="Chào mừng đến Nhà sách Hải Đăng"
+             FontSize="20"
+             TextColor="White"
+             HorizontalOptions="Center" />
+        </StackLayout>
+
+        <!-- Card trắng chứa form login -->
+        <Frame Grid.Row="1"
+           Margin="20"
+           CornerRadius="20"
+           BackgroundColor="White"
+           HasShadow="True">
+
+            <VerticalStackLayout Padding="20" Spacing="15">
+                <!-- Tiêu đề form -->
+                <Label Text="Đăng nhập"
+               FontSize="24"
+               HorizontalOptions="Center" />
+
+                <!-- Email -->
+                <Label Text="Tên đăng nhập"
+               TextColor="#FB9E3A"
+               FontAttributes="Bold" />
+                <Entry x:Name="txtUsername"
+               Placeholder="Tài khoản"
+               BackgroundColor="#F5F5F5"
+               HeightRequest="40"
+               />
+
+                <!-- Mật khẩu với nút eye -->
+                <Label Text="Mật khẩu"
+               TextColor="#FB9E3A"
+               FontAttributes="Bold" />
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+
+                    <Entry x:Name="txtPassword"
+                 Grid.Column="0"
+                 Placeholder="Mật khẩu"
+                 IsPassword="True"
+                 BackgroundColor="#F5F5F5"
+                 HeightRequest="40"
+                 />
+
+                    <ImageButton Grid.Column="1"
+                       Source="eye_off.png"
+                       BackgroundColor="Transparent"
+                       WidthRequest="35" HeightRequest="35"
+                       Margin="5,0,0,0"
+                       Clicked="OnTogglePassword" />
+                </Grid>
+
+                <!-- Nút đăng nhập -->
+                <Button Text="Đăng nhập"
+                BackgroundColor="#FB9E3A"
+                TextColor="White"
+                CornerRadius="20"
+                HeightRequest="45"
+                Clicked="OnLoginClicked" />
+            </VerticalStackLayout>
+        </Frame>
+    </Grid>
 </ContentPage>

@@ -2,7 +2,7 @@
 using PagedList.Core;
 using Microsoft.EntityFrameworkCore;
 using System.Security.Claims;
-using WebBanSach.Models.Entities;
+using WebBanSach.Model;
 
 namespace WebBanSach.Controllers
 {
@@ -122,25 +122,46 @@ namespace WebBanSach.Controllers
                 // Lấy danh sách sách gợi ý
                 if (userIdStr != null)
                 {
-                    // 1) Lấy cả BookId + Score
-                    recItems = await _recService.RecommendAsync(userId);
+                    try
+                    {
+                        // 1) Lấy cả BookId + Score
+                        recItems = await _recService.RecommendAsync(userId);
 
-                    // 2) Lấy chi tiết sách
-                    var ids = recItems.Select(r => r.BookId).ToList();
-                    var rawBooks = context.Books
-                    .Include(b => b.BookImages)
-                    .Where(b => ids.Contains(b.BookId))
-                    .ToList();
-
-                    // Sắp xếp lại theo thứ tự điểm Score từ AI
-                    recBooks = recItems
-                        .Join(rawBooks,
-                              rec => rec.BookId,
-                              book => book.BookId,
-                              (rec, book) => new { Book = book, Score = rec.Score })
-                        .OrderByDescending(x => x.Score)
-                        .Select(x => x.Book)
+                        // 2) Lấy chi tiết sách
+                        var ids = recItems.Select(r => r.BookId).ToList();
+                        var rawBooks = context.Books
+                        .Include(b => b.BookImages)
+                        .Where(b => ids.Contains(b.BookId))
                         .ToList();
+
+                        // Sắp xếp lại theo thứ tự điểm Score từ AI
+                        recBooks = recItems
+                            .Join(rawBooks,
+                                  rec => rec.BookId,
+                                  book => book.BookId,
+                                  (rec, book) => new { Book = book, Score = rec.Score })
+                            .OrderByDescending(x => x.Score)
+                            .Select(x => x.Book)
+                            .ToList();
+                    }
+                    catch (Exception)
+                    {
+                        // Fallback nếu AI lỗi: lấy sách có rating cao
+                        recItems = null;
+                        recBooks = context.BookRatings
+                            .Where(r => r.RatingValue != null)
+                            .GroupBy(r => r.BookId)
+                            .Select(g => new
+                            {
+                                BookId = g.Key,
+                                AvgRating = g.Average(r => r.RatingValue)
+                            })
+                            .OrderByDescending(x => x.AvgRating)
+                            .Take(10)
+                            .Join(context.Books.Include(b => b.BookImages),
+                                  x => x.BookId, b => b.BookId, (x, b) => b)
+                            .ToList();
+                    }
                 }
                 ViewBag.RecommendItems = recItems;
                 ViewBag.RecommendBooks = recBooks;

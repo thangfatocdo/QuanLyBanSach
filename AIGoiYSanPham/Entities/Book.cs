@@ -9,8 +9,6 @@ public partial class Book
 
     public string Title { get; set; } = null!;
 
-    public int? AuthorId { get; set; }
-
     public int? CategoryId { get; set; }
 
     public int? PublisherId { get; set; }
@@ -23,7 +21,9 @@ public partial class Book
 
     public DateTime? CreatedAt { get; set; }
 
-    public virtual Author? Author { get; set; }
+    public string? AuthorName { get; set; }
+
+    public bool IsVisible { get; set; }
 
     public virtual ICollection<BookImage> BookImages { get; set; } = new List<BookImage>();
 

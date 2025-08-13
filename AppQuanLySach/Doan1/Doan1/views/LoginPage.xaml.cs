@@ -59,7 +59,14 @@ public partial class LoginPage : ContentPage
             await DisplayAlert("Lỗi", ex.Message, "OK");
         }
     }
+    void OnTogglePassword(object sender, EventArgs e)
+    {
+        isPassword = !isPassword;
+        txtPassword.IsPassword = isPassword;
+        (sender as ImageButton).Source = isPassword ? "eye_off.png" : "eye_on.png";
+    }
 
+    bool isPassword = true;
     public class LoginResult
     {
         public int userId { get; set; }

@@ -15,6 +15,8 @@ public partial class User
 
     public string? Role { get; set; }
 
+    public string? ImageUrl { get; set; }
+
     public virtual ICollection<InventoryExport> InventoryExports { get; set; } = new List<InventoryExport>();
 
     public virtual ICollection<InventoryImport> InventoryImports { get; set; } = new List<InventoryImport>();

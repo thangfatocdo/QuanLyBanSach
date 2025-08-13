@@ -5,8 +5,7 @@ using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Security.Claims;
 using WebBanSach.Extension;
-using WebBanSach.Models;
-using WebBanSach.Models.Entities;
+using WebBanSach.Model;
 using WebBanSach.Models.ViewModels;
 
 namespace WebBanSach.Controllers

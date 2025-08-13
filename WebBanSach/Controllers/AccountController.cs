@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Authentication;
 using System.Security.Claims;
 using Microsoft.EntityFrameworkCore;
 using WebBanSach.Extension;
-using WebBanSach.Models.Entities;
+using WebBanSach.Model;
 using Microsoft.AspNetCore.Identity;
 
 namespace WebBanSach.Controllers
@@ -256,10 +256,10 @@ namespace WebBanSach.Controllers
             var userId = int.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier));
             var order = context.Orders.FirstOrDefault(o => o.OrderId == id && o.CustomerId == userId);
 
-            if (order == null || order.StatusId != 1) // Chỉ cho huỷ khi trạng thái là "Chờ xác nhận"
+            if (order.StatusId != 1 && order.StatusId != 2)
                 return BadRequest();
 
-            order.StatusId = 5; // ví dụ 5 là trạng thái "Đã huỷ"
+            order.StatusId = 5; // 5 là trạng thái "Đã huỷ"
             context.SaveChanges();
 
             TempData["ToastMessage"] = "Huỷ đơn hàng thành công!";

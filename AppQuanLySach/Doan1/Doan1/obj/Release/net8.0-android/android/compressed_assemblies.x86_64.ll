@@ -26,7 +26,7 @@ target triple = "x86_64-unknown-linux-android21"
 		ptr @__compressedAssemblyData_0; uint8_t* data (0x0)
 	}, ; 0
 	%struct.CompressedAssemblyDescriptor {
-		i32 187904, ; uint32_t uncompressed_file_size (0x2de00)
+		i32 189952, ; uint32_t uncompressed_file_size (0x2e600)
 		i8 0, ; bool loaded
 		ptr @__compressedAssemblyData_1; uint8_t* data (0x0)
 	}, ; 1
@@ -783,7 +783,7 @@ target triple = "x86_64-unknown-linux-android21"
 ], align 16
 
 @__compressedAssemblyData_0 = internal dso_local global [7168 x i8] zeroinitializer, align 16
-@__compressedAssemblyData_1 = internal dso_local global [187904 x i8] zeroinitializer, align 16
+@__compressedAssemblyData_1 = internal dso_local global [189952 x i8] zeroinitializer, align 16
 @__compressedAssemblyData_2 = internal dso_local global [151040 x i8] zeroinitializer, align 16
 @__compressedAssemblyData_3 = internal dso_local global [89600 x i8] zeroinitializer, align 16
 @__compressedAssemblyData_4 = internal dso_local global [5120 x i8] zeroinitializer, align 16

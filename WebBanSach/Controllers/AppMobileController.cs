@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using System.Security.Cryptography;
 using System.Text;
-using WebBanSach.Models.Entities;
+using WebBanSach.Model;
 
 namespace WebBanSach.Controllers
 {

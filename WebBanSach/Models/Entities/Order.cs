@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace WebBanSach.Models.Entities;
+namespace WebBanSach.Model;
 
 public partial class Order
 {

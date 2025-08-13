@@ -1,5 +1,4 @@
-﻿using WebBanSach.Models.Entities;
-
+﻿using WebBanSach.Model;
 namespace WebBanSach.Models.ViewModels
 {
     public class CartViewModel

@@ -51,44 +51,42 @@ public partial class BookstoreDbContext : DbContext
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
-        => optionsBuilder.UseSqlServer("Data Source=SQL1001.site4now.net;Initial Catalog=db_ab9f8d_bookstoredb;Persist Security Info=True;User ID=db_ab9f8d_bookstoredb_admin;Password=thanglolo1090;Trust Server Certificate=True");
+        => optionsBuilder.UseSqlServer("Data Source=SQL1004.site4now.net;Initial Catalog=db_abc8f4_quanlykhosach;Persist Security Info=True;User ID=db_abc8f4_quanlykhosach_admin;Password=thanglolo1090;Trust Server Certificate=True");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<Author>(entity =>
         {
-            entity.HasKey(e => e.AuthorId).HasName("PK__Authors__70DAFC34A58304C2");
+            entity.HasKey(e => e.AuthorId).HasName("PK__Authors__70DAFC341E2E9205");
 
             entity.Property(e => e.AuthorName).HasMaxLength(100);
         });
 
         modelBuilder.Entity<Book>(entity =>
         {
-            entity.HasKey(e => e.BookId).HasName("PK__Books__3DE0C207AF48A465");
+            entity.HasKey(e => e.BookId).HasName("PK__Books__3DE0C207CB0D7878");
 
+            entity.Property(e => e.AuthorName).HasMaxLength(200);
             entity.Property(e => e.CreatedAt)
                 .HasDefaultValueSql("(getdate())")
                 .HasColumnType("datetime");
             entity.Property(e => e.ImageUrl).HasMaxLength(255);
+            entity.Property(e => e.IsVisible).HasDefaultValue(true);
             entity.Property(e => e.Price).HasColumnType("decimal(10, 2)");
             entity.Property(e => e.Title).HasMaxLength(200);
 
-            entity.HasOne(d => d.Author).WithMany(p => p.Books)
-                .HasForeignKey(d => d.AuthorId)
-                .HasConstraintName("FK__Books__AuthorId__02FC7413");
-
             entity.HasOne(d => d.Category).WithMany(p => p.Books)
                 .HasForeignKey(d => d.CategoryId)
-                .HasConstraintName("FK__Books__CategoryI__03F0984C");
+                .HasConstraintName("FK__Books__CategoryI__5EBF139D");
 
             entity.HasOne(d => d.Publisher).WithMany(p => p.Books)
                 .HasForeignKey(d => d.PublisherId)
-                .HasConstraintName("FK__Books__Publisher__04E4BC85");
+                .HasConstraintName("FK__Books__Publisher__5FB337D6");
         });
 
         modelBuilder.Entity<BookImage>(entity =>
         {
-            entity.HasKey(e => e.ImageId).HasName("PK__BookImag__7516F70CED31ABAF");
+            entity.HasKey(e => e.ImageId).HasName("PK__BookImag__7516F70C23F1D249");
 
             entity.Property(e => e.ImageUrl).HasMaxLength(255);
 
@@ -99,7 +97,7 @@ public partial class BookstoreDbContext : DbContext
 
         modelBuilder.Entity<BookRating>(entity =>
         {
-            entity.HasKey(e => e.RatingId).HasName("PK__BookRati__FCCDF87CA086A794");
+            entity.HasKey(e => e.RatingId).HasName("PK__BookRati__FCCDF87CC7C85A27");
 
             entity.Property(e => e.CreatedAt)
                 .HasDefaultValueSql("(getdate())")
@@ -108,17 +106,17 @@ public partial class BookstoreDbContext : DbContext
             entity.HasOne(d => d.Book).WithMany(p => p.BookRatings)
                 .HasForeignKey(d => d.BookId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__BookRatin__BookI__01142BA1");
+                .HasConstraintName("FK__BookRatin__BookI__5CD6CB2B");
 
             entity.HasOne(d => d.Customer).WithMany(p => p.BookRatings)
                 .HasForeignKey(d => d.CustomerId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__BookRatin__Custo__02084FDA");
+                .HasConstraintName("FK__BookRatin__Custo__5DCAEF64");
         });
 
         modelBuilder.Entity<CartItem>(entity =>
         {
-            entity.HasKey(e => e.CartItemId).HasName("PK__CartItem__488B0B0AEF6253A4");
+            entity.HasKey(e => e.CartItemId).HasName("PK__CartItem__488B0B0A24C1CBD1");
 
             entity.Property(e => e.CreatedAt)
                 .HasDefaultValueSql("(getdate())")
@@ -135,7 +133,7 @@ public partial class BookstoreDbContext : DbContext
 
         modelBuilder.Entity<Category>(entity =>
         {
-            entity.HasKey(e => e.CategoryId).HasName("PK__Categori__19093A0BF1610BAC");
+            entity.HasKey(e => e.CategoryId).HasName("PK__Categori__19093A0BF4098ACA");
 
             entity.Property(e => e.Alias).HasMaxLength(100);
             entity.Property(e => e.CategoryName).HasMaxLength(100);
@@ -143,7 +141,7 @@ public partial class BookstoreDbContext : DbContext
 
         modelBuilder.Entity<Customer>(entity =>
         {
-            entity.HasKey(e => e.CustomerId).HasName("PK__Customer__A4AE64D8B25C300D");
+            entity.HasKey(e => e.CustomerId).HasName("PK__Customer__A4AE64D83D092700");
 
             entity.Property(e => e.Address).HasMaxLength(200);
             entity.Property(e => e.Email).HasMaxLength(100);
@@ -154,7 +152,7 @@ public partial class BookstoreDbContext : DbContext
 
         modelBuilder.Entity<InventoryDetail>(entity =>
         {
-            entity.HasKey(e => e.DetailId).HasName("PK__Inventor__135C316DDD4116E3");
+            entity.HasKey(e => e.DetailId).HasName("PK__Inventor__135C316D108219F3");
 
             entity.ToTable("InventoryDetail");
 
@@ -163,7 +161,7 @@ public partial class BookstoreDbContext : DbContext
 
             entity.HasOne(d => d.Book).WithMany(p => p.InventoryDetails)
                 .HasForeignKey(d => d.BookId)
-                .HasConstraintName("FK__Inventory__BookI__07C12930");
+                .HasConstraintName("FK__Inventory__BookI__628FA481");
 
             entity.HasOne(d => d.Iep).WithMany(p => p.InventoryDetails)
                 .HasForeignKey(d => d.IepId)
@@ -171,7 +169,7 @@ public partial class BookstoreDbContext : DbContext
 
             entity.HasOne(d => d.Import).WithMany(p => p.InventoryDetails)
                 .HasForeignKey(d => d.ImportId)
-                .HasConstraintName("FK__Inventory__Impor__08B54D69");
+                .HasConstraintName("FK__Inventory__Impor__6383C8BA");
         });
 
         modelBuilder.Entity<InventoryExport>(entity =>
@@ -191,12 +189,12 @@ public partial class BookstoreDbContext : DbContext
 
             entity.HasOne(d => d.User).WithMany(p => p.InventoryExports)
                 .HasForeignKey(d => d.UserId)
-                .HasConstraintName("FK__Inventory__UserI__0A9D95DB");
+                .HasConstraintName("FK__Inventory__UserI__656C112C");
         });
 
         modelBuilder.Entity<InventoryImport>(entity =>
         {
-            entity.HasKey(e => e.ImportId).HasName("PK__Inventor__869767EA998C2F39");
+            entity.HasKey(e => e.ImportId).HasName("PK__Inventor__869767EA0A4EC255");
 
             entity.ToTable("InventoryImport");
 
@@ -207,12 +205,12 @@ public partial class BookstoreDbContext : DbContext
 
             entity.HasOne(d => d.User).WithMany(p => p.InventoryImports)
                 .HasForeignKey(d => d.UserId)
-                .HasConstraintName("FK__Inventory__UserI__0C85DE4D");
+                .HasConstraintName("FK__Inventory__UserI__6754599E");
         });
 
         modelBuilder.Entity<Order>(entity =>
         {
-            entity.HasKey(e => e.OrderId).HasName("PK__Orders__C3905BCFF044D3A8");
+            entity.HasKey(e => e.OrderId).HasName("PK__Orders__C3905BCF70D93951");
 
             entity.Property(e => e.Address).HasMaxLength(255);
             entity.Property(e => e.CustomerName).HasMaxLength(255);
@@ -223,7 +221,7 @@ public partial class BookstoreDbContext : DbContext
 
             entity.HasOne(d => d.Customer).WithMany(p => p.Orders)
                 .HasForeignKey(d => d.CustomerId)
-                .HasConstraintName("FK__Orders__Customer__0F624AF8");
+                .HasConstraintName("FK__Orders__Customer__6A30C649");
 
             entity.HasOne(d => d.PaymentMethod).WithMany(p => p.Orders)
                 .HasForeignKey(d => d.PaymentMethodId)
@@ -236,14 +234,14 @@ public partial class BookstoreDbContext : DbContext
 
         modelBuilder.Entity<OrderItem>(entity =>
         {
-            entity.HasKey(e => e.OrderItemId).HasName("PK__OrderIte__2F302202B0742E44");
+            entity.HasKey(e => e.OrderItemId).HasName("PK__OrderIte__2F302202D93B4A3F");
 
             entity.Property(e => e.OrderItemId).HasColumnName("OrderItem_Id");
             entity.Property(e => e.BookPrice).HasColumnType("decimal(10, 2)");
 
             entity.HasOne(d => d.Book).WithMany(p => p.OrderItems)
                 .HasForeignKey(d => d.BookId)
-                .HasConstraintName("FK__OrderItem__BookI__0D7A0286");
+                .HasConstraintName("FK__OrderItem__BookI__68487DD7");
 
             entity.HasOne(d => d.Order).WithMany(p => p.OrderItems)
                 .HasForeignKey(d => d.OrderId)
@@ -264,7 +262,7 @@ public partial class BookstoreDbContext : DbContext
 
         modelBuilder.Entity<Publisher>(entity =>
         {
-            entity.HasKey(e => e.PublisherId).HasName("PK__Publishe__4C657FAB4315B49D");
+            entity.HasKey(e => e.PublisherId).HasName("PK__Publishe__4C657FAB74C074C4");
 
             entity.Property(e => e.Address).HasMaxLength(200);
             entity.Property(e => e.Phone).HasMaxLength(20);
@@ -286,11 +284,12 @@ public partial class BookstoreDbContext : DbContext
 
         modelBuilder.Entity<User>(entity =>
         {
-            entity.HasKey(e => e.UserId).HasName("PK__Users__1788CC4CEE3A9445");
+            entity.HasKey(e => e.UserId).HasName("PK__Users__1788CC4C49BF44F4");
 
-            entity.HasIndex(e => e.Username, "UQ__Users__536C85E4C0FF3490").IsUnique();
+            entity.HasIndex(e => e.Username, "UQ__Users__536C85E423FF77B3").IsUnique();
 
             entity.Property(e => e.FullName).HasMaxLength(100);
+            entity.Property(e => e.ImageUrl).HasMaxLength(255);
             entity.Property(e => e.Password).HasMaxLength(100);
             entity.Property(e => e.Role)
                 .HasMaxLength(20)

@@ -1,4 +1,4 @@
-﻿@inject WebBanSach.Models.Entities.BookstoreDbContext context
+﻿@inject WebBanSach.Model.BookstoreDbContext context
 @using System.Security.Claims
 @using WebBanSach.Extension
 @using WebBanSach.Models.ViewModels
@@ -35,21 +35,13 @@
                                 <div class="main-menu">
                                     <nav id="mobile-menu">
                                         <ul>
-                                            <li>
-                                                @* ánh xạ link để vào page *@
-                                                <a asp-controller="Home" asp-action="Index">Trang chủ</a>
-                                            </li>
-                                            <li>
-                                                @* ánh xạ link để vào page *@
-                                                <a asp-controller="Book" asp-action="Index">Cửa hàng</a>
-                                            </li>
-                                            <li>
-                                                 @* ánh xạ link để vào page *@
-                                                 <a asp-controller="Home" asp-action="About">về chúng tôi</a>
-                                            </li>
-                                            <li>
-                                                 @* ánh xạ link để vào page *@
-                                                <a asp-controller="Home" asp-action="Contact">Liên hệ</a>
+                                            <li><a asp-controller="Home" asp-action="Index">Trang chủ</a></li>
+                                            <li><a asp-controller="Book" asp-action="Index">Cửa hàng</a></li>
+                                            <li><a asp-controller="Home" asp-action="About">Về chúng tôi</a></li>
+                                            <li><a asp-controller="Home" asp-action="Contact">Liên hệ</a></li>
+                                            <!-- chỉ hiển thị trên xs–lg, ẩn từ xl trở lên -->
+                                            <li class="d-block d-xl-none">
+                                                <a asp-controller="Account" asp-action="Profile">@User.Identity.Name</a>
                                             </li>
                                         </ul>
                                     </nav>

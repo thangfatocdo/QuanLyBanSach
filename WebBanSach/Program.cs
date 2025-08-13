@@ -1,7 +1,7 @@
 ﻿using AspNetCoreHero.ToastNotification;
 using AspNetCoreHero.ToastNotification.Extensions;
 using Microsoft.EntityFrameworkCore;
-using WebBanSach.Models.Entities;
+using WebBanSach.Model;
 
 var builder = WebApplication.CreateBuilder(args);
 

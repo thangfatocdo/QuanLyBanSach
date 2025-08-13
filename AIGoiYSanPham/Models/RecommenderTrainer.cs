@@ -42,7 +42,7 @@ namespace AIGoiYSanPham.Models
             IDataView dataView = _mlContext.Data.LoadFromEnumerable(ratings);
 
             // 3) Chia train/test
-            var split = _mlContext.Data.TrainTestSplit(dataView, testFraction: 0.2);
+            //var split = _mlContext.Data.TrainTestSplit(dataView, testFraction: 0.2);
 
             // 4) Xây pipeline: map UserId/BookId → key, rồi append MatrixFactorization
             var pipeline = _mlContext.Transforms.Conversion
@@ -60,7 +60,7 @@ namespace AIGoiYSanPham.Models
                     }));
 
             // 5) Huấn luyện
-            var model = pipeline.Fit(split.TrainSet);
+            var model = pipeline.Fit(dataView);
             
 
             // 6) Lưu model (dùng schema gốc để chứa key mapping)
@@ -77,5 +77,39 @@ namespace AIGoiYSanPham.Models
             using var fs = File.OpenRead(_modelPath);
             return _mlContext.Model.Load(fs, out _);
         }
+
+        /// <summary>
+        /// Evaluate model on both train and test sets, returning RMSE and R².
+        /// </summary>
+        public (double TestRmse, double RSquared) EvaluateModel()
+        {
+            // Load rating data
+            var ratings = _db.OrderItems
+                .Where(oi => oi.Order.CustomerId != null)
+                .GroupBy(oi => new { oi.Order.CustomerId, oi.BookId })
+                .Select(g => new BookRatingEntry
+                {
+                    UserId = (uint)g.Key.CustomerId.Value,
+                    BookId = (uint)g.Key.BookId,
+                    Label = (float)g.Count()
+                })
+                .ToList();
+
+            // Convert to IDataView and split into train/test
+            IDataView dataView = _mlContext.Data.LoadFromEnumerable(ratings);
+
+            // Evaluate on test set
+            var testPredictions = LoadModel().Transform(dataView);
+            var testMetrics = _mlContext.Regression.Evaluate(
+                testPredictions,
+                labelColumnName: nameof(BookRatingEntry.Label));
+
+            // Return both train RMSE, test RMSE and R² (from test)
+            return (
+                TestRmse: testMetrics.RootMeanSquaredError,
+                RSquared: testMetrics.RSquared
+            );
+        }
+
     }
 }

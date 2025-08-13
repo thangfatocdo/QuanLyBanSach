@@ -1,5 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using WebBanSach.Models.Entities;
+using WebBanSach.Model;
 
 namespace WebBanSach.Models.ViewModels
 {
