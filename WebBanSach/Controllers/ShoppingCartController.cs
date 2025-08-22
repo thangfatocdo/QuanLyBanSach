@@ -113,7 +113,21 @@ namespace WebBanSach.Controllers
                     }
                     else
                     {
-                        var hh = context.Books.Single(p => p.BookId == bookID);
+                        // 👇 Phải viết lại để tránh lỗi vòng lặp khi lưu session
+                        var hh = context.Books
+                        .AsNoTracking()
+                        .Where(b => b.BookId == bookID)
+                        .Select(b => new Book
+                        {
+                            BookId = b.BookId,
+                            Title = b.Title,
+                            Price = b.Price,
+                            // Lấy ảnh nhưng KHÔNG mang theo tham chiếu ngược
+                            BookImages = b.BookImages
+                                .Select(img => new BookImage { ImageUrl = img.ImageUrl })
+                                .ToList()
+                        })
+                        .Single();
                         item = new CartViewModel
                         {
                             book = hh,
