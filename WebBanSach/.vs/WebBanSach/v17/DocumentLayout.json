@@ -7,23 +7,51 @@
       "RelativeMoniker": "D:0:0:{9245713E-BB27-4898-8B18-12807CE0F43C}|WebBanSach.csproj|solutionrelative:controllers\\shoppingcartcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9245713E-BB27-4898-8B18-12807CE0F43C}|WebBanSach.csproj|d:\\documents\\hoctap\\datn\\project\\webbansach\\views\\shoppingcart\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{9245713E-BB27-4898-8B18-12807CE0F43C}|WebBanSach.csproj|solutionrelative:views\\shoppingcart\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{9245713E-BB27-4898-8B18-12807CE0F43C}|WebBanSach.csproj|D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9245713E-BB27-4898-8B18-12807CE0F43C}|WebBanSach.csproj|solutionrelative:controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9245713E-BB27-4898-8B18-12807CE0F43C}|WebBanSach.csproj|d:\\documents\\hoctap\\datn\\project\\webbansach\\models\\entities\\book.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9245713E-BB27-4898-8B18-12807CE0F43C}|WebBanSach.csproj|solutionrelative:models\\entities\\book.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{9245713E-BB27-4898-8B18-12807CE0F43C}|WebBanSach.csproj|D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\controllers\\bookcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9245713E-BB27-4898-8B18-12807CE0F43C}|WebBanSach.csproj|solutionrelative:controllers\\bookcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9245713E-BB27-4898-8B18-12807CE0F43C}|WebBanSach.csproj|d:\\documents\\hoctap\\datn\\project\\webbansach\\models\\viewmodels\\cartviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9245713E-BB27-4898-8B18-12807CE0F43C}|WebBanSach.csproj|solutionrelative:models\\viewmodels\\cartviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{9245713E-BB27-4898-8B18-12807CE0F43C}|WebBanSach.csproj|D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\controllers\\appmobilecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9245713E-BB27-4898-8B18-12807CE0F43C}|WebBanSach.csproj|solutionrelative:controllers\\appmobilecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9245713E-BB27-4898-8B18-12807CE0F43C}|WebBanSach.csproj|d:\\documents\\hoctap\\datn\\project\\webbansach\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{9245713E-BB27-4898-8B18-12807CE0F43C}|WebBanSach.csproj|D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9245713E-BB27-4898-8B18-12807CE0F43C}|WebBanSach.csproj|solutionrelative:controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9245713E-BB27-4898-8B18-12807CE0F43C}|WebBanSach.csproj|D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9245713E-BB27-4898-8B18-12807CE0F43C}|WebBanSach.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9245713E-BB27-4898-8B18-12807CE0F43C}|WebBanSach.csproj|D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\views\\book\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{9245713E-BB27-4898-8B18-12807CE0F43C}|WebBanSach.csproj|solutionrelative:views\\book\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9245713E-BB27-4898-8B18-12807CE0F43C}|WebBanSach.csproj|D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{9245713E-BB27-4898-8B18-12807CE0F43C}|WebBanSach.csproj|solutionrelative:views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9245713E-BB27-4898-8B18-12807CE0F43C}|WebBanSach.csproj|d:\\documents\\hoctap\\datn\\project\\webbansach\\models\\entities\\cartitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{9245713E-BB27-4898-8B18-12807CE0F43C}|WebBanSach.csproj|D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\views\\book\\bookdetail.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{9245713E-BB27-4898-8B18-12807CE0F43C}|WebBanSach.csproj|solutionrelative:views\\book\\bookdetail.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9245713E-BB27-4898-8B18-12807CE0F43C}|WebBanSach.csproj|D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\models\\entities\\book.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9245713E-BB27-4898-8B18-12807CE0F43C}|WebBanSach.csproj|solutionrelative:models\\entities\\book.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9245713E-BB27-4898-8B18-12807CE0F43C}|WebBanSach.csproj|D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\views\\shoppingcart\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{9245713E-BB27-4898-8B18-12807CE0F43C}|WebBanSach.csproj|solutionrelative:views\\shoppingcart\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9245713E-BB27-4898-8B18-12807CE0F43C}|WebBanSach.csproj|D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\models\\viewmodels\\cartviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9245713E-BB27-4898-8B18-12807CE0F43C}|WebBanSach.csproj|solutionrelative:models\\viewmodels\\cartviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9245713E-BB27-4898-8B18-12807CE0F43C}|WebBanSach.csproj|D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\models\\entities\\cartitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9245713E-BB27-4898-8B18-12807CE0F43C}|WebBanSach.csproj|solutionrelative:models\\entities\\cartitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -34,63 +62,84 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 7,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Home\\Index.cshtml",
+              "ToolTip": "D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "Views\\Home\\Index.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAPEAAAA6AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-08-22T09:33:18.41Z",
+              "IsPinned": true
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\Views\\Home\\Index.cshtml",
-              "RelativeDocumentMoniker": "Views\\Home\\Index.cshtml",
-              "ToolTip": "D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\Views\\Home\\Index.cshtml",
-              "RelativeToolTip": "Views\\Home\\Index.cshtml",
-              "ViewState": "AQIAAN4AAAAAAAAAAAAmwPEAAAA6AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-08-22T09:33:18.41Z",
-              "EditorCaption": ""
+              "DocumentIndex": 3,
+              "Title": "AppMobileController.cs",
+              "DocumentMoniker": "D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\Controllers\\AppMobileController.cs",
+              "RelativeDocumentMoniker": "Controllers\\AppMobileController.cs",
+              "ToolTip": "D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\Controllers\\AppMobileController.cs",
+              "RelativeToolTip": "Controllers\\AppMobileController.cs",
+              "ViewState": "AQIAAEcAAAAAAAAAAAAmwFkAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-25T11:04:54.713Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "CartViewModel.cs",
-              "DocumentMoniker": "D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\Models\\ViewModels\\CartViewModel.cs",
-              "RelativeDocumentMoniker": "Models\\ViewModels\\CartViewModel.cs",
-              "ToolTip": "D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\Models\\ViewModels\\CartViewModel.cs",
-              "RelativeToolTip": "Models\\ViewModels\\CartViewModel.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "DocumentIndex": 4,
+              "Title": "AccountController.cs",
+              "DocumentMoniker": "D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\Controllers\\AccountController.cs",
+              "RelativeDocumentMoniker": "Controllers\\AccountController.cs",
+              "ToolTip": "D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\Controllers\\AccountController.cs",
+              "RelativeToolTip": "Controllers\\AccountController.cs",
+              "ViewState": "AQIAACwBAAAAAAAAAAAIwFABAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-22T09:10:38.61Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-25T11:02:51.463Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\Views\\Book\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Book\\Index.cshtml",
+              "ToolTip": "D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\Views\\Book\\Index.cshtml",
+              "RelativeToolTip": "Views\\Book\\Index.cshtml",
+              "ViewState": "AQIAABkCAAAAAAAAAAAUwCcCAAAyAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-08-25T06:02:09.738Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "Book.cs",
-              "DocumentMoniker": "D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\Models\\Entities\\Book.cs",
-              "RelativeDocumentMoniker": "Models\\Entities\\Book.cs",
-              "ToolTip": "D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\Models\\Entities\\Book.cs",
-              "RelativeToolTip": "Models\\Entities\\Book.cs",
-              "ViewState": "AQIAAAsAAAAAAAAAAAA3wBMAAAAWAAAA",
+              "Title": "BookController.cs",
+              "DocumentMoniker": "D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\Controllers\\BookController.cs",
+              "RelativeDocumentMoniker": "Controllers\\BookController.cs",
+              "ToolTip": "D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\Controllers\\BookController.cs",
+              "RelativeToolTip": "Controllers\\BookController.cs",
+              "ViewState": "AQIAANsAAAAAAAAAAAA6wO4AAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-22T04:17:21.386Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-25T06:00:00.044Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "CartItem.cs",
-              "DocumentMoniker": "D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\Models\\Entities\\CartItem.cs",
-              "RelativeDocumentMoniker": "Models\\Entities\\CartItem.cs",
-              "ToolTip": "D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\Models\\Entities\\CartItem.cs",
-              "RelativeToolTip": "Models\\Entities\\CartItem.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAAAAAA",
+              "DocumentIndex": 1,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "Controllers\\HomeController.cs",
+              "ToolTip": "D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "Controllers\\HomeController.cs",
+              "ViewState": "AQIAAFwAAAAAAAAAAAAswH4AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-22T04:16:46.306Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-25T11:40:23.904Z"
             },
             {
               "$type": "Document",
@@ -100,14 +149,74 @@
               "RelativeDocumentMoniker": "Controllers\\ShoppingCartController.cs",
               "ToolTip": "D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\Controllers\\ShoppingCartController.cs",
               "RelativeToolTip": "Controllers\\ShoppingCartController.cs",
-              "ViewState": "AQIAAGIAAAAAAAAAAAAgwHMAAAAeAAAA",
+              "ViewState": "AQIAAFgBAAAAAAAAAAAmwHMBAAASAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-22T04:15:21.001Z",
+              "WhenOpened": "2025-08-25T07:37:07.295Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 5,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AQIAACQAAAAAAAAAAAAmwBwAAAAiAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-25T07:35:18.051Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "BookDetail.cshtml",
+              "DocumentMoniker": "D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\Views\\Book\\BookDetail.cshtml",
+              "RelativeDocumentMoniker": "Views\\Book\\BookDetail.cshtml",
+              "ToolTip": "D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\Views\\Book\\BookDetail.cshtml",
+              "RelativeToolTip": "Views\\Book\\BookDetail.cshtml",
+              "ViewState": "AQIAADAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-08-25T05:23:50.709Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "CartViewModel.cs",
+              "DocumentMoniker": "D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\Models\\ViewModels\\CartViewModel.cs",
+              "RelativeDocumentMoniker": "Models\\ViewModels\\CartViewModel.cs",
+              "ToolTip": "D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\Models\\ViewModels\\CartViewModel.cs",
+              "RelativeToolTip": "Models\\ViewModels\\CartViewModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-22T09:10:38.61Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Book.cs",
+              "DocumentMoniker": "D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\Models\\Entities\\Book.cs",
+              "RelativeDocumentMoniker": "Models\\Entities\\Book.cs",
+              "ToolTip": "D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\Models\\Entities\\Book.cs",
+              "RelativeToolTip": "Models\\Entities\\Book.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAAWAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-22T04:17:21.386Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "CartItem.cs",
+              "DocumentMoniker": "D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\Models\\Entities\\CartItem.cs",
+              "RelativeDocumentMoniker": "Models\\Entities\\CartItem.cs",
+              "ToolTip": "D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\Models\\Entities\\CartItem.cs",
+              "RelativeToolTip": "Models\\Entities\\CartItem.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-22T04:16:46.306Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
               "Title": "Index.cshtml",
               "DocumentMoniker": "D:\\Documents\\HocTap\\DATN\\Project\\WebBanSach\\Views\\ShoppingCart\\Index.cshtml",
               "RelativeDocumentMoniker": "Views\\ShoppingCart\\Index.cshtml",
@@ -115,8 +224,7 @@
               "RelativeToolTip": "Views\\ShoppingCart\\Index.cshtml",
               "ViewState": "AQIAAJMAAAAAAAAAAAAmwIIAAAAoAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-08-22T04:04:44.082Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-22T04:04:44.082Z"
             }
           ]
         }

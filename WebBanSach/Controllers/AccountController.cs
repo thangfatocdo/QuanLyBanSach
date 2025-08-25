@@ -6,6 +6,7 @@ using Microsoft.EntityFrameworkCore;
 using WebBanSach.Extension;
 using WebBanSach.Model;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Authorization;
 
 namespace WebBanSach.Controllers
 {
@@ -17,7 +18,6 @@ namespace WebBanSach.Controllers
         {
             this.context = context;
         }
-
         public IActionResult Register()
         {
             return View();
@@ -144,6 +144,7 @@ namespace WebBanSach.Controllers
         }
 
         //Đổi mật khẩu
+        [Authorize]
         public IActionResult ChangePassword(string username)
         {
             if (string.IsNullOrEmpty(username))
@@ -154,6 +155,7 @@ namespace WebBanSach.Controllers
         }
 
         //Đổi mật khẩu
+        [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> ChangePassword(ChangePasswordViewModel model)
@@ -190,12 +192,14 @@ namespace WebBanSach.Controllers
             return View(model);
         }
         //đăng xuất
+        [Authorize]
         public async Task<IActionResult> Logout()
         {
             await HttpContext.SignOutAsync("MyCookieAuth");
             return RedirectToAction("Index", "Home");
         }
         //Trang Profile
+        [Authorize]
         public IActionResult Profile()
         {
             var userIdStr = User.FindFirstValue(ClaimTypes.NameIdentifier);
@@ -215,6 +219,7 @@ namespace WebBanSach.Controllers
             return View();
         }
         //Update địa chỉ
+        [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public IActionResult UpdateAddress(string country, string province, string district, string ward, string detail)
@@ -232,6 +237,7 @@ namespace WebBanSach.Controllers
             return RedirectToAction("Profile");
         }
 
+        [Authorize]
         [HttpGet("/Order/Details/{id}")]
         public IActionResult Details(int id)
         {
@@ -248,7 +254,7 @@ namespace WebBanSach.Controllers
 
             return View(order);
         }
-
+        [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public IActionResult Cancel(int id)
@@ -267,6 +273,7 @@ namespace WebBanSach.Controllers
 
             return RedirectToAction("Profile", "Account");
         }
+        [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public IActionResult UpdateProfile(string Email, string FullName, string Phone)
@@ -289,7 +296,7 @@ namespace WebBanSach.Controllers
 
             return RedirectToAction("Profile");
         }
-
+        [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> UpdatePassword(UpdatePasswordViewModel model)

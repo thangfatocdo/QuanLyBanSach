@@ -3,6 +3,7 @@ using PagedList.Core;
 using Microsoft.EntityFrameworkCore;
 using System.Security.Claims;
 using WebBanSach.Model;
+using Microsoft.AspNetCore.Authorization;
 
 namespace WebBanSach.Controllers
 {
@@ -15,6 +16,7 @@ namespace WebBanSach.Controllers
             _recService = recService;
             this.context = context;
         }
+
         [Route("shop.html", Name = "BookShop")]
         public IActionResult Index(int? categoryId, int? page, decimal? minPrice, decimal? maxPrice, int? rating, string sort)
         {
@@ -186,6 +188,7 @@ namespace WebBanSach.Controllers
                 return RedirectToAction("Index", "Home");
             }
         }
+        [Authorize]
         [HttpPost]
         public IActionResult SubmitRating(BookRating model)
         {
@@ -212,7 +215,7 @@ namespace WebBanSach.Controllers
             context.SaveChanges();
             return RedirectToRoute("BookDetails", new { id = model.BookId });
         }
-
+        [Authorize]
         [HttpPost("api/upload-image")]
         public async Task<IActionResult> UploadImage(IFormFile file)
         {
@@ -231,7 +234,6 @@ namespace WebBanSach.Controllers
 
             return Ok(new { fileName });
         }
-
         [HttpGet]
         public IActionResult Search(string q, int? categoryId, int page = 1)
         {

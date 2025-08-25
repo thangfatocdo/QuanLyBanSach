@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Security.Cryptography;
 using System.Text;
@@ -18,6 +19,7 @@ namespace WebBanSach.Controllers
         }
 
         // GET: api/appmobile/orders
+        [Authorize]
         [HttpGet("orders")]
         public async Task<IActionResult> GetAllOrders()
         {
@@ -50,6 +52,7 @@ namespace WebBanSach.Controllers
             return Ok(orders);
         }
         // GET: api/appmobile/orders/{id}
+        [Authorize]
         [HttpGet("orders/{id}")]
         public async Task<IActionResult> GetOrderDetail(int id)
         {
@@ -84,7 +87,6 @@ namespace WebBanSach.Controllers
             return Ok(result);
         }
 
-
         [HttpPost("login")]
         public async Task<IActionResult> Login([FromBody] LoginRequest request)
         {
@@ -107,7 +109,7 @@ namespace WebBanSach.Controllers
                 user.ImageUrl
             });
         }
-
+        [Authorize]
         [HttpPut("orders/{id}/status")]
         public async Task<IActionResult> UpdateStatus(int id, [FromBody] UpdateStatusDto dto)
         {
