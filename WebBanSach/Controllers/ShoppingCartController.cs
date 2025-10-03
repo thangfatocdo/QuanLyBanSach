@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Security.Claims;
 using WebBanSach.Extension;
 using WebBanSach.Model;
+using WebBanSach.Models.Entities;
 using WebBanSach.Models.ViewModels;
 
 namespace WebBanSach.Controllers

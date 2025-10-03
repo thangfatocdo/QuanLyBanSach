@@ -7,6 +7,7 @@ using WebBanSach.Extension;
 using WebBanSach.Model;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Authorization;
+using WebBanSach.Models.Entities;
 
 namespace WebBanSach.Controllers
 {

@@ -27,10 +27,10 @@ namespace QuanLyKhoSach.Model
         private string selectedImageFileName = null;
 
 
-        // 1. Khi form load, nếu đang sửa sách thì load luôn ảnh từ DB
+        // 1. Load lại thông tin sách cũ, bao gồm cả ảnh
         private void formBookAdd_Load(object sender, EventArgs e)
         {
-            LoadComboBox();  // phần cũ của bạn
+            LoadComboBox(); 
 
             // nếu BookId != null => load ảnh
             if (BookId != null)

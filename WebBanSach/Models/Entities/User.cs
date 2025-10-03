@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace WebBanSach.Model;
+namespace WebBanSach.Models.Entities;
 
 public partial class User
 {

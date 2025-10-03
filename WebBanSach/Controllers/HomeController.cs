@@ -4,6 +4,7 @@ using WebBanSach.Models.ViewModels;
 using System.Security.Claims;
 using Microsoft.EntityFrameworkCore;
 using WebBanSach.Model;
+using WebBanSach.Models.Entities;
 
 namespace WebBanSach.Controllers
 {
