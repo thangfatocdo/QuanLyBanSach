@@ -3,8 +3,32 @@
   "WorkspaceRootPath": "D:\\Documents\\HocTap\\DATN\\Project\\AppQuanLySach\\Doan1\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{401080F6-147B-4D26-91A2-7782AECFF039}|Doan1\\Doan1.csproj|d:\\documents\\hoctap\\datn\\project\\appquanlysach\\doan1\\doan1\\views\\loginpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "AbsoluteMoniker": "D:0:0:{401080F6-147B-4D26-91A2-7782AECFF039}|Doan1\\Doan1.csproj|D:\\Documents\\HocTap\\DATN\\Project\\AppQuanLySach\\Doan1\\doan1\\viewmodels\\dashboardviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{401080F6-147B-4D26-91A2-7782AECFF039}|Doan1\\Doan1.csproj|solutionrelative:doan1\\viewmodels\\dashboardviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{401080F6-147B-4D26-91A2-7782AECFF039}|Doan1\\Doan1.csproj|d:\\documents\\hoctap\\datn\\project\\appquanlysach\\doan1\\doan1\\mauiprogram.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{401080F6-147B-4D26-91A2-7782AECFF039}|Doan1\\Doan1.csproj|solutionrelative:doan1\\mauiprogram.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{401080F6-147B-4D26-91A2-7782AECFF039}|Doan1\\Doan1.csproj|D:\\Documents\\HocTap\\DATN\\Project\\AppQuanLySach\\Doan1\\doan1\\views\\loginpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{401080F6-147B-4D26-91A2-7782AECFF039}|Doan1\\Doan1.csproj|solutionrelative:doan1\\views\\loginpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{401080F6-147B-4D26-91A2-7782AECFF039}|Doan1\\Doan1.csproj|D:\\Documents\\HocTap\\DATN\\Project\\AppQuanLySach\\Doan1\\doan1\\views\\homepage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{401080F6-147B-4D26-91A2-7782AECFF039}|Doan1\\Doan1.csproj|solutionrelative:doan1\\views\\homepage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{401080F6-147B-4D26-91A2-7782AECFF039}|Doan1\\Doan1.csproj|D:\\Documents\\HocTap\\DATN\\Project\\AppQuanLySach\\Doan1\\doan1\\views\\homepage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{401080F6-147B-4D26-91A2-7782AECFF039}|Doan1\\Doan1.csproj|solutionrelative:doan1\\views\\homepage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{401080F6-147B-4D26-91A2-7782AECFF039}|Doan1\\Doan1.csproj|D:\\Documents\\HocTap\\DATN\\Project\\AppQuanLySach\\Doan1\\doan1\\models\\bill.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{401080F6-147B-4D26-91A2-7782AECFF039}|Doan1\\Doan1.csproj|solutionrelative:doan1\\models\\bill.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{401080F6-147B-4D26-91A2-7782AECFF039}|Doan1\\Doan1.csproj|D:\\Documents\\HocTap\\DATN\\Project\\AppQuanLySach\\Doan1\\doan1\\models\\orderitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{401080F6-147B-4D26-91A2-7782AECFF039}|Doan1\\Doan1.csproj|solutionrelative:doan1\\models\\orderitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{401080F6-147B-4D26-91A2-7782AECFF039}|Doan1\\Doan1.csproj|D:\\Documents\\HocTap\\DATN\\Project\\AppQuanLySach\\Doan1\\doan1\\views\\loginpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -13,10 +37,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{401080F6-147B-4D26-91A2-7782AECFF039}|Doan1\\Doan1.csproj|D:\\Documents\\HocTap\\DATN\\Project\\AppQuanLySach\\Doan1\\doan1\\views\\splashpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{401080F6-147B-4D26-91A2-7782AECFF039}|Doan1\\Doan1.csproj|solutionrelative:doan1\\views\\splashpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{401080F6-147B-4D26-91A2-7782AECFF039}|Doan1\\Doan1.csproj|D:\\Documents\\HocTap\\DATN\\Project\\AppQuanLySach\\Doan1\\doan1\\viewmodels\\dashboardviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{401080F6-147B-4D26-91A2-7782AECFF039}|Doan1\\Doan1.csproj|solutionrelative:doan1\\viewmodels\\dashboardviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{401080F6-147B-4D26-91A2-7782AECFF039}|Doan1\\Doan1.csproj|D:\\Documents\\HocTap\\DATN\\Project\\AppQuanLySach\\Doan1\\doan1\\viewmodels\\settingviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -29,14 +49,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{401080F6-147B-4D26-91A2-7782AECFF039}|Doan1\\Doan1.csproj|D:\\Documents\\HocTap\\DATN\\Project\\AppQuanLySach\\Doan1\\doan1\\viewmodels\\billdetailviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{401080F6-147B-4D26-91A2-7782AECFF039}|Doan1\\Doan1.csproj|solutionrelative:doan1\\viewmodels\\billdetailviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{401080F6-147B-4D26-91A2-7782AECFF039}|Doan1\\Doan1.csproj|D:\\Documents\\HocTap\\DATN\\Project\\AppQuanLySach\\Doan1\\doan1\\views\\homepage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{401080F6-147B-4D26-91A2-7782AECFF039}|Doan1\\Doan1.csproj|solutionrelative:doan1\\views\\homepage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{401080F6-147B-4D26-91A2-7782AECFF039}|Doan1\\Doan1.csproj|D:\\Documents\\HocTap\\DATN\\Project\\AppQuanLySach\\Doan1\\doan1\\views\\homepage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{401080F6-147B-4D26-91A2-7782AECFF039}|Doan1\\Doan1.csproj|solutionrelative:doan1\\views\\homepage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{401080F6-147B-4D26-91A2-7782AECFF039}|Doan1\\Doan1.csproj|D:\\Documents\\HocTap\\DATN\\Project\\AppQuanLySach\\Doan1\\doan1\\appshell.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
@@ -59,10 +71,6 @@
       "RelativeMoniker": "D:0:0:{401080F6-147B-4D26-91A2-7782AECFF039}|Doan1\\Doan1.csproj|solutionrelative:doan1\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{401080F6-147B-4D26-91A2-7782AECFF039}|Doan1\\Doan1.csproj|D:\\Documents\\HocTap\\DATN\\Project\\AppQuanLySach\\Doan1\\doan1\\models\\bill.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{401080F6-147B-4D26-91A2-7782AECFF039}|Doan1\\Doan1.csproj|solutionrelative:doan1\\models\\bill.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{401080F6-147B-4D26-91A2-7782AECFF039}|Doan1\\Doan1.csproj|D:\\Documents\\HocTap\\DATN\\Project\\AppQuanLySach\\Doan1\\doan1\\views\\billpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{401080F6-147B-4D26-91A2-7782AECFF039}|Doan1\\Doan1.csproj|solutionrelative:doan1\\views\\billpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -73,10 +81,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{401080F6-147B-4D26-91A2-7782AECFF039}|Doan1\\Doan1.csproj|D:\\Documents\\HocTap\\DATN\\Project\\AppQuanLySach\\Doan1\\doan1\\views\\billdetailpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{401080F6-147B-4D26-91A2-7782AECFF039}|Doan1\\Doan1.csproj|solutionrelative:doan1\\views\\billdetailpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{401080F6-147B-4D26-91A2-7782AECFF039}|Doan1\\Doan1.csproj|D:\\Documents\\HocTap\\DATN\\Project\\AppQuanLySach\\Doan1\\doan1\\mauiprogram.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{401080F6-147B-4D26-91A2-7782AECFF039}|Doan1\\Doan1.csproj|solutionrelative:doan1\\mauiprogram.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{401080F6-147B-4D26-91A2-7782AECFF039}|Doan1\\Doan1.csproj|D:\\Documents\\HocTap\\DATN\\Project\\AppQuanLySach\\Doan1\\doan1\\doan1.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
@@ -101,10 +105,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{401080F6-147B-4D26-91A2-7782AECFF039}|Doan1\\Doan1.csproj|D:\\Documents\\HocTap\\DATN\\Project\\AppQuanLySach\\Doan1\\doan1\\converters\\zerotovisibleconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{401080F6-147B-4D26-91A2-7782AECFF039}|Doan1\\Doan1.csproj|solutionrelative:doan1\\converters\\zerotovisibleconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{401080F6-147B-4D26-91A2-7782AECFF039}|Doan1\\Doan1.csproj|D:\\Documents\\HocTap\\DATN\\Project\\AppQuanLySach\\Doan1\\doan1\\models\\orderitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{401080F6-147B-4D26-91A2-7782AECFF039}|Doan1\\Doan1.csproj|solutionrelative:doan1\\models\\orderitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -114,7 +114,7 @@
       "DocumentGroups": [
         {
           "DockedHeight": 226,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Bookmark",
@@ -122,19 +122,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "DashboardViewModel.cs",
-              "DocumentMoniker": "D:\\Documents\\HocTap\\DATN\\Project\\AppQuanLySach\\Doan1\\Doan1\\ViewModels\\DashboardViewModel.cs",
-              "RelativeDocumentMoniker": "Doan1\\ViewModels\\DashboardViewModel.cs",
-              "ToolTip": "D:\\Documents\\HocTap\\DATN\\Project\\AppQuanLySach\\Doan1\\Doan1\\ViewModels\\DashboardViewModel.cs",
-              "RelativeToolTip": "Doan1\\ViewModels\\DashboardViewModel.cs",
-              "ViewState": "AQIAAA4AAAAAAAAAAAAAwGoAAABFAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-09T09:45:17.525Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "LoginPage.xaml",
               "DocumentMoniker": "D:\\Documents\\HocTap\\DATN\\Project\\AppQuanLySach\\Doan1\\Doan1\\views\\LoginPage.xaml",
               "RelativeDocumentMoniker": "Doan1\\views\\LoginPage.xaml",
@@ -142,60 +130,11 @@
               "RelativeToolTip": "Doan1\\views\\LoginPage.xaml",
               "ViewState": "AQIAADMAAAAAAAAAAAAAACcAAAAlAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-06-09T09:43:24.717Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-09T09:43:24.717Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "BillViewModel.cs",
-              "DocumentMoniker": "D:\\Documents\\HocTap\\DATN\\Project\\AppQuanLySach\\Doan1\\Doan1\\ViewModels\\BillViewModel.cs",
-              "RelativeDocumentMoniker": "Doan1\\ViewModels\\BillViewModel.cs",
-              "ToolTip": "D:\\Documents\\HocTap\\DATN\\Project\\AppQuanLySach\\Doan1\\Doan1\\ViewModels\\BillViewModel.cs",
-              "RelativeToolTip": "Doan1\\ViewModels\\BillViewModel.cs",
-              "ViewState": "AQIAAEQAAAAAAAAAAAAMwDAAAAAZAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-07T06:06:24.466Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "SettingViewModel.cs",
-              "DocumentMoniker": "D:\\Documents\\HocTap\\DATN\\Project\\AppQuanLySach\\Doan1\\Doan1\\ViewModels\\SettingViewModel.cs",
-              "RelativeDocumentMoniker": "Doan1\\ViewModels\\SettingViewModel.cs",
-              "ToolTip": "D:\\Documents\\HocTap\\DATN\\Project\\AppQuanLySach\\Doan1\\Doan1\\ViewModels\\SettingViewModel.cs",
-              "RelativeToolTip": "Doan1\\ViewModels\\SettingViewModel.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAAA+wB8AAAABAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-09T09:54:07.068Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "BillDetailViewModel.cs",
-              "DocumentMoniker": "D:\\Documents\\HocTap\\DATN\\Project\\AppQuanLySach\\Doan1\\Doan1\\ViewModels\\BillDetailViewModel.cs",
-              "RelativeDocumentMoniker": "Doan1\\ViewModels\\BillDetailViewModel.cs",
-              "ToolTip": "D:\\Documents\\HocTap\\DATN\\Project\\AppQuanLySach\\Doan1\\Doan1\\ViewModels\\BillDetailViewModel.cs",
-              "RelativeToolTip": "Doan1\\ViewModels\\BillDetailViewModel.cs",
-              "ViewState": "AQIAAJMAAAAAAAAAAAAowKkAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-07T12:08:55.868Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "LoginPage.xaml.cs",
-              "DocumentMoniker": "D:\\Documents\\HocTap\\DATN\\Project\\AppQuanLySach\\Doan1\\Doan1\\views\\LoginPage.xaml.cs",
-              "RelativeDocumentMoniker": "Doan1\\views\\LoginPage.xaml.cs",
-              "ToolTip": "D:\\Documents\\HocTap\\DATN\\Project\\AppQuanLySach\\Doan1\\Doan1\\views\\LoginPage.xaml.cs",
-              "RelativeToolTip": "Doan1\\views\\LoginPage.xaml.cs",
-              "ViewState": "AQIAAAsAAAAAAAAAAAAswBwAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-09T09:43:37.647Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 8,
               "Title": "SplashPage.xaml",
               "DocumentMoniker": "D:\\Documents\\HocTap\\DATN\\Project\\AppQuanLySach\\Doan1\\Doan1\\views\\SplashPage.xaml",
               "RelativeDocumentMoniker": "Doan1\\views\\SplashPage.xaml",
@@ -207,7 +146,31 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 6,
+              "Title": "OrderItem.cs",
+              "DocumentMoniker": "D:\\Documents\\HocTap\\DATN\\Project\\AppQuanLySach\\Doan1\\Doan1\\Models\\OrderItem.cs",
+              "RelativeDocumentMoniker": "Doan1\\Models\\OrderItem.cs",
+              "ToolTip": "D:\\Documents\\HocTap\\DATN\\Project\\AppQuanLySach\\Doan1\\Doan1\\Models\\OrderItem.cs",
+              "RelativeToolTip": "Doan1\\Models\\OrderItem.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAuwAYAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-07T06:06:43.272Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Bill.cs",
+              "DocumentMoniker": "D:\\Documents\\HocTap\\DATN\\Project\\AppQuanLySach\\Doan1\\Doan1\\Models\\Bill.cs",
+              "RelativeDocumentMoniker": "Doan1\\Models\\Bill.cs",
+              "ToolTip": "D:\\Documents\\HocTap\\DATN\\Project\\AppQuanLySach\\Doan1\\Doan1\\Models\\Bill.cs",
+              "RelativeToolTip": "Doan1\\Models\\Bill.cs",
+              "ViewState": "AQIAAAgAAAAAAAAAAAA3wBIAAAApAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-07T06:07:25.47Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "HomePage.xaml.cs",
               "DocumentMoniker": "D:\\Documents\\HocTap\\DATN\\Project\\AppQuanLySach\\Doan1\\Doan1\\views\\HomePage.xaml.cs",
               "RelativeDocumentMoniker": "Doan1\\views\\HomePage.xaml.cs",
@@ -219,7 +182,93 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "HomePage.xaml",
+              "DocumentMoniker": "D:\\Documents\\HocTap\\DATN\\Project\\AppQuanLySach\\Doan1\\Doan1\\views\\HomePage.xaml",
+              "RelativeDocumentMoniker": "Doan1\\views\\HomePage.xaml",
+              "ToolTip": "D:\\Documents\\HocTap\\DATN\\Project\\AppQuanLySach\\Doan1\\Doan1\\views\\HomePage.xaml",
+              "RelativeToolTip": "Doan1\\views\\HomePage.xaml",
+              "ViewState": "AQIAAB4AAAAAAAAAAAAAAFcAAAAUAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-06-02T19:11:31.299Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "DashboardViewModel.cs",
+              "DocumentMoniker": "D:\\Documents\\HocTap\\DATN\\Project\\AppQuanLySach\\Doan1\\Doan1\\ViewModels\\DashboardViewModel.cs",
+              "RelativeDocumentMoniker": "Doan1\\ViewModels\\DashboardViewModel.cs",
+              "ToolTip": "D:\\Documents\\HocTap\\DATN\\Project\\AppQuanLySach\\Doan1\\Doan1\\ViewModels\\DashboardViewModel.cs",
+              "RelativeToolTip": "Doan1\\ViewModels\\DashboardViewModel.cs",
+              "ViewState": "AQIAAFgAAAAAAAAAAAAwwHQAAAARAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-09T09:45:17.525Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MauiProgram.cs",
+              "DocumentMoniker": "D:\\Documents\\HocTap\\DATN\\Project\\AppQuanLySach\\Doan1\\Doan1\\MauiProgram.cs",
+              "RelativeDocumentMoniker": "Doan1\\MauiProgram.cs",
+              "ToolTip": "D:\\Documents\\HocTap\\DATN\\Project\\AppQuanLySach\\Doan1\\Doan1\\MauiProgram.cs",
+              "RelativeToolTip": "Doan1\\MauiProgram.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAjAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-07T06:03:25.929Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "LoginPage.xaml.cs",
+              "DocumentMoniker": "D:\\Documents\\HocTap\\DATN\\Project\\AppQuanLySach\\Doan1\\Doan1\\views\\LoginPage.xaml.cs",
+              "RelativeDocumentMoniker": "Doan1\\views\\LoginPage.xaml.cs",
+              "ToolTip": "D:\\Documents\\HocTap\\DATN\\Project\\AppQuanLySach\\Doan1\\Doan1\\views\\LoginPage.xaml.cs",
+              "RelativeToolTip": "Doan1\\views\\LoginPage.xaml.cs",
+              "ViewState": "AQIAAAsAAAAAAAAAAAAswBwAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-09T09:43:37.647Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "BillDetailViewModel.cs",
+              "DocumentMoniker": "D:\\Documents\\HocTap\\DATN\\Project\\AppQuanLySach\\Doan1\\Doan1\\ViewModels\\BillDetailViewModel.cs",
+              "RelativeDocumentMoniker": "Doan1\\ViewModels\\BillDetailViewModel.cs",
+              "ToolTip": "D:\\Documents\\HocTap\\DATN\\Project\\AppQuanLySach\\Doan1\\Doan1\\ViewModels\\BillDetailViewModel.cs",
+              "RelativeToolTip": "Doan1\\ViewModels\\BillDetailViewModel.cs",
+              "ViewState": "AQIAAJMAAAAAAAAAAAAowKkAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-07T12:08:55.868Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "SettingViewModel.cs",
+              "DocumentMoniker": "D:\\Documents\\HocTap\\DATN\\Project\\AppQuanLySach\\Doan1\\Doan1\\ViewModels\\SettingViewModel.cs",
+              "RelativeDocumentMoniker": "Doan1\\ViewModels\\SettingViewModel.cs",
+              "ToolTip": "D:\\Documents\\HocTap\\DATN\\Project\\AppQuanLySach\\Doan1\\Doan1\\ViewModels\\SettingViewModel.cs",
+              "RelativeToolTip": "Doan1\\ViewModels\\SettingViewModel.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAA+wB8AAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-09T09:54:07.068Z"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 10,
+              "Title": "BillViewModel.cs",
+              "DocumentMoniker": "D:\\Documents\\HocTap\\DATN\\Project\\AppQuanLySach\\Doan1\\Doan1\\ViewModels\\BillViewModel.cs",
+              "RelativeDocumentMoniker": "Doan1\\ViewModels\\BillViewModel.cs",
+              "ToolTip": "D:\\Documents\\HocTap\\DATN\\Project\\AppQuanLySach\\Doan1\\Doan1\\ViewModels\\BillViewModel.cs",
+              "RelativeToolTip": "Doan1\\ViewModels\\BillViewModel.cs",
+              "ViewState": "AQIAAEQAAAAAAAAAAAAMwDAAAAAZAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-07T06:06:24.466Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
               "Title": "SettingPage.xaml",
               "DocumentMoniker": "D:\\Documents\\HocTap\\DATN\\Project\\AppQuanLySach\\Doan1\\Doan1\\views\\SettingPage.xaml",
               "RelativeDocumentMoniker": "Doan1\\views\\SettingPage.xaml",
@@ -231,7 +280,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 15,
               "Title": "BillDetailPage.xaml",
               "DocumentMoniker": "D:\\Documents\\HocTap\\DATN\\Project\\AppQuanLySach\\Doan1\\Doan1\\views\\BillDetailPage.xaml",
               "RelativeDocumentMoniker": "Doan1\\views\\BillDetailPage.xaml",
@@ -243,7 +292,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 16,
               "Title": "App.xaml",
               "DocumentMoniker": "D:\\Documents\\HocTap\\DATN\\Project\\AppQuanLySach\\Doan1\\Doan1\\App.xaml",
               "RelativeDocumentMoniker": "Doan1\\App.xaml",
@@ -255,7 +304,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 12,
               "Title": "AppShell.xaml",
               "DocumentMoniker": "D:\\Documents\\HocTap\\DATN\\Project\\AppQuanLySach\\Doan1\\Doan1\\AppShell.xaml",
               "RelativeDocumentMoniker": "Doan1\\AppShell.xaml",
@@ -267,19 +316,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "HomePage.xaml",
-              "DocumentMoniker": "D:\\Documents\\HocTap\\DATN\\Project\\AppQuanLySach\\Doan1\\Doan1\\views\\HomePage.xaml",
-              "RelativeDocumentMoniker": "Doan1\\views\\HomePage.xaml",
-              "ToolTip": "D:\\Documents\\HocTap\\DATN\\Project\\AppQuanLySach\\Doan1\\Doan1\\views\\HomePage.xaml",
-              "RelativeToolTip": "Doan1\\views\\HomePage.xaml",
-              "ViewState": "AQIAAE4AAAAAAAAAAAAAAFcAAAAUAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-06-02T19:11:31.299Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 17,
               "Title": "BillPage.xaml.cs",
               "DocumentMoniker": "D:\\Documents\\HocTap\\DATN\\Project\\AppQuanLySach\\Doan1\\Doan1\\views\\BillPage.xaml.cs",
               "RelativeDocumentMoniker": "Doan1\\views\\BillPage.xaml.cs",
@@ -291,7 +328,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 14,
               "Title": "BillPage.xaml",
               "DocumentMoniker": "D:\\Documents\\HocTap\\DATN\\Project\\AppQuanLySach\\Doan1\\Doan1\\views\\BillPage.xaml",
               "RelativeDocumentMoniker": "Doan1\\views\\BillPage.xaml",
@@ -303,19 +340,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "Bill.cs",
-              "DocumentMoniker": "D:\\Documents\\HocTap\\DATN\\Project\\AppQuanLySach\\Doan1\\Doan1\\Models\\Bill.cs",
-              "RelativeDocumentMoniker": "Doan1\\Models\\Bill.cs",
-              "ToolTip": "D:\\Documents\\HocTap\\DATN\\Project\\AppQuanLySach\\Doan1\\Doan1\\Models\\Bill.cs",
-              "RelativeToolTip": "Doan1\\Models\\Bill.cs",
-              "ViewState": "AQIAAAcAAAAAAAAAAAA5wBIAAAApAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-07T06:07:25.47Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 18,
               "Title": "App.xaml.cs",
               "DocumentMoniker": "D:\\Documents\\HocTap\\DATN\\Project\\AppQuanLySach\\Doan1\\Doan1\\App.xaml.cs",
               "RelativeDocumentMoniker": "Doan1\\App.xaml.cs",
@@ -327,7 +352,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 19,
               "Title": "BillDetailPage.xaml.cs",
               "DocumentMoniker": "D:\\Documents\\HocTap\\DATN\\Project\\AppQuanLySach\\Doan1\\Doan1\\views\\BillDetailPage.xaml.cs",
               "RelativeDocumentMoniker": "Doan1\\views\\BillDetailPage.xaml.cs",
@@ -339,19 +364,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "MauiProgram.cs",
-              "DocumentMoniker": "D:\\Documents\\HocTap\\DATN\\Project\\AppQuanLySach\\Doan1\\Doan1\\MauiProgram.cs",
-              "RelativeDocumentMoniker": "Doan1\\MauiProgram.cs",
-              "ToolTip": "D:\\Documents\\HocTap\\DATN\\Project\\AppQuanLySach\\Doan1\\Doan1\\MauiProgram.cs",
-              "RelativeToolTip": "Doan1\\MauiProgram.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAATAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-07T06:03:25.929Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 20,
               "Title": "Doan1",
               "DocumentMoniker": "D:\\Documents\\HocTap\\DATN\\Project\\AppQuanLySach\\Doan1\\Doan1\\Doan1.csproj",
               "RelativeDocumentMoniker": "Doan1\\Doan1.csproj",
@@ -363,7 +376,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 21,
               "Title": "SettingPage.xaml.cs",
               "DocumentMoniker": "D:\\Documents\\HocTap\\DATN\\Project\\AppQuanLySach\\Doan1\\Doan1\\views\\SettingPage.xaml.cs",
               "RelativeDocumentMoniker": "Doan1\\views\\SettingPage.xaml.cs",
@@ -375,7 +388,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 22,
               "Title": "SplashPage.xaml.cs",
               "DocumentMoniker": "D:\\Documents\\HocTap\\DATN\\Project\\AppQuanLySach\\Doan1\\Doan1\\views\\SplashPage.xaml.cs",
               "RelativeDocumentMoniker": "Doan1\\views\\SplashPage.xaml.cs",
@@ -387,19 +400,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
-              "Title": "OrderItem.cs",
-              "DocumentMoniker": "D:\\Documents\\HocTap\\DATN\\Project\\AppQuanLySach\\Doan1\\Doan1\\Models\\OrderItem.cs",
-              "RelativeDocumentMoniker": "Doan1\\Models\\OrderItem.cs",
-              "ToolTip": "D:\\Documents\\HocTap\\DATN\\Project\\AppQuanLySach\\Doan1\\Doan1\\Models\\OrderItem.cs",
-              "RelativeToolTip": "Doan1\\Models\\OrderItem.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-07T06:06:43.272Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 23,
               "Title": "AppShell.xaml.cs",
               "DocumentMoniker": "D:\\Documents\\HocTap\\DATN\\Project\\AppQuanLySach\\Doan1\\Doan1\\AppShell.xaml.cs",
               "RelativeDocumentMoniker": "Doan1\\AppShell.xaml.cs",
@@ -411,7 +412,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 25,
               "Title": "ZeroToVisibleConverter.cs",
               "DocumentMoniker": "D:\\Documents\\HocTap\\DATN\\Project\\AppQuanLySach\\Doan1\\Doan1\\Converters\\ZeroToVisibleConverter.cs",
               "RelativeDocumentMoniker": "Doan1\\Converters\\ZeroToVisibleConverter.cs",
@@ -423,7 +424,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 24,
               "Title": "MainActivity.cs",
               "DocumentMoniker": "D:\\Documents\\HocTap\\DATN\\Project\\AppQuanLySach\\Doan1\\Doan1\\Platforms\\Android\\MainActivity.cs",
               "RelativeDocumentMoniker": "Doan1\\Platforms\\Android\\MainActivity.cs",

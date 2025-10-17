@@ -19,7 +19,6 @@ namespace WebBanSach.Controllers
         }
 
         // GET: api/appmobile/orders
-        [Authorize]
         [HttpGet("orders")]
         public async Task<IActionResult> GetAllOrders()
         {
@@ -52,7 +51,6 @@ namespace WebBanSach.Controllers
             return Ok(orders);
         }
         // GET: api/appmobile/orders/{id}
-        [Authorize]
         [HttpGet("orders/{id}")]
         public async Task<IActionResult> GetOrderDetail(int id)
         {
